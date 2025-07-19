@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronsRight, ChevronLeft, ChevronRight, Star, X, FileText, Gamepad2, Code, Brush, BrainCircuit, Twitter, Github, Linkedin, Mail } from 'lucide-react';
+import { ChevronsRight, ChevronLeft, ChevronRight, Star,Link as LinkIcon, X, FileText, Gamepad2, Code, Brush, BrainCircuit, Twitter, Github, Linkedin, Mail } from 'lucide-react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -464,7 +464,7 @@ export async function getStaticProps() {
 
     // --- Get Project Data ---
     const projectsDirectory = path.join(process.cwd(), 'src', 'content', 'projects');
-    const projectFilenames = fs.readdirSync(projectsDirectory);
+    const projectFilenames = fs.readdirSync(projectsDirectory).filter(filename => filename.endsWith('.md')); // ADDED FILTER
     const projects = await Promise.all(projectFilenames.map(async (filename) => {
         const filePath = path.join(projectsDirectory, filename);
         const fileContents = fs.readFileSync(filePath, 'utf8');
@@ -476,16 +476,16 @@ export async function getStaticProps() {
 
     // --- Get Blog Data ---
     const blogDirectory = path.join(process.cwd(), 'src', 'content', 'blog');
-    const blogFilenames = fs.readdirSync(blogDirectory);
+    const blogFilenames = fs.readdirSync(blogDirectory).filter(filename => filename.endsWith('.md')); // ADDED FILTER
     const blogPosts = await Promise.all(blogFilenames.map(async (filename) => {
-    const filePath = path.join(blogDirectory, filename);
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data, content } = matter(fileContents);
-    const processedContent = await remark().use(html).process(content);
-    const contentHtml = processedContent.toString();
-    const slug = filename.replace(/\.md$/, ''); // This line adds the slug
-    return { ...data, contentHtml, slug }; // And we return it here
-}));
+        const filePath = path.join(blogDirectory, filename);
+        const fileContents = fs.readFileSync(filePath, 'utf8');
+        const { data, content } = matter(fileContents);
+        const processedContent = await remark().use(html).process(content);
+        const contentHtml = processedContent.toString();
+        const slug = filename.replace(/\.md$/, '');
+        return { ...data, contentHtml, slug };
+    }));
 
     return {
         props: {
