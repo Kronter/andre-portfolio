@@ -72,7 +72,21 @@ const calculateReadingTime = (content) => {
 
 // --- Main Blog Post Component ---
 export default function BlogPostPage({ postData, nextPostInSeries, otherPosts }) {
-    
+
+const [copySuccess, setCopySuccess] = useState(''); // State for copy confirmation
+
+const handleCopyEmail = () => {
+    const email = 'andregot@gmail.com';
+    const textArea = document.createElement('textarea');
+    textArea.value = email;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+
+    setCopySuccess('Email copied!');
+    setTimeout(() => setCopySuccess(''), 2000); // Hide message after 2 seconds
+};
     // A helper function to render content blocks from Markdown HTML
     const renderContent = (htmlContent) => {
         return <div className="prose prose-invert prose-lg max-w-none prose-p:text-gray-400 prose-headings:text-white prose-a:text-violet-400 hover:prose-a:text-violet-300 prose-strong:text-gray-200 prose-blockquote:border-l-violet-500 prose-code:bg-zinc-800 prose-code:rounded-md prose-code:px-2 prose-code:py-1 prose-code:font-mono" dangerouslySetInnerHTML={{ __html: htmlContent }} />;
@@ -162,33 +176,31 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                     </div>
                 </section>
 
-                <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700 text-center">
+                <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700 text-center relative">
                     <h2 className="text-3xl font-bold text-white mb-4">Let&apos;s Create Something Amazing</h2>
                     <p className="text-gray-400 mb-8 max-w-xl mx-auto">
                         I&apos;m always open to new opportunities and collaborations. Let&apos;s get in touch and build the next great game together.
                     </p>
                     <div className="flex justify-center space-x-6 mb-8">
+                        <a href="#" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Twitter className="w-6 h-6 text-white" /></a>
+                        <a href="#" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Github className="w-6 h-6 text-white" /></a>
                         <a href="https://www.linkedin.com/in/andré-gottgtroy-b56616172/" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Linkedin className="w-6 h-6 text-white" /></a>
-                        <div className="relative">
-                            <button onClick={handleCopyEmail} className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1">
-                                <Mail className="w-6 h-6 text-white" />
-                            </button>
-                            <AnimatePresence>
-                                {copySuccess && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: 10 }}
-                                        className="absolute -top-10 left-1/2 -translate-x-1/2 bg-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap"
-                                    >
-                                        {copySuccess}
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </div>
+                        <button onClick={handleCopyEmail} className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Mail className="w-6 h-6 text-white" /></button>
                     </div>
-                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                        <a href={asset("/Andre_Gottgtroy_Resume.pdf")} download className="inline-flex items-center px-8 py-3 border-2 border-violet-500 text-violet-400 font-bold rounded-lg hover:bg-violet-500 hover:text-white transition-all duration-300 text-lg">
+                        <AnimatePresence>
+                        {copySuccess && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 10 }}
+                                className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap"
+                            >
+                                {copySuccess}
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
+                        <a href={asset("/Andre-Gottgtroy-Resume.pdf")} download className="inline-flex items-center px-8 py-3 border-2 border-violet-500 text-violet-400 font-bold rounded-lg hover:bg-violet-500 hover:text-white transition-all duration-300 text-lg">
                             <FileText className="w-5 h-5 mr-2" />
                             Download Resume
                         </a>
