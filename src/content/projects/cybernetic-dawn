@@ -1,16 +1,15 @@
+---
 id: 4
 title: "Cybernetic Dawn"
 category: "Professional"
-image: "https://www.google.com/search?q=https://placehold.co/1600x900/18181b/8b5cf6%3Ftext%3DCybernetic%2BDawn"
+image: "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Dawn"
 description: "UI/UX designer for a fast-paced cyberpunk FPS. Focused on creating an intuitive and stylish user interface."
 featured: false
 screenshots:
-
-"https://www.google.com/search?q=https://placehold.co/1600x900/18181b/8b5cf6%3Ftext%3DCybernetic%2BScreenshot%2B1"
-
-"https://www.google.com/search?q=https://placehold.co/1600x900/18181b/8b5cf6%3Ftext%3DCybernetic%2BScreenshot%2B2"
-
-"https://www.google.com/search?q=https://placehold.co/1600x900/18181b/8b5cf6%3Ftext%3DCybernetic%2BScreenshot%2B3"
+  - "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Screenshot+1"
+  - "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Screenshot+2"
+  - "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Screenshot+3"
+---
 
 My primary role was to overhaul the user interface to improve player onboarding and readability during intense combat. I conducted user testing sessions to identify pain points and iterated on HUD layouts in Figma.
 
