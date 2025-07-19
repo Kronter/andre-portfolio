@@ -1,101 +1,41 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronsRight, ChevronLeft, ChevronRight, Star, MessageSquare, ThumbsUp, Linkedin, Twitter, Github, Mail, Gamepad2, Code, Brush, BrainCircuit, FileText, Link, X } from 'lucide-react';
+import { ChevronsRight, ChevronLeft, ChevronRight, Star, Link, X, FileText, Gamepad2, Code, Brush, BrainCircuit, Twitter, Github, Linkedin, Mail } from 'lucide-react';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
 
-// Mock Data (Easy to replace with your actual data)
-const portfolioData = {
-    name: "Alex Doe",
-    title: "Innovative Game Designer & Developer",
-    about: "I'm a passionate game designer with a love for creating immersive and memorable experiences. My design philosophy is centered around 'game feel' and player agency. I thrive on solving complex design challenges and collaborating with creative teams to bring virtual worlds to life. From initial concept to final polish, I'm dedicated to crafting games that resonate with players.",
-    skills: [
-        { name: "Game Design", icon: Gamepad2, description: "System Design, Level Design, Narrative Design, Gameplay Balancing, Prototyping" },
-        { name: "Development", icon: Code, description: "Unity (C#), Unreal Engine (Blueprints), C++, JavaScript, Python" },
-        { name: "Creative Tools", icon: Brush, description: "Figma, Adobe Photoshop, Blender, Aseprite, Jira, Trello" },
-        { name: "Core Competencies", icon: BrainCircuit, description: "Problem Solving, Team Collaboration, Agile/Scrum, Version Control (Git)" },
-    ],
-    projects: [
-        { 
-            id: 1, 
-            title: "Project Nebula", 
-            category: "Professional", 
-            image: "https://placehold.co/1600x900/18181b/8b5cf6?text=Project+Nebula", 
-            description: "Lead designer on a 3D space exploration RPG. Responsible for core gameplay mechanics and narrative structure.", 
-            featured: true,
-            videoId: "dQw4w9WgXcQ", // Example YouTube Video ID. This will be shown instead of screenshots.
-            screenshots: [
-                "https://placehold.co/1600x900/18181b/8b5cf6?text=Nebula+Screenshot+1",
-                "https://placehold.co/1600x900/18181b/8b5cf6?text=Nebula+Screenshot+2",
-            ],
-            details: "As the lead on Project Nebula, I spearheaded the design of the procedural galaxy generation system, ensuring billions of unique star systems could be explored. I also wrote the main questline and designed the branching dialogue system using a proprietary node-based editor. A major challenge was balancing the ship combat to be accessible for new players while offering depth for veterans."
-        },
-        { id: 2, title: "Chrono Glitch", category: "Game Jam", image: "https://placehold.co/1600x900/18181b/8b5cf6?text=Chrono+Glitch", description: "A 48-hour game jam winner. A 2D platformer with time-manipulation mechanics." },
-        { id: 3, title: "Pixel Pets", category: "Personal", image: "https://placehold.co/1600x900/18181b/8b5cf6?text=Pixel+Pets", description: "A cozy life-sim inspired by classic pixel art games. Developed solo in my spare time." },
-        { 
-            id: 4, 
-            title: "Cybernetic Dawn", 
-            category: "Professional", 
-            image: "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Dawn", 
-            description: "UI/UX designer for a fast-paced cyberpunk FPS. Focused on creating an intuitive and stylish user interface.",
-            screenshots: [ // No videoId, so this gallery will be shown.
-                "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Screenshot+1",
-                "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Screenshot+2",
-                "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Screenshot+3",
-            ],
-            details: "My primary role was to overhaul the user interface to improve player onboarding and readability during intense combat. I conducted user testing sessions to identify pain points and iterated on HUD layouts in Figma. The final design increased player retention by 15% in the first week post-launch."
-        },
-        { id: 5, title: "Forest Spirit", category: "Game Jam", image: "https://placehold.co/1600x900/18181b/8b5cf6?text=Forest+Spirit", description: "A beautiful exploration game with a focus on atmosphere and environmental storytelling." },
-    ],
-    experience: [
-        { role: "Lead Game Designer", company: "Starlight Studios", period: "2020 - Present", description: "Leading design on unannounced titles, mentoring junior designers, and defining the creative vision for new IPs.", linkedProjectId: 1 },
-        { role: "Game Designer", company: "PixelForge Games", period: "2018 - 2020", description: "Designed and implemented core features for two successful mobile titles, contributing to level design and system balancing.", linkedProjectId: 4 },
-        { role: "QA Tester", company: "Questline Interactive", period: "2016 - 2018", description: "Began my journey in the industry, identifying and documenting bugs, and providing player-focused feedback." },
-    ],
-    blogPosts: [
-        { id: 101, title: "The Art of 'Juice': Making Games Feel Good", date: "July 17, 2025", content: "Game 'juice' or 'feel' is that intangible quality that makes an interaction satisfying. It's the screen shake, the particle effects, the snappy sound design... In this post, I break down how I approach adding juice to my projects, turning simple mechanics into delightful experiences.", featured: true },
-        { id: 102, title: "Devlog #1: Prototyping a New World", date: "June 28, 2025", content: "Starting a new personal project is always exciting! This week, I've been prototyping the core movement system for a new 2D adventure game. Using simple shapes, I'm focusing entirely on nailing the physics and responsiveness before any art is created. It's all about building a solid foundation." },
-    ]
+// --- Helper function to get the correct asset path for GitHub Pages ---
+const asset = (p) => {
+    const repo = 'andre-portfolio'; // IMPORTANT: Change this to your repository name
+    return `/${repo}${p}`;
 };
 
 // --- Animation Variants for Framer Motion ---
 const sliderVariants = {
-  enter: (direction) => ({
-    x: direction > 0 ? 1000 : -1000,
-    opacity: 0
-  }),
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1
-  },
-  exit: (direction) => ({
-    zIndex: 0,
-    x: direction < 0 ? 1000 : -1000,
-    opacity: 0
-  })
+  enter: (direction) => ({ x: direction > 0 ? 1000 : -1000, opacity: 0 }),
+  center: { zIndex: 1, x: 0, opacity: 1 },
+  exit: (direction) => ({ zIndex: 0, x: direction < 0 ? 1000 : -1000, opacity: 0 })
 };
 
 // --- Screenshot Gallery Component ---
 const ScreenshotGallery = ({ screenshots }) => {
     const [[page, direction], setPage] = useState([0, 0]);
     const timeoutRef = useRef(null);
-
-    const paginate = (newDirection) => {
-        setPage([page + newDirection, newDirection]);
-    };
+    const paginate = useCallback((newDirection) => {
+        setPage(p => [p[0] + newDirection, newDirection]);
+    }, []);
     
-    const resetTimeout = () => {
-        if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-        }
-    }
-
     useEffect(() => {
+        const resetTimeout = () => timeoutRef.current && clearTimeout(timeoutRef.current);
         resetTimeout();
         if (screenshots.length > 1) {
             timeoutRef.current = setTimeout(() => paginate(1), 4000);
         }
         return () => resetTimeout();
-    }, [page, screenshots.length]);
+    }, [page, screenshots.length, paginate]);
 
     const imageIndex = (page % screenshots.length + screenshots.length) % screenshots.length;
 
@@ -105,6 +45,7 @@ const ScreenshotGallery = ({ screenshots }) => {
                 <motion.img
                     key={page}
                     src={screenshots[imageIndex]}
+                    alt={`Screenshot ${imageIndex + 1}`}
                     custom={direction}
                     variants={sliderVariants}
                     initial="enter"
@@ -120,64 +61,53 @@ const ScreenshotGallery = ({ screenshots }) => {
     );
 };
 
-
-// Main App Component
-export default function App() {
+// --- Main App Component ---
+export default function App({ portfolioData = {}, projects = [], blogPosts = [] }) {
     const [activeFilter, setActiveFilter] = useState('All');
-    const [filteredProjects, setFilteredProjects] = useState(portfolioData.projects);
+    const [filteredProjects, setFilteredProjects] = useState(projects);
     const [selectedProject, setSelectedProject] = useState(null);
     
-    // --- Featured Slider State & Logic ---
     const [featuredContent, setFeaturedContent] = useState([]);
     const [[page, direction], setPage] = useState([0, 0]);
     const timeoutRef = useRef(null);
 
-    const paginate = (newDirection) => {
-        setPage([page + newDirection, newDirection]);
-    };
-
-    const resetTimeout = () => {
-        if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-        }
-    }
-
-    useEffect(() => {
-        const featuredItems = [
-            ...portfolioData.blogPosts.filter(b => b.featured).map(b => ({ ...b, type: 'blog' })),
-            ...portfolioData.projects.filter(p => p.featured).map(p => ({ ...p, type: 'project' }))
-        ];
-        setFeaturedContent(featuredItems);
+    const paginate = useCallback((newDirection) => {
+        setPage(p => [p[0] + newDirection, newDirection]);
     }, []);
 
     useEffect(() => {
+        const featuredItems = [
+            ...blogPosts.filter(b => b.featured).map(b => ({ ...b, type: 'blog' })),
+            ...projects.filter(p => p.featured).map(p => ({ ...p, type: 'project' }))
+        ];
+        setFeaturedContent(featuredItems);
+    }, [projects, blogPosts]);
+
+    useEffect(() => {
+        const resetTimeout = () => timeoutRef.current && clearTimeout(timeoutRef.current);
         resetTimeout();
         if (featuredContent.length > 1) {
             timeoutRef.current = setTimeout(() => paginate(1), 4000);
         }
         return () => resetTimeout();
-    }, [page, featuredContent]);
+    }, [page, featuredContent, paginate]);
 
     const featureIndex = featuredContent.length > 0 ? (page % featuredContent.length + featuredContent.length) % featuredContent.length : 0;
     
-    // --- Project Filtering Effect ---
     useEffect(() => {
         if (activeFilter === 'All') {
-            setFilteredProjects(portfolioData.projects);
+            setFilteredProjects(projects);
         } else {
-            setFilteredProjects(portfolioData.projects.filter(p => p.category === activeFilter));
+            setFilteredProjects(projects.filter(p => p.category === activeFilter));
         }
-    }, [activeFilter]);
+    }, [activeFilter, projects]);
 
-    const handleProjectClick = (project) => {
-        setSelectedProject(project);
-    };
+    const handleProjectClick = (project) => setSelectedProject(project);
+    const closeModal = () => setSelectedProject(null);
 
-    const closeModal = () => {
-        setSelectedProject(null);
-    };
+    const icons = { Gamepad2, Code, Brush, BrainCircuit };
 
-    // Sub-components for cleaner structure
+    // Sub-components
     const Section = ({ id, title, children, className = "" }) => (
         <section id={id} className={`py-16 md:py-24 px-4 sm:px-6 lg:px-8 ${className}`}>
             <div className="max-w-7xl mx-auto">
@@ -214,7 +144,7 @@ export default function App() {
                                     <a key={link} href={`#${link}`} className="capitalize text-gray-300 hover:bg-zinc-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">{link}</a>
                                 ))}
                             </div>
-                            <a href="/AlexDoe_Resume.pdf" download className="ml-6 inline-flex items-center px-4 py-2 border border-violet-500 text-sm font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
+                            <a href={asset("/AlexDoe_Resume.pdf")} download className="ml-6 inline-flex items-center px-4 py-2 border border-violet-500 text-sm font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
                                 <FileText className="w-4 h-4 mr-2" />
                                 Resume
                             </a>
@@ -233,7 +163,7 @@ export default function App() {
                             {navLinks.map(link => (
                                 <a key={link} href={`#${link}`} onClick={() => setIsOpen(false)} className="capitalize text-gray-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-300">{link}</a>
                             ))}
-                            <a href="/AlexDoe_Resume.pdf" download className="mt-2 w-full flex items-center justify-center px-4 py-2 border border-violet-500 text-base font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
+                            <a href={asset("/AlexDoe_Resume.pdf")} download className="mt-2 w-full flex items-center justify-center px-4 py-2 border border-violet-500 text-base font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
                                 <FileText className="w-5 h-5 mr-2" />
                                 Resume
                             </a>
@@ -295,15 +225,16 @@ export default function App() {
                                                     View Details
                                                 </button>
                                             </div>
+                                            {/* eslint-disable-next-line @next/next/no-img-element */}
                                             <img src={featuredContent[featureIndex].image} alt={featuredContent[featureIndex].title} className="rounded-lg shadow-lg w-full h-64 object-cover" />
                                         </div>
                                     ) : (
                                         <div className="p-8 bg-zinc-800 rounded-lg border border-zinc-700">
                                             <span className="text-violet-500 font-semibold mb-2 block">Featured Post</span>
                                             <h3 className="text-3xl font-bold text-white mb-2">{featuredContent[featureIndex].title}</h3>
-                                            <p className="text-sm text-gray-500 mb-4">{featuredContent[featureIndex].date}</p>
-                                            <p className="text-gray-400 mb-6 line-clamp-3">{featuredContent[featureIndex].content}</p>
-                                            <a href="#blog" className="font-semibold text-violet-500 hover:text-violet-400">Read More &rarr;</a>
+                                            <p className="text-sm text-gray-500 mb-4">{new Date(featuredContent[featureIndex].date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                                            <div className="text-gray-400 mb-6 line-clamp-3" dangerouslySetInnerHTML={{ __html: featuredContent[featureIndex].contentHtml }} />
+                                            <a href="#" className="font-semibold text-violet-500 hover:text-violet-400">Read More &rarr;</a>
                                         </div>
                                     )}
                                 </motion.div>
@@ -327,6 +258,7 @@ export default function App() {
                         {filteredProjects.map(project => (
                             <div key={project.id} onClick={() => handleProjectClick(project)} className="group bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 hover:border-violet-500/50 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer shadow-lg hover:shadow-violet-500/10">
                                 <div className="relative">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img src={project.image} alt={project.title} className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                                     <span className="absolute top-4 right-4 bg-violet-700/80 text-white text-xs font-bold px-3 py-1 rounded-full">{project.category}</span>
@@ -359,33 +291,26 @@ export default function App() {
                             <div className="p-8 pt-12">
                                 <h2 className="text-4xl font-bold text-white mb-2">{selectedProject.title}</h2>
                                 
-                                {/* --- MODAL MEDIA SECTION --- */}
                                 <div className="mb-6 mt-6">
                                     {selectedProject.videoId ? (
                                         <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                                            <iframe 
-                                                src={`https://www.youtube.com/embed/${selectedProject.videoId}`}
-                                                frameBorder="0" 
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                                allowFullScreen
-                                                className="w-full h-full"
-                                            ></iframe>
+                                            <iframe src={`https://www.youtube.com/embed/${selectedProject.videoId}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full"></iframe>
                                         </div>
                                     ) : selectedProject.screenshots && selectedProject.screenshots.length > 0 ? (
                                         <ScreenshotGallery screenshots={selectedProject.screenshots} />
                                     ) : (
+                                        // eslint-disable-next-line @next/next/no-img-element
                                         <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-auto object-cover rounded-lg" />
                                     )}
                                      <span className="bg-violet-600 text-white text-sm font-bold px-3 py-1 rounded-full mt-4 inline-block">{selectedProject.category}</span>
                                 </div>
 
-                                {/* --- MODAL CONTENT SECTION --- */}
                                 <p className="text-gray-300 text-lg mb-6">{selectedProject.description}</p>
                                 
-                                {selectedProject.details && (
+                                {selectedProject.contentHtml && (
                                     <div className="mt-8 pt-6 border-t border-zinc-700">
                                         <h3 className="text-2xl font-bold text-white mb-4">Project Breakdown</h3>
-                                        <p className="text-gray-400 whitespace-pre-line">{selectedProject.details}</p>
+                                        <div className="prose prose-invert prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: selectedProject.contentHtml }} />
                                     </div>
                                 )}
                             </div>
@@ -394,28 +319,28 @@ export default function App() {
                 )}
                 </AnimatePresence>
 
-                {/* About Me Section (Now contains Experience and Skills) */}
+                {/* About Me Section */}
                 <Section id="about" title="About Me" className="bg-zinc-800/50">
                     <div className="grid md:grid-cols-3 gap-12 items-center">
                         <div className="md:col-span-1 flex justify-center">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img src="https://placehold.co/400x400/18181b/8b5cf6?text=A+D" alt="Alex Doe" className="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-violet-500/50 shadow-2xl" />
                         </div>
                         <div className="md:col-span-2">
                             <p className="text-lg text-gray-400 mb-6">{portfolioData.about}</p>
                             <a href="#contact" className="text-violet-500 font-semibold hover:text-violet-400 transition-colors">
-                                Let's create something amazing together &rarr;
+                                Let&apos;s create something amazing together &rarr;
                             </a>
                         </div>
                     </div>
 
-                    {/* Experience Sub-Section with Interactive Links */}
                     <SubSection id="experience" title="My Journey">
                         <div className="relative max-w-2xl mx-auto">
                             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-zinc-700"></div>
-                            {portfolioData.experience.map((job, index) => {
-                                const linkedProject = job.linkedProjectId ? portfolioData.projects.find(p => p.id === job.linkedProjectId) : null;
+                            {portfolioData.experience?.map((job, index) => {
+                                const linkedProject = job.linkedProjectId ? projects.find(p => p.id === job.linkedProjectId) : null;
                                 return (
-                                    <div key={job.role} className={`relative mb-12 flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                                    <div key={job.role + index} className={`relative mb-12 flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                                         <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
                                             <div className="bg-zinc-900 p-6 rounded-lg border border-zinc-700 transform transition-all duration-500 hover:scale-105 hover:border-violet-500/50">
                                                 <p className="text-sm text-violet-500 mb-1">{job.period}</p>
@@ -437,30 +362,31 @@ export default function App() {
                         </div>
                     </SubSection>
 
-                    {/* Skills Sub-Section with NO Animation */}
                     <SubSection id="skills" title="My Arsenal">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {portfolioData.skills.map(skill => (
-                                <div key={skill.name} className="bg-zinc-900 p-6 rounded-lg border border-zinc-700 hover:border-violet-500/50 hover:shadow-2xl hover:shadow-violet-500/10 transition-all duration-300 transform hover:-translate-y-1">
-                                    <div className="flex items-center mb-4">
-                                        <skill.icon className="w-8 h-8 text-violet-500 mr-4" />
-                                        <h3 className="text-xl font-bold text-white">{skill.name}</h3>
+                            {portfolioData.skills?.map(skill => {
+                                const Icon = icons[skill.icon];
+                                return (
+                                    <div key={skill.name} className="bg-zinc-900 p-6 rounded-lg border border-zinc-700 hover:border-violet-500/50 hover:shadow-2xl hover:shadow-violet-500/10 transition-all duration-300 transform hover:-translate-y-1">
+                                        <div className="flex items-center mb-4">
+                                            {Icon && <Icon className="w-8 h-8 text-violet-500 mr-4" />}
+                                            <h3 className="text-xl font-bold text-white">{skill.name}</h3>
+                                        </div>
+                                        <p className="text-gray-400">{skill.description}</p>
                                     </div>
-                                    <p className="text-gray-400">{skill.description}</p>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </SubSection>
                 </Section>
 
-                {/* Blog Section */}
                 <Section id="blog" title="Devlog & Musings">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        {portfolioData.blogPosts.map(post => (
+                        {blogPosts.map(post => (
                             <div key={post.id} className="bg-zinc-800 p-8 rounded-lg border border-zinc-700 flex flex-col">
-                                <p className="text-sm text-gray-400 mb-2">{post.date}</p>
+                                <p className="text-sm text-gray-400 mb-2">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                                 <h3 className="text-2xl font-bold text-white mb-4 flex-grow">{post.title}</h3>
-                                <p className="text-gray-400 mb-6 line-clamp-3">{post.content}</p>
+                                <div className="text-gray-400 mb-6 line-clamp-3" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
                                 <div className="mt-auto pt-4 border-t border-zinc-700 flex justify-end items-center">
                                     <a href="#" className="font-semibold text-violet-500 hover:text-violet-400">Read More &rarr;</a>
                                 </div>
@@ -469,17 +395,16 @@ export default function App() {
                     </div>
                 </Section>
 
-                {/* Contact Section */}
                 <Section id="contact" title="Get In Touch" className="bg-zinc-800/50">
                     <div className="text-center max-w-3xl mx-auto">
                         <p className="text-xl text-gray-400 mb-8">
-                            I'm always open to new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out!
+                            I&apos;m always open to new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out!
                         </p>
                         <div className="flex justify-center space-x-6 mb-12">
                             <a href="#" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Twitter className="w-6 h-6 text-white" /></a>
                             <a href="#" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Github className="w-6 h-6 text-white" /></a>
                             <a href="#" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Linkedin className="w-6 h-6 text-white" /></a>
-                            <a href="mailto:example@email.com" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Mail className="w-6 h-6 text-white" /></a>
+                            <a href="mailto:alex.doe@email.com" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Mail className="w-6 h-6 text-white" /></a>
                         </div>
                         <a href="mailto:alex.doe@email.com" className="inline-block px-12 py-4 bg-zinc-800 border border-violet-500 text-violet-500 font-bold rounded-lg hover:bg-violet-600 hover:text-white transition-all duration-300 text-lg">
                             alex.doe@email.com
@@ -489,40 +414,24 @@ export default function App() {
             </main>
 
             <footer className="bg-zinc-900 py-8 text-center text-gray-500">
-                <p>&copy; {new Date().getFullYear()} {portfolioData.name}. All Rights Reserved.</p>
+                <p>© {new Date().getFullYear()} {portfolioData.name}. All Rights Reserved.</p>
                 <p className="text-sm mt-2">Designed & Built with 💜 by You!</p>
             </footer>
             
             <style jsx global>{`
-                @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap');
-                body {
-                    font-family: 'Inter', sans-serif;
-                    scroll-behavior: smooth;
-                }
-                html {
-                    scroll-behavior: smooth;
-                }
                 .aspect-w-16 { position: relative; padding-bottom: 56.25%; }
                 .aspect-h-9 { /* No specific styles needed here with this setup */ }
                 .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-                .animate-blob {
-                    animation: blob 7s infinite;
-                }
-                .animation-delay-2000 {
-                    animation-delay: 2s;
-                }
-                .animation-delay-4000 {
-                    animation-delay: 4s;
-                }
+                .animate-blob { animation: blob 7s infinite; }
+                .animation-delay-2000 { animation-delay: 2s; }
+                .animation-delay-4000 { animation-delay: 4s; }
                 @keyframes blob {
                     0% { transform: translate(0px, 0px) scale(1); }
                     33% { transform: translate(30px, -50px) scale(1.1); }
                     66% { transform: translate(-20px, 20px) scale(0.9); }
                     100% { transform: translate(0px, 0px) scale(1); }
                 }
-                .animate-fade-in {
-                    animation: fadeIn 0.5s ease-out forwards;
-                }
+                .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
                 @keyframes fadeIn {
                     from { opacity: 0; transform: scale(0.95); }
                     to { opacity: 1; transform: scale(1); }
@@ -536,4 +445,44 @@ export default function App() {
             `}</style>
         </div>
     );
+}
+
+// --- Data Fetching for Next.js ---
+export async function getStaticProps() {
+    // --- Get Main Portfolio Data ---
+    const mainDataPath = path.join(process.cwd(), 'src', 'data', 'main.md');
+    const mainFileContents = fs.readFileSync(mainDataPath, 'utf8');
+    const { data: mainData } = matter(mainFileContents);
+
+    // --- Get Project Data ---
+    const projectsDirectory = path.join(process.cwd(), 'src', 'content', 'projects');
+    const projectFilenames = fs.readdirSync(projectsDirectory);
+    const projects = await Promise.all(projectFilenames.map(async (filename) => {
+        const filePath = path.join(projectsDirectory, filename);
+        const fileContents = fs.readFileSync(filePath, 'utf8');
+        const { data, content } = matter(fileContents);
+        const processedContent = await remark().use(html).process(content);
+        const contentHtml = processedContent.toString();
+        return { ...data, contentHtml };
+    }));
+
+    // --- Get Blog Data ---
+    const blogDirectory = path.join(process.cwd(), 'src', 'content', 'blog');
+    const blogFilenames = fs.readdirSync(blogDirectory);
+    const blogPosts = await Promise.all(blogFilenames.map(async (filename) => {
+        const filePath = path.join(blogDirectory, filename);
+        const fileContents = fs.readFileSync(filePath, 'utf8');
+        const { data, content } = matter(fileContents);
+        const processedContent = await remark().use(html).process(content);
+        const contentHtml = processedContent.toString();
+        return { ...data, contentHtml };
+    }));
+
+    return {
+        props: {
+            portfolioData: mainData,
+            projects: projects.sort((a, b) => a.id - b.id),
+            blogPosts: blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date)),
+        },
+    };
 }
