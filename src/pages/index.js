@@ -388,7 +388,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                 <h3 className="text-2xl font-bold text-white mb-4 flex-grow">{post.title}</h3>
                                 <div className="text-gray-400 mb-6 line-clamp-3" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
                                 <div className="mt-auto pt-4 border-t border-zinc-700 flex justify-end items-center">
-                                    <a href="#" className="font-semibold text-violet-500 hover:text-violet-400">Read More &rarr;</a>
+                                    <Link href={asset(`/blog/${post.slug}`)} className="font-semibold text-violet-500 hover:text-violet-400"> Read More &rarr;</Link>
                                 </div>
                             </div>
                         ))}
@@ -419,6 +419,9 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
             </footer>
             
             <style jsx global>{`
+                html {
+                    scroll-behavior: smooth;
+                }
                 .aspect-w-16 { position: relative; padding-bottom: 56.25%; }
                 .aspect-h-9 { /* No specific styles needed here with this setup */ }
                 .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
@@ -470,13 +473,14 @@ export async function getStaticProps() {
     const blogDirectory = path.join(process.cwd(), 'src', 'content', 'blog');
     const blogFilenames = fs.readdirSync(blogDirectory);
     const blogPosts = await Promise.all(blogFilenames.map(async (filename) => {
-        const filePath = path.join(blogDirectory, filename);
-        const fileContents = fs.readFileSync(filePath, 'utf8');
-        const { data, content } = matter(fileContents);
-        const processedContent = await remark().use(html).process(content);
-        const contentHtml = processedContent.toString();
-        return { ...data, contentHtml };
-    }));
+    const filePath = path.join(blogDirectory, filename);
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const { data, content } = matter(fileContents);
+    const processedContent = await remark().use(html).process(content);
+    const contentHtml = processedContent.toString();
+    const slug = filename.replace(/\.md$/, ''); // This line adds the slug
+    return { ...data, contentHtml, slug }; // And we return it here
+}));
 
     return {
         props: {
