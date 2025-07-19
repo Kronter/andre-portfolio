@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronsRight, ChevronLeft, ChevronRight, Star, Link, X, FileText, Gamepad2, Code, Brush, BrainCircuit, Twitter, Github, Linkedin, Mail } from 'lucide-react';
+import { ChevronsRight, ChevronLeft, ChevronRight, Star, X, FileText, Gamepad2, Code, Brush, BrainCircuit, Twitter, Github, Linkedin, Mail } from 'lucide-react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import Link from 'next/link';
 
 // --- Helper function to get the correct asset path for GitHub Pages ---
 const asset = (p) => {
@@ -234,7 +235,9 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                             <h3 className="text-3xl font-bold text-white mb-2">{featuredContent[featureIndex].title}</h3>
                                             <p className="text-sm text-gray-500 mb-4">{new Date(featuredContent[featureIndex].date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                                             <div className="text-gray-400 mb-6 line-clamp-3" dangerouslySetInnerHTML={{ __html: featuredContent[featureIndex].contentHtml }} />
-                                            <a href="#" className="font-semibold text-violet-500 hover:text-violet-400">Read More &rarr;</a>
+                                            <Link href={asset(`/blog/${featuredContent[featureIndex].slug}`)} className="font-semibold text-violet-500 hover:text-violet-400">
+                                                Read More &rarr;
+                                            </Link>
                                         </div>
                                     )}
                                 </motion.div>
@@ -388,7 +391,9 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                 <h3 className="text-2xl font-bold text-white mb-4 flex-grow">{post.title}</h3>
                                 <div className="text-gray-400 mb-6 line-clamp-3" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
                                 <div className="mt-auto pt-4 border-t border-zinc-700 flex justify-end items-center">
-                                    <Link href={asset(`/blog/${post.slug}`)} className="font-semibold text-violet-500 hover:text-violet-400"> Read More &rarr;</Link>
+                                    <Link href={asset(`/blog/${post.slug}`)} className="font-semibold text-violet-500 hover:text-violet-400">
+                                        Read More &rarr;
+                                    </Link>
                                 </div>
                             </div>
                         ))}
