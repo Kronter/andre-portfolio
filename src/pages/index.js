@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronsRight, ChevronLeft, ChevronRight, Star,Link as LinkIcon, X, FileText, Gamepad2, Code, Brush, BrainCircuit, Twitter, Github, Linkedin, Mail } from 'lucide-react';
+import { ChevronsRight, ChevronLeft, ChevronRight, Star, Link as LinkIcon, X, FileText, Gamepad2, Code, Brush, BrainCircuit, Twitter, Github, Linkedin, Mail } from 'lucide-react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -21,6 +21,16 @@ const sliderVariants = {
   exit: (direction) => ({ zIndex: 0, x: direction < 0 ? 1000 : -1000, opacity: 0 })
 };
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+};
+
+const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 100 } }
+};
+
 // --- Screenshot Gallery Component ---
 const ScreenshotGallery = ({ screenshots }) => {
     const [[page, direction], setPage] = useState([0, 0]);
@@ -32,11 +42,13 @@ const ScreenshotGallery = ({ screenshots }) => {
     useEffect(() => {
         const resetTimeout = () => timeoutRef.current && clearTimeout(timeoutRef.current);
         resetTimeout();
-        if (screenshots.length > 1) {
+        if (screenshots && screenshots.length > 1) {
             timeoutRef.current = setTimeout(() => paginate(1), 4000);
         }
         return () => resetTimeout();
-    }, [page, screenshots.length, paginate]);
+    }, [page, screenshots, paginate]);
+
+    if (!screenshots || screenshots.length === 0) return null;
 
     const imageIndex = (page % screenshots.length + screenshots.length) % screenshots.length;
 
@@ -78,8 +90,8 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
 
     useEffect(() => {
         const featuredItems = [
-            ...blogPosts.filter(b => b.featured).map(b => ({ ...b, type: 'blog' })),
-            ...projects.filter(p => p.featured).map(p => ({ ...p, type: 'project' }))
+            ...(blogPosts || []).filter(b => b.featured).map(b => ({ ...b, type: 'blog' })),
+            ...(projects || []).filter(p => p.featured).map(p => ({ ...p, type: 'project' }))
         ];
         setFeaturedContent(featuredItems);
     }, [projects, blogPosts]);
@@ -137,7 +149,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-20">
                         <a href="#home" className="text-2xl font-bold text-white tracking-wider">
-                            {portfolioData.name} <span className="text-violet-500">.</span>
+                            {portfolioData.name || "Game Designer"} <span className="text-violet-500">.</span>
                         </a>
                         <div className="hidden md:flex items-center">
                             <div className="ml-10 flex items-baseline space-x-4">
@@ -188,7 +200,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                 </div>
                 <div className="text-center z-20 px-4">
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-4 tracking-tighter">
-                        {portfolioData.title}
+                        {portfolioData.title || "Game Designer & Developer"}
                     </h1>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8">
                         Crafting worlds, one mechanic at a time.
@@ -343,7 +355,14 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                             {portfolioData.experience?.map((job, index) => {
                                 const linkedProject = job.linkedProjectId ? projects.find(p => p.id === job.linkedProjectId) : null;
                                 return (
-                                    <div key={job.role + index} className={`relative mb-12 flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                                    <motion.div 
+                                        key={job.role + index} 
+                                        className={`relative mb-12 flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
+                                        initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true, amount: 0.5 }}
+                                        transition={{ duration: 0.6 }}
+                                    >
                                         <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
                                             <div className="bg-zinc-900 p-6 rounded-lg border border-zinc-700 transform transition-all duration-500 hover:scale-105 hover:border-violet-500/50">
                                                 <p className="text-sm text-violet-500 mb-1">{job.period}</p>
@@ -352,34 +371,45 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                                 <p className="text-gray-400 mb-4">{job.description}</p>
                                                 {linkedProject && (
                                                     <button onClick={() => handleProjectClick(linkedProject)} className="flex items-center text-sm font-semibold text-violet-500 hover:text-violet-400 transition-colors">
-                                                        <Link className="w-4 h-4 mr-2" />
+                                                        <LinkIcon className="w-4 h-4 mr-2" />
                                                         See Related Project: {linkedProject.title}
                                                     </button>
                                                 )}
                                             </div>
                                         </div>
                                         <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-violet-500 rounded-full border-4 border-zinc-800"></div>
-                                    </div>
+                                    </motion.div>
                                 );
                             })}
                         </div>
                     </SubSection>
 
                     <SubSection id="skills" title="My Arsenal">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <motion.div 
+                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
+                        >
                             {portfolioData.skills?.map(skill => {
                                 const Icon = icons[skill.icon];
                                 return (
-                                    <div key={skill.name} className="bg-zinc-900 p-6 rounded-lg border border-zinc-700 hover:border-violet-500/50 hover:shadow-2xl hover:shadow-violet-500/10 transition-all duration-300 transform hover:-translate-y-1">
+                                    <motion.div 
+                                        key={skill.name} 
+                                        className="bg-zinc-900 p-6 rounded-lg border border-zinc-700 hover:border-violet-500/50 hover:shadow-2xl hover:shadow-violet-500/10 transition-all duration-300"
+                                        variants={itemVariants}
+                                        whileHover={{ y: -5 }}
+                                    >
                                         <div className="flex items-center mb-4">
                                             {Icon && <Icon className="w-8 h-8 text-violet-500 mr-4" />}
                                             <h3 className="text-xl font-bold text-white">{skill.name}</h3>
                                         </div>
                                         <p className="text-gray-400">{skill.description}</p>
-                                    </div>
+                                    </motion.div>
                                 );
                             })}
-                        </div>
+                        </motion.div>
                     </SubSection>
                 </Section>
 
@@ -427,6 +457,9 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                 html {
                     scroll-behavior: smooth;
                 }
+                body {
+                    font-family: 'Inter', sans-serif;
+                }
                 .aspect-w-16 { position: relative; padding-bottom: 56.25%; }
                 .aspect-h-9 { /* No specific styles needed here with this setup */ }
                 .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
@@ -457,40 +490,60 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
 
 // --- Data Fetching for Next.js ---
 export async function getStaticProps() {
-    // --- Get Main Portfolio Data ---
-    const mainDataPath = path.join(process.cwd(), 'src', 'data', 'main.md');
-    const mainFileContents = fs.readFileSync(mainDataPath, 'utf8');
-    const { data: mainData } = matter(mainFileContents);
+    let mainData = {};
+    let projects = [];
+    let blogPosts = [];
 
-    // --- Get Project Data ---
-    const projectsDirectory = path.join(process.cwd(), 'src', 'content', 'projects');
-    const projectFilenames = fs.readdirSync(projectsDirectory).filter(filename => filename.endsWith('.md')); // ADDED FILTER
-    const projects = await Promise.all(projectFilenames.map(async (filename) => {
-        const filePath = path.join(projectsDirectory, filename);
-        const fileContents = fs.readFileSync(filePath, 'utf8');
-        const { data, content } = matter(fileContents);
-        const processedContent = await remark().use(html).process(content);
-        const contentHtml = processedContent.toString();
-        return { ...data, contentHtml };
-    }));
+    try {
+        const mainDataPath = path.join(process.cwd(), 'src', 'data', 'main.md');
+        if (fs.existsSync(mainDataPath)) {
+            const mainFileContents = fs.readFileSync(mainDataPath, 'utf8');
+            const { data } = matter(mainFileContents);
+            mainData = data;
+        }
+    } catch (error) {
+        console.error("Error reading main.md:", error);
+    }
 
-    // --- Get Blog Data ---
-    const blogDirectory = path.join(process.cwd(), 'src', 'content', 'blog');
-    const blogFilenames = fs.readdirSync(blogDirectory).filter(filename => filename.endsWith('.md')); // ADDED FILTER
-    const blogPosts = await Promise.all(blogFilenames.map(async (filename) => {
-        const filePath = path.join(blogDirectory, filename);
-        const fileContents = fs.readFileSync(filePath, 'utf8');
-        const { data, content } = matter(fileContents);
-        const processedContent = await remark().use(html).process(content);
-        const contentHtml = processedContent.toString();
-        const slug = filename.replace(/\.md$/, '');
-        return { ...data, contentHtml, slug };
-    }));
+    try {
+        const projectsDirectory = path.join(process.cwd(), 'src', 'content', 'projects');
+        if (fs.existsSync(projectsDirectory)) {
+            const projectFilenames = fs.readdirSync(projectsDirectory).filter(filename => filename.endsWith('.md'));
+            projects = await Promise.all(projectFilenames.map(async (filename) => {
+                const filePath = path.join(projectsDirectory, filename);
+                const fileContents = fs.readFileSync(filePath, 'utf8');
+                const { data, content } = matter(fileContents);
+                const processedContent = await remark().use(html).process(content);
+                const contentHtml = processedContent.toString();
+                return { ...data, contentHtml };
+            }));
+        }
+    } catch (error) {
+        console.error("Error reading project files:", error);
+    }
+
+    try {
+        const blogDirectory = path.join(process.cwd(), 'src', 'content', 'blog');
+        if (fs.existsSync(blogDirectory)) {
+            const blogFilenames = fs.readdirSync(blogDirectory).filter(filename => filename.endsWith('.md'));
+            blogPosts = await Promise.all(blogFilenames.map(async (filename) => {
+                const filePath = path.join(blogDirectory, filename);
+                const fileContents = fs.readFileSync(filePath, 'utf8');
+                const { data, content } = matter(fileContents);
+                const processedContent = await remark().use(html).process(content);
+                const contentHtml = processedContent.toString();
+                const slug = filename.replace(/\.md$/, '');
+                return { ...data, contentHtml, slug };
+            }));
+        }
+    } catch (error) {
+        console.error("Error reading blog files:", error);
+    }
 
     return {
         props: {
             portfolioData: mainData,
-            projects: projects.sort((a, b) => a.id - b.id),
+            projects: projects.sort((a, b) => (a.id || 0) - (b.id || 0)),
             blogPosts: blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date)),
         },
     };
