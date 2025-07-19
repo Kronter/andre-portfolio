@@ -33,7 +33,7 @@ const ScreenshotGallery = ({ screenshots }) => {
         const resetTimeout = () => timeoutRef.current && clearTimeout(timeoutRef.current);
         resetTimeout();
         if (screenshots.length > 1) {
-            timeoutRef.current = setTimeout(() => paginate(1), 7000);
+            timeoutRef.current = setTimeout(() => paginate(1), 5500);
         }
         return () => resetTimeout();
     }, [page, screenshots.length, paginate]);
