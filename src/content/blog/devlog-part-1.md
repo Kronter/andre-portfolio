@@ -2,6 +2,7 @@
 id: 102
 title: "Devlog Part 1: Prototyping a New World"
 date: "2025-06-28"
+author: "Andre Gottgtroy"
 tags: ["Devlog", "Prototyping", "C#"]
 series: "Project Terra"
 part: 1
