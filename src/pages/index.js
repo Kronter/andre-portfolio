@@ -201,7 +201,8 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
 
     const Nav = () => {
         const [isOpen, setIsOpen] = useState(false);
-        const navLinks = ["projects", "about", "experience", "skills", "blog", "contact"];
+        /*const navLinks = ["projects", "about", "experience", "skills", "blog", "contact"];*/
+        const navLinks = ["projects", "skills", "blog", "contact"];
         return (
             <nav className="bg-zinc-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg shadow-violet-500/10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -257,37 +258,29 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <div className="absolute bg-pink-500/10 rounded-full w-72 h-72 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
                 </div>
                 <div className="text-center z-20 px-4">
-                    <h3 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-4 tracking-tighter">
+                    <h1 className="text-1xl md:text-3xl lg:text-4xl font-extrabold text-white mb-4 tracking-tighter">
                         {portfolioData.title || "Game Designer & Developer"}
-                    </h3>
+                    </h1>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8">
                         Crafting worlds, one mechanic at a time.
                     </p>
-                    <div className="flex justify-center space-x-6 mb-12">
-                            <a href="https://www.linkedin.com/in/andré-gottgtroy-b56616172/" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Linkedin className="w-6 h-6 text-white" /></a>
-                            <div className="relative">
-                                <button onClick={handleCopyEmail} className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1">
-                                    <Mail className="w-6 h-6 text-white" />
-                                </button>
-                                <AnimatePresence>
-                                    {copySuccess && (
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: 10 }}
-                                            className="absolute -top-10 left-1/2 -translate-x-1/2 bg-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap"
-                                        >
-                                            {copySuccess}
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
-                    </div>  
+                </div>
+                <div className="grid md:grid-cols-3 gap-6 items-center">
+                    <div className="md:col-span-1 flex justify-center">
+                        {/* eslint-disable-next-line @next/next/no-img-element*/} 
+                        <img src={asset('/profile-photo.png')} alt="Andre Gottgtroy" className="rounded-full w-48 h-48 md:w-60 md:h-60 object-cover border-4 border-violet-500/50 shadow-2xl" />
+                    </div>
+                    <div className="md:col-span-2">
+                        <p className="text-lg text-gray-400 mb-6">{portfolioData.about}</p>
+                        <a href="#contact" className="text-violet-500 font-semibold hover:text-violet-400 transition-colors">
+                            Let&apos;s create something amazing together &rarr;
+                        </a>
+                        </div>
+                    </div>
                   {/*<a href="#projects" className="group inline-flex items-center justify-center px-8 py-4 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30">
                         View My Work
                         <ChevronsRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                     </a>*/}
-                </div>
             </header>
 
             <main>
@@ -469,20 +462,6 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                             })}
                         </motion.div>
                     {/*</SubSection>*/}
-                    <SubSection id="about" title="About Me">
-                        <div className="grid md:grid-cols-3 gap-6 items-center">
-                            <div className="md:col-span-1 flex justify-center">
-                                {/* eslint-disable-next-line @next/next/no-img-element*/} 
-                                <img src={asset('/profile-photo.png')} alt="Andre Gottgtroy" className="rounded-full w-48 h-48 md:w-60 md:h-60 object-cover border-4 border-violet-500/50 shadow-2xl" />
-                            </div>
-                            <div className="md:col-span-2">
-                                <p className="text-lg text-gray-400 mb-6">{portfolioData.about}</p>
-                                <a href="#contact" className="text-violet-500 font-semibold hover:text-violet-400 transition-colors">
-                                    Let&apos;s create something amazing together &rarr;
-                                </a>
-                            </div>
-                        </div>
-                    </SubSection>
                 </Section>
 
                 <Section id="blog" title="Blog">
