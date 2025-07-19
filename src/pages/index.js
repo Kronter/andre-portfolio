@@ -404,10 +404,10 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                             <a href="#" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Twitter className="w-6 h-6 text-white" /></a>
                             <a href="#" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Github className="w-6 h-6 text-white" /></a>
                             <a href="#" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Linkedin className="w-6 h-6 text-white" /></a>
-                            <a href="mailto:alex.doe@email.com" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Mail className="w-6 h-6 text-white" /></a>
+                            <a href="mailto:andregot@gmail.com" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Mail className="w-6 h-6 text-white" /></a>
                         </div>
-                        <a href="mailto:alex.doe@email.com" className="inline-block px-12 py-4 bg-zinc-800 border border-violet-500 text-violet-500 font-bold rounded-lg hover:bg-violet-600 hover:text-white transition-all duration-300 text-lg">
-                            alex.doe@email.com
+                        <a href="mailto:andregot@gmail.com" className="inline-block px-12 py-4 bg-zinc-800 border border-violet-500 text-violet-500 font-bold rounded-lg hover:bg-violet-600 hover:text-white transition-all duration-300 text-lg">
+                            andregot@gmail.com
                         </a>
                     </div>
                 </Section>
