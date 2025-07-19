@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView, useAnimation } from 'framer-motion';
 import { ChevronsRight, ChevronLeft, ChevronRight, Star, Link as LinkIcon, X, FileText, Gamepad2, Code, Brush, BrainCircuit, Twitter, Github, Linkedin, Mail } from 'lucide-react';
 import fs from 'fs';
 import path from 'path';
@@ -70,6 +70,50 @@ const ScreenshotGallery = ({ screenshots }) => {
             </AnimatePresence>
             <button className="absolute top-1/2 -translate-y-1/2 left-2 z-10 p-2 bg-black/40 hover:bg-black/60 rounded-full transition-colors text-white" onClick={() => paginate(-1)}><ChevronLeft size={20} /></button>
             <button className="absolute top-1/2 -translate-y-1/2 right-2 z-10 p-2 bg-black/40 hover:bg-black/60 rounded-full transition-colors text-white" onClick={() => paginate(1)}><ChevronRight size={20} /></button>
+        </div>
+    );
+};
+
+// --- NEW Timeline Item Component ---
+const TimelineItem = ({ job, index, projects, handleProjectClick }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 0.5 });
+    const animationControls = useAnimation();
+
+    useEffect(() => {
+        if (isInView) {
+            animationControls.start("visible");
+        }
+    }, [isInView, animationControls]);
+
+    const linkedProject = job.linkedProjectId ? projects.find(p => p.id === job.linkedProjectId) : null;
+
+    return (
+        <div ref={ref} className={`relative mb-12 flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+            <motion.div
+                className={`w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}
+                variants={{
+                    hidden: { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
+                    visible: { opacity: 1, x: 0 }
+                }}
+                initial="hidden"
+                animate={animationControls}
+                transition={{ duration: 0.6 }}
+            >
+                <div className="bg-zinc-900 p-6 rounded-lg border border-zinc-700 transform transition-all duration-500 hover:scale-105 hover:border-violet-500/50">
+                    <p className="text-sm text-violet-500 mb-1">{job.period}</p>
+                    <h3 className="text-xl font-bold text-white mb-2">{job.role}</h3>
+                    <p className="text-md font-semibold text-gray-300 mb-3">{job.company}</p>
+                    <p className="text-gray-400 mb-4">{job.description}</p>
+                    {linkedProject && (
+                        <button onClick={() => handleProjectClick(linkedProject)} className="flex items-center text-sm font-semibold text-violet-500 hover:text-violet-400 transition-colors">
+                            <LinkIcon className="w-4 h-4 mr-2" />
+                            See Related Project: {linkedProject.title}
+                        </button>
+                    )}
+                </div>
+            </motion.div>
+            <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-violet-500 rounded-full border-4 border-zinc-800"></div>
         </div>
     );
 };
@@ -366,35 +410,15 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <SubSection id="experience" title="Experience">
                         <div className="relative max-w-2xl mx-auto">
                             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-zinc-700"></div>
-                            {portfolioData.experience?.map((job, index) => {
-                                const linkedProject = job.linkedProjectId ? projects.find(p => p.id === job.linkedProjectId) : null;
-                                return (
-                                    <motion.div 
-                                        key={job.role + index} 
-                                        className={`relative mb-12 flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
-                                        initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ amount: 0.2, margin: "0px 0px -200px 0px" }}
-                                        transition={{ duration: 0.6 }}
-                                    >
-                                        <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                                            <div className="bg-zinc-900 p-6 rounded-lg border border-zinc-700 transform transition-all duration-500 hover:scale-105 hover:border-violet-500/50">
-                                                <p className="text-sm text-violet-500 mb-1">{job.period}</p>
-                                                <h3 className="text-xl font-bold text-white mb-2">{job.role}</h3>
-                                                <p className="text-md font-semibold text-gray-300 mb-3">{job.company}</p>
-                                                <p className="text-gray-400 mb-4">{job.description}</p>
-                                                {linkedProject && (
-                                                    <button onClick={() => handleProjectClick(linkedProject)} className="flex items-center text-sm font-semibold text-violet-500 hover:text-violet-400 transition-colors">
-                                                        <LinkIcon className="w-4 h-4 mr-2" />
-                                                        See Related Project: {linkedProject.title}
-                                                    </button>
-                                                )}
-                                            </div>
-                                        </div>
-                                        <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-violet-500 rounded-full border-4 border-zinc-800"></div>
-                                    </motion.div>
-                                );
-                            })}
+                            {portfolioData.experience?.map((job, index) => (
+                                <TimelineItem 
+                                    key={job.role + index}
+                                    job={job}
+                                    index={index}
+                                    projects={projects}
+                                    handleProjectClick={handleProjectClick}
+                                />
+                            ))}
                         </div>
                     </SubSection>
 
@@ -404,7 +428,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ amount: 0.2, margin: "0px 0px -100px 0px" }}
+                            viewport={{ once: true, amount: 0.2 }}
                         >
                             {portfolioData.skills?.map(skill => {
                                 const Icon = icons[skill.icon];
