@@ -2,6 +2,7 @@
 id: 101
 title: "The Art of 'Juice': Making Games Feel Good"
 date: "2025-07-17"
+author: "Andre Gottgtroy"
 tags: ["Game Design", "Game Feel", "Juice", "Unity"]
 featured: true
 ---
