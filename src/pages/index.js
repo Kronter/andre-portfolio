@@ -43,7 +43,7 @@ const ScreenshotGallery = ({ screenshots }) => {
         const resetTimeout = () => timeoutRef.current && clearTimeout(timeoutRef.current);
         resetTimeout();
         if (screenshots && screenshots.length > 1) {
-            timeoutRef.current = setTimeout(() => paginate(1), 4000);
+            timeoutRef.current = setTimeout(() => paginate(1), 7000);
         }
         return () => resetTimeout();
     }, [page, screenshots, paginate]);
@@ -114,7 +114,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
         const resetTimeout = () => timeoutRef.current && clearTimeout(timeoutRef.current);
         resetTimeout();
         if (featuredContent.length > 1) {
-            timeoutRef.current = setTimeout(() => paginate(1), 4000);
+            timeoutRef.current = setTimeout(() => paginate(1), 7000);
         }
         return () => resetTimeout();
     }, [page, featuredContent, paginate]);
@@ -138,7 +138,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
     const Section = ({ id, title, children, className = "" }) => (
         <section id={id} className={`py-16 md:py-24 px-4 sm:px-6 lg:px-8 ${className}`}>
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-100 tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-100 tracking-tight">
                     <span className="text-violet-500">*</span>{title}
                 </h2>
                 {children}
