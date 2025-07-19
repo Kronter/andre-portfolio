@@ -79,6 +79,20 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
     const [activeFilter, setActiveFilter] = useState('All');
     const [filteredProjects, setFilteredProjects] = useState(projects);
     const [selectedProject, setSelectedProject] = useState(null);
+    const [copySuccess, setCopySuccess] = useState(''); // State for copy confirmation
+
+    const handleCopyEmail = () => {
+        const email = 'andregot@gmail.com';
+        const textArea = document.createElement('textarea');
+        textArea.value = email;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+
+        setCopySuccess('Email copied!');
+        setTimeout(() => setCopySuccess(''), 2000); // Hide message after 2 seconds
+    };
     
     const [featuredContent, setFeaturedContent] = useState([]);
     const [[page, direction], setPage] = useState([0, 0]);
@@ -339,7 +353,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <div className="grid md:grid-cols-3 gap-6 items-center">
                         <div className="md:col-span-1 flex justify-center">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={asset('/profile-photo.png')} alt="Andre Gottgtroy" className="rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-violet-500/50 shadow-2xl" />
+                            <img src={asset('/profile-photo.png')} alt="Andre Gottgtroy" className="rounded-full w-48 h-48 md:w-60 md:h-60 object-cover border-4 border-violet-500/50 shadow-2xl" />
                         </div>
                         <div className="md:col-span-2">
                             <p className="text-lg text-gray-400 mb-6">{portfolioData.about}</p>
@@ -349,7 +363,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                         </div>
                     </div>
 
-                    <SubSection id="experience" title="My Journey">
+                    <SubSection id="experience" title="Experience">
                         <div className="relative max-w-2xl mx-auto">
                             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-zinc-700"></div>
                             {portfolioData.experience?.map((job, index) => {
@@ -384,7 +398,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                         </div>
                     </SubSection>
 
-                    <SubSection id="skills" title="My Arsenal">
+                    <SubSection id="skills" title="Skills">
                         <motion.div 
                             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
                             variants={containerVariants}
@@ -413,7 +427,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     </SubSection>
                 </Section>
 
-                <Section id="blog" title="Devlog & Musings">
+                <Section id="blog" title="Blog">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         {blogPosts.map(post => (
                             <div key={post.id} className="bg-zinc-800 p-8 rounded-lg border border-zinc-700 flex flex-col">
@@ -437,9 +451,23 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                         </p>
                         <div className="flex justify-center space-x-6 mb-12">
                             <a href="https://www.linkedin.com/in/andré-gottgtroy-b56616172/" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Linkedin className="w-6 h-6 text-white" /></a>
-                            <a href="mailto:andregot@gmail.com" className="text-violet-500 underline">
-                              Click here to email me
-                            </a>
+                            <div className="relative">
+                                <button onClick={handleCopyEmail} className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1">
+                                    <Mail className="w-6 h-6 text-white" />
+                                </button>
+                                <AnimatePresence>
+                                    {copySuccess && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: 10 }}
+                                            className="absolute -top-10 left-1/2 -translate-x-1/2 bg-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap"
+                                        >
+                                            {copySuccess}
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
                         </div>
                     </div>
                 </Section>
