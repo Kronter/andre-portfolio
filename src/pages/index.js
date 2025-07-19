@@ -191,7 +191,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
         <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed">
             <Nav />
 
-            <header id="home" className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+            <header id="home" className="relative h-[60vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-zinc-900 opacity-80 z-10"></div>
                 <div className="absolute inset-0 z-0">
                     <div className="absolute bg-violet-600/10 rounded-full w-96 h-96 -top-20 -left-20 filter blur-3xl opacity-50 animate-blob"></div>
@@ -336,10 +336,10 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
 
                 {/* About Me Section */}
                 <Section id="about" title="About Me" className="bg-zinc-800/50">
-                    <div className="grid md:grid-cols-3 gap-12 items-center">
+                    <div className="grid md:grid-cols-3 gap-6 items-center">
                         <div className="md:col-span-1 flex justify-center">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={asset('/profile-photo.png')} alt="Andre Gottgtroy" className="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-violet-500/50 shadow-2xl" />
+                            <img src={asset('/profile-photo.png')} alt="Andre Gottgtroy" className="rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-violet-500/50 shadow-2xl" />
                         </div>
                         <div className="md:col-span-2">
                             <p className="text-lg text-gray-400 mb-6">{portfolioData.about}</p>
@@ -437,7 +437,9 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                         </p>
                         <div className="flex justify-center space-x-6 mb-12">
                             <a href="https://www.linkedin.com/in/andré-gottgtroy-b56616172/" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Linkedin className="w-6 h-6 text-white" /></a>
-                            <a href="mailto:andregot@gmail.com" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Mail className="w-6 h-6 text-white" /></a>
+                            <a href="mailto:andregot@gmail.com" className="text-violet-500 underline">
+                              Click here to email me
+                            </a>
                         </div>
                     </div>
                 </Section>
