@@ -202,7 +202,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
     const Nav = () => {
         const [isOpen, setIsOpen] = useState(false);
         /*const navLinks = ["projects", "about", "experience", "skills", "blog", "contact"];*/
-        const navLinks = ["projects", "skills", "blog", "contact"];
+        const navLinks = ["projects", "skills", "about", "blog", "contact"];
         return (
             <nav className="bg-zinc-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg shadow-violet-500/10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -250,7 +250,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
         <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed">
             <Nav />
 
-            <header id="home" className="relative h-[65vh] flex items-center justify-center overflow-hidden">
+            <header id="home" className="relative h-[70vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-zinc-900 opacity-80 z-10"></div>
                 <div className="absolute inset-0 z-0">
                     <div className="absolute bg-violet-600/10 rounded-full w-96 h-96 -top-20 -left-20 filter blur-3xl opacity-50 animate-blob"></div>
@@ -258,29 +258,17 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <div className="absolute bg-pink-500/10 rounded-full w-72 h-72 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
                 </div>
                 <div className="text-center z-20 px-4">
-                    <h1 className="text-1xl md:text-3xl lg:text-4xl font-extrabold text-white mb-4 tracking-tighter">
+                    <h3 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 tracking-tighter">
                         {portfolioData.title || "Game Designer & Developer"}
-                    </h1>
+                    </h3>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8">
                         Crafting worlds, one mechanic at a time.
-                    </p>
-                </div>
-                <div className="grid md:grid-cols-3 gap-6 items-center">
-                    <div className="md:col-span-1 flex justify-center">
-                        {/* eslint-disable-next-line @next/next/no-img-element*/} 
-                        <img src={asset('/profile-photo.png')} alt="Andre Gottgtroy" className="rounded-full w-48 h-48 md:w-60 md:h-60 object-cover border-4 border-violet-500/50 shadow-2xl" />
-                    </div>
-                    <div className="md:col-span-2">
-                        <p className="text-lg text-gray-400 mb-6">{portfolioData.about}</p>
-                        <a href="#contact" className="text-violet-500 font-semibold hover:text-violet-400 transition-colors">
-                            Let&apos;s create something amazing together &rarr;
-                        </a>
-                        </div>
-                    </div>
-                  {/*<a href="#projects" className="group inline-flex items-center justify-center px-8 py-4 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30">
+                    </p> 
+                  <a href="#projects" className="group inline-flex items-center justify-center px-8 py-4 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30">
                         View My Work
                         <ChevronsRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-                    </a>*/}
+                    </a>*
+                </div>
             </header>
 
             <main>
@@ -332,7 +320,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                 )}*/}
 
                 {/* Projects Section */}
-                <Section id="projects" title="Projects">
+                <Section id="projects" title="Projects" className="bg-zinc-800/50">
                     <div className="flex justify-center space-x-2 md:space-x-4 mb-12">
                         {['All','Professional', 'Game Jam', 'Personal'].map(filter => (
                             <button key={filter} onClick={() => setActiveFilter(filter)} className={`px-4 py-2 md:px-6 md:py-2 text-sm md:text-base font-semibold rounded-full transition-all duration-300 ${activeFilter === filter ? 'bg-violet-600 text-white' : 'bg-zinc-800 text-gray-300 hover:bg-zinc-700'}`}>
@@ -462,6 +450,20 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                             })}
                         </motion.div>
                     {/*</SubSection>*/}
+                    <SubSection id="about" title="About Me">
+                        <div className="grid md:grid-cols-3 gap-6 items-center">
+                            <div className="md:col-span-1 flex justify-center">
+                                {/* eslint-disable-next-line @next/next/no-img-element*/} 
+                                <img src={asset('/profile-photo.png')} alt="Andre Gottgtroy" className="rounded-full w-48 h-48 md:w-60 md:h-60 object-cover border-4 border-violet-500/50 shadow-2xl" />
+                            </div>
+                            <div className="md:col-span-2">
+                                <p className="text-lg text-gray-400 mb-6">{portfolioData.about}</p>
+                                <a href="#contact" className="text-violet-500 font-semibold hover:text-violet-400 transition-colors">
+                                    Let&apos;s create something amazing together &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </SubSection>
                 </Section>
 
                 <Section id="blog" title="Blog">
