@@ -172,7 +172,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                         <a href="mailto:andregot@gmail.com" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Mail className="w-6 h-6 text-white" /></a>
                     </div>
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                        <a href={"/Andre_Gottgtroy_Resume_GD.pdf"} download className="inline-flex items-center px-8 py-3 border-2 border-violet-500 text-violet-400 font-bold rounded-lg hover:bg-violet-500 hover:text-white transition-all duration-300 text-lg">
+                        <a href={asset("/Andre_Gottgtroy_Resume.pdf")} download className="inline-flex items-center px-8 py-3 border-2 border-violet-500 text-violet-400 font-bold rounded-lg hover:bg-violet-500 hover:text-white transition-all duration-300 text-lg">
                             <FileText className="w-5 h-5 mr-2" />
                             Download Resume
                         </a>
