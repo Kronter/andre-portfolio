@@ -171,11 +171,11 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                         <a href="#" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Twitter className="w-6 h-6 text-white" /></a>
                         <a href="#" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Github className="w-6 h-6 text-white" /></a>
                         <a href="#" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Linkedin className="w-6 h-6 text-white" /></a>
-                        <a href="mailto:alex.doe@email.com" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Mail className="w-6 h-6 text-white" /></a>
+                        <a href="mailto:andregot@gmail.com" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Mail className="w-6 h-6 text-white" /></a>
                     </div>
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                        <a href="mailto:alex.doe@email.com" className="inline-block px-8 py-3 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 text-lg">
-                            alex.doe@email.com
+                        <a href="mailto:andregot@gmail.com" className="inline-block px-8 py-3 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 text-lg">
+                            andregot@gmail.com
                         </a>
                         <a href={asset("/AlexDoe_Resume.pdf")} download className="inline-flex items-center px-8 py-3 border-2 border-violet-500 text-violet-400 font-bold rounded-lg hover:bg-violet-500 hover:text-white transition-all duration-300 text-lg">
                             <FileText className="w-5 h-5 mr-2" />
@@ -227,18 +227,18 @@ export async function getStaticProps({ params }) {
         };
     }).sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    const nextPostInSeries = postData.series 
+    const nextInSeries = postData.series 
         ? allPosts.find(p => p.series === postData.series && p.part === postData.part + 1)
         : null;
 
     const otherPosts = allPosts
-        .filter(p => p.id !== postData.id && (!nextPostInSeries || p.id !== nextPostInSeries.id))
+        .filter(p => p.id !== postData.id && (!nextInSeries || p.id !== nextInSeries.id))
         .slice(0, 2);
 
     return {
         props: {
             postData,
-            nextPostInSeries,
+            nextPostInSeries: nextInSeries || null, // **THE FIX IS HERE**
             otherPosts
         }
     };
