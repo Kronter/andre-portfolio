@@ -85,10 +85,10 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
             <nav className="bg-zinc-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg shadow-violet-500/10">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-20">
-                        <Link href={asset("/")} className="text-2xl font-bold text-white tracking-wider">
+                        <Link href={"/"} className="text-2xl font-bold text-white tracking-wider">
                             {postData.author} <span className="text-violet-500">.</span>
                         </Link>
-                        <Link href={asset("/")} className="text-gray-300 hover:text-white transition-colors">
+                        <Link href={"/"} className="text-gray-300 hover:text-white transition-colors">
                             &larr; Back to Portfolio
                         </Link>
                     </div>
@@ -141,7 +141,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                 <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700">
                     <h2 className="text-3xl font-bold text-white mb-8">Keep Reading</h2>
                     {nextPostInSeries && (
-                        <Link href={asset(`/blog/${nextPostInSeries.slug}`)} className="group block bg-zinc-800 p-6 rounded-lg mb-8 border border-zinc-700 hover:border-violet-500 transition-colors">
+                        <Link href={`/blog/${nextPostInSeries.slug}`} className="group block bg-zinc-800 p-6 rounded-lg mb-8 border border-zinc-700 hover:border-violet-500 transition-colors">
                             <p className="text-sm text-violet-400 mb-1">Next in series: {nextPostInSeries.series}</p>
                             <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-violet-400 transition-colors">{nextPostInSeries.title}</h3>
                             <div className="flex items-center text-violet-400 font-semibold">
@@ -151,7 +151,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                     )}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {otherPosts.map(post => (
-                            <Link key={post.id} href={asset(`/blog/${post.slug}`)} className="group block bg-zinc-800 p-6 rounded-lg border border-zinc-700 hover:border-violet-500 transition-colors">
+                            <Link key={post.id} href={`/blog/${post.slug}`} className="group block bg-zinc-800 p-6 rounded-lg border border-zinc-700 hover:border-violet-500 transition-colors">
                                 <p className="text-sm text-gray-400 mb-2">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                                 <h4 className="text-xl font-bold text-white flex-grow mb-4 group-hover:text-violet-400 transition-colors">{post.title}</h4>
                                 <div className="flex items-center text-violet-400 font-semibold mt-auto">
@@ -177,7 +177,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                         <a href="mailto:andregot@gmail.com" className="inline-block px-8 py-3 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 text-lg">
                             andregot@gmail.com
                         </a>
-                        <a href={asset("/AlexDoe_Resume.pdf")} download className="inline-flex items-center px-8 py-3 border-2 border-violet-500 text-violet-400 font-bold rounded-lg hover:bg-violet-500 hover:text-white transition-all duration-300 text-lg">
+                        <a href={"/AlexDoe_Resume.pdf"} download className="inline-flex items-center px-8 py-3 border-2 border-violet-500 text-violet-400 font-bold rounded-lg hover:bg-violet-500 hover:text-white transition-all duration-300 text-lg">
                             <FileText className="w-5 h-5 mr-2" />
                             Download Resume
                         </a>

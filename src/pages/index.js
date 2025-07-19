@@ -247,7 +247,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                             <h3 className="text-3xl font-bold text-white mb-2">{featuredContent[featureIndex].title}</h3>
                                             <p className="text-sm text-gray-500 mb-4">{new Date(featuredContent[featureIndex].date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                                             <div className="text-gray-400 mb-6 line-clamp-3" dangerouslySetInnerHTML={{ __html: featuredContent[featureIndex].contentHtml }} />
-                                            <Link href={asset(`/blog/${featuredContent[featureIndex].slug}`)} className="font-semibold text-violet-500 hover:text-violet-400">
+                                            <Link href={`/blog/${featuredContent[featureIndex].slug}`} className="font-semibold text-violet-500 hover:text-violet-400">
                                                 Read More &rarr;
                                             </Link>
                                         </div>
@@ -421,7 +421,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                 <h3 className="text-2xl font-bold text-white mb-4 flex-grow">{post.title}</h3>
                                 <div className="text-gray-400 mb-6 line-clamp-3" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
                                 <div className="mt-auto pt-4 border-t border-zinc-700 flex justify-end items-center">
-                                    <Link href={asset(`/blog/${post.slug}`)} className="font-semibold text-violet-500 hover:text-violet-400">
+                                    <Link href={`/blog/${post.slug}`} className="font-semibold text-violet-500 hover:text-violet-400">
                                         Read More &rarr;
                                     </Link>
                                 </div>
