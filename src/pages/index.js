@@ -125,7 +125,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
         <section id={id} className={`py-16 md:py-24 px-4 sm:px-6 lg:px-8 ${className}`}>
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-100 tracking-tight">
-                    <span className="text-violet-500">·</span>{title}
+                    <span className="text-violet-500">*</span>{title}
                 </h2>
                 {children}
             </div>
@@ -157,7 +157,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                     <a key={link} href={`#${link}`} className="capitalize text-gray-300 hover:bg-zinc-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">{link}</a>
                                 ))}
                             </div>
-                            <a href={asset("/AlexDoe_Resume.pdf")} download className="ml-6 inline-flex items-center px-4 py-2 border border-violet-500 text-sm font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
+                            <a href={asset("/Andre_Gottgtroy_Resume_GD.pdf")} download className="ml-6 inline-flex items-center px-4 py-2 border border-violet-500 text-sm font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
                                 <FileText className="w-4 h-4 mr-2" />
                                 Resume
                             </a>
@@ -176,7 +176,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                             {navLinks.map(link => (
                                 <a key={link} href={`#${link}`} onClick={() => setIsOpen(false)} className="capitalize text-gray-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-300">{link}</a>
                             ))}
-                            <a href={asset("/AlexDoe_Resume.pdf")} download className="mt-2 w-full flex items-center justify-center px-4 py-2 border border-violet-500 text-base font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
+                            <a href={asset("/Andre_Gottgtroy_Resume_GD.pdf")} download className="mt-2 w-full flex items-center justify-center px-4 py-2 border border-violet-500 text-base font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
                                 <FileText className="w-5 h-5 mr-2" />
                                 Resume
                             </a>
@@ -191,7 +191,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
         <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed">
             <Nav />
 
-            <header id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+            <header id="home" className="relative h-[80vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-zinc-900 opacity-80 z-10"></div>
                 <div className="absolute inset-0 z-0">
                     <div className="absolute bg-violet-600/10 rounded-full w-96 h-96 -top-20 -left-20 filter blur-3xl opacity-50 animate-blob"></div>
@@ -339,7 +339,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <div className="grid md:grid-cols-3 gap-12 items-center">
                         <div className="md:col-span-1 flex justify-center">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src="https://placehold.co/400x400/18181b/8b5cf6?text=A+D" alt="Alex Doe" className="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-violet-500/50 shadow-2xl" />
+                            <img src={asset('/profile-photo.png')} alt="Andre Gottgtroy" className="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-violet-500/50 shadow-2xl" />
                         </div>
                         <div className="md:col-span-2">
                             <p className="text-lg text-gray-400 mb-6">{portfolioData.about}</p>
@@ -436,22 +436,12 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                             I&apos;m always open to new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out!
                         </p>
                         <div className="flex justify-center space-x-6 mb-12">
-                            <a href="#" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Twitter className="w-6 h-6 text-white" /></a>
-                            <a href="#" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Github className="w-6 h-6 text-white" /></a>
-                            <a href="#" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Linkedin className="w-6 h-6 text-white" /></a>
+                            <a href="https://www.linkedin.com/in/andré-gottgtroy-b56616172/" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Linkedin className="w-6 h-6 text-white" /></a>
                             <a href="mailto:andregot@gmail.com" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Mail className="w-6 h-6 text-white" /></a>
                         </div>
-                        <a href="mailto:andregot@gmail.com" className="inline-block px-12 py-4 bg-zinc-800 border border-violet-500 text-violet-500 font-bold rounded-lg hover:bg-violet-600 hover:text-white transition-all duration-300 text-lg">
-                            andregot@gmail.com
-                        </a>
                     </div>
                 </Section>
             </main>
-
-            <footer className="bg-zinc-900 py-8 text-center text-gray-500">
-                <p>© {new Date().getFullYear()} {portfolioData.name}. All Rights Reserved.</p>
-                <p className="text-sm mt-2">Designed & Built with 💜 by You!</p>
-            </footer>
             
             <style jsx global>{`
                 html {
