@@ -43,7 +43,7 @@ const ScreenshotGallery = ({ screenshots }) => {
         const resetTimeout = () => timeoutRef.current && clearTimeout(timeoutRef.current);
         resetTimeout();
         if (screenshots && screenshots.length > 1) {
-            timeoutRef.current = setTimeout(() => paginate(1), 5500);
+            timeoutRef.current = setTimeout(() => paginate(1), 4500);
         }
         return () => resetTimeout();
     }, [page, screenshots, paginate]);
@@ -114,7 +114,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
         const resetTimeout = () => timeoutRef.current && clearTimeout(timeoutRef.current);
         resetTimeout();
         if (featuredContent.length > 1) {
-            timeoutRef.current = setTimeout(() => paginate(1), 5500);
+            timeoutRef.current = setTimeout(() => paginate(1), 4500);
         }
         return () => resetTimeout();
     }, [page, featuredContent, paginate]);
@@ -374,7 +374,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                         className={`relative mb-12 flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
                                         initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                                         whileInView={{ opacity: 1, x: 0 }}
-                                        /**viewport={{amount: 0.5 }}*/
+                                        viewport={{ amount: 0.2, margin: "0px 0px -200px 0px" }}
                                         transition={{ duration: 0.6 }}
                                     >
                                         <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
@@ -404,7 +404,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="visible"
-                            /**viewport={{ amount: 0.2 }}*/
+                            viewport={{ amount: 0.2, margin: "0px 0px -100px 0px" }}
                         >
                             {portfolioData.skills?.map(skill => {
                                 const Icon = icons[skill.icon];
