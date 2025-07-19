@@ -157,7 +157,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                     <a key={link} href={`#${link}`} className="capitalize text-gray-300 hover:bg-zinc-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">{link}</a>
                                 ))}
                             </div>
-                            <a href={asset("/Andre_Gottgtroy_Resume_GD.pdf")} download className="ml-6 inline-flex items-center px-4 py-2 border border-violet-500 text-sm font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
+                            <a href={asset("/Andre_Gottgtroy_Resume.pdf")} download className="ml-6 inline-flex items-center px-4 py-2 border border-violet-500 text-sm font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
                                 <FileText className="w-4 h-4 mr-2" />
                                 Resume
                             </a>
@@ -176,7 +176,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                             {navLinks.map(link => (
                                 <a key={link} href={`#${link}`} onClick={() => setIsOpen(false)} className="capitalize text-gray-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-300">{link}</a>
                             ))}
-                            <a href={asset("/Andre_Gottgtroy_Resume_GD.pdf")} download className="mt-2 w-full flex items-center justify-center px-4 py-2 border border-violet-500 text-base font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
+                            <a href={asset("/Andre_Gottgtroy_Resume.pdf")} download className="mt-2 w-full flex items-center justify-center px-4 py-2 border border-violet-500 text-base font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
                                 <FileText className="w-5 h-5 mr-2" />
                                 Resume
                             </a>
@@ -191,7 +191,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
         <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed">
             <Nav />
 
-            <header id="home" className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+            <header id="home" className="relative h-[70vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-zinc-900 opacity-80 z-10"></div>
                 <div className="absolute inset-0 z-0">
                     <div className="absolute bg-violet-600/10 rounded-full w-96 h-96 -top-20 -left-20 filter blur-3xl opacity-50 animate-blob"></div>
