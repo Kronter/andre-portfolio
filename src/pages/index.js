@@ -273,7 +273,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
             <main>
                 {/* --- Featured Content Slider --- */}
                 {featuredContent.length > 0 && (
-                    <Section id="featured" title="Featured Content" className="bg-zinc-800/50">
+                    <Section id="featured" title="Featured" className="bg-zinc-800/50">
                         <div className="relative h-[450px] md:h-[400px] flex items-center justify-center">
                             <AnimatePresence initial={false} custom={direction}>
                                 <motion.div
