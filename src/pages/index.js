@@ -175,17 +175,6 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
         }
     }, [activeFilter, projects]);
 
-    // --- Manual Animation Controls for Skills Section ---
-    const skillsRef = useRef(null);
-    const skillsInView = useInView(skillsRef, { once: true, amount: 0.2 });
-    const skillsAnimationControls = useAnimation();
-
-    useEffect(() => {
-        if (skillsInView) {
-            skillsAnimationControls.start("visible");
-        }
-    }, [skillsInView, skillsAnimationControls]);
-
     const handleProjectClick = (project) => setSelectedProject(project);
     const closeModal = () => setSelectedProject(null);
 
@@ -390,7 +379,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                                     onClick={() => toggleCategoryExpansion(category)}
                                                     className="px-6 py-2 bg-zinc-700 text-white font-semibold rounded-full hover:bg-zinc-600 transition-colors"
                                                 >
-                                                    {isExpanded ? 'Show Less' : `Show All ${projectsForCategory.length} Projects`}
+                                                    {isExpanded ? 'Show Less' : `Show More Projects`}
                                                 </button>
                                             </div>
                                         )}
@@ -479,31 +468,20 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     </SubSection>*/}
 
                     {/*<SubSection id="skills" title="Skills">*/}
-                        <motion.div 
-                            ref={skillsRef}
-                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-                            variants={containerVariants}
-                            initial="hidden"
-                            animate={skillsAnimationControls}
-                        >
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {portfolioData.skills?.map(skill => {
                                 const Icon = icons[skill.icon];
                                 return (
-                                    <motion.div 
-                                        key={skill.name} 
-                                        className="bg-zinc-900 p-6 rounded-lg border border-zinc-700 hover:border-violet-500/50 hover:shadow-2xl hover:shadow-violet-500/10 transition-all duration-300"
-                                        variants={itemVariants}
-                                        whileHover={{ y: -5 }}
-                                    >
+                                    <div key={skill.name} className="bg-zinc-900 p-6 rounded-lg border border-zinc-700 hover:border-violet-500/50 hover:shadow-2xl hover:shadow-violet-500/10 transition-all duration-300 transform hover:-translate-y-1">
                                         <div className="flex items-center mb-4">
                                             {Icon && <Icon className="w-8 h-8 text-violet-500 mr-4" />}
                                             <h3 className="text-xl font-bold text-white">{skill.name}</h3>
                                         </div>
                                         <p className="text-gray-400">{skill.description}</p>
-                                    </motion.div>
+                                    </div>
                                 );
                             })}
-                        </motion.div>
+                        </div>
                     {/*</SubSection>*/}
                 </Section>
                 <Section id="about" title="About Me" className="bg-zinc-800/50">
