@@ -124,6 +124,8 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
     const [filteredProjects, setFilteredProjects] = useState(projects);
     const [selectedProject, setSelectedProject] = useState(null);
     const [copySuccess, setCopySuccess] = useState(''); // State for copy confirmation
+    const [expandedCategories, setExpandedCategories] = useState({});
+    const [isBlogExpanded, setIsBlogExpanded] = useState(false);
 
     const handleCopyEmail = () => {
         const email = 'andregot@gmail.com';
@@ -172,6 +174,17 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
             setFilteredProjects(projects.filter(p => p.category === activeFilter));
         }
     }, [activeFilter, projects]);
+
+    // --- Manual Animation Controls for Skills Section ---
+    const skillsRef = useRef(null);
+    const skillsInView = useInView(skillsRef, { once: true, amount: 0.2 });
+    const skillsAnimationControls = useAnimation();
+
+    useEffect(() => {
+        if (skillsInView) {
+            skillsAnimationControls.start("visible");
+        }
+    }, [skillsInView, skillsAnimationControls]);
 
     const handleProjectClick = (project) => setSelectedProject(project);
     const closeModal = () => setSelectedProject(null);
@@ -264,10 +277,10 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8">
                         Crafting worlds, one mechanic at a time.
                     </p> 
-                  <a href="#projects" className="group inline-flex items-center justify-center px-8 py-4 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30">
+                    <a href="#projects" className="group inline-flex items-center justify-center px-8 py-4 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30">
                         View My Work
                         <ChevronsRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-                    </a>*
+                    </a>
                 </div>
             </header>
 
@@ -320,29 +333,71 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                 )}*/}
 
                 {/* Projects Section */}
-                <Section id="projects" title="Projects" className="bg-zinc-800/50">
+                <Section id="projects" title="Projects">
                     <div className="flex justify-center space-x-2 md:space-x-4 mb-12">
-                        {['All','Professional', 'Game Jam', 'Personal'].map(filter => (
+                        {['All', 'Professional', 'Game Jam', 'Personal'].map(filter => (
                             <button key={filter} onClick={() => setActiveFilter(filter)} className={`px-4 py-2 md:px-6 md:py-2 text-sm md:text-base font-semibold rounded-full transition-all duration-300 ${activeFilter === filter ? 'bg-violet-600 text-white' : 'bg-zinc-800 text-gray-300 hover:bg-zinc-700'}`}>
                                 {filter}
                             </button>
                         ))}
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {filteredProjects.map(project => (
-                            <div key={project.id} onClick={() => handleProjectClick(project)} className="group bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 hover:border-violet-500/50 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer shadow-lg hover:shadow-violet-500/10">
-                                <div className="relative">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img src={project.image} alt={project.title} className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                                    <span className="absolute top-4 right-4 bg-violet-700/80 text-white text-xs font-bold px-3 py-1 rounded-full">{project.category}</span>
-                                </div>
-                                <div className="p-6">
-                                    <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                                    <p className="text-gray-400 truncate">{project.description}</p>
-                                </div>
-                            </div>
-                        ))}
+
+                    <div className="space-y-16">
+                        {(() => {
+                            const categories = ['Professional', 'Game Jam', 'Personal'];
+                            const filteredCategories = activeFilter === 'All' ? categories : categories.filter(c => c === activeFilter);
+                            
+                            const toggleCategoryExpansion = (category) => {
+                                setExpandedCategories(prev => ({
+                                    ...prev,
+                                    [category]: !prev[category]
+                                }));
+                            };
+
+                            return filteredCategories.map(category => {
+                                const projectsForCategory = projects.filter(p => p.category === category);
+                                if (projectsForCategory.length === 0) return null;
+
+                                const isExpanded = expandedCategories[category];
+                                const displayedProjects = isExpanded ? projectsForCategory : projectsForCategory.slice(0, 3);
+
+                                return (
+                                    <div key={category}>
+                                        <h3 className="text-3xl font-bold text-white mb-6 pl-2">{category}</h3>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                            {displayedProjects.map(project => (
+                                                <div key={project.id} onClick={() => handleProjectClick(project)} className="group bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 hover:border-violet-500/50 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer shadow-lg hover:shadow-violet-500/10">
+                                                    <div className="relative">
+                                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                        <img src={project.image} alt={project.title} className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" />
+                                                        <div className="absolute top-4 right-4 flex items-center gap-2">
+                                                            {project.current && (
+                                                                <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Current</span>
+                                                            )}
+                                                            <span className="bg-violet-700/80 text-white text-xs font-bold px-3 py-1 rounded-full">{project.category}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="p-6">
+                                                        <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
+                                                        <p className="text-gray-400 truncate">{project.description}</p>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        {projectsForCategory.length > 3 && (
+                                            <div className="text-center mt-8">
+                                                <button
+                                                    onClick={() => toggleCategoryExpansion(category)}
+                                                    className="px-6 py-2 bg-zinc-700 text-white font-semibold rounded-full hover:bg-zinc-600 transition-colors"
+                                                >
+                                                    {isExpanded ? 'Show Less' : `Show All ${projectsForCategory.length} Projects`}
+                                                </button>
+                                            </div>
+                                        )}
+                                    </div>
+                                );
+                            });
+                        })()}
                     </div>
                 </Section>
                 
@@ -424,12 +479,12 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     </SubSection>*/}
 
                     {/*<SubSection id="skills" title="Skills">*/}
-                        <motion.div 
+                         <motion.div 
+                            ref={skillsRef}
                             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
                             variants={containerVariants}
                             initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.2 }}
+                            animate={skillsAnimationControls}
                         >
                             {portfolioData.skills?.map(skill => {
                                 const Icon = icons[skill.icon];
@@ -450,7 +505,8 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                             })}
                         </motion.div>
                     {/*</SubSection>*/}
-                    <SubSection id="about" title="About Me">
+                </Section>
+                <Section id="about" title="About Me" className="bg-zinc-800/50">
                         <div className="grid md:grid-cols-3 gap-6 items-center">
                             <div className="md:col-span-1 flex justify-center">
                                 {/* eslint-disable-next-line @next/next/no-img-element*/} 
@@ -463,24 +519,45 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                 </a>
                             </div>
                         </div>
-                    </SubSection>
                 </Section>
 
                 <Section id="blog" title="Blog">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        {blogPosts.map(post => (
-                            <div key={post.id} className="bg-zinc-800 p-8 rounded-lg border border-zinc-700 flex flex-col">
-                                <p className="text-sm text-gray-400 mb-2">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                                <h3 className="text-2xl font-bold text-white mb-4 flex-grow">{post.title}</h3>
-                                <div className="text-gray-400 mb-6 line-clamp-3" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
-                                <div className="mt-auto pt-4 border-t border-zinc-700 flex justify-end items-center">
-                                    <Link href={`/blog/${post.slug}`} className="font-semibold text-violet-500 hover:text-violet-400">
-                                        Read More &rarr;
-                                    </Link>
+                        {(isBlogExpanded ? blogPosts : blogPosts.slice(0, 3)).map(post => {
+                            const postDate = new Date(post.date);
+                            const thirtyDaysAgo = new Date();
+                            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+                            const isNew = postDate > thirtyDaysAgo;
+
+                            return (
+                                <div key={post.id} className="bg-zinc-800 p-8 rounded-lg border border-zinc-700 flex flex-col">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <p className="text-sm text-gray-400">{postDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                                        {isNew && (
+                                            <span className="bg-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full">New</span>
+                                        )}
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-white mb-4 flex-grow">{post.title}</h3>
+                                    <div className="text-gray-400 mb-6 line-clamp-3" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+                                    <div className="mt-auto pt-4 border-t border-zinc-700 flex justify-end items-center">
+                                        <Link href={`/blog/${post.slug}`} className="font-semibold text-violet-500 hover:text-violet-400">
+                                            Read More &rarr;
+                                        </Link>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
+                    {blogPosts.length > 3 && (
+                        <div className="text-center mt-12">
+                            <button
+                                onClick={() => setIsBlogExpanded(!isBlogExpanded)}
+                                className="px-6 py-2 bg-zinc-700 text-white font-semibold rounded-full hover:bg-zinc-600 transition-colors"
+                            >
+                                {isBlogExpanded ? 'Show Less' : 'Show More Posts'}
+                            </button>
+                        </div>
+                    )}
                 </Section>
 
                 <Section id="contact" title="Get In Touch" className="bg-zinc-800/50">
@@ -608,7 +685,7 @@ export async function getStaticProps() {
     return {
         props: {
             portfolioData: mainData,
-            projects: projects.sort((a, b) => (a.id || 0) - (b.id || 0)),
+            projects: projects.sort((a, b) => (b.id || 0) - (a.id || 0)),
             blogPosts: blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date)),
         },
     };
