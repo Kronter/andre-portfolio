@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useInView, useAnimation } from 'framer-motion';
-import { ChevronsRight, ChevronLeft, ChevronRight, Star, Link as LinkIcon, X, FileText, Gamepad2, Code, Brush, BrainCircuit, Twitter, Github, Linkedin, Mail } from 'lucide-react';
+import { ChevronsRight, ChevronLeft, ChevronRight, Star, Link as LinkIcon, X, FileText, Gamepad2, Code, Brush, BrainCircuit, Twitter, Github, Linkedin, Mail, Steam, Smartphone } from 'lucide-react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
