@@ -333,9 +333,9 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                 )}*/}
 
                 {/* Projects Section */}
-                <Section id="projects" title="Projects">
+                <Section id="projects" title="Projects" className="bg-zinc-800/50">
                     <div className="flex justify-center space-x-2 md:space-x-4 mb-12">
-                        {['All', 'Professional', 'Game Jam', 'Personal'].map(filter => (
+                        {['Professional', 'Game Jam', 'Personal'].map(filter => (
                             <button key={filter} onClick={() => setActiveFilter(filter)} className={`px-4 py-2 md:px-6 md:py-2 text-sm md:text-base font-semibold rounded-full transition-all duration-300 ${activeFilter === filter ? 'bg-violet-600 text-white' : 'bg-zinc-800 text-gray-300 hover:bg-zinc-700'}`}>
                                 {filter}
                             </button>
@@ -479,7 +479,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     </SubSection>*/}
 
                     {/*<SubSection id="skills" title="Skills">*/}
-                         <motion.div 
+                        <motion.div 
                             ref={skillsRef}
                             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
                             variants={containerVariants}
@@ -523,7 +523,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
 
                 <Section id="blog" title="Blog">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        {(isBlogExpanded ? blogPosts : blogPosts.slice(0, 3)).map(post => {
+                        {(isBlogExpanded ? blogPosts : blogPosts.slice(0, 4)).map(post => {
                             const postDate = new Date(post.date);
                             const thirtyDaysAgo = new Date();
                             thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
