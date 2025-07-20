@@ -1,10 +1,11 @@
 ---
-id: 1
+id: 3
 title: "Hublix"
 category: "Professional"
 image: "https://placehold.co/1600x900/18181b/8b5cf6?text=Project+Nebula"
 description: "Lead designer on a 3D space exploration RPG. Responsible for core gameplay mechanics and narrative structure."
 featured: false
+current: false
 videoId: "dQw4w9WgXcQ"
 screenshots:
   - "https://placehold.co/1600x900/18181b/8b5cf6?text=Nebula+Screenshot+1"
