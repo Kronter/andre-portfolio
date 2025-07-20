@@ -354,8 +354,8 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                     <div key={category}>
                                         <h3 className="text-3xl font-bold text-white mb-6 pl-2">{category}</h3>
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                            {displayedProjects.map(project => (
-                                                <div key={project.id} onClick={() => handleProjectClick(project)} className="group bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 hover:border-violet-500/50 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer shadow-lg hover:shadow-violet-500/10">
+                                            {filteredProjects.map(project => (
+                                                <div key={project.id} onClick={() => handleProjectClick(project)} className="group bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 hover:border-violet-500/50 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer shadow-lg hover:shadow-violet-500/10 flex flex-col">
                                                     <div className="relative">
                                                         {/* eslint-disable-next-line @next/next/no-img-element */}
                                                         <img src={project.image} alt={project.title} className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" />
@@ -366,9 +366,9 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                                             <span className="bg-violet-700/80 text-white text-xs font-bold px-3 py-1 rounded-full">{project.category}</span>
                                                         </div>
                                                     </div>
-                                                    <div className="p-6">
+                                                    <div className="p-6 flex-grow flex flex-col">
                                                         <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                                                        <p className="text-gray-400 truncate">{project.description}</p>
+                                                        <p className="text-gray-400 text-sm line-clamp-3 flex-grow">{project.description}</p>
                                                     </div>
                                                 </div>
                                             ))}
@@ -429,6 +429,28 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                     <div className="mt-8 pt-6 border-t border-zinc-700">
                                         <h3 className="text-2xl font-bold text-white mb-4">Project Breakdown</h3>
                                         <div className="prose prose-invert prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: selectedProject.contentHtml }} />
+                                    </div>
+                                )}
+                                {selectedProject.downloadLinks && selectedProject.downloadLinks.length > 0 && (
+                                    <div className="mt-8 pt-6 border-t border-zinc-700">
+                                        <h3 className="text-2xl font-bold text-white mb-4">Available On</h3>
+                                        <div className="flex flex-wrap gap-4">
+                                            {selectedProject.downloadLinks.map(link => {
+                                                const Icon = link.platform === 'Steam' ? Steam : Smartphone;
+                                                return (
+                                                    <a 
+                                                        key={link.platform}
+                                                        href={link.url}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center justify-center px-6 py-3 bg-zinc-700 text-white font-bold rounded-lg hover:bg-violet-600 transition-all duration-300"
+                                                    >
+                                                        <Icon className="w-5 h-5 mr-3" />
+                                                        {link.platform}
+                                                    </a>
+                                                );
+                                            })}
+                                        </div>
                                     </div>
                                 )}
                             </div>

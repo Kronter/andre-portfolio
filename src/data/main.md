@@ -1,6 +1,6 @@
 ---
 name: "Andre Gottgtroy"
-title: "Innovative Game Designer & Developer"
+title: "Game Designer & Developer"
 about: "I'm a passionate game designer with a love for creating immersive and memorable experiences. My design philosophy is centered around 'game feel' and player agency. I thrive on solving complex design challenges and collaborating with creative teams to bring virtual worlds to life. From initial concept to final polish, I'm dedicated to crafting games that resonate with players."
 skills:
   - name: "Game Design"
