@@ -3,9 +3,10 @@ id: 2
 title: "Outfire"
 category: "Professional"
 image: "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Dawn"
-description: "UI/UX designer for a fast-paced cyberpunk FPS. Focused on creating an intuitive and stylish user interface."
+description: "Monetization, Content, Social Game Designer"
 featured: false
 current: false
+videoId: "rRox-ase8Dg"
 screenshots:
   - "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Screenshot+1"
   - "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Screenshot+2"
