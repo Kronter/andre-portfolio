@@ -99,8 +99,8 @@ const handleCopyEmail = () => {
             <nav className="bg-zinc-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg shadow-violet-500/10">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-20">
-                        <Link href={"/"} className="text-2xl font-bold text-white tracking-wider">
-                            {postData.author} <span className="text-violet-500">.</span>
+                        <Link href={asset("/")} className="text-2xl font-bold text-white tracking-wider">
+                            {postData.author || "Andre Gottgtroy"} <span className="text-violet-500">.</span>
                         </Link>
                         <Link href={"/"} className="text-gray-300 hover:text-white transition-colors">
                             &larr; Back to Portfolio
