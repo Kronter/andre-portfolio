@@ -3,7 +3,7 @@ id: 3
 title: "Ravenhill"
 category: "Professional"
 image: "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Dawn"
-Roles: 
+roles: 
   - "General Designer"
 featured: true
 current: true
