@@ -365,6 +365,9 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                                         {/* eslint-disable-next-line @next/next/no-img-element */}
                                                         <img src={asset(project.image)} alt={project.title} className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" />
                                                         <div className="absolute top-4 right-4 flex items-center gap-2">
+                                                            {project.university && (
+                                                                <span className="bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-full">University</span>
+                                                            )}
                                                             {project.current && (
                                                                 <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Current</span>
                                                             )}
