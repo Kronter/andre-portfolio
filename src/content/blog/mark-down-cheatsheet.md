@@ -11,7 +11,9 @@ content:
   - type: heading
     text: "Basic Content Types"
   - type: paragraph
-    text: "This is a standard paragraph. You can write your main content here. To make text **bold**, you wrap it in double asterisks. To make it *italic*, you use single asterisks. For ***both***, use three."
+    text: "This is a standard paragraph. You can now use standard Markdown for **bold**, *italic*, and ***both***."
+  - type: paragraph
+    text: "You can also add a standard Markdown link like this: [GDC's YouTube channel](https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA)."
   - type: list
     items:
       - "This is the first item in a list."
@@ -45,22 +47,11 @@ content:
   - type: heading
     text: "Advanced Formatting with HTML"
   - type: paragraph
-    text: "For more control, you can use the 'html' type. This is how you can align text."
+    text: "For complex cases, like a colored link, you can use the 'html' type."
   - type: html
-    value: '<p class="text-center">This entire paragraph is centered.</p>'
+    value: "<p>My work is heavily influenced by the design talks on <a href='https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA' target='_blank' rel='noopener noreferrer'><strong><em><span class='text-violet-400'>the official GDC channel</span></em></strong></a>.</p>"
+  - type: paragraph
+    text: "You can also use 'html' for alignment. Remember to use single quotes for local image paths."
   - type: html
-    value: '<p class="text-right">And this paragraph is right-aligned.</p>'
-  
-  - type: paragraph
-    text: "You can also use this method to center images."
-  - type: html
-    value: '<div class="flex justify-center my-8"><img src="/ravenhill-image.png" alt="A centered image" class="rounded-lg shadow-lg"></div>'
-
-  - type: heading
-    text: "Combining Styles"
-  - type: paragraph
-    text: "Finally, here is how you can combine multiple styles onto a single piece of text. My work is heavily influenced by the design talks on <span class='text-violet-400'>***the official GDC channel***</span>, which is an invaluable resource for any game designer."
-
-  - type: paragraph
-    text: "My design philosophy is heavily inspired by the principles I learned from the level design analysis on [GDC's YouTube channel](https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA). I often start by creating a simple blockout in Unity."
+    value: "<div class='flex justify-center my-8'><img src='/ravenhill_image.png' alt='A centered image' class='rounded-lg shadow-lg'></div>"
 ---
