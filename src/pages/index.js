@@ -359,7 +359,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                     <div key={category}>
                                         <h3 className="text-3xl font-bold text-white mb-6 pl-2">{category}</h3>
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                            {filteredProjects.map(project => (
+                                            {displayedProjects.map(project => (
                                                 <div key={project.id} onClick={() => handleProjectClick(project)} className="group bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 hover:border-violet-500/50 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer shadow-lg hover:shadow-violet-500/10 flex flex-col">
                                                     <div className="relative">
                                                         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -462,7 +462,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                         <h3 className="text-2xl font-bold text-white mb-4">Available On</h3>
                                         <div className="flex flex-wrap gap-4">
                                             {selectedProject.downloadLinks.map(link => {
-                                                const Icon = link.platform === 'Steam' ? Gamepad2 : Smartphone;
+                                                const Icon = link.platform === 'Steam' || 'itch.io' ? Gamepad2 : Smartphone;
                                                 return (
                                                     <a 
                                                         key={link.platform}
