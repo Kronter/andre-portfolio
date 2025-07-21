@@ -57,7 +57,7 @@ const ScreenshotGallery = ({ screenshots }) => {
             <AnimatePresence initial={false} custom={direction}>
                 <motion.img
                     key={page}
-                    src={screenshots[imageIndex]}
+                    src={asset(screenshots[imageIndex])}
                     alt={`Screenshot ${imageIndex + 1}`}
                     custom={direction}
                     variants={sliderVariants}
@@ -120,7 +120,7 @@ const TimelineItem = ({ job, index, projects, handleProjectClick }) => {
 
 // --- Main App Component ---
 export default function App({ portfolioData = {}, projects = [], blogPosts = [] }) {
-    const [activeFilter, setActiveFilter] = useState('All');
+    const [activeFilter, setActiveFilter] = useState('Professional');
     const [filteredProjects, setFilteredProjects] = useState(projects);
     const [selectedProject, setSelectedProject] = useState(null);
     const [copySuccess, setCopySuccess] = useState(''); // State for copy confirmation
@@ -337,7 +337,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <div className="space-y-16">
                         {(() => {
                             const categories = ['Professional', 'Game Jam', 'Personal'];
-                            const filteredCategories = activeFilter === 'Professional' ? categories : categories.filter(c => c === activeFilter);
+                            const filteredCategories = activeFilter === 'All' ? categories : categories.filter(c => c === activeFilter);
                             
                             const toggleCategoryExpansion = (category) => {
                                 setExpandedCategories(prev => ({
