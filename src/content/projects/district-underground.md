@@ -22,11 +22,11 @@ downloadLinks:
 
 ***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
 
-**Engine:**
+**Engine:** Unity
 
 **Genre(s):**
 
-**Platform(s):**
+**Platform(s):** PC
 
 **​Responsibilities:**
 My primary role was to overhaul the user interface to improve player onboarding and readability during intense combat. I conducted user testing sessions to identify pain points and iterated on HUD layouts in Figma.
