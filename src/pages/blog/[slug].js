@@ -108,17 +108,19 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
             case 'paragraph':
                 return <p key={index} className="mb-6 text-lg" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
             case 'heading':
-                return <h3 key={index} className="text-3xl font-bold mt-12 mb-4" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
+                return <div key={index} dangerouslySetInnerHTML={{ __html: block.processedText }} />;
             case 'image':
-                return <img key={index} src={asset(block.src)} alt={block.alt} className="my-8 rounded-lg shadow-lg" />;
+                return <div key={index} className="flex justify-center my-8"><img src={asset(block.src)} alt={block.alt} className="rounded-lg shadow-lg max-w-full h-auto" /></div>;
             case 'video':
                 return (
-                    <div key={index} className="my-8 aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                        <iframe src={`https://www.youtube.com/embed/${block.videoId}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full" title={block.alt}></iframe>
+                    <div key={index} className="flex justify-center my-8">
+                        <div className="w-full max-w-3xl aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                            <iframe src={`https://www.youtube.com/embed/${block.videoId}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full" title={block.alt}></iframe>
+                        </div>
                     </div>
                 );
             case 'gallery':
-                return <ScreenshotGallery key={index} screenshots={block.screenshots} />;
+                return <div key={index} className="flex justify-center my-8"><div className="w-full max-w-3xl"><ScreenshotGallery screenshots={block.screenshots} /></div></div>;
             case 'list':
                 return (
                     <ul key={index} className="list-disc list-inside space-y-4 mb-6 pl-4">
@@ -211,9 +213,10 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                 )}
 
                 <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700 text-center relative">
-                    <h2 className="text-3xl font-bold text-white mb-4">Let&apos;s Create Something Amazing</h2>
+                    <h2 className="text-3xl font-bold text-white mb-4">Get In Touch</h2>
                     <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-                        I&apos;m always open to new opportunities and collaborations. Let&apos;s get in touch and build the next great game together.
+                         I&apos;m always open to new opportunities and collaborations. 
+                            Feel free to reach out!
                     </p>
                     <div className="flex justify-center space-x-6 mb-8">
                         <a href="https://www.linkedin.com/in/andré-gottgtroy-b56616172/" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Linkedin className="w-6 h-6 text-white" /></a>
@@ -266,7 +269,7 @@ export async function getStaticProps({ params }) {
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const { data } = matter(fileContents);
 
-    // Process Markdown for relevant fields in the content array
+    // **THE FIX IS HERE: Process Markdown for relevant fields in the content array**
     if (data.content && Array.isArray(data.content)) {
         for (const block of data.content) {
             if ((block.type === 'paragraph' || block.type === 'heading' || block.type === 'blockquote') && block.text) {
@@ -279,10 +282,10 @@ export async function getStaticProps({ params }) {
     const allFilenames = fs.readdirSync(blogDirectory).filter(filename => filename.endsWith('.md'));
     const allPosts = allFilenames.map(filename => {
         const file = fs.readFileSync(path.join(blogDirectory, filename), 'utf8');
-        const { data } = matter(file);
+        const { data: postMeta } = matter(file);
         return {
             slug: filename.replace(/\.md$/, ''),
-            ...data
+            ...postMeta
         };
     }).sort((a, b) => new Date(b.date) - new Date(a.date));
 
