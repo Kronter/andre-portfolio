@@ -446,11 +446,6 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                                 <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Current</span>
                                             )}
                                             <span className="bg-violet-600 text-white text-sm font-bold px-3 py-1 rounded-full">{selectedProject.category}</span>
-                                            {selectedProject.roles?.map(role => (
-                                                <span key={role} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
-                                                    {role}
-                                                </span>
-                                            ))}
                                         </div>
 
                                         {/* Right side: Date */}
