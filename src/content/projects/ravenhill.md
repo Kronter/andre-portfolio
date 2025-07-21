@@ -2,16 +2,12 @@
 id: 3
 title: "Ravenhill"
 category: "Professional"
-image: "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Dawn"
+image: "/Ravenhill_image.png"
 roles: 
   - "General Designer"
 featured: true
 current: true
 videoId: "oq9raTB9cHM"
-screenshots:
-  - "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Screenshot+1"
-  - "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Screenshot+2"
-  - "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Screenshot+3"
 downloadLinks:
   - platform: "Google Play"
     url: "https://play.google.com/store/apps/details?id=com.mytona.rh&hl=en"

@@ -264,7 +264,11 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                         {portfolioData.title || "Game Designer & Developer"}
                     </h3>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8">
-                        Crafting worlds, one mechanic at a time.
+                        Hello, My name is André Gottgtroy, 
+                        I am a passionate game designer with a love for crafting worlds and esperiences, one mechanic at a time.
+                        I am currently working as a general game designer at Mytona.
+                        Below, you can find my professional and hobby game development work, as well as my game design blog.
+                        Thanks for stopping by.
                     </p> 
                     <a href="#projects" className="group inline-flex items-center justify-center px-8 py-4 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30">
                         View My Work
@@ -509,7 +513,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                             <h3 className="text-xl font-bold text-white">{skill.name}</h3>
                                         </div>
                                         {/* This new div displays the tags */}
-                                        <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-zinc-700/50">
+                                        <div className="flex flex-wrap gap-2 border-t border-zinc-700/50">
                                             {skillTags.map(tag => (
                                                 <span key={tag} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
                                                     {tag}
@@ -579,7 +583,8 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                 <Section id="contact" title="Get In Touch" className="bg-zinc-800/50">
                     <div className="text-center max-w-3xl mx-auto">
                         <p className="text-xl text-gray-400 mb-8">
-                            I&apos;m always open to new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out!
+                            I&apos;m always open to new opportunities and collaborations. 
+                            Feel free to reach out!
                         </p>
                         <div className="flex justify-center space-x-6 mb-12">
                             <a href="https://www.linkedin.com/in/andré-gottgtroy-b56616172/" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Linkedin className="w-6 h-6 text-white" /></a>

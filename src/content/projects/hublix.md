@@ -13,9 +13,6 @@ roles:
 featured: false
 current: false
 videoId: "0zd_g4t-lsk"
-screenshots:
-  - "https://placehold.co/1600x900/18181b/8b5cf6?text=Nebula+Screenshot+1"
-  - "https://placehold.co/1600x900/18181b/8b5cf6?text=Nebula+Screenshot+2"
 ---
 
 As the lead on Project Nebula, I spearheaded the design of the procedural galaxy generation system, ensuring billions of unique star systems could be explored. I also wrote the main questline and designed the branching dialogue system using a proprietary node-based editor.
