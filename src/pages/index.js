@@ -450,7 +450,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
 
                                         {/* Right side: Date */}
                                         {selectedProject.dates && (
-                                            <p className="text-lg text-white-400 font-semibold flex-shrink-0 ml-4">{selectedProject.dates}</p>
+                                            <p className="text-lg text-white font-semibold flex-shrink-0 ml-4">{selectedProject.dates}</p>
                                         )}
                                     </div>
                                 </div>
@@ -464,14 +464,6 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                             </span>
                                         ))}
                                     </div>
-                                </div>
-
-                                <div className="flex flex-wrap justify-left gap-2 my-2">
-                                    {selectedProject.roles?.map(role => (
-                                        <span key={role} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
-                                            {role}
-                                        </span>
-                                    ))}
                                 </div>
                                 
                                 {selectedProject.contentHtml && (
@@ -583,7 +575,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                 {blogPosts && blogPosts.length > 0 && (
                 <Section id="blog" title="Blog">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        {(isBlogExpanded ? blogPosts : blogPosts.slice(0, 4)).map(post => {
+                        {(isBlogExpanded ? blogPosts : blogPosts.slice(0, 2)).map(post => {
                             const postDate = new Date(post.date);
                             const thirtyDaysAgo = new Date();
                             thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
