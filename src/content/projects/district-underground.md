@@ -15,7 +15,7 @@ current: false
 university: true
 videoId: "ah21Hvkg65U"
 downloadLinks:
-  - platform: "Steam"
+  - platform: "itch.io"
     url: "https://kronter.itch.io/district-underground"
 ---
 
