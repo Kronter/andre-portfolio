@@ -442,6 +442,9 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                             {selectedProject.university && (
                                                 <span className="bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-full">University</span>
                                             )}
+                                            {selectedProject.current && (
+                                                <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Current</span>
+                                            )}
                                             <span className="bg-violet-600 text-white text-sm font-bold px-3 py-1 rounded-full">{selectedProject.category}</span>
                                             {selectedProject.roles?.map(role => (
                                                 <span key={role} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
@@ -452,7 +455,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
 
                                         {/* Right side: Date */}
                                         {selectedProject.dates && (
-                                            <p className="text-sm text-gray-400 font-semibold flex-shrink-0 ml-4">{selectedProject.dates}</p>
+                                            <p className="text-lg text-violet-400 font-semibold flex-shrink-0 ml-4">{selectedProject.dates}</p>
                                         )}
                                     </div>
                                 </div>
