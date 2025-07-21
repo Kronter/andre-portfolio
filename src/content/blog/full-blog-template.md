@@ -13,7 +13,7 @@ content:
   - type: heading
     text: "Single Image Example"
   - type: image
-    src: "/ravenhill_image.png"
+    src: '/ravenhill-image.png'
     alt: "Concept art for a powerful spell card from Ravenhill."
   - type: heading
     text: "Video Demonstration"
@@ -33,8 +33,8 @@ content:
   - type: list
     items:
       - "<strong>Prototyping:</strong> The first and most crucial step."
-      - "<strong>Art & Assets:</strong> Creating the visual style of the game."
-      - "<em>Systems Design:</em> Building the core rules and mechanics."
+      - "<em>Art & Assets:</em> Creating the visual style of the game."
+      - "<strong><em>Systems Design:</em></strong> Building the core rules and mechanics."
   - type: blockquote
     text: "This new content system provides the flexibility I need to write truly engaging devlogs."
 ---

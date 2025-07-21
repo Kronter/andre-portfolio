@@ -13,7 +13,7 @@ content:
   - type: heading
     text: "Single Image Example"
   - type: image
-    src: "/ravenhill_image.png"
+    src: '/ravenhill-image.png'
     alt: "Concept art for a powerful spell card from Ravenhill."
   - type: heading
     text: "Video Demonstration"
