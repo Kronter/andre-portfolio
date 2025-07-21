@@ -440,18 +440,29 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                         {/* Left side: All tags */}
                                         <div className="flex flex-wrap items-center gap-2">
                                             {selectedProject.university && (
-                                                <span className="bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-full">University</span>
+                                                <span className="bg-sky-600 text-white text-xs font-bold px-3 py-1 rounded-full">University</span>
                                             )}
                                             {selectedProject.current && (
-                                                <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Current</span>
+                                                <span className="bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">Current</span>
                                             )}
                                             <span className="bg-violet-600 text-white text-sm font-bold px-3 py-1 rounded-full">{selectedProject.category}</span>
                                         </div>
 
                                         {/* Right side: Date */}
                                         {selectedProject.dates && (
-                                            <p className="text-lg text-violet-400 font-semibold flex-shrink-0 ml-4">{selectedProject.dates}</p>
+                                            <p className="text-lg text-white-400 font-semibold flex-shrink-0 ml-4">{selectedProject.dates}</p>
                                         )}
+                                    </div>
+                                </div>
+
+                                <div className="mt-2 pt-3 border-t border-zinc-700">
+                                    <h3 className="text-lg font-bold text-white mb-2">Role(s)</h3>
+                                    <div className="flex flex-wrap justify-left gap-2 my-2">
+                                        {selectedProject.roles?.map(role => (
+                                            <span key={role} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
+                                                 {role}
+                                            </span>
+                                        ))}
                                     </div>
                                 </div>
 
@@ -462,8 +473,6 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                         </span>
                                     ))}
                                 </div>
-
-                                <p className="text-gray-300 text-lg mb-4">{selectedProject.description}</p>
                                 
                                 {selectedProject.contentHtml && (
                                     <div className="mt-2 pt-3 border-t border-zinc-700">
@@ -476,7 +485,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                         <h3 className="text-lg font-bold text-white mb-2">Available On</h3>
                                         <div className="flex flex-wrap gap-4">
                                             {selectedProject.downloadLinks.map(link => {
-                                                const Icon = link.platform === 'Steam' || 'itch.io' ? Gamepad2 : Smartphone;
+                                                const Icon = link.platform === 'Steam' || link.platform === 'itch.io' ? Gamepad2 : Smartphone;
                                                 return (
                                                     <a 
                                                         key={link.platform}
