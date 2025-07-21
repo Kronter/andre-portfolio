@@ -114,7 +114,7 @@ const handleCopyEmail = () => {
             case 'list':
                 return (
                     <ul key={index} className="list-disc list-inside space-y-4 mb-6 pl-4">
-                        {block.items.map((item, i) => (
+                        {block.items?.map((item, i) => (
                             <li key={i} className="text-lg text-gray-400" dangerouslySetInnerHTML={{ __html: item }} />
                         ))}
                     </ul>
@@ -283,13 +283,11 @@ export async function getStaticProps({ params }) {
     // Get current post data
     const filePath = path.join(blogDirectory, `${params.slug}.md`);
     const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data, content } = matter(fileContents);
-    const processedContent = await remark().use(html).process(content);
-    const contentHtml = processedContent.toString();
-    const postData = { slug: params.slug, ...data, contentHtml };
+    // We only need the 'data' part here, which includes the content list
+    const { data: postData } = matter(fileContents);
 
     // Get all posts for "Keep Reading" section
-    const allFilenames = fs.readdirSync(blogDirectory);
+    const allFilenames = fs.readdirSync(blogDirectory).filter(filename => filename.endsWith('.md'));
     const allPosts = allFilenames.map(filename => {
         const file = fs.readFileSync(path.join(blogDirectory, filename), 'utf8');
         const { data } = matter(file);
@@ -309,8 +307,8 @@ export async function getStaticProps({ params }) {
 
     return {
         props: {
-            postData,
-            nextPostInSeries: nextInSeries || null, // **THE FIX IS HERE**
+            postData: { slug: params.slug, ...postData },
+            nextPostInSeries: nextInSeries || null,
             otherPosts
         }
     };
