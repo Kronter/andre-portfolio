@@ -143,13 +143,12 @@ const handleCopyEmail = () => {
                     </motion.div>
 
                     <motion.div
-                        className="mt-8"
+                        className="mt-8 prose prose-invert prose-lg max-w-none prose-p:text-gray-400 prose-headings:text-white prose-a:text-violet-400 hover:prose-a:text-violet-300 prose-strong:text-gray-200 prose-blockquote:border-l-violet-500 prose-code:bg-zinc-800 prose-code:rounded-md prose-code:px-2 prose-code:py-1 prose-code:font-mono"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
-                    >
-                        {renderContent(postData.contentHtml)}
-                    </motion.div>
+                        dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+                    />
                 </article>
 
                 <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700">

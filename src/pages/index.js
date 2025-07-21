@@ -266,6 +266,9 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8 whitespace-pre-line">
                         {portfolioData.heroSubtitle}
                     </p>
+                    <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8 justify-left whitespace-pre-line">
+                        Thanks for stopping by.
+                    </p>
                     <a href="#projects" className="group inline-flex items-center justify-center px-8 py-4 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30">
                         View My Work
                         <ChevronsRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
@@ -358,7 +361,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                                 <div key={project.id} onClick={() => handleProjectClick(project)} className="group bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 hover:border-violet-500/50 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer shadow-lg hover:shadow-violet-500/10 flex flex-col">
                                                     <div className="relative">
                                                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                                                        <img src={project.image} alt={project.title} className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" />
+                                                        <img src={asset(project.image)} alt={project.title} className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" />
                                                         <div className="absolute top-4 right-4 flex items-center gap-2">
                                                             {project.current && (
                                                                 <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Current</span>
@@ -368,7 +371,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                                     </div>
                                                     <div className="p-6 flex-grow flex flex-col">
                                                         <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                                                        <div className="flex flex-wrap gap-1 mt-2 pt-3 border-t border-zinc-700/50">
+                                                        <div className="flex flex-wrap gap-2 mt-2 pt-3 border-t border-zinc-700/50">
                                                             {project.roles?.map(role => (
                                                                 <span key={role} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
                                                                     {role}
@@ -521,7 +524,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                             <h3 className="text-xl font-bold text-white">{skill.name}</h3>
                                         </div>
                                         {/* This new div displays the tags */}
-                                        <div className="flex flex-wrap gap-1 mt-2 pt-3 border-t border-zinc-700/50">
+                                        <div className="flex flex-wrap gap-2 mt-2 pt-3 border-t border-zinc-700/50">
                                             {skillTags.map(tag => (
                                                 <span key={tag} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
                                                     {tag}
