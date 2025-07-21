@@ -4,12 +4,11 @@ import { Clock, ChevronLeft, ChevronRight, Linkedin, Twitter, Github, Mail, File
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
 import Link from 'next/link';
 
 // --- Helper function to get the correct asset path for GitHub Pages ---
 const asset = (p) => {
+    if (!p || p.startsWith('http')) return p;
     const repo = 'andre-portfolio'; // IMPORTANT: Change this to your repository name
     return `/${repo}${p}`;
 };
@@ -32,12 +31,13 @@ const ScreenshotGallery = ({ screenshots }) => {
     useEffect(() => {
         const resetTimeout = () => timeoutRef.current && clearTimeout(timeoutRef.current);
         resetTimeout();
-        if (screenshots.length > 1) {
-            timeoutRef.current = setTimeout(() => paginate(1), 4500);
+        if (screenshots && screenshots.length > 1) {
+            timeoutRef.current = setTimeout(() => paginate(1), 7000);
         }
         return () => resetTimeout();
-    }, [page, screenshots.length, paginate]);
+    }, [page, screenshots, paginate]);
 
+    if (!screenshots || screenshots.length === 0) return null;
     const imageIndex = (page % screenshots.length + screenshots.length) % screenshots.length;
 
     return (
@@ -45,7 +45,7 @@ const ScreenshotGallery = ({ screenshots }) => {
             <AnimatePresence initial={false} custom={direction}>
                 <motion.img
                     key={page}
-                    src={screenshots[imageIndex]}
+                    src={asset(screenshots[imageIndex])}
                     alt={`Screenshot ${imageIndex + 1}`}
                     custom={direction}
                     variants={sliderVariants}
@@ -63,50 +63,54 @@ const ScreenshotGallery = ({ screenshots }) => {
 };
 
 // --- Reading Time Calculator ---
-const calculateReadingTime = (content) => {
+const calculateReadingTime = (contentArray) => {
+    if (!contentArray || !Array.isArray(contentArray)) return '1 min read';
     const wordsPerMinute = 225;
-    const wordCount = content.split(/\s+/).filter(Boolean).length;
+    let textContent = '';
+
+    contentArray.forEach(block => {
+        if (block.type === 'paragraph' || block.type === 'heading' || block.type === 'blockquote') {
+            textContent += block.text + ' ';
+        } else if (block.type === 'list' && Array.isArray(block.items)) {
+            textContent += block.items.join(' ') + ' ';
+        }
+    });
+
+    const plainText = textContent.replace(/<[^>]*>?/gm, '');
+    const wordCount = plainText.split(/\s+/).filter(Boolean).length;
     const readingTime = Math.ceil(wordCount / wordsPerMinute);
-    return `${readingTime} min read`;
+    
+    return `${readingTime || 1} min read`;
 };
 
 // --- Main Blog Post Component ---
 export default function BlogPostPage({ postData, nextPostInSeries, otherPosts }) {
+    const [copySuccess, setCopySuccess] = useState('');
 
-const [copySuccess, setCopySuccess] = useState(''); // State for copy confirmation
-
-const handleCopyEmail = () => {
-    const email = 'andregot@gmail.com';
-    const textArea = document.createElement('textarea');
-    textArea.value = email;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textArea);
-
-    setCopySuccess('Email copied!');
-    setTimeout(() => setCopySuccess(''), 2000); // Hide message after 2 seconds
-};
-    // A helper function to render content blocks from Markdown HTML
+    const handleCopyEmail = () => {
+        const email = 'andregot@gmail.com';
+        const textArea = document.createElement('textarea');
+        textArea.value = email;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        setCopySuccess('Email copied!');
+        setTimeout(() => setCopySuccess(''), 2000);
+    };
+    
     const renderContent = (block, index) => {
         switch (block.type) {
             case 'paragraph':
-                return <p key={index} className="mb-6 text-lg text-gray-400">{block.text}</p>;
+                return <p key={index} className="mb-6 text-lg">{block.text}</p>;
             case 'heading':
-                return <h3 key={index} className="text-3xl font-bold text-white mt-12 mb-4">{block.text}</h3>;
+                return <h3 key={index} className="text-3xl font-bold mt-12 mb-4">{block.text}</h3>;
             case 'image':
                 return <img key={index} src={asset(block.src)} alt={block.alt} className="my-8 rounded-lg shadow-lg" />;
             case 'video':
                 return (
                     <div key={index} className="my-8 aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                        <iframe 
-                            src={`https://www.youtube.com/embed/${block.videoId}`}
-                            frameBorder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowFullScreen
-                            className="w-full h-full"
-                            title={block.alt}
-                        ></iframe>
+                        <iframe src={`https://www.youtube.com/embed/${block.videoId}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full" title={block.alt}></iframe>
                     </div>
                 );
             case 'gallery':
@@ -115,13 +119,13 @@ const handleCopyEmail = () => {
                 return (
                     <ul key={index} className="list-disc list-inside space-y-4 mb-6 pl-4">
                         {block.items?.map((item, i) => (
-                            <li key={i} className="text-lg text-gray-400" dangerouslySetInnerHTML={{ __html: item }} />
+                            <li key={i} className="text-lg" dangerouslySetInnerHTML={{ __html: item }} />
                         ))}
                     </ul>
                 );
             case 'blockquote':
                 return (
-                    <blockquote key={index} className="my-8 border-l-4 border-violet-500 pl-4 italic text-gray-400">
+                    <blockquote key={index} className="my-8 border-l-4 border-violet-500 pl-4 italic">
                         {block.text}
                     </blockquote>
                 );
@@ -130,7 +134,7 @@ const handleCopyEmail = () => {
         }
     };
 
-    const readingTime = calculateReadingTime(postData.contentHtml);
+    const readingTime = calculateReadingTime(postData.content);
 
     return (
         <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed">
@@ -140,7 +144,7 @@ const handleCopyEmail = () => {
                         <Link href={asset("/")} className="text-2xl font-bold text-white tracking-wider">
                             {postData.author || "Andre Gottgtroy"} <span className="text-violet-500">.</span>
                         </Link>
-                        <Link href={"/"} className="text-gray-300 hover:text-white transition-colors">
+                        <Link href={asset("/")} className="text-gray-300 hover:text-white transition-colors">
                             &larr; Back to Portfolio
                         </Link>
                     </div>
@@ -148,26 +152,17 @@ const handleCopyEmail = () => {
             </nav>
 
             <main className="pt-32 pb-16">
-                <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                    >
+                <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-invert prose-lg">
+                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
                         <div className="mb-4">
-                            {postData.tags.map(tag => (
-                                <span key={tag} className="inline-block bg-violet-600/20 text-violet-400 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
-                                    {tag}
-                                </span>
+                            {postData.tags?.map(tag => (
+                                <span key={tag} className="inline-block bg-violet-600/20 text-violet-400 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">{tag}</span>
                             ))}
                         </div>
-                        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tighter">
-                            {postData.title}
-                        </h1>
+                        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tighter">{postData.title}</h1>
                         <div className="flex items-center text-gray-400 space-x-4 mb-8">
                             <div className="flex items-center">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src="https://placehold.co/40x40/18181b/8b5cf6?text=A+D" alt="Alex Doe" className="w-8 h-8 rounded-full mr-2" />
+                                <img src="https://placehold.co/40x40/18181b/8b5cf6?text=A+D" alt="Andre Gottgtroy" className="w-8 h-8 rounded-full mr-2" />
                                 <span>{postData.author}</span>
                             </div>
                             <span>&bull;</span>
@@ -180,17 +175,12 @@ const handleCopyEmail = () => {
                         </div>
                     </motion.div>
 
-                   <motion.div
-                        className="mt-8"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.2, duration: 0.5 }}
-                    >
-                        {postData.content.map((block, index) => renderContent(block, index))}
+                    <motion.div className="mt-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.5 }}>
+                        {postData.content?.map((block, index) => renderContent(block, index))}
                     </motion.div>
                 </article>
 
-                {(nextPostInSeries || otherPosts.length > 0) && (
+                {(nextPostInSeries || (otherPosts && otherPosts.length > 0)) && (
                     <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700">
                         <h2 className="text-3xl font-bold text-white mb-8">Keep Reading</h2>
                         {nextPostInSeries && (
@@ -208,7 +198,7 @@ const handleCopyEmail = () => {
                                     <p className="text-sm text-gray-400 mb-2">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                                     <h4 className="text-xl font-bold text-white flex-grow mb-4 group-hover:text-violet-400 transition-colors">{post.title}</h4>
                                     <div className="flex items-center text-violet-400 font-semibold mt-auto">
-                                        Read Post <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                                       Read Post <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                                     </div>
                                 </Link>
                             ))}
@@ -225,7 +215,7 @@ const handleCopyEmail = () => {
                         <a href="https://www.linkedin.com/in/andré-gottgtroy-b56616172/" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Linkedin className="w-6 h-6 text-white" /></a>
                         <button onClick={handleCopyEmail} className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Mail className="w-6 h-6 text-white" /></button>
                     </div>
-                        <AnimatePresence>
+                     <AnimatePresence>
                         {copySuccess && (
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
@@ -236,7 +226,7 @@ const handleCopyEmail = () => {
                                 {copySuccess}
                             </motion.div>
                         )}
-                        </AnimatePresence>
+                    </AnimatePresence>
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
                         <a href={asset("/Andre_Gottgtroy_Resume.pdf")} download className="inline-flex items-center px-8 py-3 border-2 border-violet-500 text-violet-400 font-bold rounded-lg hover:bg-violet-500 hover:text-white transition-all duration-300 text-lg">
                             <FileText className="w-5 h-5 mr-2" />
@@ -248,29 +238,17 @@ const handleCopyEmail = () => {
 
             <style jsx global>{`
                 .aspect-w-16 { position: relative; padding-bottom: 56.25%; }
-                .aspect-h-9 { /* No specific styles needed here with this setup */ }
+                .aspect-h-9 { }
                 .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-                .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-                    color: white;
-                    font-weight: 700; /* This makes the text bold */
-                    margin-top: 1.5em;
-                    margin-bottom: 0.5em;
-                    line-height: 1.2;
-                }
-                .prose h1 { font-size: 2.25rem; } /* Corresponds to text-4xl */
-                .prose h2 { font-size: 1.875rem; } /* Corresponds to text-3xl */
-                .prose h3 { font-size: 1.5rem; }   /* Corresponds to text-2xl */
             `}</style>
         </div>
     );
 }
 
 // --- Next.js Data Fetching Functions ---
-
 export async function getStaticPaths() {
     const blogDirectory = path.join(process.cwd(), 'src', 'content', 'blog');
-    const filenames = fs.readdirSync(blogDirectory);
+    const filenames = fs.readdirSync(blogDirectory).filter(filename => filename.endsWith('.md'));
     const paths = filenames.map(filename => ({
         params: { slug: filename.replace(/\.md$/, '') }
     }));
@@ -280,13 +258,10 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const blogDirectory = path.join(process.cwd(), 'src', 'content', 'blog');
     
-    // Get current post data
     const filePath = path.join(blogDirectory, `${params.slug}.md`);
     const fileContents = fs.readFileSync(filePath, 'utf8');
-    // We only need the 'data' part here, which includes the content list
     const { data: postData } = matter(fileContents);
 
-    // Get all posts for "Keep Reading" section
     const allFilenames = fs.readdirSync(blogDirectory).filter(filename => filename.endsWith('.md'));
     const allPosts = allFilenames.map(filename => {
         const file = fs.readFileSync(path.join(blogDirectory, filename), 'utf8');
