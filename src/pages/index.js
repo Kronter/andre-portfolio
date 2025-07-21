@@ -346,7 +346,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                 }));
                             };
 
-                            return categories.map(category => {
+                            return filteredCategories.map(category => {
                                 const projectsForCategory = projects.filter(p => p.category === category);
                                 // Only show this category if it's selected OR if we're showing "All"
                                 if (activeFilter !== 'All' && activeFilter !== category) return null;
