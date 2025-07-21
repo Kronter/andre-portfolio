@@ -2,6 +2,7 @@
 id: 2
 title: "Hublix"
 category: "Professional"
+dates: "2020 - 2023"
 image: '/hublix-image.png'
 roles: 
   - "Lead Designer"
@@ -15,6 +16,15 @@ current: false
 videoId: "0zd_g4t-lsk"
 ---
 
-As the lead on Project Nebula, I spearheaded the design of the procedural galaxy generation system, ensuring billions of unique star systems could be explored. I also wrote the main questline and designed the branching dialogue system using a proprietary node-based editor.
+*Outfire* is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
 
-A major challenge was balancing the ship combat to be accessible for new players while offering depth for veterans.
+**Engine:**
+
+**Genre(s):**
+
+**Platform(s):**
+
+**​Role(s) and responsibilities:**
+My primary role was to overhaul the user interface to improve player onboarding and readability during intense combat. I conducted user testing sessions to identify pain points and iterated on HUD layouts in Figma.
+
+The final design increased player retention by 15% in the first week post-launch.

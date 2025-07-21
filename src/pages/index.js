@@ -436,9 +436,22 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                             <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-auto object-cover rounded-lg shadow-lg" />
                                         )}
                                     </div>
-                                    <div className="text-left mt-4">
-                                        <span className="bg-violet-600 text-white text-sm font-bold px-3 py-1 rounded-full">{selectedProject.category}</span>
-                                    </div>
+                                    <div className="flex justify-between items-center mt-4">
+                                        {/* Tag container */}
+                                        <div className="flex items-center gap-2"></div>
+                                            {project.university && (
+                                                <span className="bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-full">University</span>
+                                            )}
+                                            {project.current && (
+                                                <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Current</span>
+                                            )}
+                                                <span className="bg-violet-700/80 text-white text-xs font-bold px-3 py-1 rounded-full">{project.category}</span>
+                                        </div>
+
+                                        {/* Date container */}
+                                        {selectedProject.dates && (
+                                            <p className="text-sm text-gray-400 font-semibold">{selectedProject.dates}</p>
+                                        )}
                                 </div>
 
                                 <div className="flex flex-wrap justify-left gap-2 my-2">
@@ -452,14 +465,14 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                 <p className="text-gray-300 text-lg mb-4">{selectedProject.description}</p>
                                 
                                 {selectedProject.contentHtml && (
-                                    <div className="mt-4 pt-3 border-t border-zinc-700">
-                                        <h3 className="text-2xl font-bold text-white mb-4">Project Breakdown</h3>
+                                    <div className="mt-2 pt-3 border-t border-zinc-700">
+                                        <h3 className="text-lg font-bold text-white mb-2">Project Breakdown</h3>
                                         <div className="prose prose-invert prose-lg max-w-none prose-p:text-gray-400 prose-headings:text-white prose-a:text-violet-400 hover:prose-a:text-violet-300 prose-strong:text-gray-200 prose-blockquote:border-l-violet-500 prose-code:bg-zinc-800 prose-code:rounded-md prose-code:px-2 prose-code:py-1 prose-code:font-mono" dangerouslySetInnerHTML={{ __html: selectedProject.contentHtml }} />
                                     </div>
                                 )}
                                 {selectedProject.downloadLinks && selectedProject.downloadLinks.length > 0 && (
-                                    <div className="mt-4 pt-3 border-t border-zinc-700">
-                                        <h3 className="text-2xl font-bold text-white mb-4">Available On</h3>
+                                    <div className="mt-2 pt-3 border-t border-zinc-700">
+                                        <h3 className="text-lg font-bold text-white mb-2">Available On</h3>
                                         <div className="flex flex-wrap gap-4">
                                             {selectedProject.downloadLinks.map(link => {
                                                 const Icon = link.platform === 'Steam' || 'itch.io' ? Gamepad2 : Smartphone;
