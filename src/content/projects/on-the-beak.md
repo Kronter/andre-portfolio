@@ -1,28 +1,30 @@
 ---
-id: 8
-title: "Ravenhill"
-category: "Professional"
-dates: "2025 - Present"
-image: '/ravenhill-image.png'
+id: 6
+title: "On The Beak"
+category: "Game Jam"
+dates: "2020"
+image: '/on-the-beak-image.png'
 roles: 
   - "General Designer"
-featured: true
-current: true
+  - "Gameplay Programmer"
+  - "Shader Programer"
 videoId: "oq9raTB9cHM"
 downloadLinks:
-  - platform: "Google Play"
-    url: "https://play.google.com/store/apps/details?id=com.mytona.rh&hl=en"
-  - platform: "App Store"
-    url: "https://apps.apple.com/us/app/ravenhill-find-hidden-objects/id1399339172"
+  - platform: "itch.io"
+    url: "https://kronter.itch.io/on-the-beak"
 ---
+
+**Kiwijam 2020** entry
+
+**Awards:** 1st *(tied)* overall
 
 ***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
 
-**Engine:** Proprietary
+**Engine:** Unity 
 
-**Genre(s):**
+**Genre(s):** Arcade, Arena Brawler
 
-**Platform(s):** Ios, Android
+**Platform(s):** PC
 
 **​Responsibilities:**
 My primary role was to overhaul the user interface to improve player onboarding and readability during intense combat. I conducted user testing sessions to identify pain points and iterated on HUD layouts in Figma.

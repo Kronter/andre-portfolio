@@ -1,5 +1,5 @@
 ---
-id: 3
+id: 7
 title: "Outfire"
 category: "Professional"
 dates: "2023 - 2025"
@@ -20,11 +20,11 @@ downloadLinks:
 
 ***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
 
-**Engine:**
+**Engine:** Unity
 
 **Genre(s):**
 
-**Platform(s):**
+**Platform(s):** Ios, Android
 
 **​Responsibilities:**
 My primary role was to overhaul the user interface to improve player onboarding and readability during intense combat. I conducted user testing sessions to identify pain points and iterated on HUD layouts in Figma.

@@ -1,28 +1,32 @@
 ---
-id: 8
-title: "Ravenhill"
-category: "Professional"
-dates: "2025 - Present"
-image: '/ravenhill-image.png'
+id: 5
+title: "Helping Hands"
+category: "Game Jam"
+dates: "2020"
+image: '/helping-hands-main-image.png'
 roles: 
   - "General Designer"
-featured: true
-current: true
-videoId: "oq9raTB9cHM"
+  - "Gameplay Programmer"
+  - "Shader Programer"
+screenshots:
+  - "/helping-hands-1-image.png"
+  - "/helping-hands-2-image.png"
+  - "/helping-hands-3-image.png"
+  - "/helping-hands-4-image.png"
 downloadLinks:
-  - platform: "Google Play"
-    url: "https://play.google.com/store/apps/details?id=com.mytona.rh&hl=en"
-  - platform: "App Store"
-    url: "https://apps.apple.com/us/app/ravenhill-find-hidden-objects/id1399339172"
+  - platform: "GGJ"
+    url: "https://v3.globalgamejam.org/2020/games/helping-hands-9"
 ---
+
+**Global Game Jam 2020** entry
 
 ***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
 
-**Engine:** Proprietary
+**Engine:** Unity 
 
-**Genre(s):**
+**Genre(s):** Stealth, Comedy
 
-**Platform(s):** Ios, Android
+**Platform(s):** PC
 
 **​Responsibilities:**
 My primary role was to overhaul the user interface to improve player onboarding and readability during intense combat. I conducted user testing sessions to identify pain points and iterated on HUD layouts in Figma.

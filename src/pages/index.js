@@ -433,11 +433,11 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                             <ScreenshotGallery screenshots={selectedProject.screenshots} />
                                         ) : (
                                             // eslint-disable-next-line @next/next/no-img-element
-                                            <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-auto object-cover rounded-lg shadow-lg" />
+                                            <img src={asset(selectedProject.image)} alt={selectedProject.title} className="w-full h-auto object-cover rounded-lg shadow-lg" />
                                         )}
                                     </div>
-                                    {/*<div className="flex justify-between items-center my-4">
-                                        {/* Left side: All tags 
+                                    <div className="flex justify-between items-center my-4">
+                                        {/* Left side: All tags*/}  
                                         <div className="flex flex-wrap items-center gap-2">
                                             {selectedProject.university && (
                                                 <span className="bg-sky-500 text-white text-sm font-bold px-3 py-1 rounded-full">University</span>
@@ -448,25 +448,10 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                             <span className="bg-violet-600 text-white text-sm font-bold px-3 py-1 rounded-full">{selectedProject.category}</span>
                                         </div>
 
-                                        {/* Right side: Date 
+                                        {/* Right side: Date*/} 
                                         {selectedProject.dates && (
                                             <p className="text-lg text-white font-semibold flex-shrink-0 ml-4">{selectedProject.dates}</p>
                                         )}
-                                    </div>*/}
-                                    <div className="flex justify-between items-center my-4">
-                                        {/* Left side: All tags*/}  
-                                        <div className="flex flex-wrap items-center gap-2">
-                                            {selectedProject.dates && (
-                                            <p className="text-lg text-white font-semibold flex-shrink-0 ml-4">{selectedProject.dates}</p>
-                                            )}
-                                            {selectedProject.university && (
-                                                <span className="bg-sky-500 text-white text-sm font-bold px-3 py-1 rounded-full">University</span>
-                                            )}
-                                            {selectedProject.current && (
-                                                <span className="bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-full">Current</span>
-                                            )}
-                                            <span className="bg-violet-600 text-white text-sm font-bold px-3 py-1 rounded-full">{selectedProject.category}</span>
-                                        </div>
                                     </div>
                                 </div>
 
@@ -492,7 +477,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                         <h3 className="text-lg font-bold text-white mb-2">Available On</h3>
                                         <div className="flex flex-wrap gap-4">
                                             {selectedProject.downloadLinks.map(link => {
-                                                const Icon = link.platform === 'Steam' || link.platform === 'itch.io' ? Gamepad2 : Smartphone;
+                                                const Icon = link.platform === 'Steam' || link.platform === 'itch.io' || link.platform === 'GGJ'? Gamepad2 : Smartphone;
                                                 return (
                                                     <a 
                                                         key={link.platform}
