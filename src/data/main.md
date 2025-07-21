@@ -1,6 +1,14 @@
 ---
 name: "Andre Gottgtroy"
 title: "Game Designer & Developer"
+heroSubtitle: |
+  Hello, My name is André Gottgtroy,
+  I am a passionate game designer with a love for crafting worlds and experiences, one mechanic at a time.
+  I am currently working as a general game designer at Mytona.
+  
+  Below, you can find my professional and hobby game development work, as well as my game design blog.
+
+  Thanks for stopping by.
 about: "I'm a passionate game designer with a love for creating immersive and memorable experiences. My design philosophy is centered around 'game feel' and player agency. I thrive on solving complex design challenges and collaborating with creative teams to bring virtual worlds to life. From initial concept to final polish, I'm dedicated to crafting games that resonate with players."
 skills:
   - name: "Game Design"

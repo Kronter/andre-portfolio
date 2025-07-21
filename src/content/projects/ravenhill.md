@@ -2,7 +2,7 @@
 id: 3
 title: "Ravenhill"
 category: "Professional"
-image: "/ravenhill_image.png"
+image: "/ravenhill-image.png"
 roles: 
   - "General Designer"
 featured: true
