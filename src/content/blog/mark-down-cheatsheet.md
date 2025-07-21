@@ -12,14 +12,16 @@ content:
     text: "Basic Content Types"
   - type: paragraph
     text: "This is a standard paragraph. You can now use standard Markdown for **bold**, *italic*, and ***both***."
-  - type: paragraph
-    text: "You can also add a standard Markdown link like this: [GDC's YouTube channel](https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA)."
   - type: list
     items:
       - "This is the first item in a list."
       - "This is the second item."
       - "<strong>This item uses HTML for bolding.</strong>"
       - "<em>This item uses HTML for italics.</em>"
+  - type: html
+    value: "<p>This is using a htlm link to a <a href='https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA' target='_blank' rel='noopener noreferrer'>site</a>.</p>"
+  - type: html
+    value: "<p>this is using html to <span class='text-violet-400'>color a text</span>.</p>"
   - type: blockquote
     text: "This is a blockquote. It's great for highlighting a key takeaway or a quote that inspired you during development."
 
@@ -50,8 +52,4 @@ content:
     text: "For complex cases, like a colored link, you can use the 'html' type."
   - type: html
     value: "<p>My work is heavily influenced by the design talks on <a href='https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA' target='_blank' rel='noopener noreferrer'><strong><em><span class='text-violet-400'>the official GDC channel</span></em></strong></a>.</p>"
-  - type: paragraph
-    text: "You can also use 'html' for alignment. Remember to use single quotes for local image paths."
-  - type: html
-    value: "<div class='flex justify-center my-8'><img src='/ravenhill_image.png' alt='A centered image' class='rounded-lg shadow-lg'></div>"
 ---
