@@ -252,7 +252,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
         <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed">
             <Nav />
 
-            <header id="home" className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+            <header id="home" className="relative flex items-center justify-center overflow-hidden py-32 md:h-[70vh] md:py-0">
                 <div className="absolute inset-0 bg-zinc-900 opacity-80 z-10"></div>
                 <div className="absolute inset-0 z-0">
                     <div className="absolute bg-violet-600/10 rounded-full w-96 h-96 -top-20 -left-20 filter blur-3xl opacity-50 animate-blob"></div>
@@ -436,22 +436,25 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                             <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-auto object-cover rounded-lg shadow-lg" />
                                         )}
                                     </div>
-                                    <div className="flex justify-between items-center mt-4">
-                                        {/* Tag container */}
-                                        <div className="flex items-center gap-2"></div>
+                                    <div className="flex justify-between items-center my-4">
+                                        {/* Left side: All tags */}
+                                        <div className="flex flex-wrap items-center gap-2">
                                             {selectedProject.university && (
                                                 <span className="bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-full">University</span>
                                             )}
-                                            {selectedProject.current && (
-                                                <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Current</span>
-                                            )}
-                                                <span className="bg-violet-700/80 text-white text-xs font-bold px-3 py-1 rounded-full">{selectedProject.category}</span>
+                                            <span className="bg-violet-600 text-white text-sm font-bold px-3 py-1 rounded-full">{selectedProject.category}</span>
+                                            {selectedProject.roles?.map(role => (
+                                                <span key={role} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
+                                                    {role}
+                                                </span>
+                                            ))}
                                         </div>
 
-                                        {/* Date container */}
+                                        {/* Right side: Date */}
                                         {selectedProject.dates && (
-                                            <p className="text-sm text-gray-400 font-semibold">{selectedProject.dates}</p>
+                                            <p className="text-sm text-gray-400 font-semibold flex-shrink-0 ml-4">{selectedProject.dates}</p>
                                         )}
+                                    </div>
                                 </div>
 
                                 <div className="flex flex-wrap justify-left gap-2 my-2">
