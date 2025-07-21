@@ -367,8 +367,8 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                                         </div>
                                                     </div>
                                                     <div className="p-6 flex-grow flex flex-col">
-                                                        <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
-                                                        <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-zinc-700/50">
+                                                        <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
+                                                        <div className="flex flex-wrap gap-2 mt-2">
                                                             {project.roles?.map(role => (
                                                                 <span key={role} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
                                                                     {role}
@@ -499,13 +499,23 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {portfolioData.skills?.map(skill => {
                                 const Icon = icons[skill.icon];
+                                // This splits the description string into an array of tags
+                                const skillTags = skill.description.split(',').map(s => s.trim());
+
                                 return (
-                                    <div key={skill.name} className="bg-zinc-900 p-6 rounded-lg border border-zinc-700 hover:border-violet-500/50 hover:shadow-2xl hover:shadow-violet-500/10 transition-all duration-300 transform hover:-translate-y-1">
+                                    <div key={skill.name} className="bg-zinc-900 p-6 rounded-lg border border-zinc-700 flex flex-col">
                                         <div className="flex items-center mb-4">
                                             {Icon && <Icon className="w-8 h-8 text-violet-500 mr-4" />}
                                             <h3 className="text-xl font-bold text-white">{skill.name}</h3>
                                         </div>
-                                        <p className="text-gray-400">{skill.description}</p>
+                                        {/* This new div displays the tags */}
+                                        <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-zinc-700/50">
+                                            {skillTags.map(tag => (
+                                                <span key={tag} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
                                 );
                             })}
