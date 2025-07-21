@@ -439,19 +439,19 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                     <div className="flex justify-between items-center mt-4">
                                         {/* Tag container */}
                                         <div className="flex items-center gap-2"></div>
-                                            {project.university && (
+                                            {selectedProject.university && (
                                                 <span className="bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-full">University</span>
                                             )}
-                                            {project.current && (
+                                            {selectedProject.current && (
                                                 <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Current</span>
                                             )}
-                                                <span className="bg-violet-700/80 text-white text-xs font-bold px-3 py-1 rounded-full">{project.category}</span>
+                                                <span className="bg-violet-700/80 text-white text-xs font-bold px-3 py-1 rounded-full">{selectedProject.category}</span>
                                         </div>
 
-                                        {/* Date container */}
+                                        {/*{/* Date container */}
                                         {selectedProject.dates && (
                                             <p className="text-sm text-gray-400 font-semibold">{selectedProject.dates}</p>
-                                        )}
+                                        )}*/}
                                 </div>
 
                                 <div className="flex flex-wrap justify-left gap-2 my-2">
