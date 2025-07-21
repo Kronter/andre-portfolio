@@ -43,7 +43,7 @@ const ScreenshotGallery = ({ screenshots }) => {
     const imageIndex = (page % screenshots.length + screenshots.length) % screenshots.length;
 
     return (
-        <div className="aspect-w-16 aspect-h-9 my-8 rounded-lg overflow-hidden relative flex items-center justify-center bg-zinc-900">
+        <div className="aspect-w-16 aspect-h-9 my-8 rounded-lg overflow-hidden relative bg-zinc-900">
             <AnimatePresence initial={false} custom={direction}>
                 <motion.img
                     key={page}
@@ -106,7 +106,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
     const renderContent = (block, index) => {
         switch (block.type) {
             case 'paragraph':
-                return <p key={index} className="mb-6 text-lg" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
+                return <p key={index} className="mb-6 text-lg whitespace-pre-line" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
             case 'heading':
                 return <div key={index} dangerouslySetInnerHTML={{ __html: block.processedText }} />;
             case 'image':
