@@ -4,6 +4,8 @@ import { Clock, ChevronLeft, ChevronRight, Linkedin, Twitter, Github, Mail, File
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
 import Link from 'next/link';
 
 // --- Helper function to get the correct asset path for GitHub Pages ---
@@ -71,6 +73,8 @@ const calculateReadingTime = (contentArray) => {
     contentArray.forEach(block => {
         if (block.type === 'paragraph' || block.type === 'heading' || block.type === 'blockquote') {
             textContent += block.text + ' ';
+        } else if (block.type === 'html') {
+            textContent += block.value + ' ';
         } else if (block.type === 'list' && Array.isArray(block.items)) {
             textContent += block.items.join(' ') + ' ';
         }
@@ -102,9 +106,9 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
     const renderContent = (block, index) => {
         switch (block.type) {
             case 'paragraph':
-                return <p key={index} className="mb-6 text-lg">{block.text}</p>;
+                return <p key={index} className="mb-6 text-lg" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
             case 'heading':
-                return <h3 key={index} className="text-3xl font-bold mt-12 mb-4">{block.text}</h3>;
+                return <h3 key={index} className="text-3xl font-bold mt-12 mb-4" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
             case 'image':
                 return <img key={index} src={asset(block.src)} alt={block.alt} className="my-8 rounded-lg shadow-lg" />;
             case 'video':
@@ -125,10 +129,10 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                 );
             case 'blockquote':
                 return (
-                    <blockquote key={index} className="my-8 border-l-4 border-violet-500 pl-4 italic">
-                        {block.text}
-                    </blockquote>
+                    <blockquote key={index} className="my-8 border-l-4 border-violet-500 pl-4 italic" dangerouslySetInnerHTML={{ __html: block.processedText }} />
                 );
+            case 'html':
+                return <div key={index} dangerouslySetInnerHTML={{ __html: block.value }} />;
             default:
                 return null;
         }
@@ -207,9 +211,9 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                 )}
 
                 <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700 text-center relative">
-                    <h2 className="text-3xl font-bold text-white mb-4">Get In Touch</h2>
+                    <h2 className="text-3xl font-bold text-white mb-4">Let&apos;s Create Something Amazing</h2>
                     <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-                        I&apos;m always open to new opportunities and collaborations. Feel free to reach out!
+                        I&apos;m always open to new opportunities and collaborations. Let&apos;s get in touch and build the next great game together.
                     </p>
                     <div className="flex justify-center space-x-6 mb-8">
                         <a href="https://www.linkedin.com/in/andré-gottgtroy-b56616172/" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Linkedin className="w-6 h-6 text-white" /></a>
@@ -260,7 +264,17 @@ export async function getStaticProps({ params }) {
     
     const filePath = path.join(blogDirectory, `${params.slug}.md`);
     const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data: postData } = matter(fileContents);
+    const { data } = matter(fileContents);
+
+    // Process Markdown for relevant fields in the content array
+    if (data.content && Array.isArray(data.content)) {
+        for (const block of data.content) {
+            if ((block.type === 'paragraph' || block.type === 'heading' || block.type === 'blockquote') && block.text) {
+                const processed = await remark().use(html).process(block.text);
+                block.processedText = processed.toString();
+            }
+        }
+    }
 
     const allFilenames = fs.readdirSync(blogDirectory).filter(filename => filename.endsWith('.md'));
     const allPosts = allFilenames.map(filename => {
@@ -272,17 +286,17 @@ export async function getStaticProps({ params }) {
         };
     }).sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    const nextInSeries = postData.series 
-        ? allPosts.find(p => p.series === postData.series && p.part === postData.part + 1)
+    const nextInSeries = data.series 
+        ? allPosts.find(p => p.series === data.series && p.part === data.part + 1)
         : null;
 
     const otherPosts = allPosts
-        .filter(p => p.id !== postData.id && (!nextInSeries || p.id !== nextInSeries.id))
+        .filter(p => p.id !== data.id && (!nextInSeries || p.id !== nextInSeries.id))
         .slice(0, 2);
 
     return {
         props: {
-            postData: { slug: params.slug, ...postData },
+            postData: { slug: params.slug, ...data },
             nextPostInSeries: nextInSeries || null,
             otherPosts
         }
