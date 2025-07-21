@@ -2,7 +2,7 @@
 id: 4
 title: "Ravenhill"
 category: "Professional"
-dates: "2025 - Present"
+dates: "2025 - "
 image: '/ravenhill-image.png'
 roles: 
   - "General Designer"

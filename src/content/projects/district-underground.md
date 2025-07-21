@@ -2,7 +2,7 @@
 id: 1
 title: "District Underground"
 category: "Professional"
-dates: "2018 - 2018"
+dates: "2018"
 image: '/district-underground-image.png'
 roles: 
   - "Game Designer"
