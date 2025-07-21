@@ -54,10 +54,13 @@ content:
   - type: paragraph
     text: "You can also use this method to center images."
   - type: html
-    value: '<div class="flex justify-center my-8"><img src="https://placehold.co/800x400/18181b/8b5cf6?text=Centered+Image" alt="A centered image" class="rounded-lg shadow-lg"></div>'
+    value: '<div class="flex justify-center my-8"><img src="/ravenhill-image.png" alt="A centered image" class="rounded-lg shadow-lg"></div>'
 
   - type: heading
     text: "Combining Styles"
   - type: paragraph
-    text: "Finally, here is how you can combine multiple styles onto a single piece of text. My work is heavily influenced by the design talks on <a href='https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA' target='_blank' rel='noopener noreferrer'><strong><em><span class='text-violet-400'>the official GDC channel</span></em></strong></a>, which is an invaluable resource for any game designer."
+    text: "Finally, here is how you can combine multiple styles onto a single piece of text. My work is heavily influenced by the design talks on <span class='text-violet-400'>***the official GDC channel***</span>, which is an invaluable resource for any game designer."
+
+  - type: paragraph
+    text: "My design philosophy is heavily inspired by the principles I learned from the level design analysis on [GDC's YouTube channel](https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA). I often start by creating a simple blockout in Unity."
 ---
