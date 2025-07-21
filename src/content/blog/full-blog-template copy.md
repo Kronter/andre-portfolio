@@ -1,40 +1,63 @@
 ---
 id: 102
-title: "Full Feature Showcase: My Card Game Devlog part 2"
-date: "2025-07-20"
+title: "Markdown Cheatsheet & Full Feature Showcase"
+date: "2025-07-21"
 author: "Andre Gottgtroy"
-tags: ["Devlog", "Card Game", "Systems Design", "Unity"]
-featured: true
-series: "Card Game Devlog"
+tags: ["Reference", "Template", "Markdown"]
+featured: false
+series: "Website Guide"
 part: 2
 content:
-  - type: paragraph
-    text: "This post is a complete demonstration of all the features available in the blog. You can use this file as a template for your own posts! This new system allows for a flexible arrangement of content, letting me place images, videos, and galleries exactly where they make the most sense in the article."
   - type: heading
-    text: "Single Image Example"
+    text: "Basic Content Types"
+  - type: paragraph
+    text: "This is a standard paragraph. You can write your main content here. To make text **bold**, you wrap it in double asterisks. To make it *italic*, you use single asterisks. For ***both***, use three."
+  - type: list
+    items:
+      - "This is the first item in a list."
+      - "This is the second item."
+      - "<strong>This item uses HTML for bolding.</strong>"
+      - "<em>This item uses HTML for italics.</em>"
+  - type: blockquote
+    text: "This is a blockquote. It's great for highlighting a key takeaway or a quote that inspired you during development."
+
+  - type: heading
+    text: "Media Content Types"
+  - type: paragraph
+    text: "Below is an example of a single, standard image. It will align to the left by default."
   - type: image
     src: '/ravenhill-image.png'
-    alt: "Concept art for a powerful spell card from Ravenhill."
-  - type: heading
-    text: "Video Demonstration"
+    alt: "A standard image example."
+  - type: paragraph
+    text: "Next is a video, which is perfect for showing gameplay."
   - type: video
     videoId: "oq9raTB9cHM"
     alt: "YouTube trailer for the game Ravenhill."
-  - type: heading
-    text: "Screenshot Gallery"
+  - type: paragraph
+    text: "And here is an auto-sliding gallery for multiple screenshots."
   - type: gallery
     screenshots:
-      - "https://placehold.co/1600x900/18181b/8b5cf6?text=Card+Gallery+1"
-      - "https://placehold.co/1600x900/18181b/8b5cf6?text=Card+Gallery+2"
-      - "https://placehold.co/1600x900/18181b/8b5cf6?text=Card+Gallery+3"
+      - "https://placehold.co/1600x900/18181b/8b5cf6?text=Gallery+Image+1"
+      - "https://placehold.co/1600x900/18181b/8b5cf6?text=Gallery+Image+2"
+      - "https://placehold.co/1600x900/18181b/8b5cf6?text=Gallery+Image+3"
     alt: "A gallery showing various in-game screenshots."
+
   - type: heading
-    text: "Other Formatting Options"
-  - type: list
-    items:
-      - "<strong>Prototyping:</strong> The first and most crucial step."
-      - "<strong>Art & Assets:</strong> Creating the visual style of the game."
-      - "<em>Systems Design:</em> Building the core rules and mechanics."
-  - type: blockquote
-    text: "This new content system provides the flexibility I need to write truly engaging devlogs."
+    text: "Advanced Formatting with HTML"
+  - type: paragraph
+    text: "For more control, you can use the 'html' type. This is how you can align text."
+  - type: html
+    value: '<p class="text-center">This entire paragraph is centered.</p>'
+  - type: html
+    value: '<p class="text-right">And this paragraph is right-aligned.</p>'
+  
+  - type: paragraph
+    text: "You can also use this method to center images."
+  - type: html
+    value: '<div class="flex justify-center my-8"><img src="https://placehold.co/800x400/18181b/8b5cf6?text=Centered+Image" alt="A centered image" class="rounded-lg shadow-lg"></div>'
+
+  - type: heading
+    text: "Combining Styles"
+  - type: paragraph
+    text: "Finally, here is how you can combine multiple styles onto a single piece of text. My work is heavily influenced by the design talks on <a href='https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA' target='_blank' rel='noopener noreferrer'><strong><em><span class='text-violet-400'>the official GDC channel</span></em></strong></a>, which is an invaluable resource for any game designer."
 ---
