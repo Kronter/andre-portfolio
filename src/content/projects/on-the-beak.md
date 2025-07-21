@@ -8,7 +8,6 @@ roles:
   - "General Designer"
   - "Gameplay Programmer"
   - "Shader Programer"
-videoId: "oq9raTB9cHM"
 downloadLinks:
   - platform: "itch.io"
     url: "https://kronter.itch.io/on-the-beak"
