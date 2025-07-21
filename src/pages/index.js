@@ -448,10 +448,10 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                                 <span className="bg-violet-700/80 text-white text-xs font-bold px-3 py-1 rounded-full">{selectedProject.category}</span>
                                         </div>
 
-                                        {/*{/* Date container */}
+                                        {/* Date container */}
                                         {selectedProject.dates && (
                                             <p className="text-sm text-gray-400 font-semibold">{selectedProject.dates}</p>
-                                        )}*/}
+                                        )}
                                 </div>
 
                                 <div className="flex flex-wrap justify-left gap-2 my-2">
