@@ -337,7 +337,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <div className="space-y-16">
                         {(() => {
                             const categories = ['Professional', 'Game Jam', 'Personal'];
-                            const filteredCategories = activeFilter === 'All' ? categories : categories.filter(c => c === activeFilter);
+                            const filteredCategories = activeFilter === 'Professional' ? categories : categories.filter(c => c === activeFilter);
                             
                             const toggleCategoryExpansion = (category) => {
                                 setExpandedCategories(prev => ({
