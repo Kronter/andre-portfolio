@@ -367,8 +367,14 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                                         </div>
                                                     </div>
                                                     <div className="p-6 flex-grow flex flex-col">
-                                                        <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                                                        <p className="text-gray-400 text-sm line-clamp-3 flex-grow">{project.description}</p>
+                                                        <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
+                                                        <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-zinc-700/50">
+                                                            {project.roles?.map(role => (
+                                                                <span key={role} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
+                                                                    {role}
+                                                                </span>
+                                                            ))}
+                                                        </div>
                                                     </div>
                                                 </div>
                                             ))}

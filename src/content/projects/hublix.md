@@ -3,7 +3,13 @@ id: 1
 title: "Hublix"
 category: "Professional"
 image: "https://placehold.co/1600x900/18181b/8b5cf6?text=Project+Nebula"
-description: "Creative Producer, Lead/Assistant Lead Game Designer, General Game Designer R&D Game Designer, Junior Game Designer"
+Roles: 
+  - "Lead Designer"
+  - "Assistant Lead Designer"
+  - "Creative Producer"
+  - "General Designer"
+  - "R&D Designer"
+  - "Junior General Designer"
 featured: false
 current: false
 videoId: "0zd_g4t-lsk"
