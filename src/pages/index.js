@@ -263,10 +263,10 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <h3 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-tighter">
                         {portfolioData.title || "Game Designer & Developer"}
                     </h3>
-                    <p className="text-base md:text-lg max-w-1xl mx-auto text-gray-300 mb-12 whitespace-pre-line">
+                    <p className="text-lg md:text-1xl max-w-2xl mx-auto text-gray-300 mb-12 whitespace-pre-line">
                         {portfolioData.heroSubtitle}
                     </p>
-                    <p className="text-base md:text-lg max-w-1xl mx-auto text-gray-300 mb-8 justify-left whitespace-pre-line">
+                    <p className="text-lg md:text-1xl max-w-2xl mx-auto text-gray-300 mb-8 justify-left whitespace-pre-line">
                         Thanks for stopping by.
                     </p>
                     <a href="#projects" className="group inline-flex items-center justify-center px-8 py-4 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30">
@@ -421,7 +421,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                 <h2 className="text-4xl font-bold text-white mb-2">{selectedProject.title}</h2>
                                 
                                 <div className="mb-6 mt-6">
-                                    <div className="max-w-3xl mx-auto"> {/* This new wrapper controls the size */}
+                                    <div className="max-w-4xl mx-auto"> {/* This new wrapper controls the size */}
                                         {selectedProject.videoId ? (
                                             <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
                                                 <iframe src={`https://www.youtube.com/embed/${selectedProject.videoId}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full"></iframe>
