@@ -53,7 +53,7 @@ const ScreenshotGallery = ({ screenshots }) => {
     const imageIndex = (page % screenshots.length + screenshots.length) % screenshots.length;
 
     return (
-        <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative flex items-center justify-center bg-zinc-900">
+        <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative bg-zinc-900">
             <AnimatePresence initial={false} custom={direction}>
                 <motion.img
                     key={page}
@@ -469,7 +469,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                 {selectedProject.contentHtml && (
                                     <div className="mt-2 pt-3 border-t border-zinc-700">
                                         <h3 className="text-lg font-bold text-white mb-2">Project Breakdown</h3>
-                                        <div className="prose prose-invert prose-lg max-w-none prose-p:text-gray-400 prose-headings:text-white prose-a:text-violet-400 hover:prose-a:text-violet-300 prose-strong:text-gray-200 prose-blockquote:border-l-violet-500 prose-code:bg-zinc-800 prose-code:rounded-md prose-code:px-2 prose-code:py-1 prose-code:font-mono" dangerouslySetInnerHTML={{ __html: selectedProject.contentHtml }} />
+                                        <div className="prose prose-invert prose-lg max-w-none prose-p:text-gray-400 prose-headings:text-white prose-a:text-violet-400 hover:prose-a:text-violet-300 prose-strong:text-gray-200 prose-blockquote:border-l-violet-500 prose-code:bg-zinc-800 prose-code:rounded-md prose-code:px-2 prose-code:py-1 prose-code:font-mono whitespace-pre-line" dangerouslySetInnerHTML={{ __html: selectedProject.contentHtml }} />
                                     </div>
                                 )}
                                 {selectedProject.downloadLinks && selectedProject.downloadLinks.length > 0 && (

@@ -8,6 +8,7 @@ roles:
   - "Tool Designer"
   - "Programmer"
 videoId: "oq9raTB9cHM"
+university: true
 ---
 
 ***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
