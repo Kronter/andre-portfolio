@@ -263,11 +263,13 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <h3 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 tracking-tighter">
                         {portfolioData.title || "Game Designer & Developer"}
                     </h3>
-                    <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8">
+                    <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8 whitespace-pre-line">
                         Hello, My name is André Gottgtroy, 
                         I am a passionate game designer with a love for crafting worlds and esperiences, one mechanic at a time.
                         I am currently working as a general game designer at Mytona.
+
                         Below, you can find my professional and hobby game development work, as well as my game design blog.
+
                         Thanks for stopping by.
                     </p> 
                     <a href="#projects" className="group inline-flex items-center justify-center px-8 py-4 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30">
@@ -362,7 +364,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                                 <div key={project.id} onClick={() => handleProjectClick(project)} className="group bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 hover:border-violet-500/50 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer shadow-lg hover:shadow-violet-500/10 flex flex-col">
                                                     <div className="relative">
                                                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                                                        <img src={project.image} alt={project.title} className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" />
+                                                        <img src={asset(project.image)} alt={project.title} className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" />
                                                         <div className="absolute top-4 right-4 flex items-center gap-2">
                                                             {project.current && (
                                                                 <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Current</span>
@@ -372,7 +374,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                                     </div>
                                                     <div className="p-6 flex-grow flex flex-col">
                                                         <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                                                        <div className="flex flex-wrap gap-2 mt-2 pt-1 border-t border-zinc-700/50">
+                                                        <div className="flex flex-wrap gap-2 mt-1 pt-2 border-t border-zinc-700/50">
                                                             {project.roles?.map(role => (
                                                                 <span key={role} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
                                                                     {role}
@@ -420,17 +422,29 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                 <h2 className="text-4xl font-bold text-white mb-2">{selectedProject.title}</h2>
                                 
                                 <div className="mb-6 mt-6">
-                                    {selectedProject.videoId ? (
-                                        <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                                            <iframe src={`https://www.youtube.com/embed/${selectedProject.videoId}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full"></iframe>
-                                        </div>
-                                    ) : selectedProject.screenshots && selectedProject.screenshots.length > 0 ? (
-                                        <ScreenshotGallery screenshots={selectedProject.screenshots} />
-                                    ) : (
-                                        // eslint-disable-next-line @next/next/no-img-element
-                                        <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-auto object-cover rounded-lg" />
-                                    )}
-                                     <span className="bg-violet-600 text-white text-sm font-bold px-3 py-1 rounded-full mt-4 inline-block">{selectedProject.category}</span>
+                                    <div className="max-w-3xl mx-auto"> {/* This new wrapper controls the size */}
+                                        {selectedProject.videoId ? (
+                                            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+                                                <iframe src={`https://www.youtube.com/embed/${selectedProject.videoId}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full"></iframe>
+                                            </div>
+                                        ) : selectedProject.screenshots && selectedProject.screenshots.length > 0 ? (
+                                            <ScreenshotGallery screenshots={selectedProject.screenshots} />
+                                        ) : (
+                                            // eslint-disable-next-line @next/next/no-img-element
+                                            <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-auto object-cover rounded-lg shadow-lg" />
+                                        )}
+                                    </div>
+                                    <div className="text-center mt-4">
+                                        <span className="bg-violet-600 text-white text-sm font-bold px-3 py-1 rounded-full">{selectedProject.category}</span>
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-wrap justify-center gap-2 my-4">
+                                    {selectedProject.roles?.map(role => (
+                                        <span key={role} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
+                                            {role}
+                                        </span>
+                                    ))}
                                 </div>
 
                                 <p className="text-gray-300 text-lg mb-6">{selectedProject.description}</p>
@@ -438,7 +452,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                 {selectedProject.contentHtml && (
                                     <div className="mt-8 pt-6 border-t border-zinc-700">
                                         <h3 className="text-2xl font-bold text-white mb-4">Project Breakdown</h3>
-                                        <div className="prose prose-invert prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: selectedProject.contentHtml }} />
+                                        <div className="prose prose-invert prose-lg max-w-none prose-p:text-gray-400 prose-headings:text-white prose-a:text-violet-400 hover:prose-a:text-violet-300 prose-strong:text-gray-200 prose-blockquote:border-l-violet-500 prose-code:bg-zinc-800 prose-code:rounded-md prose-code:px-2 prose-code:py-1 prose-code:font-mono" dangerouslySetInnerHTML={{ __html: selectedProject.contentHtml }} />
                                     </div>
                                 )}
                                 {selectedProject.downloadLinks && selectedProject.downloadLinks.length > 0 && (
@@ -513,7 +527,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                             <h3 className="text-xl font-bold text-white">{skill.name}</h3>
                                         </div>
                                         {/* This new div displays the tags */}
-                                        <div className="flex flex-wrap gap-2 mt-2 pt-1 border-t border-zinc-700/50">
+                                        <div className="flex flex-wrap gap-2 mt-1 pt-2 border-t border-zinc-700/50">
                                             {skillTags.map(tag => (
                                                 <span key={tag} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
                                                     {tag}
