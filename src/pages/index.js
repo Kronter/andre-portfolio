@@ -260,13 +260,13 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <div className="absolute bg-pink-500/10 rounded-full w-72 h-72 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
                 </div>
                 <div className="text-center z-20 px-4">
-                    <h3 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 tracking-tighter">
+                    <h3 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-tighter">
                         {portfolioData.title || "Game Designer & Developer"}
                     </h3>
-                    <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-12 whitespace-pre-line">
+                    <p className="text-base md:text-lg max-w-1xl mx-auto text-gray-300 mb-12 whitespace-pre-line">
                         {portfolioData.heroSubtitle}
                     </p>
-                    <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8 justify-left whitespace-pre-line">
+                    <p className="text-base md:text-lg max-w-1xl mx-auto text-gray-300 mb-8 justify-left whitespace-pre-line">
                         Thanks for stopping by.
                     </p>
                     <a href="#projects" className="group inline-flex items-center justify-center px-8 py-4 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30">
