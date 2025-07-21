@@ -3,7 +3,7 @@ id: 2
 title: "Outfire"
 category: "Professional"
 image: "https://placehold.co/1600x900/18181b/8b5cf6?text=Cybernetic+Dawn"
-Roles: 
+roles: 
   - "Monetization Designer"
   - "Content Designer"
   - "Social Designer"
