@@ -20,7 +20,7 @@ content:
       - "<em>This item uses HTML for italics.</em>"
       - "<u>This item uses HTML for italics.</u>"
   - type: html
-    value: "<p>This is using a htlm link to a <a href='https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA' target='_blank' rel='noopener noreferrer'><u><span class='text-teal-400'>site/span></u></a>.</p>"
+    value: "<p>This is using a htlm link to a <a href='https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA' target='_blank' rel='noopener noreferrer'><span class='text-teal-400'><u>site</u></span></a>.</p>"
   - type: html
     value: "<p>this is using html to <span class='text-violet-400'>color a text</span>.</p>"
   - type: blockquote
@@ -52,5 +52,5 @@ content:
   - type: paragraph
     text: "For complex cases, like a colored link, you can use the 'html' type."
   - type: html
-    value: "<p>My work is heavily influenced by the design talks on <a href='https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA' target='_blank' rel='noopener noreferrer'><strong><em><u><span class='text-teal-400'>the official GDC channel</span></u></em></strong></a>.</p>"
+    value: "<p>My work is heavily influenced by the design talks on <a href='https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA' target='_blank' rel='noopener noreferrer'><strong><em><span class='text-teal-400'><u>the official GDC channel</u></span></em></strong></a>.</p>"
 ---
