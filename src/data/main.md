@@ -5,7 +5,7 @@ about: "I'm a passionate game designer with a love for creating immersive and me
 skills:
   - name: "Game Design"
     icon: "Gamepad2"
-    description: "General, Systems, Content, Social, Monetization, Technical, Gameplay, Prototyping, R&D,"
+    description: "General, Systems, Content, Social, Monetization, Technical, Gameplay, Prototyping, R&D"
   - name: "Development"
     icon: "Code"
     description: "Unreal Engine, Unity Engine, Unreal (Blueprints), C, C++, C#, JavaScript, Python, Lua"
