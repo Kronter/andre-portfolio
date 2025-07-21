@@ -346,8 +346,10 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                 }));
                             };
 
-                            return filteredCategories.map(category => {
+                            return categories.map(category => {
                                 const projectsForCategory = projects.filter(p => p.category === category);
+                                // Only show this category if it's selected OR if we're showing "All"
+                                if (activeFilter !== 'All' && activeFilter !== category) return null;
                                 if (projectsForCategory.length === 0) return null;
 
                                 const isExpanded = expandedCategories[category];
@@ -419,7 +421,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                 <h2 className="text-4xl font-bold text-white mb-2">{selectedProject.title}</h2>
                                 
                                 <div className="mb-6 mt-6">
-                                    <div className="max-w-2xl mx-auto"> {/* This new wrapper controls the size */}
+                                    <div className="max-w-3xl mx-auto"> {/* This new wrapper controls the size */}
                                         {selectedProject.videoId ? (
                                             <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
                                                 <iframe src={`https://www.youtube.com/embed/${selectedProject.videoId}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full"></iframe>
@@ -436,7 +438,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                     </div>
                                 </div>
 
-                                <div className="flex flex-wrap justify-left gap-2 my-4">
+                                <div className="flex flex-wrap justify-left gap-2 my-2">
                                     {selectedProject.roles?.map(role => (
                                         <span key={role} className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">
                                             {role}
@@ -444,16 +446,16 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                     ))}
                                 </div>
 
-                                <p className="text-gray-300 text-lg mb-6">{selectedProject.description}</p>
+                                <p className="text-gray-300 text-lg mb-4">{selectedProject.description}</p>
                                 
                                 {selectedProject.contentHtml && (
-                                    <div className="mt-8 pt-6 border-t border-zinc-700">
+                                    <div className="mt-4 pt-3 border-t border-zinc-700">
                                         <h3 className="text-2xl font-bold text-white mb-4">Project Breakdown</h3>
                                         <div className="prose prose-invert prose-lg max-w-none prose-p:text-gray-400 prose-headings:text-white prose-a:text-violet-400 hover:prose-a:text-violet-300 prose-strong:text-gray-200 prose-blockquote:border-l-violet-500 prose-code:bg-zinc-800 prose-code:rounded-md prose-code:px-2 prose-code:py-1 prose-code:font-mono" dangerouslySetInnerHTML={{ __html: selectedProject.contentHtml }} />
                                     </div>
                                 )}
                                 {selectedProject.downloadLinks && selectedProject.downloadLinks.length > 0 && (
-                                    <div className="mt-8 pt-6 border-t border-zinc-700">
+                                    <div className="mt-4 pt-3 border-t border-zinc-700">
                                         <h3 className="text-2xl font-bold text-white mb-4">Available On</h3>
                                         <div className="flex flex-wrap gap-4">
                                             {selectedProject.downloadLinks.map(link => {
@@ -552,6 +554,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                         </div>
                 </Section>
 
+                {blogPosts && blogPosts.length > 0 && (
                 <Section id="blog" title="Blog">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         {(isBlogExpanded ? blogPosts : blogPosts.slice(0, 4)).map(post => {
@@ -590,7 +593,8 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                         </div>
                     )}
                 </Section>
-
+                )}
+                
                 <Section id="contact" title="Get In Touch" className="bg-zinc-800/50">
                     <div className="text-center max-w-3xl mx-auto">
                         <p className="text-xl text-gray-400 mb-8">

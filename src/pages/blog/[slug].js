@@ -88,8 +88,46 @@ const handleCopyEmail = () => {
     setTimeout(() => setCopySuccess(''), 2000); // Hide message after 2 seconds
 };
     // A helper function to render content blocks from Markdown HTML
-    const renderContent = (htmlContent) => {
-        return <div className="prose prose-invert prose-lg max-w-none prose-p:text-gray-400 prose-headings:text-white prose-a:text-violet-400 hover:prose-a:text-violet-300 prose-strong:text-gray-200 prose-blockquote:border-l-violet-500 prose-code:bg-zinc-800 prose-code:rounded-md prose-code:px-2 prose-code:py-1 prose-code:font-mono" dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+    const renderContent = (block, index) => {
+        switch (block.type) {
+            case 'paragraph':
+                return <p key={index} className="mb-6 text-lg text-gray-400">{block.text}</p>;
+            case 'heading':
+                return <h3 key={index} className="text-3xl font-bold text-white mt-12 mb-4">{block.text}</h3>;
+            case 'image':
+                return <img key={index} src={asset(block.src)} alt={block.alt} className="my-8 rounded-lg shadow-lg" />;
+            case 'video':
+                return (
+                    <div key={index} className="my-8 aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                        <iframe 
+                            src={`https://www.youtube.com/embed/${block.videoId}`}
+                            frameBorder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowFullScreen
+                            className="w-full h-full"
+                            title={block.alt}
+                        ></iframe>
+                    </div>
+                );
+            case 'gallery':
+                return <ScreenshotGallery key={index} screenshots={block.screenshots} />;
+            case 'list':
+                return (
+                    <ul key={index} className="list-disc list-inside space-y-4 mb-6 pl-4">
+                        {block.items.map((item, i) => (
+                            <li key={i} className="text-lg text-gray-400" dangerouslySetInnerHTML={{ __html: item }} />
+                        ))}
+                    </ul>
+                );
+            case 'blockquote':
+                return (
+                    <blockquote key={index} className="my-8 border-l-4 border-violet-500 pl-4 italic text-gray-400">
+                        {block.text}
+                    </blockquote>
+                );
+            default:
+                return null;
+        }
     };
 
     const readingTime = calculateReadingTime(postData.contentHtml);
@@ -142,38 +180,41 @@ const handleCopyEmail = () => {
                         </div>
                     </motion.div>
 
-                    <motion.div
-                        className="mt-8 prose prose-invert prose-lg max-w-none prose-p:text-gray-400 prose-headings:text-white prose-a:text-violet-400 hover:prose-a:text-violet-300 prose-strong:text-gray-200 prose-blockquote:border-l-violet-500 prose-code:bg-zinc-800 prose-code:rounded-md prose-code:px-2 prose-code:py-1 prose-code:font-mono"
+                   <motion.div
+                        className="mt-8"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
-                        dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
-                    />
+                    >
+                        {postData.content.map((block, index) => renderContent(block, index))}
+                    </motion.div>
                 </article>
 
-                <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700">
-                    <h2 className="text-3xl font-bold text-white mb-8">Keep Reading</h2>
-                    {nextPostInSeries && (
-                        <Link href={`/blog/${nextPostInSeries.slug}`} className="group block bg-zinc-800 p-6 rounded-lg mb-8 border border-zinc-700 hover:border-violet-500 transition-colors">
-                            <p className="text-sm text-violet-400 mb-1">Next in series: {nextPostInSeries.series}</p>
-                            <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-violet-400 transition-colors">{nextPostInSeries.title}</h3>
-                            <div className="flex items-center text-violet-400 font-semibold">
-                                Continue Reading <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
-                            </div>
-                        </Link>
-                    )}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {otherPosts.map(post => (
-                            <Link key={post.id} href={`/blog/${post.slug}`} className="group block bg-zinc-800 p-6 rounded-lg border border-zinc-700 hover:border-violet-500 transition-colors">
-                                <p className="text-sm text-gray-400 mb-2">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                                <h4 className="text-xl font-bold text-white flex-grow mb-4 group-hover:text-violet-400 transition-colors">{post.title}</h4>
-                                <div className="flex items-center text-violet-400 font-semibold mt-auto">
-                                   Read Post <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                {(nextPostInSeries || otherPosts.length > 0) && (
+                    <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700">
+                        <h2 className="text-3xl font-bold text-white mb-8">Keep Reading</h2>
+                        {nextPostInSeries && (
+                            <Link href={`/blog/${nextPostInSeries.slug}`} className="group block bg-zinc-800 p-6 rounded-lg mb-8 border border-zinc-700 hover:border-violet-500 transition-colors">
+                                <p className="text-sm text-violet-400 mb-1">Next in series: {nextPostInSeries.series}</p>
+                                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-violet-400 transition-colors">{nextPostInSeries.title}</h3>
+                                <div className="flex items-center text-violet-400 font-semibold">
+                                    Continue Reading <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
                                 </div>
                             </Link>
-                        ))}
-                    </div>
-                </section>
+                        )}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {otherPosts.map(post => (
+                                <Link key={post.id} href={`/blog/${post.slug}`} className="group block bg-zinc-800 p-6 rounded-lg border border-zinc-700 hover:border-violet-500 transition-colors">
+                                    <p className="text-sm text-gray-400 mb-2">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                                    <h4 className="text-xl font-bold text-white flex-grow mb-4 group-hover:text-violet-400 transition-colors">{post.title}</h4>
+                                    <div className="flex items-center text-violet-400 font-semibold mt-auto">
+                                        Read Post <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </section>
+                )}
 
                 <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700 text-center relative">
                     <h2 className="text-3xl font-bold text-white mb-4">Let&apos;s Create Something Amazing</h2>
@@ -209,6 +250,17 @@ const handleCopyEmail = () => {
                 .aspect-w-16 { position: relative; padding-bottom: 56.25%; }
                 .aspect-h-9 { /* No specific styles needed here with this setup */ }
                 .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+                .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+                    color: white;
+                    font-weight: 700; /* This makes the text bold */
+                    margin-top: 1.5em;
+                    margin-bottom: 0.5em;
+                    line-height: 1.2;
+                }
+                .prose h1 { font-size: 2.25rem; } /* Corresponds to text-4xl */
+                .prose h2 { font-size: 1.875rem; } /* Corresponds to text-3xl */
+                .prose h3 { font-size: 1.5rem; }   /* Corresponds to text-2xl */
             `}</style>
         </div>
     );

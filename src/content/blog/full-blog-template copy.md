@@ -1,12 +1,12 @@
 ---
-id: 101
-title: "Full Feature Showcase: My Card Game Devlog part 1"
+id: 102
+title: "Full Feature Showcase: My Card Game Devlog part 2"
 date: "2025-07-20"
 author: "Andre Gottgtroy"
 tags: ["Devlog", "Card Game", "Systems Design", "Unity"]
 featured: true
 series: "Card Game Devlog"
-part: 1
+part: 2
 ---
 
 - type: paragraph
