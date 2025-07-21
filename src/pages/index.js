@@ -263,7 +263,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <h3 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 tracking-tighter">
                         {portfolioData.title || "Game Designer & Developer"}
                     </h3>
-                    <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8 whitespace-pre-line">
+                    <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-12 whitespace-pre-line">
                         {portfolioData.heroSubtitle}
                     </p>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8 justify-left whitespace-pre-line">
