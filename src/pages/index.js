@@ -440,10 +440,10 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                         {/* Left side: All tags */}
                                         <div className="flex flex-wrap items-center gap-2">
                                             {selectedProject.university && (
-                                                <span className="bg-sky-600 text-white text-xs font-bold px-3 py-1 rounded-full">University</span>
+                                                <span className="bg-sky-500 text-white text-sm font-bold px-3 py-1 rounded-full">University</span>
                                             )}
                                             {selectedProject.current && (
-                                                <span className="bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">Current</span>
+                                                <span className="bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-full">Current</span>
                                             )}
                                             <span className="bg-violet-600 text-white text-sm font-bold px-3 py-1 rounded-full">{selectedProject.category}</span>
                                         </div>
