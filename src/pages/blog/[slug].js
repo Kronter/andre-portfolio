@@ -71,7 +71,7 @@ const calculateReadingTime = (contentArray) => {
     let textContent = '';
 
     contentArray.forEach(block => {
-        if (block.type === 'paragraph' || block.type === 'heading' || block.type === 'subheading' || block.type === 'heading-1' || block.type === 'heading-2' || block.type === 'heading-3' || block.type === 'heading-4' || block.type === 'heading-5' ||block.type === 'blockquote') {
+        if (block.type === 'paragraph' || block.type === 'heading' || block.type === 'subheading' || block.type === 'heading-1' || block.type === 'heading-2' || block.type === 'heading-3' || block.type === 'subheading-2' ||block.type === 'blockquote') {
             textContent += block.text + ' ';
         } else if (block.type === 'html') {
             textContent += block.value + ' ';
@@ -113,14 +113,12 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                 return <h2 key={index} className="text-4xl font-bold text-white mt-12 mb-4">{block.text}</h2>;
             case 'heading-3':
                 return <h3 key={index} className="text-3xl font-bold text-white mt-12 mb-4">{block.text}</h3>;
-            case 'heading-4':
-                return <h4 key={index} className="text-2xl font-bold text-white mt-12 mb-4">{block.text}</h4>;
-            case 'heading-5':
-                return <h5 key={index} className="text-1xl font-bold text-white mt-12 mb-4">{block.text}</h5>;
             case 'heading':
                 return <h3 key={index} className="text-3xl font-bold text-white mt-12 mb-4">{block.text}</h3>;
             case 'subheading':
                 return <h6 key={index} className="text-lg font-bold text-white mt-12 mb-4">{block.text}</h6>;
+            case 'subheading-2':
+                return <h5 key={index} className="text-1xl font-bold text-white mt-12 mb-4">{block.text}</h5>;
             case 'image':
                 return <div key={index} className="flex justify-center my-8"><img src={asset(block.src)} alt={block.alt} className="rounded-lg shadow-lg max-w-full h-auto" /></div>;
             case 'video':
