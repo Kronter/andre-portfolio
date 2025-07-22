@@ -8,10 +8,8 @@ featured: false
 series: "Website Guide"
 part: 2
 content:
-  - type: heading
-    text: "<strong><h1>Basic Content Types</h1></strong>"
   - type: html
-    text: "<h2>Basic Content Types</h2>"
+    text: "<h2 className='text-lg md:text-1xl font-extrabold text-white'> Basic Content Types</h2>"
   - type: paragraph
     text: "This is a standard paragraph. You can now use standard Markdown for **bold**, *italic*, and ***both***."
   - type: list
@@ -28,8 +26,8 @@ content:
   - type: blockquote
     text: "This is a blockquote. It's great for highlighting a key takeaway or a quote that inspired you during development."
 
-  - type: heading
-    text: "<strong><h1>Media Content Types</strong></h1>"
+  - type: html
+    text: "<h2 className='text-lg md:text-1xl font-extrabold text-white'>Media Content Types</h2>"
   - type: paragraph
     text: "Below is an example of a single, standard image. It will align to the left by default."
   - type: image
@@ -49,8 +47,8 @@ content:
       - "https://placehold.co/1600x900/18181b/8b5cf6?text=Gallery+Image+3"
     alt: "A gallery showing various in-game screenshots."
 
-  - type: heading
-    text: "<strong><h1>Advanced Formatting with HTML</strong></h1>"
+  - type: html
+    text: "<h2 className='text-lg md:text-1xl font-extrabold text-white'>Advanced Formatting with HTML</h2>"
   - type: paragraph
     text: "For complex cases, like a colored link, you can use the 'html' type."
   - type: html
