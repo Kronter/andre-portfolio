@@ -95,7 +95,7 @@ const VideoGallery = ({ videos }) => {
     const videoIndex = (page % videos.length + videos.length) % videos.length;
 
     return (
-        <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative flex items-center justify-center bg-zinc-900">
+        <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative bg-zinc-900">
             <AnimatePresence initial={false} custom={direction}>
                 <motion.div
                     key={page}
