@@ -47,10 +47,27 @@ content:
       - "https://placehold.co/1600x900/18181b/8b5cf6?text=Gallery+Image+3"
     alt: "A gallery showing various in-game screenshots."
 
-  - type: html
-    value: "<h3 className='text-lg md:text-1xl font-extrabold text-white'>Advanced Formatting with HTML</h3>"
+  - type: heading
+    text: "Advanced Formatting with HTML"
   - type: paragraph
     text: "For complex cases, like a colored link, you can use the 'html' type."
   - type: html
     value: "<p>My work is heavily influenced by the design talks on <a href='https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA' target='_blank' rel='noopener noreferrer'><strong><em><span class='text-teal-400'><u>the official GDC channel</u></span></em></strong></a>.</p>"
+
+  - type: heading
+    text: "Heading types"
+  - type: heading-1
+    text: "heading-1"
+  - type: heading-2
+    text: "heading-2"
+  - type: heading-3
+    text: "heading-3"
+  - type: heading4
+    text: "heading-4"
+  - type: heading-5
+    text: "heading-5"
+  - type: heading
+    text: "heading"
+  - type: subheading
+    text: "subheading"
 ---
