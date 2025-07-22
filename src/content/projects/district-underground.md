@@ -5,12 +5,14 @@ category: "Professional"
 dates: "2018"
 image: '/district-underground-image.png'
 roles: 
-  - "Game Designer"
-  - "General programmer"
-  - "AI Programmer"
+  - "General Designer"
   - "Encounter Designer"
   - "Combat Designer"
   - "AI Designer"
+  - "Tools Designer"
+  - "Programmer"
+  - "AI Programmer"
+  - "Tools programmer"
 featured: false
 current: false
 university: true
