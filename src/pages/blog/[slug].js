@@ -106,7 +106,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
     const renderContent = (block, index) => {
         switch (block.type) {
             case 'paragraph':
-                return <p key={index} className="mb-6 text-lg" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
+                return <p key={index} className="mb-6 text-lg whitespace-pre-line" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
             case 'heading':
                 return <div key={index} dangerouslySetInnerHTML={{ __html: block.processedText }} />;
             case 'image':
@@ -181,7 +181,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                         </div>
                     </motion.div>
 
-                    <motion.div className="mt-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.5 }}>
+                    <motion.div className="mt-8 prose prose-invert prose-lg max-w-none" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.5 }}>
                         {postData.content?.map((block, index) => renderContent(block, index))}
                     </motion.div>
                 </article>
