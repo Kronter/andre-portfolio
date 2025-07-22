@@ -108,7 +108,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
             case 'paragraph':
                 return <p key={index} className="mb-6 text-lg whitespace-pre-line" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
             case 'heading':
-                return <div key={index} dangerouslySetInnerHTML={{ __html: block.processedText }} />;
+                return <h3 key={index} className="text-3xl font-bold text-white mt-12 mb-4">{block.text}</h3>;
             case 'image':
                 return <div key={index} className="flex justify-center my-8"><img src={asset(block.src)} alt={block.alt} className="rounded-lg shadow-lg max-w-full h-auto" /></div>;
             case 'video':
@@ -272,7 +272,7 @@ export async function getStaticProps({ params }) {
     // **THE FIX IS HERE: Process Markdown for relevant fields in the content array**
     if (data.content && Array.isArray(data.content)) {
         for (const block of data.content) {
-            if ((block.type === 'paragraph' || block.type === 'heading' || block.type === 'blockquote') && block.text) {
+            if ((block.type === 'paragraph' || block.type === 'blockquote') && block.text) {
                 const processed = await remark().use(html).process(block.text);
                 block.processedText = processed.toString();
             }
