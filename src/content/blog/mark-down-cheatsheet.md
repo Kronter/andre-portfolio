@@ -8,8 +8,8 @@ featured: false
 series: "Website Guide"
 part: 2
 content:
-  - type: html
-    text: "<h2 className='text-lg md:text-1xl font-extrabold text-white'> Basic Content Types</h2>"
+  - type: heading
+    text: "Basic Content Types"
   - type: paragraph
     text: "This is a standard paragraph. You can now use standard Markdown for **bold**, *italic*, and ***both***."
   - type: list
@@ -26,8 +26,8 @@ content:
   - type: blockquote
     text: "This is a blockquote. It's great for highlighting a key takeaway or a quote that inspired you during development."
 
-  - type: html
-    text: "<h2 className='text-lg md:text-1xl font-extrabold text-white'>Media Content Types</h2>"
+  - type: heading
+    text: "Media Content Types"
   - type: paragraph
     text: "Below is an example of a single, standard image. It will align to the left by default."
   - type: image
@@ -48,7 +48,7 @@ content:
     alt: "A gallery showing various in-game screenshots."
 
   - type: html
-    text: "<h2 className='text-lg md:text-1xl font-extrabold text-white'>Advanced Formatting with HTML</h2>"
+    value: "<h3 className='text-lg md:text-1xl font-extrabold text-white'>Advanced Formatting with HTML</h3>"
   - type: paragraph
     text: "For complex cases, like a colored link, you can use the 'html' type."
   - type: html
