@@ -15,13 +15,10 @@ featured: false
 current: false
 videoId: "0zd_g4t-lsk"
 ---
-
 ***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
 
 **Engine:** Unreal Engine
-
 **Genre(s):**
-
 **Platform(s):** PC, Ios, Android
 
 **Responsibilities:**

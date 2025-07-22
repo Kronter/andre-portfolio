@@ -11,7 +11,7 @@ import Link from 'next/link';
 // --- Helper function to get the correct asset path for GitHub Pages ---
 const asset = (p) => {
     if (!p || p.startsWith('http')) return p;
-    const repo = 'andre-portfolio'; // IMPORTANT: Change this to your repository name
+    const repo = 'andre-portfolio'; 
     return `/${repo}${p}`;
 };
 
@@ -106,7 +106,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
     const renderContent = (block, index) => {
         switch (block.type) {
             case 'paragraph':
-                return <p key={index} className="mb-6 text-lg whitespace-pre-line" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
+                return <p key={index} className="mb-6 text-lg" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
             case 'heading':
                 return <div key={index} dangerouslySetInnerHTML={{ __html: block.processedText }} />;
             case 'image':

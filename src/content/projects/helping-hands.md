@@ -17,15 +17,12 @@ downloadLinks:
   - platform: "GGJ"
     url: "https://v3.globalgamejam.org/2020/games/helping-hands-9"
 ---
-
 **Global Game Jam 2020** entry
  
 ***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
  
 **Engine:** Unity 
-
 **Genre(s):** Stealth, Comedy
-
 **Platform(s):** PC
  
 **​Responsibilities:**

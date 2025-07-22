@@ -12,17 +12,12 @@ downloadLinks:
   - platform: "itch.io"
     url: "https://kronter.itch.io/on-the-beak"
 ---
-
-**Kiwijam 2020** entry
-
-**Awards:** 1st *(tied)* overall
+**Kiwijam 2020** entry  **Awards:** 1st *(tied)* overall
 
 ***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
 
 **Engine:** Unity 
-
 **Genre(s):** Arcade, Arena Brawler
-
 **Platform(s):** PC
 
 **​Responsibilities:**

@@ -15,13 +15,10 @@ downloadLinks:
   - platform: "App Store"
     url: "https://apps.apple.com/us/app/ravenhill-find-hidden-objects/id1399339172"
 ---
-
 ***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
 
 **Engine:** Proprietary
-
 **Genre(s):**
-
 **Platform(s):** Ios, Android
 
 **​Responsibilities:**
