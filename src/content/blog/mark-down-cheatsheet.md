@@ -62,12 +62,10 @@ content:
     text: "heading-2"
   - type: heading-3
     text: "heading-3"
-  - type: heading4
-    text: "heading-4"
-  - type: heading-5
-    text: "heading-5"
   - type: heading
     text: "heading"
   - type: subheading
     text: "subheading"
+  - type: subheading-2
+    text: "subheading-2"
 ---
