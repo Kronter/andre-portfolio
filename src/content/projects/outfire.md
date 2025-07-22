@@ -17,13 +17,10 @@ downloadLinks:
   - platform: "App Store"
     url: "https://apps.apple.com/us/app/outfire/id1453615632"
 ---
-
 ***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
 
 **Engine:** Unity
-
 **Genre(s):**
-
 **Platform(s):** Ios, Android
 
 **​Responsibilities:**

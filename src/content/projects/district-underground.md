@@ -19,13 +19,10 @@ downloadLinks:
   - platform: "itch.io"
     url: "https://kronter.itch.io/district-underground"
 ---
-
 ***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
 
 **Engine:** Unity
-
 **Genre(s):**
-
 **Platform(s):** PC
 
 **​Responsibilities:**

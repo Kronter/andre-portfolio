@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 // --- Helper function to get the correct asset path for GitHub Pages ---
 const asset = (p) => {
-    const repo = 'andre-portfolio'; // IMPORTANT: Change this to your repository name
+    const repo = 'andre-portfolio'; 
     return `/${repo}${p}`;
 };
 
