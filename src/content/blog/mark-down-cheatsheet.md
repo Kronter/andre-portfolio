@@ -9,11 +9,9 @@ series: "Website Guide"
 part: 2
 content:
   - type: heading
-    text: "### Basic Content Types"
+    text: "<strong><h1>Basic Content Types</h1></strong>"
   - type: html
     text: "<h2>Basic Content Types</h2>"
-  - type: paragraph
-    text: "### Basic Content Types"
   - type: paragraph
     text: "This is a standard paragraph. You can now use standard Markdown for **bold**, *italic*, and ***both***."
   - type: list
@@ -31,7 +29,7 @@ content:
     text: "This is a blockquote. It's great for highlighting a key takeaway or a quote that inspired you during development."
 
   - type: heading
-    text: "### Media Content Types"
+    text: "<strong><h1>Media Content Types</strong></h1>"
   - type: paragraph
     text: "Below is an example of a single, standard image. It will align to the left by default."
   - type: image
@@ -52,7 +50,7 @@ content:
     alt: "A gallery showing various in-game screenshots."
 
   - type: heading
-    text: "### Advanced Formatting with HTML"
+    text: "<strong><h1>Advanced Formatting with HTML</strong></h1>"
   - type: paragraph
     text: "For complex cases, like a colored link, you can use the 'html' type."
   - type: html
