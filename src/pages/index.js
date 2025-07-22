@@ -74,6 +74,55 @@ const ScreenshotGallery = ({ screenshots }) => {
     );
 };
 
+// --- NEW Video Gallery Component ---
+const VideoGallery = ({ videos }) => {
+    const [[page, direction], setPage] = useState([0, 0]);
+    const timeoutRef = useRef(null);
+    const paginate = useCallback((newDirection) => {
+        setPage(p => [p[0] + newDirection, newDirection]);
+    }, []);
+    
+    useEffect(() => {
+        const resetTimeout = () => timeoutRef.current && clearTimeout(timeoutRef.current);
+        resetTimeout();
+        if (videos && videos.length > 1) {
+            timeoutRef.current = setTimeout(() => paginate(1), 7000);
+        }
+        return () => resetTimeout();
+    }, [page, videos, paginate]);
+
+    if (!videos || videos.length === 0) return null;
+    const videoIndex = (page % videos.length + videos.length) % videos.length;
+
+    return (
+        <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative flex items-center justify-center bg-zinc-900">
+            <AnimatePresence initial={false} custom={direction}>
+                <motion.div
+                    key={page}
+                    custom={direction}
+                    variants={sliderVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } }}
+                    className="absolute w-full h-full"
+                >
+                    <iframe 
+                        src={`https://www.youtube.com/embed/${videos[videoIndex].videoId}`} 
+                        frameBorder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowFullScreen
+                        className="w-full h-full"
+                        title={`Embedded YouTube video ${videos[videoIndex].videoId}`}
+                    ></iframe>
+                </motion.div>
+            </AnimatePresence>
+            <button className="absolute top-1/2 -translate-y-1/2 left-2 z-10 p-2 bg-black/40 hover:bg-black/60 rounded-full transition-colors text-white" onClick={() => paginate(-1)}><ChevronLeft size={20} /></button>
+            <button className="absolute top-1/2 -translate-y-1/2 right-2 z-10 p-2 bg-black/40 hover:bg-black/60 rounded-full transition-colors text-white" onClick={() => paginate(1)}><ChevronRight size={20} /></button>
+        </div>
+    );
+};
+
 // --- NEW Timeline Item Component ---
 const TimelineItem = ({ job, index, projects, handleProjectClick }) => {
     const ref = useRef(null);
@@ -425,7 +474,9 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                 
                                 <div className="mb-6 mt-6">
                                     <div className="max-w-4xl mx-auto"> {/* This new wrapper controls the size */}
-                                        {selectedProject.videoId ? (
+                                        {selectedProject.videos && selectedProject.videos.length > 0 ? (
+                                            <VideoGallery videos={selectedProject.videos} />
+                                        ) : selectedProject.videoId ? (
                                             <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
                                                 <iframe src={`https://www.youtube.com/embed/${selectedProject.videoId}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full"></iframe>
                                             </div>

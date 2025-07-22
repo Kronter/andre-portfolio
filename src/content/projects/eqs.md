@@ -5,7 +5,7 @@ category: "Personal"
 dates: "2018 - 2019"
 image: '/ravenhill-image.png'
 roles: 
-  - "Tool Designer"
+  - "Tools Designer"
   - "Programmer"
 videoId: "oq9raTB9cHM"
 university: true
