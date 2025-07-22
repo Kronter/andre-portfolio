@@ -64,41 +64,19 @@ const ScreenshotGallery = ({ screenshots }) => {
     );
 };
 
-// --- NEW Video Gallery Component ---
+// --- NEW Video Gallery Component (No Auto-Scroll) ---
 const VideoGallery = ({ videos }) => {
     const [[page, direction], setPage] = useState([0, 0]);
-    const timeoutRef = useRef(null);
 
-    const paginate = useCallback((newDirection) => {
-        setPage(p => [p[0] + newDirection, newDirection]);
-    }, []);
-
-    const startTimeout = useCallback(() => {
-        if (videos && videos.length > 1) {
-            timeoutRef.current = setTimeout(() => paginate(1), 7000);
-        }
-    }, [videos, paginate]);
-
-    const stopTimeout = () => {
-        if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-        }
+    const paginate = (newDirection) => {
+        setPage([page + newDirection, newDirection]);
     };
-
-    useEffect(() => {
-        startTimeout();
-        return () => stopTimeout();
-    }, [page, startTimeout]);
 
     if (!videos || videos.length === 0) return null;
     const videoIndex = (page % videos.length + videos.length) % videos.length;
 
     return (
-        <div 
-            className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative bg-zinc-900"
-            onMouseEnter={stopTimeout}
-            onMouseLeave={startTimeout}
-        >
+        <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative bg-zinc-900">
             <AnimatePresence initial={false} custom={direction}>
                 <motion.div
                     key={page}
