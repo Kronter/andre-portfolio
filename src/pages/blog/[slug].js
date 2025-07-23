@@ -199,9 +199,15 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
             <nav className="bg-zinc-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg shadow-violet-500/10">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-20">
-                        <Link href={"/"} className="text-2xl font-bold text-white tracking-wider">
-                            {postData.author || "Andre Gottgtroy"} <span className="text-violet-500">.</span>
-                        </Link>
+                        <a href={"/"} className="text-2xl font-bold text-white tracking-wider flex items-center">
+                            <span>{postData.author  || "Game Designer"}</span>
+                            <div className="grid grid-cols-3 grid-rows-3 gap-0.5 w-5 h-5 ml-3">
+                                <span className="w-1.5 h-1.5 bg-pink-500 rounded-full col-start-2 self-center justify-self-center"></span>
+                                <span className="w-1.5 h-1.5 bg-sky-500 rounded-full row-start-2 self-center justify-self-center"></span>
+                                <span className="w-1.5 h-1.5 bg-teal-400 rounded-full row-start-2 col-start-3 self-center justify-self-center"></span>
+                                <span className="w-1.5 h-1.5 bg-violet-500 rounded-full row-start-3 col-start-2 self-center justify-self-center"></span>
+                            </div>
+                        </a>
                         <Link href={"/"} className="text-gray-300 hover:text-white transition-colors">
                             &larr; Back to Portfolio
                         </Link>
