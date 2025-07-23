@@ -224,13 +224,14 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
     const Section = ({ id, title, children, className = "" }) => (
         <section id={id} className={`py-16 md:py-24 px-4 sm:px-6 lg:px-8 ${className}`}>
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-100 tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-100 tracking-tight flex items-center justify-center">
                     <div className="grid grid-cols-3 grid-rows-3 gap-1 w-8 h-8 mr-4">
                         <span className="w-2.5 h-2.5 bg-pink-500 rounded-full col-start-2 self-center justify-self-center"></span>
                         <span className="w-2.5 h-2.5 bg-sky-500 rounded-full row-start-2 self-center justify-self-center"></span>
                         <span className="w-2.5 h-2.5 bg-teal-400 rounded-full row-start-2 col-start-3 self-center justify-self-center"></span>
                         <span className="w-2.5 h-2.5 bg-violet-500 rounded-full row-start-3 col-start-2 self-center justify-self-center"></span>
-                    </div>{title}
+                    </div>
+                    {title}
                 </h2>
                 {children}
             </div>
