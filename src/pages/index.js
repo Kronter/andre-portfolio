@@ -639,17 +639,17 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                 <div key={post.id} className="bg-zinc-800 p-8 rounded-lg border border-zinc-700 flex flex-col">
                                     <div className="flex items-center justify-between mb-2">
                                         <p className="text-sm text-gray-400">{postDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                                        <div className="flex items-center gap-2">
-                                            {post.series && (
-                                                <span className="bg-zinc-700 text-violet-300 text-xs font-semibold px-2.5 py-1 rounded-full">{post.series}</span>
-                                            )}
-                                            {isNew && (
-                                                <span className="bg-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full">New</span>
-                                            )}
-                                        </div>
+                                        {isNew && (
+                                            <span className="bg-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full">New</span>
+                                        )}
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white mb-4 flex-grow">{post.title}</h3>
-                                    <div className="text-gray-400 mb-6 line-clamp-3" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+                                    <h3 className="text-2xl font-bold text-white mb-2">{post.title}</h3>
+                                    {post.series && (
+                                        <p className="text-sm text-violet-400 font-semibold mb-4">
+                                            Part of the {post.series} series
+                                        </p>
+                                    )}
+                                    <div className="text-gray-400 mb-6 line-clamp-3 flex-grow" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
                                     <div className="mt-auto pt-4 border-t border-zinc-700 flex justify-end items-center">
                                         <Link href={`/blog/${post.slug}`} className="font-semibold text-violet-500 hover:text-violet-400">
                                             Read More &rarr;
