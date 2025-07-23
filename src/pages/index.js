@@ -225,7 +225,12 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
         <section id={id} className={`py-16 md:py-24 px-4 sm:px-6 lg:px-8 ${className}`}>
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-100 tracking-tight">
-                    <span className="text-violet-500">*</span>{title}
+                    <div className="grid grid-cols-3 grid-rows-3 gap-1 w-8 h-8 mr-4">
+                        <span className="w-2.5 h-2.5 bg-pink-500 rounded-full col-start-2 self-center justify-self-center"></span>
+                        <span className="w-2.5 h-2.5 bg-sky-500 rounded-full row-start-2 self-center justify-self-center"></span>
+                        <span className="w-2.5 h-2.5 bg-teal-400 rounded-full row-start-2 col-start-3 self-center justify-self-center"></span>
+                        <span className="w-2.5 h-2.5 bg-violet-500 rounded-full row-start-3 col-start-2 self-center justify-self-center"></span>
+                    </div>{title}
                 </h2>
                 {children}
             </div>
@@ -299,7 +304,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <div className="absolute bg-blue-500/10 rounded-full w-96 h-96 -bottom-20 -right-20 filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
                     <div className="absolute bg-pink-500/10 rounded-full w-72 h-72 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
                 </div>
-                <div className="text-center z-20 px-4">
+                <div className="text-center z-20 px-4 mt-16">
                     <h3 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-tighter">
                         {portfolioData.title || "Game Designer & Developer"}
                     </h3>
