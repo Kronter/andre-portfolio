@@ -19,7 +19,7 @@ The behaviour tree originally was code only, so I felt the need to crerate a too
 **Engine:** Unity tool
 
 **Main Features:**
-  ◦ Behaviour tree contructor and visualizer
-  ◦ Real time flow viewer and debugger
-  ◦ Scriptable object base for tree, actions and nodes
-  ◦ Easily transferable between projects
+> ◦ Behaviour tree contructor and visualizer
+> ◦ Real time flow viewer and debugger
+> ◦ Scriptable object base for tree, actions and nodes
+> ◦ Easily transferable between projects
