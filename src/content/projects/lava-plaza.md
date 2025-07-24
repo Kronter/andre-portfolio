@@ -22,8 +22,8 @@ downloadLinks:
 
 **​Responsibilities:**
 
-***General Designer:*** 
-I was in charge of the whole game design for this game.
+  ◦***General Designer:*** 
+   I was in charge of the whole game design for this game.
 
-***Programmer:*** 
-I was part of a three-person programming team, all programming was shared between team members with no particular focus areas.
+  ◦***Programmer:*** 
+   I was part of a three-person programming team, all programming was shared between team members with no particular focus areas.
