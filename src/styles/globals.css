@@ -3,6 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom styles for links inside Markdown content */
+.prose a {
+  color: #8b5cf6; /* This is a nice, bright blue (sky-400) */
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
+}
+
+.prose a:hover {
+  color: #a78bfa; /* A lighter blue for the hover effect */
+}
+
 /**:root {
   --background: #ffffff;
   --foreground: #171717;
