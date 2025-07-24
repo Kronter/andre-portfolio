@@ -8,6 +8,7 @@ roles:
   - "Monetization Designer"
   - "Content Designer"
   - "Social Designer"
+  - "Gameplay Designer"
 featured: false
 current: false
 videoId: "rRox-ase8Dg"
@@ -17,14 +18,25 @@ downloadLinks:
   - platform: "App Store"
     url: "https://apps.apple.com/us/app/outfire/id1453615632"
 ---
-***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
+***Outfire*** is a competitive fast paced top down hero shooter with MOBA like elements and various gamemodes including Battle Royal, and team based modes.
 
 **Engine:** Unity
-**Genre(s):**
+**Genre(s):** Hero Shooter, Action, Battle Royal, Online Multiplayer
 **Platform(s):** Ios, Android
 
 **​Responsibilities:**
-My primary role was to overhaul the user interface to improve player onboarding and readability during intense combat. I conducted user testing sessions to identify pain points and iterated on HUD layouts in Figma.
+*While on the project, I was assigned to various teams to fill in gaps and expedite features where needed.*
 
-The final design increased player retention by 15% in the first week post-launch.
+◦ ***Monetization Designer:*** 
+My main focus was on reworking and organising the in-game shop, its contents and in-app offers to allow a better experience for players and grow the game's conversion rate.
+During this time I also worked closely with the content team and as a content designer, for the content needed in the shop and offers, such as skins, stickers, banners, etc.
+
+◦ ***Content Designer:*** 
+I worked mainly on game polish, quest/tasks. This included Battle pass quests/tasks, career tasks, event tasks, general polish of visual effects from hero abilities, making sure they were satisfying and readable, and level props.
+
+◦ ***Gameplay Designer:*** 
+The main focus during this time was on the player experience, during matches, and more focused on polishing and extending features that were already in place, making sure they were easily understood and read by players, such as team communications during matches, the downed/pick up feature of team mates, making sure the death screen clearly communicated to players all the information they needed.
+
+◦ ***Social Designer:*** 
+This was the main bulk of my work on Outfire, the game had removed most of it's social features, and along with one other game designer we were tasked with introducing them back, this included in a total revamp of the player profile and profile customization, a rework of the adding friends system, a friend gifting system, match communication systems, in match ping systems, and in match social animation and sticker systems.  
 
