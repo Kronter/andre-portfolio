@@ -672,7 +672,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                 </Section>
                 )}
 
-                <Section id="contact" title="Get In Touch" className="bg-zinc-800/50">
+                <Section id="contact" title="Get In Touch" className={blogPosts && blogPosts.length > 0 ? "bg-zinc-800/50" : "bg-zinc-900"}>
                     <div className="text-center max-w-3xl mx-auto">
                         <p className="text-xl text-gray-400 mb-8">
                             I&apos;m always open to new opportunities and collaborations. 
