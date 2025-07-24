@@ -312,10 +312,10 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <div className="absolute bg-pink-500/10 rounded-full w-72 h-72 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
                 </div>
                 <div className="text-center z-20 px-4 mt-16">
-                    <h3 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-tighter">
+                    <h3 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white mb-8 tracking-tighter">
                         {portfolioData.title || "Game Designer & Developer"}
                     </h3>
-                    <p className="text-lg md:text-1xl max-w-2xl mx-auto text-gray-300 mb-12 whitespace-pre-line">
+                    <p className="text-lg md:text-1xl max-w-2xl mx-auto text-gray-300 mb-8 whitespace-pre-line">
                         {portfolioData.heroSubtitle}
                     </p>
                     <p className="text-lg md:text-1xl max-w-2xl mx-auto text-gray-300 mb-8 justify-left whitespace-pre-line">

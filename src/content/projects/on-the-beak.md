@@ -1,5 +1,5 @@
 ---
-id: 6
+id: 7
 title: "On The Beak"
 category: "Game Jam"
 dates: "2020"
@@ -12,15 +12,24 @@ downloadLinks:
   - platform: "itch.io"
     url: "https://kronter.itch.io/on-the-beak"
 ---
-**Kiwijam 2020** entry  **Awards:** 1st *(tied)* overall
+**Kiwijam 2020** entry  
 
-***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
+***Helping Hands*** is a arcade, arena brawler where players are wrestling penguins, fighting to stay on top of an iceberg to eat the most amount of fish. 
+
+Developed during the **Kiwijam 2020** with the theme “on the brink”.
 
 **Engine:** Unity 
-**Genre(s):** Arcade, Arena Brawler
+**Genre(s):** Arcade, Arena Brawler, Comedy
 **Platform(s):** PC
+**Awards:** 1st *(tied)* overall
 
 **​Responsibilities:**
-My primary role was to overhaul the user interface to improve player onboarding and readability during intense combat. I conducted user testing sessions to identify pain points and iterated on HUD layouts in Figma.
 
-The final design increased player retention by 15% in the first week post-launch.
+***General Designer:*** 
+I was in charge of the whole game design for this game.
+
+***Gameplay Programmer:*** 
+I was part of a three-person programming team, my main focus was on the general gameplay.
+
+***Shader Programmer:*** 
+I was in charge of doing the shaders for the iceberg and water. 
