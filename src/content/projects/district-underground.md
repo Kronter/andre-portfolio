@@ -21,13 +21,21 @@ downloadLinks:
   - platform: "itch.io"
     url: "https://kronter.itch.io/district-underground"
 ---
-***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
+***District Underground*** is a third person hack and slash video game focusing primarily on fast-paced combat and maneuvering throughout levels by utilizing several mechanics such as dashing, jumping, and grappling. Players are encouraged to finish levels as fast as possible while also gaining the highest amount of points by killing the robots while chaining combos.
+
 
 **Engine:** Unity
-**Genre(s):**
+**Genre(s):** Hack'n Slash, Speed Runner 
 **Platform(s):** PC
 
 **​Responsibilities:**
-My primary role was to overhaul the user interface to improve player onboarding and readability during intense combat. I conducted user testing sessions to identify pain points and iterated on HUD layouts in Figma.
+*This project was made as part of my university studies, and was our final capstone project.*
 
-The final design increased player retention by 15% in the first week post-launch.
+I had two primary roles in this project:
+
+  ◦ ***Game Designer:***
+    As a game designer I done the overall design for this project, with level design beign shared between all memebers. 
+    I had a strong focus on enemy design this meant that my main design work was on ***AI***, ***Combat*** and ***Encounters Design***. 
+
+  ◦ ***Programmer:***
+    As a programmer my main focus was on ***AI*** and enemy programming, this included programming and using systems such as ***Behaviour trees***, ***Environment Query System***, a simple AI director *(based on the left 4 dead and doom systems)*, various general ai systems and ***tools*** for these systems.
