@@ -311,17 +311,17 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <div className="absolute bg-blue-500/10 rounded-full w-96 h-96 -bottom-20 -right-20 filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
                     <div className="absolute bg-pink-500/10 rounded-full w-72 h-72 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
                 </div>
-                <div className="text-center z-20 px-4 mt-16">
-                    <h3 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white mb-8 tracking-tighter">
+                <div className="z-20 px-4 mt-16 w-full max-w-3xl mx-auto flex flex-col gap-8">
+                    <h3 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tighter text-center">
                         {portfolioData.title || "Game Designer & Developer"}
                     </h3>
-                    <p className="text-lg md:text-1xl max-w-2xl mx-auto text-gray-300 mb-8 whitespace-pre-line">
+                    <p className="text-lg md:text-xl text-gray-300 whitespace-pre-line text-left">
                         {portfolioData.heroSubtitle}
                     </p>
-                    <p className="text-lg md:text-1xl max-w-2xl mx-auto text-gray-300 mb-8 justify-left whitespace-pre-line">
+                    {/*<p className="text-lg md:text-xl text-gray-300 whitespace-pre-line text-right">
                         Thanks for stopping by.
-                    </p>
-                    <a href="#projects" className="group inline-flex items-center justify-center px-8 py-4 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30">
+                    </p>*/}
+                    <a href="#projects" className="group self-center inline-flex items-center justify-center px-8 py-4 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-600/30">
                         View My Work
                         <ChevronsRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                     </a>
