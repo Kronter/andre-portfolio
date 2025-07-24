@@ -25,4 +25,4 @@ downloadLinks:
 *This is my current project, and I have recently been assigned to it*
 
 ◦ ***General Designer:*** 
-As I have been fairly recently assigned to this project, I have been kept as a general designer, jumping in where needed, my current focus is on refining existing systems from various areas, social, meta, gameplay, and polish adding extra juice to the game.
+I have been kept as a general designer, jumping in where needed, my current focus is on refining existing systems from various areas, social, meta, gameplay, and polish adding extra juice to the game.
