@@ -1,5 +1,5 @@
 ---
-id: 5
+id: 6
 title: "Helping Hands"
 category: "Game Jam"
 dates: "2020"
@@ -17,15 +17,21 @@ downloadLinks:
   - platform: "GGJ"
     url: "https://v3.globalgamejam.org/2020/games/helping-hands-9"
 ---
-**Global Game Jam 2020** entry
- 
-***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
+***Helping Hands*** is a stealth game where you play as a misunderstood racoon on a mission to fix your town. 
+
+Developed during the **Global Game Jam 2020** with the theme “Repair”.
  
 **Engine:** Unity 
 **Genre(s):** Stealth, Comedy
 **Platform(s):** PC
  
 **​Responsibilities:**
-My primary role was to overhaul the user interface to improve player onboarding and readability during intense combat. I conducted user testing sessions to identify pain points and iterated on HUD layouts in Figma.
 
-The final design increased player retention by 15% in the first week post-launch.
+***General Designer:*** 
+I was in charge of the whole game design for this game.
+
+***Gameplay Programmer:*** 
+I was part of a three-person programming team, my main focus of gameplay was the stealth mechanics.
+
+***Shader Programmer:*** 
+As our artists wanted a particular style, I was in charge of making the cel shading, snow effects (through shaders). 

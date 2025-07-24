@@ -1,9 +1,9 @@
 ---
-id: 2
+id: 3
 title: "Behavior Tree Tool"
 category: "Personal"
 dates: "2018 - 2020"
-image: '/ravenhill-image.png'
+image: '/behavior-tree-image.png'
 roles: 
   - "Tools Designer"
   - "Programmer"
@@ -12,6 +12,13 @@ videos:
   - videoId: "ntX2sU9pToA"
 university: true
 ---
-***Outfire*** is a top down shooter with MOBA elements with various gamemodes including Battle Royal and team based modes.
+This tool is made to help visualize and create a better work flow for the Behavior tree I created for the ***District Underground*** project.
+The behaviour tree originally was code only, so I felt the need to crerate a tool, to better visualize and debug its structure.
 
 **Engine:** Unity tool
+
+**Main Features:**
+- Behaviour tree contructor and visualizer
+- Real time flow viewer and debugger
+- Scriptable object base for tree, actions and nodes
+- Easily transferable between projects
