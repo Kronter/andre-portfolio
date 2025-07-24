@@ -21,6 +21,7 @@ downloadLinks:
 **Platform(s):** Android
 
 **​Responsibilities:**
+*This project was made as part of my university studies*
 
   ◦***General Designer:*** 
    I was in charge of the whole game design for this game.

@@ -313,10 +313,16 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
 // --- Next.js Data Fetching Functions ---
 export async function getStaticPaths() {
     const blogDirectory = path.join(process.cwd(), 'src', 'content', 'blog');
-    const filenames = fs.readdirSync(blogDirectory).filter(filename => filename.endsWith('.md'));
-    const paths = filenames.map(filename => ({
-        params: { slug: filename.replace(/\.md$/, '') }
-    }));
+    let paths = [];
+
+    // Check if the directory exists before trying to read it
+    if (fs.existsSync(blogDirectory)) {
+        const filenames = fs.readdirSync(blogDirectory).filter(filename => filename.endsWith('.md'));
+        paths = filenames.map(filename => ({
+            params: { slug: filename.replace(/\.md$/, '') }
+        }));
+    }
+
     return { paths, fallback: false };
 }
 
