@@ -25,11 +25,11 @@ Developed during the **Kiwijam 2020** with the theme “on the brink”.
 
 **​Responsibilities:**
 
-> ◦ ***General Designer:*** 
->  I was in charge of the whole game design for this game.
+◦ ***General Designer:*** 
+| I was in charge of the whole game design for this game.
 
-> ◦ ***Gameplay Programmer:*** 
->  I was part of a three-person programming team, my main focus was on the general gameplay.
+◦ ***Gameplay Programmer:*** 
+| I was part of a three-person programming team, my main focus was on the general gameplay.
 
-> ◦ ***Shader Programmer:***
->  I was in charge of doing the shaders for the iceberg and water. 
+◦ ***Shader Programmer:***
+| I was in charge of doing the shaders for the iceberg and water. 
