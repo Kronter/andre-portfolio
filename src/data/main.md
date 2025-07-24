@@ -2,11 +2,26 @@
 name: "Andre Gottgtroy"
 title: "Game Designer & Developer"
 heroSubtitle: |
-  Hello, My name is André Gottgtroy, I am a passionate game designer with a love for crafting worlds and experiences, one mechanic at a time. I am currently working as a general game designer at Mytona.
+  Hello, my name is André Gottgtroy. I am a passionate game designer with a love for creating worlds and experiences, one mechanic at a time.
 
-  Below, you can find my professional and hobby game development work, as well as my game design blog.
+  I am currently working as a general game designer.
 
-about: "I'm a passionate game designer with a love for creating immersive and memorable experiences. My design philosophy is centered around 'game feel' and player agency. I thrive on solving complex design challenges and collaborating with creative teams to bring virtual worlds to life. From initial concept to final polish, I'm dedicated to crafting games that resonate with players."
+  Below, you can find my professional and hobby game development work, as well as my game design blog. 
+
+about:  |
+  I was born in Brazil, but grew up in New Zealand. Currently living in Auckland, NZ.
+
+  I have always had a deep fascination with history *(especially ancient history)*, myths, legends, novels, and moving cultures early in my life only heightened it. I found that the stories that come from these always help to give a deeper understanding of the people telling and listening to them. My love of games originated from this, as I initially discovered games through the Age of Empires series, the Baldur's Gate series, and Harvest Moon, where their storytelling of history and fantasy sparked a strong passion in me.
+
+  All maners of games have shaped my life, from sports I love and still play teaching me creativity, team work, determination and compromise, to board games and Role playing games teaching me essential social skills, and video games helping me learn english., because of this I foster a deep passion for games and sharing them with others.
+
+  My friends and family will be the first to say I can always find a way to bring any one into becoming a gamer *(weather it is a board game, Role playing game, a sport or a video game)*, some might say my vast collection of physical board games is even a little too much *(they lie, there can never be enough)*.
+
+  After maturing and learning more about how games are made, I earned a Bachelor's degree in Software Engineering *(specialising in game development)*, and now, having a little kid of my own, my drive for creating immersive, incredible experiences that will hopefully inspire others, just as I have been, has only grown stronger. If not to inspire, but to allow any and all to share in the wonderful experience that it is to play and enjoy a game truly. 
+
+  After all, everyone should have even a little spark of fun and joy in their lives.
+
+  
 skills:
   - name: "Game Design"
     icon: "Gamepad2"
