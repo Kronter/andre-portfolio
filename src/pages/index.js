@@ -409,7 +409,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                                 <div key={project.id} onClick={() => handleProjectClick(project)} className="group bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 hover:border-violet-500/50 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer shadow-lg hover:shadow-violet-500/10 flex flex-col">
                                                     <div className="relative">
                                                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                                                        <img src={asset(project.image)} alt={project.title} className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" />
+                                                        <img src={project.image} alt={project.title} className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" />
                                                         <div className="absolute top-4 right-4 flex items-center gap-2">
                                                             {project.university && (
                                                                 <span className="bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-full">University</span>
@@ -481,7 +481,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                             <ScreenshotGallery screenshots={selectedProject.screenshots} />
                                         ) : (
                                             // eslint-disable-next-line @next/next/no-img-element
-                                            <img src={asset(selectedProject.image)} alt={selectedProject.title} className="w-full h-auto object-cover rounded-lg shadow-lg" />
+                                            <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-auto object-cover rounded-lg shadow-lg" />
                                         )}
                                     </div>
                                     <div className="flex justify-between items-center my-4">
