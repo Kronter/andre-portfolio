@@ -8,13 +8,6 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import Link from 'next/link';
 
-// --- Helper function to get the correct asset path for GitHub Pages ---
-const asset = (p) => {
-    if (!p || p.startsWith('http')) return p;
-    const repo = 'andre-portfolio'; 
-    return `/${repo}${p}`;
-};
-
 // --- Animation Variants for Framer Motion ---
 const sliderVariants = {
   enter: (direction) => ({ x: direction > 0 ? 500 : -500, opacity: 0 }),
@@ -47,7 +40,7 @@ const ScreenshotGallery = ({ screenshots }) => {
             <AnimatePresence initial={false} custom={direction}>
                 <motion.img
                     key={page}
-                    src={asset(screenshots[imageIndex])}
+                    src={screenshots[imageIndex]}
                     alt={`Screenshot ${imageIndex + 1}`}
                     custom={direction}
                     variants={sliderVariants}
@@ -160,7 +153,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
             case 'subheading-2':
                 return <h5 key={index} className="text-1xl font-bold text-white mt-12 mb-4">{block.text}</h5>;
             case 'image':
-                return <div key={index} className="flex justify-center my-8"><img src={asset(block.src)} alt={block.alt} className="rounded-lg shadow-lg max-w-full h-auto" /></div>;
+                return <div key={index} className="flex justify-center my-8"><img src={block.src} alt={block.alt} className="rounded-lg shadow-lg max-w-full h-auto" /></div>;
             case 'video':
                 return (
                     <div key={index} className="flex justify-center my-8">
@@ -293,7 +286,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                         )}
                     </AnimatePresence>
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
-                        <a href={asset("/Andre_Gottgtroy_Resume.pdf")} download className="inline-flex items-center px-8 py-3 border-2 border-violet-500 text-violet-400 font-bold rounded-lg hover:bg-violet-500 hover:text-white transition-all duration-300 text-lg">
+                        <a href={"/Andre_Gottgtroy_Resume.pdf"} download className="inline-flex items-center px-8 py-3 border-2 border-violet-500 text-violet-400 font-bold rounded-lg hover:bg-violet-500 hover:text-white transition-all duration-300 text-lg">
                             <FileText className="w-5 h-5 mr-2" />
                             Download Resume
                         </a>
