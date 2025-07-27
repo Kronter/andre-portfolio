@@ -1,16 +1,11 @@
-/** @type {import('next').NextConfig} */
-const repo = 'andre-portfolio'; // IMPORTANT: Make sure this matches your repo name
-const assetPrefix = `/${repo}/`;
-const basePath = `/${repo}`;
+/** @type {import('next').NextConfig} */ 
 
-const nextConfig = {
+const nextConfig = { 
   output: 'export',
-  assetPrefix: assetPrefix,
-  basePath: basePath,
-  images: {
-    unoptimized: true,
-  },
-  reactStrictMode: true,
-};
+  // basePath and assetPrefix are removed for custom domain 
+  images:
+    { unoptimized: true, 
+    }, 
+}; 
 
 export default nextConfig;
