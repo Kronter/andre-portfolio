@@ -8,12 +8,6 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import Link from 'next/link';
 
-// --- Helper function to get the correct asset path for GitHub Pages ---
-const asset = (p) => {
-    const repo = 'andre-portfolio'; 
-    return `/${repo}${p}`;
-};
-
 // --- Animation Variants for Framer Motion ---
 const sliderVariants = {
   enter: (direction) => ({ x: direction > 0 ? 1000 : -1000, opacity: 0 }),
@@ -57,7 +51,7 @@ const ScreenshotGallery = ({ screenshots }) => {
             <AnimatePresence initial={false} custom={direction}>
                 <motion.img
                     key={page}
-                    src={asset(screenshots[imageIndex])}
+                    src={screenshots[imageIndex]}
                     alt={`Screenshot ${imageIndex + 1}`}
                     custom={direction}
                     variants={sliderVariants}
@@ -270,7 +264,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                                     <a key={link} href={`#${link}`} className="capitalize text-gray-300 hover:bg-zinc-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">{link}</a>
                                 ))}
                             </div>
-                            <a href={asset("/Andre_Gottgtroy_Resume.pdf")} download className="ml-6 inline-flex items-center px-4 py-2 border border-violet-500 text-sm font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
+                            <a href={"/Andre_Gottgtroy_Resume.pdf"} download className="ml-6 inline-flex items-center px-4 py-2 border border-violet-500 text-sm font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
                                 <FileText className="w-4 h-4 mr-2" />
                                 Resume
                             </a>
@@ -289,7 +283,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                             {navLinks.map(link => (
                                 <a key={link} href={`#${link}`} onClick={() => setIsOpen(false)} className="capitalize text-gray-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-300">{link}</a>
                             ))}
-                            <a href={asset("/Andre_Gottgtroy_Resume.pdf")} download className="mt-2 w-full flex items-center justify-center px-4 py-2 border border-violet-500 text-base font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
+                            <a href={"/Andre_Gottgtroy_Resume.pdf"} download className="mt-2 w-full flex items-center justify-center px-4 py-2 border border-violet-500 text-base font-medium rounded-md text-violet-500 bg-transparent hover:bg-violet-500 hover:text-white transition-colors">
                                 <FileText className="w-5 h-5 mr-2" />
                                 Resume
                             </a>
@@ -559,7 +553,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <div className="grid md:grid-cols-3 gap-6 items-center">
                         <div className="md:col-span-1 flex justify-center">
                             {/* eslint-disable-next-line @next/next/no-img-element 
-                            <img src={asset('/profile-photo.png')} alt="Andre Gottgtroy" className="rounded-full w-48 h-48 md:w-60 md:h-60 object-cover border-4 border-violet-500/50 shadow-2xl" />
+                            <img src={'/profile-photo.png'} alt="Andre Gottgtroy" className="rounded-full w-48 h-48 md:w-60 md:h-60 object-cover border-4 border-violet-500/50 shadow-2xl" />
                         </div>
                         <div className="md:col-span-2">
                             <p className="text-lg text-gray-400 mb-6">{portfolioData.about}</p>
@@ -615,7 +609,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                         <div className="grid md:grid-cols-3 gap-6 items-center">
                             <div className="md:col-span-1 flex justify-center self-start">
                                 {/* eslint-disable-next-line @next/next/no-img-element*/} 
-                                <img src={asset('/profile-photo.png')} alt="Andre Gottgtroy" className="rounded-full w-48 h-48 md:w-60 md:h-60 object-cover border-4 border-violet-500/50 shadow-2xl" />
+                                <img src={'/profile-photo.png'} alt="Andre Gottgtroy" className="rounded-full w-48 h-48 md:w-60 md:h-60 object-cover border-4 border-violet-500/50 shadow-2xl" />
                             </div>
                             <div className="md:col-span-2">
                                 <p className="text-lg text-gray-400 mb-6 whitespace-pre-line">{portfolioData.about}</p>
@@ -699,7 +693,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                             </div>
                         </div>
                          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
-                                <a href={asset("/Andre_Gottgtroy_Resume.pdf")} download className="inline-flex items-center px-8 py-3 border-2 border-violet-500 text-violet-400 font-bold rounded-lg hover:bg-violet-500 hover:text-white transition-all duration-300 text-lg">
+                                <a href={"/Andre_Gottgtroy_Resume.pdf"} download className="inline-flex items-center px-8 py-3 border-2 border-violet-500 text-violet-400 font-bold rounded-lg hover:bg-violet-500 hover:text-white transition-all duration-300 text-lg">
                                     <FileText className="w-5 h-5 mr-2" />
                                     Download Resume
                               </a>
