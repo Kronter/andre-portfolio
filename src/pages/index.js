@@ -7,6 +7,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import Link from 'next/link';
+import Head from 'next/head';
 
 // --- Animation Variants for Framer Motion ---
 const sliderVariants = {
@@ -296,6 +297,16 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
 
     return (
         <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed">
+            <Head>
+                <title>Andre Gottgtroy - Game Designer Portfolio</title>
+                <meta name="description" content="The professional portfolio for Andre Gottgtroy, a passionate game designer with a love for crafting worlds and experiences." />
+                <link rel="icon" href="/favicon.png" />
+                <meta property="og:title" content="Andre Gottgtroy - Game Designer Portfolio" />
+                <meta property="og:description" content="A passionate game designer with a love for crafting worlds and experiences." />
+                <meta property="og:image" content="/social-preview.png" />
+                <meta property="og:url" content="https://andregottgtroy.is-a.dev" />
+                <meta name="twitter:card" content="summary_large_image" />
+            </Head>
             <Nav />
 
             <header id="home" className="relative flex items-center justify-center overflow-hidden py-32 md:h-[70vh] md:py-0">
