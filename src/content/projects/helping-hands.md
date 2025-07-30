@@ -28,10 +28,10 @@ Developed during the **Global Game Jam 2020** with the theme “Repair”.
 **​Responsibilities:**
 
 ◦ ***General Designer:*** 
-I was in charge of the whole game design for this game.
+[INDENT]I was in charge of the whole game design for this game.[/INDENT]
 
 ◦ ***Gameplay Programmer:*** 
-I was part of a three-person programming team, my main focus of gameplay was the stealth mechanics.
+[INDENT]I was part of a three-person programming team, my main focus of gameplay was the stealth mechanics.[/INDENT]
 
 ◦ ***Shader Programmer:*** 
-As our artists wanted a particular style, I was in charge of making the cel shading, snow effects (through shaders). 
+[INDENT]As our artists wanted a particular style, I was in charge of making the cel shading, snow effects (through shaders).[/INDENT] 

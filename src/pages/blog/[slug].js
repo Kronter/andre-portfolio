@@ -7,6 +7,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import Link from 'next/link';
+import Head from 'next/head';
 
 // --- Animation Variants for Framer Motion ---
 const sliderVariants = {
@@ -139,7 +140,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
     const renderContent = (block, index) => {
         switch (block.type) {
             case 'paragraph':
-                return <p key={index} className="mb-6 text-lg whitespace-pre-line" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
+                return <p key={index} className="text-base whitespace-pre-line" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
             case 'heading-1':
                 return <h1 key={index} className="text-5xl font-bold text-white mt-12 mb-4">{block.text}</h1>;
             case 'heading-2':
@@ -149,9 +150,9 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
             case 'heading':
                 return <h3 key={index} className="text-3xl font-bold text-white mt-12 mb-4">{block.text}</h3>;
             case 'subheading':
-                return <h6 key={index} className="text-lg font-bold text-white mt-12 mb-4">{block.text}</h6>;
+                return <h6 key={index} className="text-lg font-bold text-white mt-6 mb-1">{block.text}</h6>;
             case 'subheading-2':
-                return <h5 key={index} className="text-1xl font-bold text-white mt-12 mb-4">{block.text}</h5>;
+                return <h5 key={index} className="text-1xl font-bold text-white mt-6 mb-1">{block.text}</h5>;
             case 'image':
                 return <div key={index} className="flex justify-center my-8"><img src={block.src} alt={block.alt} className="rounded-lg shadow-lg max-w-full h-auto" /></div>;
             case 'video':
@@ -168,9 +169,9 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                 return <div key={index} className="flex justify-center my-8"><div className="w-full max-w-3xl"><VideoGallery videos={block.videos} /></div></div>;
             case 'list':
                 return (
-                    <ul key={index} className="list-disc list-inside space-y-4 mb-6 pl-4">
+                    <ul key={index} className="list-disc list-inside space-y-4 mb-2 pl-4">
                         {block.items?.map((item, i) => (
-                            <li key={i} className="text-lg" dangerouslySetInnerHTML={{ __html: item }} />
+                            <li key={i} className="text-base whitespace-pre-line" dangerouslySetInnerHTML={{ __html: item }} />
                         ))}
                     </ul>
                 );
@@ -189,6 +190,12 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
 
     return (
         <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed">
+            <Head>
+                <title>{postData.title} | Andre Gottgtroy</title>
+                <meta name="description" content= {`A game design blog post about "${postData.title}" by Andre Gottgtroy.`} />
+                <meta property="og:title" content= "Andre Gottgtroy Blog" />
+                <meta property="og:description" content={`A game design blog post about "${postData.title}" by Andre Gottgtroy.`} />
+            </Head>
             <nav className="bg-zinc-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg shadow-violet-500/10">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-20">
@@ -326,12 +333,25 @@ export async function getStaticProps({ params }) {
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const { data } = matter(fileContents);
 
-    // **THE FIX IS HERE: Process Markdown for relevant fields in the content array**
+    // This new block correctly processes your Markdown and indentation shortcodes.
     if (data.content && Array.isArray(data.content)) {
         for (const block of data.content) {
             if ((block.type === 'paragraph' || block.type === 'blockquote') && block.text) {
+                // First, process the text for standard Markdown (bold, italic, etc.)
                 const processed = await remark().use(html).process(block.text);
-                block.processedText = processed.toString();
+                let processedHtml = processed.toString();
+
+                // Now, find and replace the indent shortcodes within the resulting HTML
+                processedHtml = processedHtml.replace(/\[INDENT=(\d+)\]/g, (match, level) => {
+                    const indentSize = parseInt(level); 
+                    return `<p style="padding-left: ${indentSize}em;">`;
+                }).replace(/\[\/INDENT\]/g, '</span>');
+
+                processedHtml = processedHtml.replace(/\[INDENT\]/g, (match, level) => {
+                    return `<p style="padding-left: 1em;">`;
+                }).replace(/\[\/INDENT\]/g, '</span>');
+
+                block.processedText = processedHtml;
             }
         }
     }

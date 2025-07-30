@@ -298,14 +298,11 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
     return (
         <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed">
             <Head>
-                <title>Andre Gottgtroy - Game Designer Portfolio</title>
+                <title>Portfolio | Andre Gottgtroy</title>
                 <meta name="description" content="The professional portfolio for Andre Gottgtroy, a passionate game designer with a love for crafting worlds and experiences." />
-                <link rel="icon" href="/favicon.png" />
                 <meta property="og:title" content="Andre Gottgtroy - Game Designer Portfolio" />
                 <meta property="og:description" content="A passionate game designer with a love for crafting worlds and experiences." />
-                <meta property="og:image" content="/social-preview.png" />
                 <meta property="og:url" content="https://andregottgtroy.is-a.dev" />
-                <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <Nav />
 
@@ -774,7 +771,17 @@ export async function getStaticProps() {
                 const fileContents = fs.readFileSync(filePath, 'utf8');
                 const { data, content } = matter(fileContents);
                 const processedContent = await remark().use(html).process(content);
-                const contentHtml = processedContent.toString();
+                let contentHtml = processedContent.toString();
+            
+                contentHtml = contentHtml.replace(/\[INDENT=(\d+)\]/g, (match, level) => {
+                    const indentSize = parseInt(level);
+                    return `<p style="padding-left: ${indentSize}em;">`;
+                }).replace(/\[\/INDENT\]/g, '</span>');
+
+                contentHtml = contentHtml.replace(/\[INDENT\]/g, (match, level) => {
+                    return `<p style="padding-left: 1em;">`;
+                }).replace(/\[\/INDENT\]/g, '</span>');
+
                 return { ...data, contentHtml };
             }));
         }

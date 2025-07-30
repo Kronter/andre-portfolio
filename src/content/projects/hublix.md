@@ -27,18 +27,21 @@ videoId: "0zd_g4t-lsk"
 *I led a team of 6 other game designers along with mentoring 2 of them*
 
 ◦ ***R&D Designer:*** 
-The project was a fairly experimental project and required a lot of prototypes and R&D, as the first game designer on this project, all these responsibilities fell on me.
-I came up with, presented and prototyped game and feature ideas with my team and CEOs. Researched market trends and, when needed, designed innovations with a small team of programmers.
-During this time, I led multiple teams of programmers on multiple different prototype projects as the sole designer.
+[INDENT]The project was a fairly experimental project and required a lot of prototypes and R&D, as the first game designer on this project, all these responsibilities fell on me.
+I came up with, presented and prototyped game and feature ideas with my team and CEOs. Researched market trends and, when needed, designed innovations with a small team of programmers.[/INDENT]
+
+[INDENT]During this time, I led multiple teams of programmers on multiple different prototype projects as the sole designer.[/INDENT]
 
 ◦ ***General Designer:*** 
-Once the project had entered production I became a more general game designer, working on all areas of the project, from level design, UI/UX, 3Cs, gameplay, social, to meta and more.
-As the original designer in the project, I made sure we kept to the main vision & pillars of the project, and that all systems and mechanics integrated cohesively into the general design.
+[INDENT]Once the project had entered production I became a more general game designer, working on all areas of the project, from level design, UI/UX, 3Cs, gameplay, social, to meta and more.[/INDENT]
+
+[INDENT]As the original designer in the project, I made sure we kept to the main vision & pillars of the project, and that all systems and mechanics integrated cohesively into the general design.[/INDENT]
 
 ◦ ***Creative Producer:*** 
-I was eventually made into a Deputy producer, focusing on being a creative producer, for the project.
-While in this role I still continued to also act as a game designer.
-I was focused on working with the sound, game design and art teams making sure the scheduale was correct, the teams work flow was smooth, on time, and followed the projects main vision. 
+[INDENT]I was eventually made into a Deputy producer, focusing on being a creative producer, for the project.
+While in this role I still continued to also act as a game designer.[/INDENT]
+
+[INDENT]I was focused on working with the sound, game design and art teams making sure the scheduale was correct, the teams work flow was smooth, on time, and followed the projects main vision.[/INDENT]
 
 **Personal Acheivements:** 
 Finalist: **[Game Refinery - Mobile Gamedev Awards - Best feature innovation 2022](https://www.gamerefinery.com/mobile-gamedev-awards-2022/).**

@@ -12,6 +12,12 @@ content:
     text: "Basic Content Types"
   - type: paragraph
     text: "This is a standard paragraph. You can now use standard Markdown for **bold**, *italic*, and ***both***."
+  - type: paragraph
+    text: "&nbsp;&nbsp;&nbsp;&nbsp;This is a indented single line paragraph in paragraph."
+  - type: paragraph
+    text: "[INDENT]This is a indented full block paragraph in paragraph.[/INDENT]"
+  - type: paragraph
+    text: "[INDENT=2]This is a indented full block paragraph in paragraph with multiple indents.[/INDENT]"
   - type: list
     items:
       - "This is the first item in a list."
@@ -19,6 +25,8 @@ content:
       - "<strong>This item uses HTML for bolding.</strong>"
       - "<em>This item uses HTML for italics.</em>"
       - "<u>This item uses HTML for italics.</u>"
+      - "&nbsp;&nbsp;&nbsp;&nbsp;single line indentation"
+      - "<div style='padding-left: 2em;'>block of text indentation in lists </div>"
   - type: html
     value: "<p>This is using a htlm link to a <a href='https://www.youtube.com/channel/UC0JB7TSe4MA MoscpbWGo-pA' target='_blank' rel='noopener noreferrer'><span class='text-teal-400'><u>site</u></span></a>.</p>"
   - type: html

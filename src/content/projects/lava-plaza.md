@@ -24,7 +24,7 @@ downloadLinks:
 *This project was made as part of my university studies*
 
 ◦ ***General Designer:*** 
-I was in charge of the whole game design for this game.
+[INDENT]I was in charge of the whole game design for this game.[/INDENT]
 
 ◦ ***Programmer:*** 
-I was part of a three-person programming team, all programming was shared between team members with no particular focus areas.
+[INDENT]I was part of a three-person programming team, all programming was shared between team members with no particular focus areas.[/INDENT]
