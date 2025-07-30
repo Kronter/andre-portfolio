@@ -34,8 +34,8 @@ downloadLinks:
 I had two primary roles in this project:
 
 ◦ ***Game Designer:***
-As a game designer I done the overall design for this project, with level design beign shared between all memebers. 
-I had a strong focus on enemy design this meant that my main design work was on ***AI***, ***Combat*** and ***Encounters Design***. 
+[INDENT]As a game designer I done the overall design for this project, with level design beign shared between all memebers. 
+I had a strong focus on enemy design this meant that my main design work was on ***AI***, ***Combat*** and ***Encounters Design***.[/INDENT] 
 
 ◦ ***Programmer:***
-As a programmer my main focus was on ***AI*** and enemy programming, this included programming and using systems such as ***Behaviour trees***, ***Environment Query System***, a simple AI director *(based on the left 4 dead and doom systems)*, various general ai systems and ***tools*** for these systems.
+[INDENT]As a programmer my main focus was on ***AI*** and enemy programming, this included programming and using systems such as ***Behaviour trees***, ***Environment Query System***, a simple AI director *(based on the left 4 dead and doom systems)*, various general ai systems and ***tools*** for these systems.[/INDENT]
