@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
           <meta property="og:image" content="/social-preview.png" />
           <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
 
   )

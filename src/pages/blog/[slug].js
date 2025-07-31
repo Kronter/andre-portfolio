@@ -308,7 +308,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                     </div>
                 </section>
             </main>
-
+            
             <style jsx global>{`
                 .aspect-w-16 { position: relative; padding-bottom: 56.25%; }
                 .aspect-h-9 { }
