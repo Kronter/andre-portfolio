@@ -296,7 +296,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
     };
 
     return (
-        <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed flex flex-col min-h-screen">
+        <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed">
             <Head>
                 <title>Portfolio | Andre Gottgtroy</title>
                 <meta name="description" content="The professional portfolio for Andre Gottgtroy, a passionate game designer with a love for crafting worlds and experiences." />
@@ -330,7 +330,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                 </div>
             </header>
 
-            <main className="flex-grow">
+            <main>
                 {/* --- Featured Content Slider --- 
                 {featuredContent.length > 0 && (
                     <Section id="featured" title="Featured" className="bg-zinc-800/50">
@@ -716,6 +716,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                 }
                 body {
                     font-family: 'Inter', sans-serif;
+                    background-color: #18181b; /* This is the color for zinc-900 */
                 }
                 .aspect-w-16 { position: relative; padding-bottom: 56.25%; }
                 .aspect-h-9 { /* No specific styles needed here with this setup */ }
