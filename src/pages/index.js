@@ -716,7 +716,6 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                 }
                 body {
                     font-family: 'Inter', sans-serif;
-                    background-color: #18181b; /* This is the color for zinc-900 */
                 }
                 .aspect-w-16 { position: relative; padding-bottom: 56.25%; }
                 .aspect-h-9 { /* No specific styles needed here with this setup */ }
