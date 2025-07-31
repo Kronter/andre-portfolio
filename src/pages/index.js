@@ -296,7 +296,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
     };
 
     return (
-        <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed">
+        <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed flex flex-col min-h-screen">
             <Head>
                 <title>Portfolio | Andre Gottgtroy</title>
                 <meta name="description" content="The professional portfolio for Andre Gottgtroy, a passionate game designer with a love for crafting worlds and experiences." />
@@ -330,7 +330,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                 </div>
             </header>
 
-            <main>
+            <main className="flex-grow">
                 {/* --- Featured Content Slider --- 
                 {featuredContent.length > 0 && (
                     <Section id="featured" title="Featured" className="bg-zinc-800/50">
