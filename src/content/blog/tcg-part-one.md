@@ -57,7 +57,7 @@ content:
      [BLOCK]Most cards in these games decks serve as resources, giving players an interesting strategic choice about which cards to keep, which to play, and which to convert into resources. This helps mitigate the awkwardness of drawing high-cost cards early in the game.[/BLOCK]
      
      **Flesh and Blood**
-     [BLOCK]The pitching system gives most cards additional utility and strategic depth in gameplay, prompting players to think carefully about the order in which they pitch cards for future turns. dditionally, it serves as a valuable tool to balance cards through their pitching costs.[/BLOCK]
+     [BLOCK]The pitching system gives most cards additional utility and strategic depth in gameplay, prompting players to think carefully about the order in which they pitch cards for future turns. Additionally, it serves as a valuable tool to balance cards through their pitching costs.[/BLOCK]
 
      **One Piece TCG** [ZINC]*(and other Bandai TCGs)*[/ZINC]
      [BLOCK]This game features a multi-use resource system that allows resources to be used both to pay for and to buff cards, creating an engaging fluidity in gameplay. Although simple, it adds more strategic depth.[/BLOCK]
