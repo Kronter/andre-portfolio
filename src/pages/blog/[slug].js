@@ -244,9 +244,9 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                     </motion.div>
                 </article>
 
-                <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700">
+                
                     {(nextPostInSeries || (otherPosts && otherPosts.length > 0)) && (
-                        <>
+                        <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700">
                             <h2 className="text-3xl font-bold text-white mb-8">Keep Reading</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {/* This combines the next post and other posts into one list */}
@@ -275,9 +275,8 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                                     );
                                 })}
                             </div>
-                        </>
+                        </section>
                     )}
-                </section>
 
                 <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700 text-center relative">
                     <h2 className="text-3xl font-bold text-white mb-4">Get In Touch</h2>
