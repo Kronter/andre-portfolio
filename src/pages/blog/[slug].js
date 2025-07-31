@@ -142,13 +142,13 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
             case 'paragraph':
                 return <p key={index} className="text-base whitespace-pre-line" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
             case 'heading-1':
-                return <h1 key={index} className="text-5xl font-bold text-white mt-12 mb-4">{block.text}</h1>;
+                return <h1 key={index} className="text-5xl font-bold text-white mt-6 mb-4">{block.text}</h1>;
             case 'heading-2':
-                return <h2 key={index} className="text-4xl font-bold text-white mt-12 mb-4">{block.text}</h2>;
+                return <h2 key={index} className="text-4xl font-bold text-white mt-6 mb-4">{block.text}</h2>;
             case 'heading-3':
-                return <h3 key={index} className="text-3xl font-bold text-white mt-12 mb-4">{block.text}</h3>;
+                return <h3 key={index} className="text-3xl font-bold text-white mt-6 mb-4">{block.text}</h3>;
             case 'heading':
-                return <h3 key={index} className="text-3xl font-bold text-white mt-12 mb-4">{block.text}</h3>;
+                return <h3 key={index} className="text-3xl font-bold text-white mt-6 mb-4">{block.text}</h3>;
             case 'subheading':
                 return <h6 key={index} className="text-lg font-bold text-white mt-6 mb-1">{block.text}</h6>;
             case 'subheading-2':
@@ -177,7 +177,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                 );
             case 'blockquote':
                 return (
-                    <blockquote key={index} className="my-8 border-l-4 border-violet-500 pl-4 italic" dangerouslySetInnerHTML={{ __html: block.processedText }} />
+                    <blockquote key={index} className="my-1 border-l-4 border-violet-500 bg-zinc-800/40 p-4 rounded-sm italic" dangerouslySetInnerHTML={{ __html: block.processedText }} />
                 );
             case 'html':
                 return <div key={index} dangerouslySetInnerHTML={{ __html: block.value }} />;
@@ -244,31 +244,40 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                     </motion.div>
                 </article>
 
-                {(nextPostInSeries || (otherPosts && otherPosts.length > 0)) && (
-                    <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700">
-                        <h2 className="text-3xl font-bold text-white mb-8">Keep Reading</h2>
-                        {nextPostInSeries && (
-                            <Link href={`/blog/${nextPostInSeries.slug}`} className="group block bg-zinc-800 p-6 rounded-lg mb-8 border border-zinc-700 hover:border-violet-500 transition-colors">
-                                <p className="text-sm text-violet-400 mb-1">Next in series: {nextPostInSeries.series}</p>
-                                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-violet-400 transition-colors">{nextPostInSeries.title}</h3>
-                                <div className="flex items-center text-violet-400 font-semibold">
-                                    Continue Reading <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
-                                </div>
-                            </Link>
-                        )}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {otherPosts.map(post => (
-                                <Link key={post.id} href={`/blog/${post.slug}`} className="group block bg-zinc-800 p-6 rounded-lg border border-zinc-700 hover:border-violet-500 transition-colors">
-                                    <p className="text-sm text-gray-400 mb-2">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                                    <h4 className="text-xl font-bold text-white flex-grow mb-4 group-hover:text-violet-400 transition-colors">{post.title}</h4>
-                                    <div className="flex items-center text-violet-400 font-semibold mt-auto">
-                                       Read Post <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
-                    </section>
-                )}
+                <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700">
+                    {(nextPostInSeries || (otherPosts && otherPosts.length > 0)) && (
+                        <>
+                            <h2 className="text-3xl font-bold text-white mb-8">Keep Reading</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {/* This combines the next post and other posts into one list */}
+                                {[nextPostInSeries, ...otherPosts].filter(Boolean).map(post => {
+                                    const isNextInSeries = nextPostInSeries && post.id === nextPostInSeries.id;
+                                    
+                                    // Apply special styles if it's the next post in the series
+                                    const cardClasses = isNextInSeries
+                                        ? "group block bg-zinc-700/40 p-6 rounded-lg border border-violet-500/40 shadow-lg shadow-violet-500/10 hover:border-violet-500/80 hover:shadow-violet-500/15 hover:transition-all duration-300 flex flex-col"
+                                        : "group block bg-zinc-800 p-6 rounded-lg border border-zinc-700 hover:border-violet-500 transition-colors flex flex-col";
+
+                                    return (
+                                        <Link key={post.id} href={`/blog/${post.slug}`} className={cardClasses}>
+                                            {isNextInSeries ? (
+                                                <p className="text-sm text-violet-400 mb-1">Next in series: {post.series}</p>
+                                            ) : (
+                                                <p className="text-sm text-gray-400 mb-2">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                                            )}
+                                            
+                                            <h4 className="text-xl font-bold text-white flex-grow mb-4 group-hover:text-violet-400 transition-colors">{post.title}</h4>
+                                            
+                                            <div className="flex items-center text-violet-400 font-semibold mt-auto">
+                                            {isNextInSeries ? 'Continue Reading' : 'Read Post'} <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                                            </div>
+                                        </Link>
+                                    );
+                                })}
+                            </div>
+                        </>
+                    )}
+                </section>
 
                 <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700 text-center relative">
                     <h2 className="text-3xl font-bold text-white mb-4">Get In Touch</h2>
@@ -350,6 +359,61 @@ export async function getStaticProps({ params }) {
                 processedHtml = processedHtml.replace(/\[INDENT\]/g, (match, level) => {
                     return `<p style="padding-left: 1em;">`;
                 }).replace(/\[\/INDENT\]/g, '</span>');
+
+                processedHtml = processedHtml.replace(/\[VIOLET\]/g, (match, level) => {
+                    return `<span class="text-violet-400">`;
+                }).replace(/\[\/VIOLET\]/g, '</span>');
+
+                processedHtml = processedHtml.replace(/\[ZINC\]/g, (match, level) => {
+                    return `<span class="text-zinc-400">`;
+                }).replace(/\[\/ZINC\]/g, '</span>');
+
+                processedHtml = processedHtml.replace(/\[WHITE\]/g, (match, level) => {
+                    return `<span class="text-white">`;
+                }).replace(/\[\/WHITE\]/g, '</span>');
+
+                processedHtml = processedHtml.replace(/\[BLOCK\]/g, (match, level) => {
+                    return `<blockquote class="my-1 border-l-4 border-violet-500 px-4 rounded-sm">`;
+                }).replace(/\[\/BLOCK\]/g, '</blockquote>');
+
+                const colors = [
+                    'border-sky-500',  // Level 1
+                    'border-teal-500', // Level 2
+                    'border-pink-500',  // Level 3
+                    'border-violet-700',  // Level 4
+                    'border-sky-700',   // Level 5
+                    'border-teal-700',  // Level 6
+                    'border-pink-700',   // Level 7
+                    'border-violet-900',  // Level 8
+                    'border-sky-900',   // Level 9
+                    'border-teal-900',  // Level 10
+                    'border-pink-900'  // Level 11
+                ];
+                processedHtml = processedHtml.replace(/\[BLOCK=(\d+)\]/g, (match, level) => {
+                    const indentLevel = parseInt(level) || 0;
+                    const blockIndentSize = indentLevel;
+                    const borderColorClass = colors[indentLevel > 0 ? (indentLevel - 1) % colors.length : 0];
+                    return `<blockquote style="margin-left:${blockIndentSize}em;" class=" my-1 border-l-4 ${borderColorClass} px-4 rounded-sm">`;
+                }).replace(/\[\/BLOCK\]/g, '</blockquote>');
+
+                processedHtml = processedHtml.replace(/\[NOTE\]/g, (match, level) => {
+                    return `<blockquote class="my-1 border-l-4 border-violet-500 bg-zinc-800/40 p-4 rounded-sm text-violet-400 italic">`;
+                }).replace(/\[\/NOTE\]/g, '</blockquote>');
+
+                processedHtml = processedHtml.replace(/\[NOTE=(\d+)\]/g, (match, level) => {
+                    const noteIndentSize = parseInt(level); 
+                    return `<blockquote style="margin-left:${noteIndentSize}em;" class="my-1 border-l-4 border-violet-500 bg-zinc-800/40 p-4 rounded-sm text-violet-400 italic">`;
+                }).replace(/\[\/NOTE\]/g, '</blockquote>');
+
+                 processedHtml = processedHtml.replace(/\[CNOTE=(\d+)\]/g, (match, level) => {
+                    const noteColor = parseInt(level); 
+                    const noteColorClass = colors[noteColor > 0 ? (noteColor - 1) % colors.length : 0];
+                    return `<blockquote class="my-1 border-l-4 ${noteColorClass} bg-zinc-800/40 p-4 rounded-sm text-white italic">`;
+                }).replace(/\[\/CNOTE\]/g, '</blockquote>');
+
+                processedHtml = processedHtml.replace(/\[SIDENOTE\]/g, (match, level) => {
+                    return `<span class="text-zinc-400 italic">—`;
+                }).replace(/\[\/SIDENOTE\]/g, '—</span>');
 
                 block.processedText = processedHtml;
             }

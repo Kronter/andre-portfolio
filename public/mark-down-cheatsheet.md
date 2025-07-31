@@ -13,6 +13,21 @@ content:
   - type: paragraph
     text: "This is a standard paragraph. You can now use standard Markdown for **bold**, *italic*, and ***both***."
   - type: paragraph
+    text:   |
+     this way you can take into account
+
+     new lines
+
+     this is a [VIOLET]*violet*[/VIOLET] word and this is a [ZINC]*zinc*[/ZINC] word and this is a [WHITE]*white*[/WHITE] word
+
+     [BLOCK]This is a block code[/BLOCK] 
+
+     [NOTE]This is a Note[/NOTE] 
+
+     [CNOTE]This is a Note with a different color border[/CNOTE] 
+
+     [SIDENOTE]This is a side Note[/SIDENOTE] 
+  - type: paragraph
     text: "&nbsp;&nbsp;&nbsp;&nbsp;This is a indented single line paragraph in paragraph."
   - type: paragraph
     text: "[INDENT]This is a indented full block paragraph in paragraph.[/INDENT]"
