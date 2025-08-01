@@ -49,7 +49,7 @@ content:
     text:   | 
      I want to create an interesting resource system that adds strategic depth, is easy to understand, flows smoothly, and does not hinder gameplay. 
 
-     While Magic's mana system is the most classic and [SIDENOTE]for the most part[/SIDENOTE] the simplest, I believe it is not the best design. Although the mana flood in Magic can serve as a catch-up and balance tool, it often leaves players feeling frustrated and is not very effective overall.
+     While Magic's mana system is the most classic and [SIDENOTE]for the most part[/SIDENOTE] the simplest, I believe it is not the best design. Although the mana flood/screw in Magic can serve as a catch-up and balance tool, it often leaves players feeling frustrated and is not very effective overall.
 
      I have observed several elegant solutions from various games that can be taken as inspiration:
 
