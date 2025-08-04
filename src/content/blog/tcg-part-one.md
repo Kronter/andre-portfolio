@@ -49,7 +49,7 @@ content:
     text:   | 
      I want to create an interesting resource system that adds strategic depth, is easy to understand, flows smoothly, and does not hinder gameplay. 
 
-     While Magic's mana system is the most classic and [SIDENOTE]for the most part[/SIDENOTE] the simplest, I believe it is not the best design. Although the mana flood in Magic can serve as a catch-up and balance tool, it often leaves players feeling frustrated and is not very effective overall.
+     While Magic's mana system is the most classic and [SIDENOTE]for the most part[/SIDENOTE] the simplest, I believe it is not the best design. Although the mana flood/screw in Magic can serve as a catch-up and balance tool, it often leaves players feeling frustrated and is not very effective overall.
 
      I have observed several elegant solutions from various games that can be taken as inspiration:
 
@@ -57,7 +57,7 @@ content:
      [BLOCK]Most cards in these games decks serve as resources, giving players an interesting strategic choice about which cards to keep, which to play, and which to convert into resources. This helps mitigate the awkwardness of drawing high-cost cards early in the game.[/BLOCK]
      
      **Flesh and Blood**
-     [BLOCK]The pitching system gives most cards additional utility and strategic depth in gameplay, prompting players to think carefully about the order in which they pitch cards for future turns. dditionally, it serves as a valuable tool to balance cards through their pitching costs.[/BLOCK]
+     [BLOCK]The pitching system gives most cards additional utility and strategic depth in gameplay, prompting players to think carefully about the order in which they pitch cards for future turns. Additionally, it serves as a valuable tool to balance cards through their pitching costs.[/BLOCK]
 
      **One Piece TCG** [ZINC]*(and other Bandai TCGs)*[/ZINC]
      [BLOCK]This game features a multi-use resource system that allows resources to be used both to pay for and to buff cards, creating an engaging fluidity in gameplay. Although simple, it adds more strategic depth.[/BLOCK]
