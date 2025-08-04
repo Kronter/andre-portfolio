@@ -3,16 +3,16 @@ id: 6
 title: "Helping Hands"
 category: "Game Jam"
 dates: "2020"
-image: '/helping-hands-main-image.png'
+image: '/helping-hands-main-image.jpg'
 roles: 
   - "General Designer"
   - "Gameplay Programmer"
   - "Shader Programer"
 screenshots:
-  - '/helping-hands-1-image.png'
-  - '/helping-hands-2-image.png'
-  - '/helping-hands-3-image.png'
-  - '/helping-hands-4-image.png'
+  - '/helping-hands-1-image.jpg'
+  - '/helping-hands-2-image.jpg'
+  - '/helping-hands-3-image.jpg'
+  - '/helping-hands-4-image.jpg'
 downloadLinks:
   - platform: "GGJ"
     url: "https://v3.globalgamejam.org/2020/games/helping-hands-9"

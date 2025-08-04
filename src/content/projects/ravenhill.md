@@ -3,7 +3,7 @@ id: 9
 title: "Ravenhill"
 category: "Professional"
 dates: "2025 - Present"
-image: '/ravenhill-image.png'
+image: '/ravenhill-image.jpg'
 roles: 
   - "General Designer"
 featured: true
@@ -15,7 +15,7 @@ downloadLinks:
   - platform: "App Store"
     url: "https://apps.apple.com/us/app/ravenhill-find-hidden-objects/id1399339172"
 ---
-***Ravenhill*** is a semi narrative dirven detective game where players search for hidden objects, solve tile and match-3 puzzles, and complete quests to unravel the city's secrets.
+***Ravenhill*** is a semi narrative driven detective game where players search for hidden objects, solve tile and match-3 puzzles, and complete quests to unravel the city's secrets.
 
 **Engine:** Proprietary
 **Genre(s):** Casual, Hidden Object, Puzzle

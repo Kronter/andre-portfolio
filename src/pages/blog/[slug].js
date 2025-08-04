@@ -140,7 +140,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
     const renderContent = (block, index) => {
         switch (block.type) {
             case 'paragraph':
-                return <p key={index} className="text-base whitespace-pre-line" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
+                return <div key={index} className="text-base whitespace-pre-line" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
             case 'heading-1':
                 return <h1 key={index} className="text-5xl font-bold text-white mt-6 mb-4">{block.text}</h1>;
             case 'heading-2':
@@ -200,7 +200,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-20">
                         <Link href={"/"} className="text-2xl font-bold text-white tracking-wider flex items-center">
-                            <span>{postData.author  || "Game Designer"}</span>
+                            <span>{postData.author  || "Andre Gottgtroy"}</span>
                             <div className="grid grid-cols-3 grid-rows-3 gap-0.5 w-5 h-5 ml-3">
                                 <span className="w-1.5 h-1.5 bg-pink-500 rounded-full col-start-2 self-center justify-self-center"></span>
                                 <span className="w-1.5 h-1.5 bg-sky-500 rounded-full row-start-2 self-center justify-self-center"></span>
@@ -208,8 +208,9 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                                 <span className="w-1.5 h-1.5 bg-violet-500 rounded-full row-start-3 col-start-2 self-center justify-self-center"></span>
                             </div>
                         </Link>
-                        <Link href={"/"} className="text-gray-300 hover:text-white transition-colors">
-                            &larr; Back to Portfolio
+                        <Link href={"/"} className="text-gray-300 hover:text-white transition-colors flex-shrink-0 ml-4">
+                            <span className="inline sm:hidden text-2xl">&larr;</span>
+                            <span className="hidden sm:inline text-base">&larr; Back to Portfolio</span>
                         </Link>
                     </div>
                 </div>

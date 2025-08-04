@@ -3,7 +3,7 @@ id: 2
 title: "District Underground"
 category: "Professional"
 dates: "2018"
-image: '/district-underground-image.png'
+image: '/district-underground-image.jpg'
 roles: 
   - "General Designer"
   - "Encounter Designer"

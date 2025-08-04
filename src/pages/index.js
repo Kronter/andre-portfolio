@@ -561,7 +561,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                     <div className="grid md:grid-cols-3 gap-6 items-center">
                         <div className="md:col-span-1 flex justify-center">
                             {/* eslint-disable-next-line @next/next/no-img-element 
-                            <img src={'/profile-photo.png'} alt="Andre Gottgtroy" className="rounded-full w-48 h-48 md:w-60 md:h-60 object-cover border-4 border-violet-500/50 shadow-2xl" />
+                            <img src={'/profile-photo.jpg'} alt="Andre Gottgtroy" className="rounded-full w-48 h-48 md:w-60 md:h-60 object-cover border-4 border-violet-500/50 shadow-2xl" />
                         </div>
                         <div className="md:col-span-2">
                             <p className="text-lg text-gray-400 mb-6">{portfolioData.about}</p>
@@ -617,7 +617,7 @@ export default function App({ portfolioData = {}, projects = [], blogPosts = [] 
                         <div className="grid md:grid-cols-3 gap-6 items-center">
                             <div className="md:col-span-1 flex justify-center self-start">
                                 {/* eslint-disable-next-line @next/next/no-img-element*/} 
-                                <img src={'/profile-photo.png'} alt="Andre Gottgtroy" className="rounded-full w-48 h-48 md:w-60 md:h-60 object-cover border-4 border-violet-500/50 shadow-2xl" />
+                                <img src={'/profile-photo.jpg'} alt="Andre Gottgtroy" className="rounded-full w-48 h-48 md:w-60 md:h-60 object-cover border-4 border-violet-500/50 shadow-2xl" />
                             </div>
                             <div className="md:col-span-2">
                                 <p className="text-lg text-gray-400 mb-6 whitespace-pre-line">{portfolioData.about}</p>

@@ -20,7 +20,7 @@ content:
   - type: heading-2
     text: "Why am I making a Trading Card Game?"
   - type: image
-    src: '/part-one-tcg-image.png'
+    src: '/part-one-tcg-image.jpg'
   - type: subheading
     text: "The Family Fun"
   - type: paragraph
@@ -67,7 +67,7 @@ content:
   - type: heading-2
     text: "Why sort of?"
   - type: image
-    src: '/thinking-meme-image.png'
+    src: '/thinking-meme-image.jpg'
   - type: paragraph
     text:   | 
      While I will approach this TCG design as if I intend to publish it, that is not my primary goal. 
@@ -77,7 +77,7 @@ content:
   - type: heading-2
     text: "Design Pillars"
   - type: image
-    src: '/pillars-image.png'
+    src: '/pillars-image.jpg'
   - type: paragraph
     text:   | 
      What are the main design pillars for this project?

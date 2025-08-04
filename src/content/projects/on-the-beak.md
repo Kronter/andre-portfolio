@@ -3,7 +3,7 @@ id: 7
 title: "On The Beak"
 category: "Game Jam"
 dates: "2020"
-image: '/on-the-beak-image.png'
+image: '/on-the-beak-image.jpg'
 roles: 
   - "General Designer"
   - "Gameplay Programmer"

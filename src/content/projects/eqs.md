@@ -3,7 +3,7 @@ id: 4
 title: "Environment Query System Tool"
 category: "Personal"
 dates: "2018 - 2019"
-image: '/eqs-image.png'
+image: '/eqs-image.jpg'
 roles: 
   - "Tools Designer"
   - "Programmer"

@@ -3,7 +3,7 @@ id: 1
 title: "Lava Plaza"
 category: "Professional"
 dates: "2018"
-image: '/lava-plaza-image.png'
+image: '/lava-plaza-image.jpg'
 roles: 
   - "General Designer"
   - "Programmer"

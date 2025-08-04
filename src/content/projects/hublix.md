@@ -3,7 +3,7 @@ id: 5
 title: "Hublix"
 category: "Professional"
 dates: "2020 - 2023"
-image: '/hublix-image.png'
+image: '/hublix-image.jpg'
 roles: 
   - "Lead Designer"
   - "Deputy Lead Designer"

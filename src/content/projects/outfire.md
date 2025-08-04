@@ -3,7 +3,7 @@ id: 8
 title: "Outfire"
 category: "Professional"
 dates: "2023 - 2025"
-image: '/outfire-image.png'
+image: '/outfire-image.jpg'
 roles: 
   - "Monetization Designer"
   - "Content Designer"

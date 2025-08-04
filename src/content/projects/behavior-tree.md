@@ -3,7 +3,7 @@ id: 3
 title: "Behavior Tree Tool"
 category: "Personal"
 dates: "2018 - 2020"
-image: '/behavior-tree-image.png'
+image: '/behavior-tree-image.jpg'
 roles: 
   - "Tools Designer"
   - "Programmer"
