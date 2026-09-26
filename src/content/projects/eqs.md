@@ -1,29 +1,34 @@
 ---
-id: 4
+id: "environment-query-system"
+slug: "environment-query-system"
+order: 8
 title: "Environment Query System Tool"
-category: "Personal"
-dates: "2018 - 2019"
-image: '/eqs-image.jpg'
-roles: 
-  - "Tools Designer"
-  - "Programmer"
+category: "Technical"
+browseGroup: "Technical"
+projectType: "Student Technical Tool"
+dates: "2018–2019"
+engine: "Unity"
+platforms: ["Unity editor"]
+tags: ["AI Tools", "Queries", "Unity"]
+selectedWork: false
+image: "/eqs-image.webp"
+imageAlt: "Unity Environment Query System debug view"
 videoId: "agZPd6LQoQ8"
-university: true
+roles: ["Tools Designer", "Programmer"]
+responsibilityAreas: ["Environment sampling", "Query scoring", "Visual debugging", "Reusable query tests"]
+summary: "A Unity tool inspired by Unreal's Environment Query System, built to give District Underground's AI useful spatial information."
+relatedProjects: ["district-underground"]
 ---
-This tool was created for the ***District Underground*** project, used to query the environment for data. That data was then used to provide the AI with data used in the decision-making process on how to proceed, and postion.
+## Why I built it
 
-I based this tool on the Unreal engine tool of the same name *(as unity did not have this tool available)*.
+I created this tool for District Underground so enemy AI could query the environment and use the results when choosing positions. Unity did not provide an equivalent at the time, so I used Unreal's Environment Query System as a reference for the approach.
 
-**Engine:** Unity tool
+## Main features
 
-**Main Features:**
-[INDENT]◦ Enviroment data query
-◦ Visual indication of queried data and test outcomes
-◦ Swapable and scriptable data tests
-◦ Adjustable query point shapes
-◦ Adjustable query point density
-◦ Togglable height adjustment *(for terrain with different heights)* [/INDENT]
+- environment-data queries;
+- visual feedback for query data and test results;
+- swappable, scriptable tests;
+- adjustable query shapes and point density;
+- optional height adjustment for uneven terrain.
 
-**Use case examples:**
-[INDENT]◦ Combat positioning: for back stab/ganking, always being in front of player, best postion for specific attacks.
-◦ General positioning: for staying in cover, always being in the players line of sight or outside of cover, hiding.[/INDENT] 
+Use cases included combat positioning for flanking or specific attacks, maintaining line of sight, choosing cover and finding hiding positions.

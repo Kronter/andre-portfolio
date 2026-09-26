@@ -1,37 +1,29 @@
 ---
-id: 6
+id: "helping-hands"
+slug: "helping-hands"
+order: 5
 title: "Helping Hands"
 category: "Game Jam"
+browseGroup: "Game Jams"
+projectType: "Game Jam Project"
 dates: "2020"
-image: '/helping-hands-main-image.jpg'
-roles: 
-  - "General Designer"
-  - "Gameplay Programmer"
-  - "Shader Programer"
-screenshots:
-  - '/helping-hands-1-image.jpg'
-  - '/helping-hands-2-image.jpg'
-  - '/helping-hands-3-image.jpg'
-  - '/helping-hands-4-image.jpg'
-downloadLinks:
-  - platform: "GGJ"
+engine: "Unity"
+platforms: ["PC"]
+genres: ["Stealth", "Comedy"]
+tags: ["Game Jam", "Stealth", "Unity"]
+selectedWork: false
+image: "/helping-hands-main-image.webp"
+imageAlt: "Helping Hands raccoon stealth game scene"
+screenshots: ["/helping-hands-1-image.webp", "/helping-hands-2-image.webp", "/helping-hands-3-image.webp", "/helping-hands-4-image.webp"]
+roles: ["Game Designer", "Gameplay Programmer", "Shader Programmer"]
+responsibilityAreas: ["Overall game design", "Stealth gameplay programming", "Cel-shading and snow effects"]
+summary: "A small stealth comedy made during Global Game Jam 2020, where I owned the game design and worked on stealth gameplay and shaders."
+externalLinks:
+  - label: "Global Game Jam page"
     url: "https://v3.globalgamejam.org/2020/games/helping-hands-9"
 ---
-***Helping Hands*** is a stealth game where you play as a misunderstood racoon on a mission to fix your town. 
+## Project overview
 
-Developed during the **Global Game Jam 2020** with the theme “Repair”.
- 
-**Engine:** Unity 
-**Genre(s):** Stealth, Comedy
-**Platform(s):** PC
- 
-**​Responsibilities:**
+Helping Hands is a stealth comedy where a misunderstood raccoon sets out to repair its town. We built it during Global Game Jam 2020 around the theme **Repair**.
 
-◦ ***General Designer:*** 
-[INDENT]I was in charge of the whole game design for this game.[/INDENT]
-
-◦ ***Gameplay Programmer:*** 
-[INDENT]I was part of a three-person programming team, my main focus of gameplay was the stealth mechanics.[/INDENT]
-
-◦ ***Shader Programmer:*** 
-[INDENT]As our artists wanted a particular style, I was in charge of making the cel shading, snow effects (through shaders).[/INDENT] 
+I was responsible for the overall Game Design. I also worked in the three-person programming team, focusing on the stealth mechanics, and built the cel-shading and snow effects the art direction needed.

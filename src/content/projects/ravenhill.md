@@ -1,28 +1,40 @@
 ---
-id: 9
+id: "ravenhill"
+slug: "ravenhill"
+order: 3
 title: "Ravenhill"
+company: "Mytona"
 category: "Professional"
-dates: "2025 - Present"
-image: '/ravenhill-image.jpg'
-roles: 
-  - "General Designer"
-featured: true
-current: true
+projectType: "Commercial Live-Service Game"
+dates: "2025–2026"
+engine: "Proprietary engine"
+platforms: ["iOS", "Android"]
+genres: ["Hidden Object", "Puzzle", "Narrative"]
+tags: ["Live Service", "Monetization", "Events", "Meta Systems"]
+selectedWork: true
+image: "/ravenhill-image.webp"
+imageAlt: "Ravenhill hidden-object game key art"
 videoId: "oq9raTB9cHM"
-downloadLinks:
-  - platform: "Google Play"
+roles: ["Game Designer"]
+responsibilityAreas: ["Live-service Game Design", "Monetization events and offers", "Offer standards and design principles", "Player-facing meta systems", "Refinement and polish"]
+summary: "Live-service Game Design across monetization events and offers, updated offer standards, player-facing meta systems, and refinement of established features."
+ndaLimited: true
+externalLinks:
+  - label: "Google Play"
     url: "https://play.google.com/store/apps/details?id=com.mytona.rh&hl=en"
-  - platform: "App Store"
+  - label: "App Store"
     url: "https://apps.apple.com/us/app/ravenhill-find-hidden-objects/id1399339172"
 ---
-***Ravenhill*** is a semi narrative driven detective game where players search for hidden objects, solve tile and match-3 puzzles, and complete quests to unravel the city's secrets.
+## Project overview
 
-**Engine:** Proprietary
-**Genre(s):** Casual, Hidden Object, Puzzle
-**Platform(s):** Ios, Android
+Ravenhill is a narrative-led hidden-object and puzzle game supported through live-service systems and recurring content. My work covered monetization events and offers, player-facing meta systems, and the refinement and polish of established features.
 
-**​Responsibilities:**
-*This is my current project, and I have recently been assigned to it*
+## Updating the offer approach
 
-◦ ***General Designer:*** 
-[INDENT]I have been kept as a general designer, jumping in where needed, my current focus is on refining existing systems from various areas, social, meta, gameplay, and polish adding extra juice to the game.[/INDENT]
+Part of my contribution was helping establish updated standards and design principles for offers. That meant looking beyond an individual bundle and considering how presentation, value, player context and the surrounding experience worked together.
+
+I then created an offer using the updated approach. It outperformed comparable older offers and performed better than expected. The result was useful evidence that the principles worked in practice without relying on confidential figures.
+
+## Established systems still need design
+
+Live-service work often means improving a system that already has players, expectations and production constraints around it. I worked across social, meta, gameplay and polish tasks, focusing on changes that made the experience clearer, more satisfying and better aligned with the player's reason for engaging.

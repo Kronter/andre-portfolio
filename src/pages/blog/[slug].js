@@ -8,6 +8,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image';
 
 // --- Animation Variants for Framer Motion ---
 const sliderVariants = {
@@ -154,7 +155,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
             case 'subheading-2':
                 return <h5 key={index} className="text-1xl font-bold text-white mt-6 mb-1">{block.text}</h5>;
             case 'image':
-                return <div key={index} className="flex justify-center my-8"><img src={block.src} alt={block.alt} className="rounded-lg shadow-lg max-w-full h-auto" /></div>;
+                return <div key={index} className="flex justify-center my-8"><Image src={block.src} alt={block.alt || `${postData.title} illustration`} width={1200} height={675} sizes="(max-width: 768px) 100vw, 768px" className="rounded-lg shadow-lg max-w-full h-auto" /></div>;
             case 'video':
                 return (
                     <div key={index} className="flex justify-center my-8">
@@ -192,9 +193,9 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
         <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed">
             <Head>
                 <title>{postData.title} | Andre Gottgtroy</title>
-                <meta name="description" content= {`A game design blog post about "${postData.title}" by Andre Gottgtroy.`} />
-                <meta property="og:title" content= "Andre Gottgtroy Blog" />
-                <meta property="og:description" content={`A game design blog post about "${postData.title}" by Andre Gottgtroy.`} />
+                <meta name="description" content= {`Design writing about "${postData.title}" by André Gottgtroy.`} />
+                <meta property="og:title" content= "André Gottgtroy — Design Writing" />
+                <meta property="og:description" content={`Design writing about "${postData.title}" by André Gottgtroy.`} />
             </Head>
             <nav className="bg-zinc-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg shadow-violet-500/10">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -227,7 +228,7 @@ export default function BlogPostPage({ postData, nextPostInSeries, otherPosts })
                         <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tighter">{postData.title}</h1>
                         <div className="flex items-center text-gray-400 space-x-4 mb-8">
                             <div className="flex items-center">
-                                <img src="https://placehold.co/40x40/18181b/8b5cf6?text=A+D" alt="Andre Gottgtroy" className="w-8 h-8 rounded-full mr-2" />
+                                <Image src="/profile-photo.webp" alt="André Gottgtroy" width={32} height={32} className="w-8 h-8 rounded-full mr-2 object-cover" />
                                 <span>{postData.author}</span>
                             </div>
                             <span>&bull;</span>
@@ -342,23 +343,19 @@ export async function getStaticProps({ params }) {
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const { data } = matter(fileContents);
 
-    // This new block correctly processes your Markdown and indentation shortcodes.
+    // Convert the legacy block shortcodes to standard Markdown before rendering.
+    // Inline colour/sidenote markers remain spans, so the generated HTML stays valid.
     if (data.content && Array.isArray(data.content)) {
         for (const block of data.content) {
             if ((block.type === 'paragraph' || block.type === 'blockquote') && block.text) {
-                // First, process the text for standard Markdown (bold, italic, etc.)
-                const processed = await remark().use(html).process(block.text);
+                const preparedText = block.text
+                    .replace(/\[(?:BLOCK|NOTE|CNOTE)(?:=\d+)?\]([\s\S]*?)\[\/(?:BLOCK|NOTE|CNOTE)\]/g, (_match, content) =>
+                        content.split('\n').map(line => `> ${line}`).join('\n')
+                    )
+                    .replace(/\[INDENT(?:=\d+)?\]([\s\S]*?)\[\/INDENT\]/g, '$1');
+
+                const processed = await remark().use(html).process(preparedText);
                 let processedHtml = processed.toString();
-
-                // Now, find and replace the indent shortcodes within the resulting HTML
-                processedHtml = processedHtml.replace(/\[INDENT=(\d+)\]/g, (match, level) => {
-                    const indentSize = parseInt(level); 
-                    return `<p style="padding-left: ${indentSize}em;">`;
-                }).replace(/\[\/INDENT\]/g, '</span>');
-
-                processedHtml = processedHtml.replace(/\[INDENT\]/g, (match, level) => {
-                    return `<p style="padding-left: 1em;">`;
-                }).replace(/\[\/INDENT\]/g, '</span>');
 
                 processedHtml = processedHtml.replace(/\[VIOLET\]/g, (match, level) => {
                     return `<span class="text-violet-400">`;
@@ -371,45 +368,6 @@ export async function getStaticProps({ params }) {
                 processedHtml = processedHtml.replace(/\[WHITE\]/g, (match, level) => {
                     return `<span class="text-white">`;
                 }).replace(/\[\/WHITE\]/g, '</span>');
-
-                processedHtml = processedHtml.replace(/\[BLOCK\]/g, (match, level) => {
-                    return `<blockquote class="my-1 border-l-4 border-violet-500 px-4 rounded-sm">`;
-                }).replace(/\[\/BLOCK\]/g, '</blockquote>');
-
-                const colors = [
-                    'border-sky-500',  // Level 1
-                    'border-teal-500', // Level 2
-                    'border-pink-500',  // Level 3
-                    'border-violet-700',  // Level 4
-                    'border-sky-700',   // Level 5
-                    'border-teal-700',  // Level 6
-                    'border-pink-700',   // Level 7
-                    'border-violet-900',  // Level 8
-                    'border-sky-900',   // Level 9
-                    'border-teal-900',  // Level 10
-                    'border-pink-900'  // Level 11
-                ];
-                processedHtml = processedHtml.replace(/\[BLOCK=(\d+)\]/g, (match, level) => {
-                    const indentLevel = parseInt(level) || 0;
-                    const blockIndentSize = indentLevel;
-                    const borderColorClass = colors[indentLevel > 0 ? (indentLevel - 1) % colors.length : 0];
-                    return `<blockquote style="margin-left:${blockIndentSize}em;" class=" my-1 border-l-4 ${borderColorClass} px-4 rounded-sm">`;
-                }).replace(/\[\/BLOCK\]/g, '</blockquote>');
-
-                processedHtml = processedHtml.replace(/\[NOTE\]/g, (match, level) => {
-                    return `<blockquote class="my-1 border-l-4 border-violet-500 bg-zinc-800/40 p-4 rounded-sm text-violet-400 italic">`;
-                }).replace(/\[\/NOTE\]/g, '</blockquote>');
-
-                processedHtml = processedHtml.replace(/\[NOTE=(\d+)\]/g, (match, level) => {
-                    const noteIndentSize = parseInt(level); 
-                    return `<blockquote style="margin-left:${noteIndentSize}em;" class="my-1 border-l-4 border-violet-500 bg-zinc-800/40 p-4 rounded-sm text-violet-400 italic">`;
-                }).replace(/\[\/NOTE\]/g, '</blockquote>');
-
-                 processedHtml = processedHtml.replace(/\[CNOTE=(\d+)\]/g, (match, level) => {
-                    const noteColor = parseInt(level); 
-                    const noteColorClass = colors[noteColor > 0 ? (noteColor - 1) % colors.length : 0];
-                    return `<blockquote class="my-1 border-l-4 ${noteColorClass} bg-zinc-800/40 p-4 rounded-sm text-white italic">`;
-                }).replace(/\[\/CNOTE\]/g, '</blockquote>');
 
                 processedHtml = processedHtml.replace(/\[SIDENOTE\]/g, (match, level) => {
                     return `<span class="text-zinc-400 italic">—`;

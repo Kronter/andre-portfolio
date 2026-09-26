@@ -2,7 +2,7 @@
 id: 100
 title: "Making a TCG (Sort of)"
 date: "2025-07-30"
-author: "Andre Gottgtroy"
+author: "André Gottgtroy"
 tags: ["TCG", "Game Design", "Practice"]
 featured: true
 series: "TCG"
@@ -10,7 +10,7 @@ part: 1
 content:
   - type: paragraph
     text:   |
-     **Welcome** to the beginning of my very first blog series! This post marks the first part in the [VIOLET]*TCG series*[/VIOLET].
+     **Welcome** to the beginning of my first design-writing series. This post marks the first part in the [VIOLET]*TCG series*[/VIOLET].
 
      In this initial entry, I will introduce the reasons behind starting this new project and outline the basic design principles that will guide it.
 
@@ -20,7 +20,7 @@ content:
   - type: heading-2
     text: "Why am I making a Trading Card Game?"
   - type: image
-    src: '/part-one-tcg-image.jpg'
+    src: '/part-one-tcg-image.webp'
   - type: subheading
     text: "The Family Fun"
   - type: paragraph
@@ -67,7 +67,7 @@ content:
   - type: heading-2
     text: "Why sort of?"
   - type: image
-    src: '/thinking-meme-image.jpg'
+    src: '/thinking-meme-image.webp'
   - type: paragraph
     text:   | 
      While I will approach this TCG design as if I intend to publish it, that is not my primary goal. 
@@ -77,7 +77,7 @@ content:
   - type: heading-2
     text: "Design Pillars"
   - type: image
-    src: '/pillars-image.jpg'
+    src: '/pillars-image.webp'
   - type: paragraph
     text:   | 
      What are the main design pillars for this project?

@@ -1,35 +1,28 @@
 ---
-id: 7
+id: "on-the-beak"
+slug: "on-the-beak"
+order: 6
 title: "On The Beak"
 category: "Game Jam"
+browseGroup: "Game Jams"
+projectType: "Award-winning Game Jam Project"
 dates: "2020"
-image: '/on-the-beak-image.jpg'
-roles: 
-  - "General Designer"
-  - "Gameplay Programmer"
-  - "Shader Programer"
-downloadLinks:
-  - platform: "itch.io"
+engine: "Unity"
+platforms: ["PC"]
+genres: ["Arena Brawler", "Arcade", "Comedy"]
+tags: ["Game Jam", "Gameplay", "Unity"]
+selectedWork: false
+image: "/on-the-beak-image.webp"
+imageAlt: "On The Beak penguin arena brawler scene"
+roles: ["Game Designer", "Gameplay Programmer", "Shader Programmer"]
+responsibilityAreas: ["Overall game design", "General gameplay programming", "Water and iceberg shaders"]
+summary: "A Kiwijam 2020 arena brawler about wrestling penguins, tied for first overall."
+externalLinks:
+  - label: "Play on itch.io"
     url: "https://kronter.itch.io/on-the-beak"
 ---
-**Kiwijam 2020** entry  
+## Project overview
 
-***Helping Hands*** is a arcade, arena brawler where players are wrestling penguins, fighting to stay on top of an iceberg to eat the most amount of fish. 
+On The Beak is an arcade arena brawler where wrestling penguins fight to stay on an iceberg and eat the most fish. We built it for Kiwijam 2020 around the theme **On the brink**, and it tied for first overall.
 
-Developed during the **Kiwijam 2020** with the theme “on the brink”.
-
-**Engine:** Unity 
-**Genre(s):** Arcade, Arena Brawler, Comedy
-**Platform(s):** PC
-**Awards:** 1st *(tied)* overall
-
-**​Responsibilities:**
-
-◦ ***General Designer:*** 
-[INDENT]I was in charge of the whole game design for this game.[/INDENT]
-
-◦ ***Gameplay Programmer:*** 
-[INDENT]I was part of a three-person programming team, my main focus was on the general gameplay.[/INDENT]
-
-◦ ***Shader Programmer:***
-[INDENT]I was in charge of doing the shaders for the iceberg and water.[/INDENT] 
+I owned the overall Game Design, contributed to general gameplay programming in our three-person programming team, and created the iceberg and water shaders.

@@ -6,8 +6,10 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
           <link rel="icon" href="/favicon.png" />
-          <meta property="og:image" content="/social-preview.jpg" />
+          <meta property="og:image" content="/social-preview.webp" />
           <meta name="twitter:card" content="summary_large_image" />
+          <meta name="theme-color" content="#09090b" />
+          <meta name="color-scheme" content="dark" />
       </Head>
       <Component {...pageProps} />
     </>

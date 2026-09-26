@@ -1,51 +1,55 @@
 ---
-id: 5
+id: "hublix"
+slug: "hublix"
+order: 1
 title: "Hublix"
+company: "Mytona"
 category: "Professional"
-dates: "2020 - 2023"
-image: '/hublix-image.jpg'
-roles: 
-  - "Lead Designer"
-  - "Deputy Lead Designer"
-  - "Deputy Creative Producer"
-  - "General Designer"
-  - "R&D Designer"
-  - "Junior General Designer"
-featured: false
-current: false
+projectType: "Commercial R&D Project"
+dates: "2020–2023"
+engine: "Unreal Engine"
+platforms: ["PC", "iOS", "Android"]
+genres: ["Social", "Casual", "Cozy"]
+tags: ["Unreal", "R&D", "Systems", "Leadership"]
+selectedWork: true
+image: "/hublix-image.webp"
+imageAlt: "Hublix social game key art"
 videoId: "0zd_g4t-lsk"
+roles: ["Game Designer", "Design Leadership", "Deputy Production"]
+responsibilityAreas: ["R&D and rapid prototyping", "Gameplay and systems design", "3Cs and social/meta features", "Technical collaboration", "Design leadership and mentoring", "Deputy-production responsibility"]
+summary: "An experimental social game where I worked across R&D, prototyping, gameplay, systems, 3Cs and social/meta features, later carrying design leadership and deputy-production responsibility while continuing hands-on Game Design."
+ndaLimited: true
 ---
-***Hublix*** is a Cozy social driven game where players meet, talk, play and create new friends in social and private hubs of their own designs.
+## Project overview
 
-**Engine:** Unreal Engine
-**Genre(s):** Casual, Cozy, Social
-**Platform(s):** PC, Ios, Android
+Hublix was a social game built around meeting, talking, playing and creating spaces with other people. It was my first professional Game Design project and a broad one: the team was exploring a new concept, so design work moved repeatedly between research, prototypes, player-facing systems and the details required to make those systems work together.
 
-**Responsibilities:**
-*This was my first project as a professional game designer and so I began it as a* ***Junior Designer*** *I progressed through to a* ***Intermidiate Designer*** *during this project, along with becoming a* ***Deputy Lead Designer*** *and a*  ***Lead Designer***.
+## R&D and prototyping
 
-*I led a team of 6 other game designers along with mentoring 2 of them*
+As the first Game Designer on the project, I researched the market, developed and presented feature ideas, and worked with small engineering teams to prototype them. The useful question was not only whether an idea sounded promising, but whether it felt coherent once a player could move through it.
 
-◦ ***R&D Designer:*** 
-[INDENT]The project was a fairly experimental project and required a lot of prototypes and R&D, as the first game designer on this project, all these responsibilities fell on me.
-I came up with, presented and prototyped game and feature ideas with my team and CEOs. Researched market trends and, when needed, designed innovations with a small team of programmers.[/INDENT]
+I also worked as the sole designer with multiple programming teams on different prototypes. My Software Engineering background helped me communicate intent, understand implementation constraints and keep iteration moving.
 
-[INDENT]During this time, I led multiple teams of programmers on multiple different prototype projects as the sole designer.[/INDENT]
+## Hands-on Game Design
 
-◦ ***General Designer:*** 
-[INDENT]Once the project had entered production I became a more general game designer, working on all areas of the project, from level design, UI/UX, 3Cs, gameplay, social, to meta and more.[/INDENT]
+When Hublix moved into production, my work broadened across:
 
-[INDENT]As the original designer in the project, I made sure we kept to the main vision & pillars of the project, and that all systems and mechanics integrated cohesively into the general design.[/INDENT]
+- gameplay systems and mechanics;
+- 3Cs;
+- social and private hub features;
+- meta systems;
+- UI/UX collaboration;
+- some level-design work;
+- feature specifications, flows and implementation support.
 
-◦ ***Creative Producer:*** 
-[INDENT]I was eventually made into a Deputy producer, focusing on being a creative producer, for the project.
-While in this role I still continued to also act as a game designer.[/INDENT]
+Because I had been involved from the project's early exploration, I also helped keep features aligned with its design pillars and made sure individual systems supported the same overall player experience.
 
-[INDENT]I was focused on working with the sound, game design and art teams making sure the scheduale was correct, the teams work flow was smooth, on time, and followed the projects main vision.[/INDENT]
+## Overlapping responsibility
 
-**Personal Acheivements:** 
-Finalist: **[Game Refinery - Mobile Gamedev Awards - Best feature innovation 2022](https://www.gamerefinery.com/mobile-gamedev-awards-2022/).**
+Game Design remained my core work throughout Hublix. As the team grew, I also took on design leadership and mentoring, including leading a team of designers. Later, I carried deputy-production responsibility across art, design and audio, supporting planning and delivery while continuing to design hands-on.
 
-*While working on Hublix, I was asked to help another project (Cooking Diary) team port a particular feature I had created from our project.* 
-*I worked as a consultant on this with the other project team, using my specifications as a base and guideline for the ported feature.* 
-*This feature was eventually nominated as a finalist for the award above.*
+These responsibilities overlapped. They were not a sequence where Game Design stopped and a production role replaced it.
+
+## Related recognition
+
+A feature I designed was later used as the basis for work with the Cooking Diary team. I consulted with that team using my specifications and design intent as a guide. The resulting feature was a finalist in the GameRefinery Mobile GameDev Awards 2022 for Best Feature Innovation.
