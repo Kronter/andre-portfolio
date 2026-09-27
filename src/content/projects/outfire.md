@@ -27,9 +27,7 @@ externalLinks:
 ---
 ## Project overview
 
-Outfire is a fast-paced top-down multiplayer hero shooter with team modes and battle royale play.
-
-During development I moved between several design areas, often joining teams where additional design support was needed.
+Outfire is a fast-paced top-down multiplayer hero shooter with team modes and battle royale play. During development I moved between several design areas, often joining teams where additional design support was needed.
 
 ## Gameplay Design
 

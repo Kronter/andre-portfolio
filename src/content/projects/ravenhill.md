@@ -27,9 +27,7 @@ externalLinks:
 ---
 ## Project overview
 
-Ravenhill is a live-service detective game built around hidden-object scenes, puzzles, quests and long-term meta progression.
-
-My work covered monetization events and offers, player-facing meta systems, and the refinement, polish of established features and where additional design support was needed.
+Ravenhill is a live-service detective game built around hidden-object scenes, puzzles, quests and long-term meta progression. My work covered monetization events and offers, player-facing meta systems, and the refinement, polish of established features and where additional design support was needed.
 
 ## Monetization & Live Events
 
