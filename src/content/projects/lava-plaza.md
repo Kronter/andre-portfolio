@@ -1,30 +1,30 @@
 ---
-id: 1
+id: "lava-plaza"
+slug: "lava-plaza"
+order: 9
 title: "Lava Plaza"
-category: "Professional"
+category: "Student / Independent"
+browseGroup: "Student / Independent"
+projectType: "Released Student Game"
 dates: "2018"
-image: '/lava-plaza-image.jpg'
-roles: 
-  - "General Designer"
-  - "Programmer"
-featured: false
-current: false
-university: true
-downloadLinks:
-  - platform: "APK"
+engine: "Unity"
+platforms: ["Android"]
+genres: ["Arcade", "Casual"]
+tags: ["Student", "Mobile", "Unity"]
+selectedWork: false
+image: "/lava-plaza-image.webp"
+imageAlt: "Lava Plaza mobile arcade game scene"
+roles: ["Game Designer", "Programmer"]
+responsibilityAreas: ["Overall game design", "Shared gameplay programming"]
+summary: "A released student arcade game where players dodge falling boulders while the plaza floor collapses into lava."
+released: true
+studentProject: true
+externalLinks:
+  - label: "Android release"
     url: "https://apkpure.com/lava-plaza/com.DangerNoodle.LavaPlaza"
 ---
-***Lava Plaza*** is a casual, arcade game, where players dodge falling boulders to avoid falling into lava.
+## Project overview
 
-**Engine:** Unity
-**Genre(s):** Arcade, Casual
-**Platform(s):** Android
+Lava Plaza is a casual arcade game where players dodge falling boulders and try to avoid the collapsing floor and lava below. It was made during my university studies.
 
-**​Responsibilities:**
-*This project was made as part of my university studies*
-
-◦ ***General Designer:*** 
-[INDENT]I was in charge of the whole game design for this game.[/INDENT]
-
-◦ ***Programmer:*** 
-[INDENT]I was part of a three-person programming team, all programming was shared between team members with no particular focus areas.[/INDENT]
+I owned the overall Game Design and shared general programming work with the other two programmers on the team.

@@ -1,25 +1,36 @@
 ---
-id: 3
-title: "Behavior Tree Tool"
-category: "Personal"
-dates: "2018 - 2020"
-image: '/behavior-tree-image.jpg'
-roles: 
-  - "Tools Designer"
-  - "Programmer"
-videos: 
+id: "behavior-tree"
+slug: "behavior-tree"
+order: 7
+title: "Behaviour Tree Tool"
+category: "Technical"
+browseGroup: "Technical"
+projectType: "Student Technical Tool"
+dates: "2018–2020"
+engine: "Unity"
+platforms: ["Unity editor"]
+tags: ["AI Tools", "Unity", "Technical Design"]
+selectedWork: false
+image: "/behavior-tree-image.webp"
+imageAlt: "Unity Behaviour Tree visual editor"
+videos:
   - videoId: "gWdGxazrgqw"
   - videoId: "ntX2sU9pToA"
-university: true
+videoId: "gWdGxazrgqw"
+roles: ["Tools Designer", "Programmer"]
+responsibilityAreas: ["Behaviour Tree framework", "Visual editor", "Real-time debugging", "Reusable ScriptableObject structure"]
+summary: "A visual authoring and debugging tool created for the code-first Behaviour Tree used in District Underground."
+relatedProjects: ["district-underground"]
 ---
-This tool is made to help visualize and create a better work flow for the Behavior tree I created for the ***District Underground*** project.
+## Why I built it
 
-The behaviour tree originally was code only, so I felt the need to crerate a tool, to better visualize and debug its structure.
+District Underground's original Behaviour Tree existed only in code. That made its structure difficult to read and slowed down debugging, so I created a Unity editor tool that made the tree visible and easier to author.
 
-**Engine:** Unity tool
+## Main features
 
-**Main Features:**
- [INDENT]◦ Behaviour tree contructor and visualizer
-◦ Real time flow viewer and debugger
-◦ Scriptable object base for tree, actions and nodes
-◦ Easily transferable between projects [/INDENT]
+- Behaviour Tree construction and visualisation;
+- real-time flow viewing and debugging;
+- a ScriptableObject base for trees, actions and nodes;
+- a structure that could be moved between projects more easily.
+
+The tool was both a programming project and an early technical-design exercise: it translated a system into an interface that made iteration clearer.
