@@ -2,58 +2,56 @@
 
 ## Comparison target
 
-- Source visual truth path: `C:/Users/Andrev/AppData/Local/Temp/codex-clipboard-fa1a4e41-28ea-4cd4-ab9b-f59145d4c795.png`.
-- Rendered implementation: `http://localhost:3001/`, More Projects region captured in the Codex in-app Browser.
-- Implementation screenshot evidence: browser capture attached to this task; the in-app Browser backend does not expose a filesystem path for captured bytes.
-- Viewport: 1598 × 900 CSS px at device pixel ratio 1; comparison region: 1598 × 598 px.
+- Source visual truth: Browser Comment 1 attached screenshot of the homepage at 1625 × 892, highlighting the oversized gap above More Projects.
+- Rendered implementation: `http://localhost:3001/`, captured in the Codex in-app Browser after the spacing update.
 - State: homepage, dark theme, More Projects collapsed with the All filter active.
+- Desktop implementation capture: 1111 × 711 CSS px at device pixel ratio 1; focused on the Selected Work / More Projects boundary.
+- Mobile regression viewport: existing `@media (max-width: 767px)` layout with its unchanged 62 px section spacing.
 
 ## Capture normalization
 
-- The source image is 1598 × 598 px. The implementation comparison uses the same 1598 px width and a 598 px crop beginning at the More Projects section boundary.
-- Both captures use the desktop layout and the same collapsed project-strip state.
-- A separate mobile regression check used 390 × 844 CSS px at device pixel ratio 1.
+- The source and implementation are both desktop layouts. The browser capture width is narrower than the annotation, so the comparison is limited to the vertical section boundary and header rhythm, which do not depend on shell width at these desktop breakpoints.
+- The implementation capture includes the end of Selected Work, the section divider, the More Projects label, filters and project strip in one view.
 
 ## Full-view comparison evidence
 
-- The More Projects label, filter row, card strip and expand control retain the reference composition and existing site shell.
-- The left/right controls were lowered by 30 px, matching the measured offset between the previous control position and the remaining section label.
-- Selected Work, Experience and Skills now use a compact 22 px heading-to-content gap after their large titles were removed.
+- The Selected Work cards now finish 48 px before the next section divider instead of retaining the previous 76 px desktop section padding.
+- More Projects begins with a 48 px section inset. The label appears about 66 px below the divider including its line box, down from roughly 95 px in the annotated source.
+- The label, arrows, filters and card strip form one compact header/content block without the former flex spacer.
 
 ## Focused-region comparison evidence
 
-- Before the fix, `.strip-controls` occupied y=1111–1154 while the remaining heading occupied y=1153–1184, leaving the controls visually above the label.
-- After the fix, `.strip-controls` occupies y=1135–1178 and the heading occupies y=1147–1178. Their vertical centres are aligned within approximately 2 px.
-- The filter row begins at y=1196, preserving an 18 px gap below the aligned header controls.
-- At 390 × 844, the desktop controls remain hidden, compact heading spacing resolves to the existing 32 px mobile rule, and document horizontal overflow is 0 px.
+- Desktop `.section` padding changed from 76 px to 48 px on both boundaries.
+- At desktop widths, `.more-projects-heading` now uses centred alignment and an explicit 18 px bottom gap.
+- The heading and control margins/transforms that previously reserved 91 px of header height are reset; the header row is now 43 px tall.
+- The mobile rule remains `.section { padding: 62px 0; }`, so the previously approved phone layout is unchanged.
 
 ## Required fidelity surfaces
 
-- Fonts and typography: passed. Existing font family, weights, letter spacing and label hierarchy are unchanged.
-- Spacing and layout rhythm: passed. Arrow alignment is corrected and no-title desktop sections use a tighter, consistent 22 px content gap.
-- Colors and visual tokens: passed. Existing charcoal, violet, border and focus tokens are unchanged.
-- Image quality and asset fidelity: passed. Project imagery and crops are unchanged.
+- Fonts and typography: passed. Font family, size, weight and label hierarchy are unchanged.
+- Spacing and layout rhythm: passed. Desktop section boundaries are materially tighter and the More Projects header no longer contains hidden vertical space.
+- Colors and visual tokens: passed. Existing charcoal, violet and border tokens are unchanged.
+- Image quality and asset fidelity: passed. Project assets, crops and card dimensions are unchanged.
 - Copy and content: passed. No text or project data changed.
 
 ## Findings and comparison history
 
-- [Resolved P2] More Projects controls sat noticeably above the remaining section label after the large title was removed.
-  - Fix: lowered the control group by the measured 30 px offset.
-  - Post-fix evidence: control and label centres align within approximately 2 px, with 18 px remaining before the filters.
-- [Resolved P2] Sections whose large titles were removed retained the former 28 px title-era heading gap.
-  - Fix: added a reusable compact heading state with a 22 px desktop gap.
-  - Post-fix evidence: Selected Work, Experience and Skills all measure 22 px from heading copy to primary content; About retains its intentional 28 px titled layout.
+- [Resolved P2] Desktop sections retained 76 px top and bottom padding after their large titles were removed.
+  - Fix: reduced desktop section padding to 48 px while preserving the existing mobile rule.
+  - Post-fix evidence: browser capture shows the Selected Work / More Projects transition reduced by 56 px in total.
+- [Resolved P2] The More Projects flex row reserved extra vertical height to position its arrows, pushing the label farther from the section boundary.
+  - Fix: centred the desktop header row, removed the transformed/margined control positioning and applied one explicit 18 px gap before the filters.
+  - Post-fix evidence: the header row now measures 43 px high and the label/arrows align without a spacer.
 
 ## Interaction and technical checks
 
-- Verified More Projects filter and project strip remain in their existing positions and states.
-- Verified desktop at 1598 × 900 and mobile at 390 × 844.
-- Verified mobile controls remain hidden and no document-level horizontal overflow is introduced.
-- Browser console checked with no errors or warnings.
+- Verified More Projects remains collapsed with filters and horizontal card strip intact.
+- Verified desktop rendering in the in-app Browser.
+- Confirmed mobile spacing rules were not changed.
 - Production build completed successfully.
 
 ## Follow-up polish
 
-- No actionable P0/P1/P2 differences remain for the supplied spacing and alignment reference.
+- No actionable P0/P1/P2 differences remain for the supplied section-spacing annotation.
 
 final result: passed

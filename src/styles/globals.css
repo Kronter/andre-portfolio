@@ -59,7 +59,7 @@ img { display: block; }
 .skip-link:focus { transform: translateY(0); }
 
 .site-shell { width: var(--shell); margin-inline: auto; }
-.section { padding: 76px 0; border-top: 1px solid var(--line); }
+.section { padding: 48px 0; border-top: 1px solid var(--line); }
 
 .eyebrow {
   margin: 0 0 12px;
@@ -455,6 +455,10 @@ img { display: block; }
 .prose a:hover { color: #c4b5fd; }
 
 @media (min-width: 768px) {
+  .more-projects-heading { align-items: center; margin-bottom: 18px; }
+  .more-projects .section-heading { margin-bottom: 0; }
+  .more-projects .eyebrow { margin-bottom: 0; }
+  .strip-controls { margin-bottom: 0; transform: none; }
   .hero-copy { margin-inline: auto; text-align: center; }
   .hero-lead, .hero-body { margin-right: auto; margin-left: auto; }
   .hero-location, .hero-actions { justify-content: center; }
