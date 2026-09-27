@@ -52,7 +52,6 @@ export default function DesignWritingPage({ posts }) {
       <Navigation />
       <main className="writing-page">
         <header className="writing-hero">
-          <div className="writing-hero-glow" aria-hidden="true" />
           <div className="site-shell writing-hero-inner">
             <p className="eyebrow">Design Writing</p>
             <h1>Ideas, exercises and notes from the design process.</h1>

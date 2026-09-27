@@ -75,7 +75,6 @@ export default function DesignWritingPostPage({ postData, nextPostInSeries, othe
     <Navigation />
     <main className="article-page">
       <header className="article-hero">
-        <div className="article-hero-glow" aria-hidden="true" />
         <div className="site-shell article-hero-inner">
           <Link href="/design-writing" className="article-back"><ArrowLeft aria-hidden="true" /> All Design Writing</Link>
           <div className="article-tags">{postData.tags?.map((tag) => <span key={tag}>{tag}</span>)}</div>

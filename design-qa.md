@@ -1,49 +1,67 @@
 # Design QA
 
-## Reference
+## Comparison target
 
-- `andre_portfolio_mockup.html`
-- `ChatGPT Image Sep 27, 2026, 01_44_52 PM.png`
-- `ChatGPT Image Sep 27, 2026, 01_45_57 PM.png`
+- Source visual truth:
+  - `C:/Users/Andrev/Desktop/andre_portfolio_mockup.html`
+  - `C:/Users/Andrev/Desktop/ChatGPT Image Sep 27, 2026, 01_44_52 PM.png`
+  - `C:/Users/Andrev/Desktop/ChatGPT Image Sep 27, 2026, 01_45_57 PM.png`
+  - User refinement: preserve the approved mobile composition and simplify all desktop page heroes to a purple-to-black gradient without AI-styled decoration.
+- Implementation capture:
+  - `http://localhost:3003/` — in-app browser desktop capture
+  - `http://localhost:3003/design-writing/` — in-app browser desktop capture
+  - `http://localhost:3003/design-writing/tcg-part-one/` — in-app browser desktop capture
+- State: default page load, dark theme, navigation closed.
 
-The references were used for visual hierarchy, density, responsive composition and Project Focus behaviour. Portfolio imagery and factual content remain sourced from the project.
+## Capture normalization
 
-## Visual comparison
+- Desktop viewport and implementation pixels: 1440 × 1000 CSS px at device pixel ratio 1.
+- Mobile viewport and implementation pixels: 390 × 844 CSS px at device pixel ratio 1.
+- Source boards contain several framed desktop and mobile states rather than a single pixel-matched viewport. Comparison therefore used the corresponding hero, navigation, content hierarchy and mobile regions rather than browser chrome or board annotations.
 
-- Desktop hero now follows the reference's compact split composition: concise positioning and actions on the left, real project media on the right.
-- Selected Work is a dense four-card image-led row at desktop widths and a single-column stack on mobile.
-- More Projects retains the reference's horizontal browse strip, compact filters and optional expanded grid.
-- Experience, Skills, About and Quick Links use the tighter spacing and bordered dark-panel language shown in the references.
-- Project Focus uses a fixed desktop window with a compact sticky header, large media stage, vertical thumbnails and side-by-side overview/contribution content. Mobile uses a full-height project screen with horizontal thumbnails and a single reading column.
-- Design Writing retains its editorial layout while using the same dark surfaces, grid texture, violet accents, typography and navigation.
+## Full-view comparison evidence
 
-## Responsive checks
+- Homepage: the implementation now follows the approved mobile hierarchy at desktop scale—label, direct headline, evidence-led summary, location and two actions—with no unrelated hero artwork competing with the work section.
+- Design Writing library: the grid texture and radial glow are removed; its header uses the same restrained gradient, typography and spacing language as the portfolio.
+- Article: the header uses the shared gradient and keeps article-specific metadata readable without decorative visual effects.
+- Project imagery remains limited to verified portfolio and article assets below the page headers.
 
-- 1440 × 1000 desktop: pass
-- 1280 × 900 desktop: pass
-- 390 × 844 mobile: pass
-- No document-level horizontal overflow at tested desktop or mobile widths.
-- Mobile project view fills `100dvh`; the desktop overlay remains centred and independently scrollable.
+## Focused-region comparison evidence
 
-## Interaction checks
+- Hero background: verified as one continuous `linear-gradient(135deg, #21143a 0%, #15101f 38%, #09090b 78%)` at desktop and mobile sizes. An earlier mobile capture exposed accidental 38 px background tiling; the inherited `background-size` was removed and the corrected capture shows a continuous gradient.
+- Typography: desktop headline stays large enough to establish immediate positioning but uses the same left-aligned rhythm and controlled width as mobile. Design Writing and article display sizes were reduced from the previous oversized editorial treatment.
+- Asset treatment: promotional Outfire hero art and its generated-sounding caption were removed. Real project images begin in Selected Work; the article cover remains the author’s real work.
 
-- Project open and close: pass
-- URL hash deep link: pass
-- Browser Back closes and Forward reopens: pass
-- Escape closes: pass
-- Body scroll lock while open: pass
-- Focus restoration to originating project card: pass
-- Desktop previous/next controls: present
-- Mobile carousel controls, swipe surface and thumbnails: present
-- Reduced-motion handling and carousel manual-stop behaviour: preserved
+## Required fidelity surfaces
 
-## Content and accessibility checks
+- Fonts and typography: passed. Inter/system type remains consistent; display sizes, line height, wrapping and weights are restrained and readable.
+- Spacing and layout rhythm: passed. Desktop hero has one content column, stable 1240 px shell alignment and clean transition into Selected Work. Mobile spacing remains unchanged apart from the corrected background.
+- Colors and visual tokens: passed. All page heroes share the same muted violet-to-black token with sufficient foreground contrast.
+- Image quality and asset fidelity: passed. No unrelated or generated hero image is used; verified project and article images remain sharp and correctly cropped.
+- Copy and content: passed. Game Designer positioning, experience summary, location and actions are unchanged; the removed caption carried no factual evidence.
 
-- Real portfolio assets are used; no reference artwork was copied into the site.
-- Semantic project buttons, labelled icon controls, dialog semantics, focus trap and visible focus treatment are preserved.
-- Quick Links email row aligns with the other rows and includes the external-action icon.
-- Design Writing and article pages remain linked and visually consistent with the redesigned portfolio.
+## Findings and comparison history
 
-## Result
+- [Resolved P2] Desktop homepage hero felt more like a promotional/generated landing page than the approved mobile experience.
+  - Fix: removed the split artwork panel, glow, grid and caption; adopted a simple one-column gradient hero.
+  - Post-fix evidence: 1440 × 1000 homepage capture shows a clean content-led hero and direct transition into real project work.
+- [Resolved P2] Design Writing library used a grid texture and radial glow inconsistent with the requested cleanup.
+  - Fix: replaced both with the shared hero gradient and reduced display scale.
+  - Post-fix evidence: 1440 × 1000 Design Writing capture shows the same visual language as the homepage.
+- [Resolved P2] Mobile hero gradient tiled into visible squares after the shared gradient change.
+  - Fix: removed the stale mobile `background-size: 38px 38px` rule.
+  - Post-fix evidence: 390 × 844 capture shows one uninterrupted gradient with no document-level horizontal overflow.
 
-Passed. No blocking mismatch remains against the supplied visual direction at the tested representative viewports.
+## Interaction and technical checks
+
+- Desktop homepage, Design Writing library and article rendered in the in-app browser.
+- Mobile homepage rechecked at 390 × 844.
+- Document width remains within the viewport at tested desktop and mobile sizes.
+- Browser console: no errors. One non-blocking Next.js development LCP warning was observed for an already-prioritized article image.
+- Production build: passed.
+
+## Follow-up polish
+
+- No blocking visual differences remain. Further change would be subjective color tuning rather than correction.
+
+final result: passed

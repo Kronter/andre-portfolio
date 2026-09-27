@@ -19,7 +19,6 @@ export function SectionHeading({ eyebrow, title, description }) {
 export function Hero() {
   return (
     <header id="top" className="hero">
-      <div className="hero-glow" aria-hidden="true" />
       <div className="site-shell hero-inner">
         <div className="hero-copy">
           <p className="eyebrow">Game Designer</p>
@@ -36,13 +35,6 @@ export function Hero() {
             <a className="secondary-button" href={SITE.resume} target="_blank" rel="noreferrer">
               Resume <ExternalLink aria-hidden="true" />
             </a>
-          </div>
-        </div>
-        <div className="hero-visual" aria-label="Outfire, one of André's selected projects">
-          <Image src="/outfire-image.webp" alt="Outfire characters in a colourful multiplayer battle scene" fill priority sizes="(max-width: 767px) 100vw, 48vw" />
-          <div className="hero-visual-caption">
-            <span>Selected work</span>
-            <strong>Systems · Players · Moments · Better games</strong>
           </div>
         </div>
       </div>
