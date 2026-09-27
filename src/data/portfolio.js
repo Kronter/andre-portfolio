@@ -122,7 +122,7 @@ export const SKILL_GROUPS = [
 export const ABOUT = [
   "I was born in Brazil and grew up in New Zealand. I've always been interested in history, myths and legends, and games became another way of exploring that curiosity. Age of Empires, Baldur's Gate and Harvest Moon were some of the games that first got me hooked — not just on playing, but eventually on wondering how games actually work.",
   'I still spend a lot of time with video games, board games and tabletop RPGs, and have a physical game collection that my family insists is already large enough. They are wrong.',
-  "I studied Software Engineering with a focus on game development, which gave me a practical way to pull things apart, prototype ideas and work closely with engineers. Whether I'm playing or designing, I'm usually interested in **why something works, what is getting in the player's way, and what small change might make it click.**",
+  "I studied Software Engineering with a focus on game development, which gave me a practical way to pull things apart, prototype ideas and work closely with engineers. Whether I'm playing or designing, I'm usually interested in why something works, what is getting in the player's way, and what small change might make it click.",
 ];
 
 export const FILTERS = ['All', 'Technical', 'Game Jams', 'Student / Independent'];
