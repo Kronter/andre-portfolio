@@ -27,14 +27,22 @@ externalLinks:
 ---
 ## Project overview
 
-Ravenhill is a narrative-led hidden-object and puzzle game supported through live-service systems and recurring content. My work covered monetization events and offers, player-facing meta systems, and the refinement and polish of established features.
+Ravenhill is a live-service detective game built around hidden-object scenes, puzzles, quests and long-term meta progression.
 
-## Updating the offer approach
+My work covered monetization events and offers, player-facing meta systems, and the refinement, polish of established features and where additional design support was needed.
 
-Part of my contribution was helping establish updated standards and design principles for offers. That meant looking beyond an individual bundle and considering how presentation, value, player context and the surrounding experience worked together.
+## Monetization & Live Events
 
-I then created an offer using the updated approach. It outperformed comparable older offers and performed better than expected. The result was useful evidence that the principles worked in practice without relying on confidential figures.
+A significant part of my work focused on monetization events and offers.
 
-## Established systems still need design
+I helped establish updated standards and design principles for offers, with the goal of improving their structure, presentation and value to players while supporting the game's monetization goals.
 
-Live-service work often means improving a system that already has players, expectations and production constraints around it. I worked across social, meta, gameplay and polish tasks, focusing on changes that made the experience clearer, more satisfying and better aligned with the player's reason for engaging.
+I was able to take one offer through development using the new approach. It outperformed comparable older offers and performed better than expected, providing encouraging validation for the direction.
+
+Unfortunately, this work came late in the project's lifecycle, so there was limited opportunity to apply and iterate on the approach more broadly.
+
+## Meta & Player-Facing Systems
+
+I also worked across a range of player-facing meta systems, helping refine existing features, improve usability and presentation, and support the ongoing live-service experience.
+
+My role frequently involved entering established systems, understanding how they worked within the wider game, identifying opportunities for improvement, and working with the team to implement and polish those changes.
