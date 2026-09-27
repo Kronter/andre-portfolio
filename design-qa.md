@@ -2,70 +2,68 @@
 
 ## Comparison target
 
-- Source visual truth: `C:/Users/Andrev/AppData/Local/Temp/codex-clipboard-da87257b-c567-4640-aa08-a2f55891a57c.png` (1479 × 921 px), supplemented by the previously supplied desktop/mobile boards and HTML mock-up.
+- Source visual truth: Browser Comments 1–3 and their annotated screenshots for `https://african-statutory-terrace-clean.trycloudflare.com/`, supplied in the current request. These show the footer link row, Selected Work cards, and the desired wide desktop hero behavior.
 - Rendered implementation evidence:
-  - `http://localhost:3001/` — browser-rendered homepage captures at 1440 × 900, 1440 × 1000, 1440 × 1200, and 390 × 844.
-  - `http://localhost:3001/design-writing/` — browser-rendered desktop capture at 1440 × 900.
+  - `http://localhost:3001/` — homepage captures at 1395 × 892 and 390 × 844.
+  - `http://localhost:3001/design-writing/` — Design Writing capture at 1440 × 900.
+  - `http://localhost:3001/design-writing/tcg-part-one/` — article hero inspected at 1440 × 900.
   - Persistent preview: `https://african-statutory-terrace-clean.trycloudflare.com/`.
-- State: dark theme, homepage default state, project focus closed, desktop navigation visible, mobile navigation closed.
+- State: dark theme, project focus closed, desktop navigation visible, mobile menu closed.
 
 ## Capture normalization
 
-- Source: 1479 × 921 raster at its original density. It is a cropped desktop reference rather than a full-page or device-framed specification.
-- Desktop implementation: CSS viewports of 1440 × 900/1000/1200 at device pixel ratio 1.
-- Mobile implementation: 390 × 844 CSS px at device pixel ratio 1.
-- The comparison aligned the source card rows and section rhythm with the corresponding browser-rendered regions. Browser chrome, the source's crop, and different page content heights were excluded from fidelity judgments.
+- Desktop reference and implementation were compared at the same wide-browser state, with implementation captures at 1395 × 892 and 1440 × 900 CSS px at device pixel ratio 1.
+- Mobile regression capture used 390 × 844 CSS px at device pixel ratio 1.
+- The annotated browser screenshots are viewport captures rather than exported source files, so comparison used matching visible regions instead of a pixel-diff. The source captures and browser-rendered implementation captures were both opened in the same review context before judging.
 
 ## Full-view comparison evidence
 
-- The desktop homepage hero now follows the approved mobile composition at desktop scale: one centered content column over a restrained violet-to-black gradient, with no generated or decorative hero artwork.
-- Selected Work uses verified project imagery with a distinct opaque information footer. Titles and tag rows no longer fight the image contrast.
-- Desktop Experience now translates the mobile career-card language horizontally: VISTIC and continuous Mytona employment are primary cards, while Hublix, Outfire and Ravenhill sit within the Mytona card as project evidence.
-- The Design Writing landing hero uses the same centered, image-free gradient treatment as the homepage.
-- At 390 × 844 the mobile hero and Selected Work composition remain left-aligned and unchanged in structure; only the requested skill-tag color carries through.
+- Homepage hero: the centered copy now occupies up to 1080 px instead of being compressed into a 790 px column. The violet-to-black gradient remains full bleed.
+- Design Writing and article heroes use the same wide desktop proportions: 1080 px hero content, up to 1080 px index heading, and up to 1040 px article heading.
+- Selected Work once again presents each project as a full-image card. A stronger bottom fade provides contrast without reintroducing a separate opaque footer.
+- The About section now stands alone, while the complete Quick Links panel occupies the footer position selected in Browser Comment 1.
 
 ## Focused-region comparison evidence
 
-- Project cards: compared the supplied Selected Work and More Projects crop directly with the 1440 × 900 browser capture. The implementation intentionally uses opaque footers instead of the source's image overlay because the user specifically identified poor tag contrast. Every title row reserves the same height, including the two-line Environment Query System Tool title.
-- Experience: the 1440 × 1200 capture verifies the horizontal connector, paired employment cards and three nested Mytona project cards. The relationships match the mobile card hierarchy without implying sequential title replacement.
-- Skills: the 1440 × 900 capture verifies category-specific violet, cyan and pink tag treatments with readable text and subdued surfaces.
-- Heroes: the 1440 × 1000 homepage and 1440 × 900 Design Writing captures verify centered desktop headings and copy. The 390 × 844 capture verifies mobile remains left aligned.
+- Selected Work: the 1395 × 892 implementation capture was compared with Browser Comment 2. Images fill each card, the fade is stronger toward the lower edge, and violet tags are less transparent. Measured title and tag regions align identically across all four cards: title top and a fixed 51 px tag zone are consistent.
+- Footer: the browser capture confirms the duplicate LinkedIn/Resume/Design Writing footer list is removed and replaced with the existing Quick Links panel, including Resume, LinkedIn, direct email, and Design Writing.
+- Heroes: measured homepage copy width is 1080 px at 1395 px viewport width. Design Writing heading width is 1080 px and article heading width is 1040 px at 1440 px.
+- Mobile: 390 × 844 capture confirms the homepage remains left aligned, Selected Work cards remain 220 px tall, and Quick Links appear only in the footer. Document width stays within the viewport.
 
 ## Required fidelity surfaces
 
-- Fonts and typography: passed. Display hierarchy remains clean and human, title wrapping is controlled, project-card title blocks align, and small tags use sufficient weight.
-- Spacing and layout rhythm: passed. Desktop hero content is centered; Selected Work footers align; Experience reads horizontally; mobile retains its established vertical rhythm.
-- Colors and visual tokens: passed. Violet remains the primary accent, while skill categories add restrained violet/cyan/pink differentiation. Project tags have an opaque dark-violet surface and higher-contrast text.
-- Image quality and asset fidelity: passed. Existing verified project images are preserved with responsive crops; no generated or unrelated artwork was introduced.
-- Copy and content: passed. Employment continuity, overlapping Hublix responsibilities, project names, dates and skill labels remain grounded in the verified content.
+- Fonts and typography: passed. Existing type family and hierarchy are preserved; wider desktop measures improve line wrapping without enlarging the text excessively.
+- Spacing and layout rhythm: passed. Hero content scales across wide displays, Selected Work title/tag zones align, and the footer uses a balanced two-column structure.
+- Colors and visual tokens: passed. Existing violet/charcoal tokens remain intact. Selected Work fades and tag backgrounds now provide stronger contrast while preserving the image-led treatment.
+- Image quality and asset fidelity: passed. Verified project assets remain the card backgrounds with their existing crops; no generated or replacement imagery was introduced.
+- Copy and content: passed. All existing hero, project, About, contact, and Quick Links content is preserved without new factual claims.
 
 ## Findings and comparison history
 
-- [Resolved P2] Selected Work tags were difficult to read over several project images.
-  - Fix: moved desktop titles and tags into opaque, bordered information footers and strengthened tag contrast.
-  - Post-fix evidence: 1440 × 900 capture shows consistent readability across bright Hublix/Outfire/Ravenhill imagery and the dark District Underground image.
-- [Resolved P2] Project title and tag rows did not align when a title wrapped.
-  - Fix: made cards flex columns and reserved a consistent two-line heading area for Selected Work and More Projects.
-  - Post-fix evidence: 1440 × 900 capture shows equal card bottoms and aligned tag zones, including the two-line Environment Query System Tool title.
-- [Resolved P2] Desktop Experience used a different visual grammar from the preferred mobile timeline.
-  - Fix: replaced proportional bars with horizontal employment cards and nested project cards connected by a restrained timeline rule.
-  - Post-fix evidence: 1440 × 1200 capture shows VISTIC and Mytona as peer career periods with the three Mytona projects nested correctly.
-- [Resolved P2] The new desktop Experience row was not hidden by the legacy mobile breakpoint selector and caused mobile overflow.
-  - Fix: hide `.desktop-career-flow` below 768 px and contain the mobile filter row without negative margins.
-  - Post-fix evidence: 390 × 844 browser measurement reports the desktop flow as `display: none`, the mobile timeline as `block`, and no document-level horizontal overflow.
-- [Resolved P3] Skills lacked category differentiation.
-  - Fix: added restrained category colors to tag borders, fills and text for Design, Technical and Production / Collaboration.
+- [Resolved P2] Desktop heroes became visually compressed on wide browsers.
+  - Fix: expanded homepage, Design Writing, and article hero content widths while keeping centered alignment and responsive limits.
+  - Post-fix evidence: browser measurements show 1080 px homepage/index hero content and a 1040 px article heading at wide viewports.
+- [Resolved P2] Selected Work lost the preferred full-image presentation when contrast was improved.
+  - Fix: restored full-card imagery, added a stronger dark fade, and increased tag opacity and border contrast.
+  - Post-fix evidence: 1395 × 892 capture shows readable titles/tags over all four real project images.
+- [Resolved P2] Selected Work title positions differed when tag rows wrapped.
+  - Fix: reserved a fixed 51 px tag region on desktop and aligned tag content to its lower edge.
+  - Post-fix evidence: browser measurements report identical title and tag-region positions for all four cards.
+- [Resolved P2] Footer repeated a reduced link list while Quick Links occupied the About section.
+  - Fix: moved the full Quick Links component into the footer and removed the duplicate list.
+  - Post-fix evidence: footer accessibility tree contains one Quick Links group with Resume, LinkedIn, email and Design Writing; About contains none.
 
 ## Interaction and technical checks
 
-- Primary responsive checks: 1440 × 900, 1440 × 1000, 1440 × 1200 and 390 × 844.
-- Homepage, Design Writing library and responsive navigation rendered in the in-app browser.
-- Mobile document width rechecked after the overflow fix.
-- Browser console checked; no application errors were found.
+- Tested homepage at 1395 × 892 and 390 × 844.
+- Tested Design Writing and article heroes at 1440 × 900.
+- Verified responsive widths and absence of document-level horizontal overflow.
+- Verified Quick Links destinations remain semantic links, including direct `mailto:` email behavior.
+- Browser console checked with no errors or warnings.
 - Production build completed successfully.
 
 ## Follow-up polish
 
-- No actionable P0/P1/P2 differences remain. Any further adjustment would be subjective density or accent-color tuning.
+- No actionable P0/P1/P2 differences remain for the three annotated requests.
 
 final result: passed
