@@ -240,7 +240,6 @@ function QuickLinks() {
       <a href={SITE.resume} target="_blank" rel="noreferrer"><FileText aria-hidden="true" /> Resume <ExternalLink aria-hidden="true" /></a>
       <a href={SITE.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /> LinkedIn <ExternalLink aria-hidden="true" /></a>
       <a href={`mailto:${SITE.email}`}><Mail aria-hidden="true" /> <span>{SITE.email}</span> <ExternalLink aria-hidden="true" /></a>
-      <Link href="/design-writing">Design Writing <ArrowRight aria-hidden="true" /></Link>
     </aside>
   );
 }
@@ -263,15 +262,13 @@ export function Footer() {
     <footer id="contact" className="footer">
       <div className="site-shell footer-grid">
         <div>
-          <FourDotMark />
           <p className="eyebrow">Contact</p>
           <h2>Let’s talk about games and design problems.</h2>
-          <a className="footer-email" href={`mailto:${SITE.email}`}>{SITE.email} <ArrowRight aria-hidden="true" /></a>
         </div>
         <QuickLinks />
       </div>
       <div className="site-shell footer-bottom">
-        <span>© {new Date().getFullYear()} André Gottgtroy</span>
+        <span className="footer-signoff"><FourDotMark /> <span>{new Date().getFullYear()} André Gottgtroy</span></span>
         <span>Game Designer · Auckland, New Zealand</span>
       </div>
     </footer>

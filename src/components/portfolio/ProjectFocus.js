@@ -86,7 +86,7 @@ export default function ProjectFocus({ project, projects, onClose, onNavigate })
     <AnimatePresence>
       {project && (
         <motion.div
-          className="focus-backdrop"
+          className={`focus-backdrop ${fullscreen ? 'focus-backdrop-fullscreen' : ''}`}
           initial={reducedMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
