@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowDown, ArrowLeft, ArrowRight, ExternalLink, FileText, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, ArrowLeft, ArrowRight, ExternalLink, FileText, Linkedin, Mail, MapPin } from 'lucide-react';
 import ProjectCard from './ProjectCard';
 import FourDotMark from './FourDotMark';
 import { ABOUT, EXPERIENCE, FILTERS, SITE, SKILL_GROUPS } from '@/data/portfolio';
@@ -21,24 +21,29 @@ export function Hero() {
     <header id="top" className="hero">
       <div className="hero-glow" aria-hidden="true" />
       <div className="site-shell hero-inner">
-        <p className="eyebrow">Auckland, New Zealand · Open to relocation &amp; remote work</p>
-        <h1>Game Designer</h1>
-        <p className="hero-lead">
-          6 years of professional experience across gameplay, systems, live service, monetization, social features, technical design, prototyping and R&amp;D.
-        </p>
-        <p className="hero-body">
-          I have a Software Engineering background and hands-on experience with Unreal Engine, Unity, proprietary engines, Blueprints and scripting. I like getting stuck into design problems, trying ideas quickly, seeing how they feel in the game, and working with the team to keep improving them until they make sense for the player.
-        </p>
-        <div className="hero-actions">
-          <a className="primary-button" href="#work">View Selected Work <ArrowDown aria-hidden="true" /></a>
-          <a className="secondary-button" href={SITE.resume} target="_blank" rel="noreferrer">
-            Resume <ExternalLink aria-hidden="true" />
-          </a>
+        <div className="hero-copy">
+          <p className="eyebrow">Game Designer</p>
+          <h1>I design game <span>systems</span> people enjoy playing.</h1>
+          <p className="hero-lead">
+            6 years of professional experience across gameplay, systems, live service, monetization, social features, technical design, prototyping and R&amp;D.
+          </p>
+          <p className="hero-body">
+            With a Software Engineering background and hands-on experience in Unreal Engine, Unity, proprietary engines, Blueprints and scripting, I like getting stuck into design problems, trying ideas quickly and improving them with the team until they make sense for the player.
+          </p>
+          <p className="hero-location"><MapPin aria-hidden="true" /> Auckland, New Zealand <span aria-hidden="true">·</span> Open to relocation &amp; remote work</p>
+          <div className="hero-actions">
+            <a className="primary-button" href="#work">View Selected Work <ArrowDown aria-hidden="true" /></a>
+            <a className="secondary-button" href={SITE.resume} target="_blank" rel="noreferrer">
+              Resume <ExternalLink aria-hidden="true" />
+            </a>
+          </div>
         </div>
-        <div className="hero-proof" aria-label="Professional profile highlights">
-          <span><strong>6 years</strong> professional experience</span>
-          <span><strong>3 engines</strong> Unreal, Unity, proprietary</span>
-          <span><strong>Broad practice</strong> systems to player-facing design</span>
+        <div className="hero-visual" aria-label="Outfire, one of André's selected projects">
+          <Image src="/outfire-image.webp" alt="Outfire characters in a colourful multiplayer battle scene" fill priority sizes="(max-width: 767px) 100vw, 48vw" />
+          <div className="hero-visual-caption">
+            <span>Selected work</span>
+            <strong>Systems · Players · Moments · Better games</strong>
+          </div>
         </div>
       </div>
     </header>
@@ -51,8 +56,8 @@ export function SelectedWork({ projects, onOpen }) {
       <div className="site-shell">
         <SectionHeading
           eyebrow="Selected work"
-          title="Four projects. Four different design problems."
-          description="A curated view of professional and released work across R&D, multiplayer, live service, systems, combat and technical implementation."
+          title="Projects that show different sides of my design work."
+          description="Professional and released work across R&D, multiplayer, live service, systems, combat and technical implementation."
         />
         <div className="selected-grid">
           {projects.map((project) => <ProjectCard key={project.slug} project={project} onOpen={onOpen} />)}
@@ -79,7 +84,7 @@ export function MoreProjects({ projects, onOpen }) {
     <section className="section more-projects" aria-labelledby="more-projects-title">
       <div className="site-shell">
         <div className="more-projects-heading">
-          <SectionHeading eyebrow="More projects" title="Tools, jams and independent work." />
+          <SectionHeading eyebrow="More projects" title="Smaller projects, tools and experiments." />
           {!expanded && (
             <div className="strip-controls" aria-label="Scroll projects">
               <button type="button" onClick={() => scroll(-1)} aria-label="Scroll projects left"><ArrowLeft aria-hidden="true" /></button>
@@ -135,7 +140,7 @@ export function Experience({ onOpenBySlug }) {
         <SectionHeading
           eyebrow="Experience"
           title="Game Design is the through-line."
-          description="Mytona was one continuous Game Design role across multiple projects. On Hublix, leadership and deputy-production responsibilities overlapped with — rather than replaced — hands-on design."
+          description="Professional experience and overlapping responsibilities over time. Mytona was one continuous Game Design role; on Hublix, leadership and deputy-production responsibilities overlapped with hands-on design."
         />
 
         <div className="desktop-timeline" aria-label="Career timeline from 2019 to 2026">
@@ -208,8 +213,8 @@ export function Skills() {
       <div className="site-shell">
         <SectionHeading
           eyebrow="Skills"
-          title="A broad design practice, grounded in implementation."
-          description="The useful part is not the number of tools. It is knowing when to prototype, when to document, and how to keep the player problem visible across disciplines."
+          title="Core areas I work across."
+          description="A broad design practice grounded in implementation, communication and the player problem."
         />
         <div className="skills-grid">
           {SKILL_GROUPS.map((group, index) => (

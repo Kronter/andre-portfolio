@@ -138,27 +138,27 @@ export default function ProjectFocus({ project, projects, onClose, onNavigate })
               <div className="focus-content">
                 <MediaCarousel project={project} />
 
-                <div className="project-intro">
-                  <div>
+                <div className="focus-summary-grid">
+                  <section className="project-intro" aria-labelledby="project-focus-title">
                     <p className="eyebrow">{project.projectType}</p>
                     <h2 id="project-focus-title">{project.title}</h2>
                     <p className="project-summary">{project.summary}</p>
                     <div className="tag-list">
                       {project.tags?.map((tag) => <span key={tag}>{tag}</span>)}
                     </div>
-                  </div>
-                  <Metadata project={project} />
-                </div>
-
-                {project.responsibilityAreas?.length > 0 && (
-                  <section className="contribution-panel" aria-labelledby="contribution-title">
-                    <p className="eyebrow">My contribution</p>
-                    <h3 id="contribution-title">Areas of responsibility</h3>
-                    <ul>
-                      {project.responsibilityAreas.map((area) => <li key={area}>{area}</li>)}
-                    </ul>
+                    <Metadata project={project} />
                   </section>
-                )}
+
+                  {project.responsibilityAreas?.length > 0 && (
+                    <section className="contribution-panel" aria-labelledby="contribution-title">
+                      <p className="eyebrow">My contribution</p>
+                      <h3 id="contribution-title">Areas of responsibility</h3>
+                      <ul>
+                        {project.responsibilityAreas.map((area) => <li key={area}>{area}</li>)}
+                      </ul>
+                    </section>
+                  )}
+                </div>
 
                 <article className="project-prose" dangerouslySetInnerHTML={{ __html: project.contentHtml }} />
 
