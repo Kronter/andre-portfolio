@@ -2,66 +2,70 @@
 
 ## Comparison target
 
-- Source visual truth:
-  - `C:/Users/Andrev/Desktop/andre_portfolio_mockup.html`
-  - `C:/Users/Andrev/Desktop/ChatGPT Image Sep 27, 2026, 01_44_52 PM.png`
-  - `C:/Users/Andrev/Desktop/ChatGPT Image Sep 27, 2026, 01_45_57 PM.png`
-  - User refinement: preserve the approved mobile composition and simplify all desktop page heroes to a purple-to-black gradient without AI-styled decoration.
-- Implementation capture:
-  - `http://localhost:3003/` — in-app browser desktop capture
-  - `http://localhost:3003/design-writing/` — in-app browser desktop capture
-  - `http://localhost:3003/design-writing/tcg-part-one/` — in-app browser desktop capture
-- State: default page load, dark theme, navigation closed.
+- Source visual truth: `C:/Users/Andrev/AppData/Local/Temp/codex-clipboard-da87257b-c567-4640-aa08-a2f55891a57c.png` (1479 × 921 px), supplemented by the previously supplied desktop/mobile boards and HTML mock-up.
+- Rendered implementation evidence:
+  - `http://localhost:3001/` — browser-rendered homepage captures at 1440 × 900, 1440 × 1000, 1440 × 1200, and 390 × 844.
+  - `http://localhost:3001/design-writing/` — browser-rendered desktop capture at 1440 × 900.
+  - Persistent preview: `https://african-statutory-terrace-clean.trycloudflare.com/`.
+- State: dark theme, homepage default state, project focus closed, desktop navigation visible, mobile navigation closed.
 
 ## Capture normalization
 
-- Desktop viewport and implementation pixels: 1440 × 1000 CSS px at device pixel ratio 1.
-- Mobile viewport and implementation pixels: 390 × 844 CSS px at device pixel ratio 1.
-- Source boards contain several framed desktop and mobile states rather than a single pixel-matched viewport. Comparison therefore used the corresponding hero, navigation, content hierarchy and mobile regions rather than browser chrome or board annotations.
+- Source: 1479 × 921 raster at its original density. It is a cropped desktop reference rather than a full-page or device-framed specification.
+- Desktop implementation: CSS viewports of 1440 × 900/1000/1200 at device pixel ratio 1.
+- Mobile implementation: 390 × 844 CSS px at device pixel ratio 1.
+- The comparison aligned the source card rows and section rhythm with the corresponding browser-rendered regions. Browser chrome, the source's crop, and different page content heights were excluded from fidelity judgments.
 
 ## Full-view comparison evidence
 
-- Homepage: the implementation now follows the approved mobile hierarchy at desktop scale—label, direct headline, evidence-led summary, location and two actions—with no unrelated hero artwork competing with the work section.
-- Design Writing library: the grid texture and radial glow are removed; its header uses the same restrained gradient, typography and spacing language as the portfolio.
-- Article: the header uses the shared gradient and keeps article-specific metadata readable without decorative visual effects.
-- Project imagery remains limited to verified portfolio and article assets below the page headers.
+- The desktop homepage hero now follows the approved mobile composition at desktop scale: one centered content column over a restrained violet-to-black gradient, with no generated or decorative hero artwork.
+- Selected Work uses verified project imagery with a distinct opaque information footer. Titles and tag rows no longer fight the image contrast.
+- Desktop Experience now translates the mobile career-card language horizontally: VISTIC and continuous Mytona employment are primary cards, while Hublix, Outfire and Ravenhill sit within the Mytona card as project evidence.
+- The Design Writing landing hero uses the same centered, image-free gradient treatment as the homepage.
+- At 390 × 844 the mobile hero and Selected Work composition remain left-aligned and unchanged in structure; only the requested skill-tag color carries through.
 
 ## Focused-region comparison evidence
 
-- Hero background: verified as one continuous `linear-gradient(135deg, #21143a 0%, #15101f 38%, #09090b 78%)` at desktop and mobile sizes. An earlier mobile capture exposed accidental 38 px background tiling; the inherited `background-size` was removed and the corrected capture shows a continuous gradient.
-- Typography: desktop headline stays large enough to establish immediate positioning but uses the same left-aligned rhythm and controlled width as mobile. Design Writing and article display sizes were reduced from the previous oversized editorial treatment.
-- Asset treatment: promotional Outfire hero art and its generated-sounding caption were removed. Real project images begin in Selected Work; the article cover remains the author’s real work.
+- Project cards: compared the supplied Selected Work and More Projects crop directly with the 1440 × 900 browser capture. The implementation intentionally uses opaque footers instead of the source's image overlay because the user specifically identified poor tag contrast. Every title row reserves the same height, including the two-line Environment Query System Tool title.
+- Experience: the 1440 × 1200 capture verifies the horizontal connector, paired employment cards and three nested Mytona project cards. The relationships match the mobile card hierarchy without implying sequential title replacement.
+- Skills: the 1440 × 900 capture verifies category-specific violet, cyan and pink tag treatments with readable text and subdued surfaces.
+- Heroes: the 1440 × 1000 homepage and 1440 × 900 Design Writing captures verify centered desktop headings and copy. The 390 × 844 capture verifies mobile remains left aligned.
 
 ## Required fidelity surfaces
 
-- Fonts and typography: passed. Inter/system type remains consistent; display sizes, line height, wrapping and weights are restrained and readable.
-- Spacing and layout rhythm: passed. Desktop hero has one content column, stable 1240 px shell alignment and clean transition into Selected Work. Mobile spacing remains unchanged apart from the corrected background.
-- Colors and visual tokens: passed. All page heroes share the same muted violet-to-black token with sufficient foreground contrast.
-- Image quality and asset fidelity: passed. No unrelated or generated hero image is used; verified project and article images remain sharp and correctly cropped.
-- Copy and content: passed. Game Designer positioning, experience summary, location and actions are unchanged; the removed caption carried no factual evidence.
+- Fonts and typography: passed. Display hierarchy remains clean and human, title wrapping is controlled, project-card title blocks align, and small tags use sufficient weight.
+- Spacing and layout rhythm: passed. Desktop hero content is centered; Selected Work footers align; Experience reads horizontally; mobile retains its established vertical rhythm.
+- Colors and visual tokens: passed. Violet remains the primary accent, while skill categories add restrained violet/cyan/pink differentiation. Project tags have an opaque dark-violet surface and higher-contrast text.
+- Image quality and asset fidelity: passed. Existing verified project images are preserved with responsive crops; no generated or unrelated artwork was introduced.
+- Copy and content: passed. Employment continuity, overlapping Hublix responsibilities, project names, dates and skill labels remain grounded in the verified content.
 
 ## Findings and comparison history
 
-- [Resolved P2] Desktop homepage hero felt more like a promotional/generated landing page than the approved mobile experience.
-  - Fix: removed the split artwork panel, glow, grid and caption; adopted a simple one-column gradient hero.
-  - Post-fix evidence: 1440 × 1000 homepage capture shows a clean content-led hero and direct transition into real project work.
-- [Resolved P2] Design Writing library used a grid texture and radial glow inconsistent with the requested cleanup.
-  - Fix: replaced both with the shared hero gradient and reduced display scale.
-  - Post-fix evidence: 1440 × 1000 Design Writing capture shows the same visual language as the homepage.
-- [Resolved P2] Mobile hero gradient tiled into visible squares after the shared gradient change.
-  - Fix: removed the stale mobile `background-size: 38px 38px` rule.
-  - Post-fix evidence: 390 × 844 capture shows one uninterrupted gradient with no document-level horizontal overflow.
+- [Resolved P2] Selected Work tags were difficult to read over several project images.
+  - Fix: moved desktop titles and tags into opaque, bordered information footers and strengthened tag contrast.
+  - Post-fix evidence: 1440 × 900 capture shows consistent readability across bright Hublix/Outfire/Ravenhill imagery and the dark District Underground image.
+- [Resolved P2] Project title and tag rows did not align when a title wrapped.
+  - Fix: made cards flex columns and reserved a consistent two-line heading area for Selected Work and More Projects.
+  - Post-fix evidence: 1440 × 900 capture shows equal card bottoms and aligned tag zones, including the two-line Environment Query System Tool title.
+- [Resolved P2] Desktop Experience used a different visual grammar from the preferred mobile timeline.
+  - Fix: replaced proportional bars with horizontal employment cards and nested project cards connected by a restrained timeline rule.
+  - Post-fix evidence: 1440 × 1200 capture shows VISTIC and Mytona as peer career periods with the three Mytona projects nested correctly.
+- [Resolved P2] The new desktop Experience row was not hidden by the legacy mobile breakpoint selector and caused mobile overflow.
+  - Fix: hide `.desktop-career-flow` below 768 px and contain the mobile filter row without negative margins.
+  - Post-fix evidence: 390 × 844 browser measurement reports the desktop flow as `display: none`, the mobile timeline as `block`, and no document-level horizontal overflow.
+- [Resolved P3] Skills lacked category differentiation.
+  - Fix: added restrained category colors to tag borders, fills and text for Design, Technical and Production / Collaboration.
 
 ## Interaction and technical checks
 
-- Desktop homepage, Design Writing library and article rendered in the in-app browser.
-- Mobile homepage rechecked at 390 × 844.
-- Document width remains within the viewport at tested desktop and mobile sizes.
-- Browser console: no errors. One non-blocking Next.js development LCP warning was observed for an already-prioritized article image.
-- Production build: passed.
+- Primary responsive checks: 1440 × 900, 1440 × 1000, 1440 × 1200 and 390 × 844.
+- Homepage, Design Writing library and responsive navigation rendered in the in-app browser.
+- Mobile document width rechecked after the overflow fix.
+- Browser console checked; no application errors were found.
+- Production build completed successfully.
 
 ## Follow-up polish
 
-- No blocking visual differences remain. Further change would be subjective color tuning rather than correction.
+- No actionable P0/P1/P2 differences remain. Any further adjustment would be subjective density or accent-color tuning.
 
 final result: passed

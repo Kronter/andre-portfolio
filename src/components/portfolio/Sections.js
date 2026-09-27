@@ -123,9 +123,6 @@ function TimelineButton({ item, onOpen }) {
 }
 
 export function Experience({ onOpenBySlug }) {
-  const years = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
-  const columnFor = (year) => year - 2017;
-
   return (
     <section id="experience" className="section experience-section">
       <div className="site-shell">
@@ -135,35 +132,31 @@ export function Experience({ onOpenBySlug }) {
           description="Professional experience and overlapping responsibilities over time. Mytona was one continuous Game Design role; on Hublix, leadership and deputy-production responsibilities overlapped with hands-on design."
         />
 
-        <div className="desktop-timeline" aria-label="Career timeline from 2019 to 2026">
-          <div className="timeline-years">
-            <span aria-hidden="true" />
-            {years.map((year) => <span key={year}>{year}</span>)}
-          </div>
+        <div className="desktop-career-flow" aria-label="Career timeline from 2019 to 2026">
           {EXPERIENCE.employment.map((job) => (
-            <div className="timeline-row" key={job.company}>
-              <div className="timeline-label"><strong>{job.company}</strong><span>{job.role}</span></div>
-              <div
-                className={`employment-bar ${job.company === 'Mytona' ? 'mytona-bar' : ''}`}
-                style={{ gridColumn: `${columnFor(job.start)} / ${columnFor(job.end) + 1}` }}
-              >
-                <strong>{job.period}</strong>
-              </div>
-            </div>
-          ))}
-          <div className="timeline-projects-label">Projects within Mytona</div>
-          {EXPERIENCE.projects.map((item) => (
-            <div className="timeline-row project-timeline-row" key={item.slug}>
-              <div className="timeline-label"><span>{item.title}</span></div>
-              <div style={{ gridColumn: `${columnFor(item.start)} / ${columnFor(item.end) + 1}` }}>
-                <TimelineButton item={item} onOpen={onOpenBySlug} />
-                {item.additional && (
-                  <div className="overlap-labels" aria-label="Additional overlapping Hublix responsibilities">
-                    {item.additional.map((label) => <span key={label}>{label}</span>)}
-                  </div>
-                )}
-              </div>
-            </div>
+            <article key={job.company} className={`desktop-career-item ${job.company === 'Mytona' ? 'desktop-career-item-primary' : ''}`}>
+              <span className="desktop-timeline-dot" aria-hidden="true" />
+              <p className="eyebrow">{job.period}</p>
+              <h3>{job.role}</h3>
+              <p className="career-company">{job.company}</p>
+              <p className="desktop-career-summary">{job.summary}</p>
+              {job.company === 'Mytona' && (
+                <div className="desktop-project-list" aria-label="Projects within Mytona">
+                  {EXPERIENCE.projects.map((item) => (
+                    <div key={item.slug} className="desktop-project-item">
+                      <TimelineButton item={item} onOpen={onOpenBySlug} />
+                      {item.additional && (
+                        <div className="overlap-labels" aria-label="Additional overlapping Hublix responsibilities">
+                          <span>Game Design continued throughout</span>
+                          {item.additional.map((label) => <span key={label}>{label}</span>)}
+                        </div>
+                      )}
+                      <p>{item.summary}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </article>
           ))}
         </div>
 
