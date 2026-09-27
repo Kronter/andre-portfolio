@@ -36,7 +36,17 @@ export async function getWritingPosts() {
     .map((filename) => {
       const source = fs.readFileSync(path.join(directory, filename), 'utf8');
       const { data } = matter(source);
-      return { ...data, slug: filename.replace(/\.md$/, '') };
+      const text = Array.isArray(data.content)
+        ? data.content.flatMap((block) => [block.text || '', ...(block.items || [])]).join(' ')
+        : '';
+      const plainText = text.replace(/\[[A-Z]+\]|\[\/[A-Z]+\]|<[^>]+>|[*_#]/g, ' ');
+      const readingMinutes = Math.max(1, Math.ceil(plainText.split(/\s+/).filter(Boolean).length / 225));
+
+      return {
+        ...data,
+        slug: filename.replace(/\.md$/, ''),
+        readingTime: `${readingMinutes} min read`,
+      };
     })
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 }

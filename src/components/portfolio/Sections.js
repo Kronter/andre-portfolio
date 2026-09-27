@@ -242,8 +242,8 @@ export function About() {
           <p className="eyebrow" id="quick-links-title">Quick links</p>
           <a href={SITE.resume} target="_blank" rel="noreferrer"><FileText aria-hidden="true" /> Resume <ExternalLink aria-hidden="true" /></a>
           <a href={SITE.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /> LinkedIn <ExternalLink aria-hidden="true" /></a>
-          <a href={`mailto:${SITE.email}`}><Mail aria-hidden="true" /> {SITE.email}</a>
-          <Link href="/blog/tcg-part-one">Design Writing <ArrowRight aria-hidden="true" /></Link>
+          <a href={`mailto:${SITE.email}`}><Mail aria-hidden="true" /> <span>{SITE.email}</span> <ExternalLink aria-hidden="true" /></a>
+          <Link href="/design-writing">Design Writing <ArrowRight aria-hidden="true" /></Link>
         </aside>
       </div>
     </section>
@@ -251,14 +251,13 @@ export function About() {
 }
 
 export function WritingInvitation({ posts }) {
-  const firstPost = posts[0];
-  if (!firstPost) return null;
+  if (!posts.length) return null;
 
   return (
     <section id="design-writing" className="writing-invitation">
       <div className="site-shell">
         <p>Interested in how I approach design?</p>
-        <Link href={`/blog/${firstPost.slug}`}>Read my design writing <ArrowRight aria-hidden="true" /></Link>
+        <Link href="/design-writing">Explore my design writing <ArrowRight aria-hidden="true" /></Link>
       </div>
     </section>
   );
@@ -277,7 +276,7 @@ export function Footer() {
         <div className="footer-links">
           <a href={SITE.linkedin} target="_blank" rel="noreferrer">LinkedIn <ExternalLink aria-hidden="true" /></a>
           <a href={SITE.resume} target="_blank" rel="noreferrer">Resume <ExternalLink aria-hidden="true" /></a>
-          <Link href="/blog/tcg-part-one">Design Writing <ArrowRight aria-hidden="true" /></Link>
+          <Link href="/design-writing">Design Writing <ArrowRight aria-hidden="true" /></Link>
         </div>
       </div>
       <div className="site-shell footer-bottom">

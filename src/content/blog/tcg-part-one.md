@@ -4,6 +4,9 @@ title: "Making a TCG (Sort of)"
 date: "2025-07-30"
 author: "André Gottgtroy"
 tags: ["TCG", "Game Design", "Practice"]
+coverImage: "/part-one-tcg-image.webp"
+coverAlt: "Trading card prototypes arranged across a game design workspace"
+excerpt: "Why I started designing a multiplayer-friendly trading card game, the constraints behind it, and the pillars guiding the project."
 featured: true
 series: "TCG"
 part: 1
@@ -16,7 +19,7 @@ content:
 
      I hope you'll join me on this journey, and I look forward to sharing insights into ***my design and thought process*** along the way.
 
-     [NOTE]***Quick note:*** I aim for these blog posts to be readable in about 5 minutes, focusing on a single topic for clarity and ease of understanding.[/NOTE]
+     [NOTE]***Quick note:*** I aim for these articles to be readable in about 5 minutes, focusing on a single topic for clarity and ease of understanding.[/NOTE]
   - type: heading-2
     text: "Why am I making a Trading Card Game?"
   - type: image

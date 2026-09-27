@@ -1,406 +1,144 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Clock, ChevronLeft, ChevronRight, Linkedin, Twitter, Github, Mail, FileText, ArrowRight } from 'lucide-react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowLeft, ArrowRight, Clock, ExternalLink, Mail } from 'lucide-react';
+import Navigation from '@/components/portfolio/Navigation';
+import FourDotMark from '@/components/portfolio/FourDotMark';
+import { SITE } from '@/data/portfolio';
 
-// --- Animation Variants for Framer Motion ---
-const sliderVariants = {
-  enter: (direction) => ({ x: direction > 0 ? 500 : -500, opacity: 0 }),
-  center: { zIndex: 1, x: 0, opacity: 1 },
-  exit: (direction) => ({ zIndex: 0, x: direction < 0 ? 500 : -500, opacity: 0 })
+const calculateReadingTime = (content = []) => {
+  const text = content.flatMap((block) => [block.text || '', ...(block.items || [])]).join(' ');
+  const words = text.replace(/<[^>]*>?/g, '').split(/\s+/).filter(Boolean).length;
+  return `${Math.max(1, Math.ceil(words / 225))} min read`;
 };
 
-// --- Reusable Screenshot Gallery Component ---
-const ScreenshotGallery = ({ screenshots }) => {
-    const [[page, direction], setPage] = useState([0, 0]);
-    const timeoutRef = useRef(null);
-    const paginate = useCallback((newDirection) => {
-        setPage(p => [p[0] + newDirection, newDirection]);
-    }, []);
-    
-    useEffect(() => {
-        const resetTimeout = () => timeoutRef.current && clearTimeout(timeoutRef.current);
-        resetTimeout();
-        if (screenshots && screenshots.length > 1) {
-            timeoutRef.current = setTimeout(() => paginate(1), 7000);
-        }
-        return () => resetTimeout();
-    }, [page, screenshots, paginate]);
+const formatDate = (date) => new Date(date).toLocaleDateString('en-NZ', {
+  day: 'numeric', month: 'long', year: 'numeric',
+});
 
-    if (!screenshots || screenshots.length === 0) return null;
-    const imageIndex = (page % screenshots.length + screenshots.length) % screenshots.length;
-
-    return (
-        <div className="aspect-w-16 aspect-h-9 my-8 rounded-lg overflow-hidden relative bg-zinc-900">
-            <AnimatePresence initial={false} custom={direction}>
-                <motion.img
-                    key={page}
-                    src={screenshots[imageIndex]}
-                    alt={`Screenshot ${imageIndex + 1}`}
-                    custom={direction}
-                    variants={sliderVariants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{ x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } }}
-                    className="absolute w-full h-full object-cover"
-                />
-            </AnimatePresence>
-            <button className="absolute top-1/2 -translate-y-1/2 left-2 z-10 p-2 bg-black/40 hover:bg-black/60 rounded-full transition-colors text-white" onClick={() => paginate(-1)}><ChevronLeft size={20} /></button>
-            <button className="absolute top-1/2 -translate-y-1/2 right-2 z-10 p-2 bg-black/40 hover:bg-black/60 rounded-full transition-colors text-white" onClick={() => paginate(1)}><ChevronRight size={20} /></button>
-        </div>
-    );
-};
-
-// --- NEW Video Gallery Component (No Auto-Scroll) ---
-const VideoGallery = ({ videos }) => {
-    const [[page, direction], setPage] = useState([0, 0]);
-
-    const paginate = (newDirection) => {
-        setPage([page + newDirection, newDirection]);
-    };
-
-    if (!videos || videos.length === 0) return null;
-    const videoIndex = (page % videos.length + videos.length) % videos.length;
-
-    return (
-        <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative bg-zinc-900">
-            <AnimatePresence initial={false} custom={direction}>
-                <motion.div
-                    key={page}
-                    custom={direction}
-                    variants={sliderVariants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{ x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } }}
-                    className="absolute w-full h-full"
-                >
-                    <iframe 
-                        src={`https://www.youtube.com/embed/${videos[videoIndex].videoId}`} 
-                        frameBorder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowFullScreen
-                        className="w-full h-full"
-                        title={`Embedded YouTube video ${videos[videoIndex].videoId}`}
-                    ></iframe>
-                </motion.div>
-            </AnimatePresence>
-            <button className="absolute top-1/2 -translate-y-1/2 left-2 z-10 p-2 bg-black/40 hover:bg-black/60 rounded-full transition-colors text-white" onClick={() => paginate(-1)}><ChevronLeft size={20} /></button>
-            <button className="absolute top-1/2 -translate-y-1/2 right-2 z-10 p-2 bg-black/40 hover:bg-black/60 rounded-full transition-colors text-white" onClick={() => paginate(1)}><ChevronRight size={20} /></button>
-        </div>
-    );
-};
-
-// --- Reading Time Calculator ---
-const calculateReadingTime = (contentArray) => {
-    if (!contentArray || !Array.isArray(contentArray)) return '1 min read';
-    const wordsPerMinute = 225;
-    let textContent = '';
-
-    contentArray.forEach(block => {
-        if (block.type === 'paragraph' || block.type === 'heading' || block.type === 'subheading' || block.type === 'heading-1' || block.type === 'heading-2' || block.type === 'heading-3' || block.type === 'subheading-2' ||block.type === 'blockquote') {
-            textContent += block.text + ' ';
-        } else if (block.type === 'html') {
-            textContent += block.value + ' ';
-        } else if (block.type === 'list' && Array.isArray(block.items)) {
-            textContent += block.items.join(' ') + ' ';
-        }
-    });
-
-    const plainText = textContent.replace(/<[^>]*>?/gm, '');
-    const wordCount = plainText.split(/\s+/).filter(Boolean).length;
-    const readingTime = Math.ceil(wordCount / wordsPerMinute);
-    
-    return `${readingTime || 1} min read`;
-};
-
-// --- Main Blog Post Component ---
-export default function BlogPostPage({ postData, nextPostInSeries, otherPosts }) {
-    const [copySuccess, setCopySuccess] = useState('');
-
-    const handleCopyEmail = () => {
-        const email = 'andregot@gmail.com';
-        const textArea = document.createElement('textarea');
-        textArea.value = email;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-        setCopySuccess('Email copied!');
-        setTimeout(() => setCopySuccess(''), 2000);
-    };
-    
-    const renderContent = (block, index) => {
-        switch (block.type) {
-            case 'paragraph':
-                return <div key={index} className="text-base whitespace-pre-line" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
-            case 'heading-1':
-                return <h1 key={index} className="text-5xl font-bold text-white mt-6 mb-4">{block.text}</h1>;
-            case 'heading-2':
-                return <h2 key={index} className="text-4xl font-bold text-white mt-6 mb-4">{block.text}</h2>;
-            case 'heading-3':
-                return <h3 key={index} className="text-3xl font-bold text-white mt-6 mb-4">{block.text}</h3>;
-            case 'heading':
-                return <h3 key={index} className="text-3xl font-bold text-white mt-6 mb-4">{block.text}</h3>;
-            case 'subheading':
-                return <h6 key={index} className="text-lg font-bold text-white mt-6 mb-1">{block.text}</h6>;
-            case 'subheading-2':
-                return <h5 key={index} className="text-1xl font-bold text-white mt-6 mb-1">{block.text}</h5>;
-            case 'image':
-                return <div key={index} className="flex justify-center my-8"><Image src={block.src} alt={block.alt || `${postData.title} illustration`} width={1200} height={675} sizes="(max-width: 768px) 100vw, 768px" className="rounded-lg shadow-lg max-w-full h-auto" /></div>;
-            case 'video':
-                return (
-                    <div key={index} className="flex justify-center my-8">
-                        <div className="w-full max-w-3xl aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                            <iframe src={`https://www.youtube.com/embed/${block.videoId}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full" title={block.alt}></iframe>
-                        </div>
-                    </div>
-                );
-            case 'gallery':
-                return <div key={index} className="flex justify-center my-8"><div className="w-full max-w-3xl"><ScreenshotGallery screenshots={block.screenshots} /></div></div>;
-            case 'video_gallery':
-                return <div key={index} className="flex justify-center my-8"><div className="w-full max-w-3xl"><VideoGallery videos={block.videos} /></div></div>;
-            case 'list':
-                return (
-                    <ul key={index} className="list-disc list-inside space-y-4 mb-2 pl-4">
-                        {block.items?.map((item, i) => (
-                            <li key={i} className="text-base whitespace-pre-line" dangerouslySetInnerHTML={{ __html: item }} />
-                        ))}
-                    </ul>
-                );
-            case 'blockquote':
-                return (
-                    <blockquote key={index} className="my-1 border-l-4 border-violet-500 bg-zinc-800/40 p-4 rounded-sm italic" dangerouslySetInnerHTML={{ __html: block.processedText }} />
-                );
-            case 'html':
-                return <div key={index} dangerouslySetInnerHTML={{ __html: block.value }} />;
-            default:
-                return null;
-        }
-    };
-
-    const readingTime = calculateReadingTime(postData.content);
-
-    return (
-        <div className="bg-zinc-900 text-gray-300 font-sans leading-relaxed">
-            <Head>
-                <title>{postData.title} | Andre Gottgtroy</title>
-                <meta name="description" content= {`Design writing about "${postData.title}" by André Gottgtroy.`} />
-                <meta property="og:title" content= "André Gottgtroy — Design Writing" />
-                <meta property="og:description" content={`Design writing about "${postData.title}" by André Gottgtroy.`} />
-            </Head>
-            <nav className="bg-zinc-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg shadow-violet-500/10">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between h-20">
-                        <Link href={"/"} className="text-2xl font-bold text-white tracking-wider flex items-center">
-                            <span>{postData.author  || "Andre Gottgtroy"}</span>
-                            <div className="grid grid-cols-3 grid-rows-3 gap-0.5 w-5 h-5 ml-3">
-                                <span className="w-1.5 h-1.5 bg-pink-500 rounded-full col-start-2 self-center justify-self-center"></span>
-                                <span className="w-1.5 h-1.5 bg-sky-500 rounded-full row-start-2 self-center justify-self-center"></span>
-                                <span className="w-1.5 h-1.5 bg-teal-400 rounded-full row-start-2 col-start-3 self-center justify-self-center"></span>
-                                <span className="w-1.5 h-1.5 bg-violet-500 rounded-full row-start-3 col-start-2 self-center justify-self-center"></span>
-                            </div>
-                        </Link>
-                        <Link href={"/"} className="text-gray-300 hover:text-white transition-colors flex-shrink-0 ml-4">
-                            <span className="inline sm:hidden text-2xl">&larr;</span>
-                            <span className="hidden sm:inline text-base">&larr; Back to Portfolio</span>
-                        </Link>
-                    </div>
-                </div>
-            </nav>
-
-            <main className="pt-32 pb-16">
-                <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-invert prose-lg">
-                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                        <div className="mb-4">
-                            {postData.tags?.map(tag => (
-                                <span key={tag} className="inline-block bg-violet-600/20 text-violet-400 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">{tag}</span>
-                            ))}
-                        </div>
-                        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tighter">{postData.title}</h1>
-                        <div className="flex items-center text-gray-400 space-x-4 mb-8">
-                            <div className="flex items-center">
-                                <Image src="/profile-photo.webp" alt="André Gottgtroy" width={32} height={32} className="w-8 h-8 rounded-full mr-2 object-cover" />
-                                <span>{postData.author}</span>
-                            </div>
-                            <span>&bull;</span>
-                            <span>{new Date(postData.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                            <span>&bull;</span>
-                            <div className="flex items-center">
-                                <Clock className="w-4 h-4 mr-1.5" />
-                                <span>{readingTime}</span>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    <motion.div className="mt-8 prose prose-invert prose-lg max-w-none" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.5 }}>
-                        {postData.content?.map((block, index) => renderContent(block, index))}
-                    </motion.div>
-                </article>
-
-                
-                    {(nextPostInSeries || (otherPosts && otherPosts.length > 0)) && (
-                        <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700">
-                            <h2 className="text-3xl font-bold text-white mb-8">Keep Reading</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {/* This combines the next post and other posts into one list */}
-                                {[nextPostInSeries, ...otherPosts].filter(Boolean).map(post => {
-                                    const isNextInSeries = nextPostInSeries && post.id === nextPostInSeries.id;
-                                    
-                                    // Apply special styles if it's the next post in the series
-                                    const cardClasses = isNextInSeries
-                                        ? "group block bg-zinc-700/40 p-6 rounded-lg border border-violet-500/40 shadow-lg shadow-violet-500/10 hover:border-violet-500/80 hover:shadow-violet-500/15 hover:transition-all duration-300 flex flex-col"
-                                        : "group block bg-zinc-800 p-6 rounded-lg border border-zinc-700 hover:border-violet-500 transition-colors flex flex-col";
-
-                                    return (
-                                        <Link key={post.id} href={`/blog/${post.slug}`} className={cardClasses}>
-                                            {isNextInSeries ? (
-                                                <p className="text-sm text-violet-400 mb-1">Next in series: {post.series}</p>
-                                            ) : (
-                                                <p className="text-sm text-gray-400 mb-2">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                                            )}
-                                            
-                                            <h4 className="text-xl font-bold text-white flex-grow mb-4 group-hover:text-violet-400 transition-colors">{post.title}</h4>
-                                            
-                                            <div className="flex items-center text-violet-400 font-semibold mt-auto">
-                                            {isNextInSeries ? 'Continue Reading' : 'Read Post'} <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                                            </div>
-                                        </Link>
-                                    );
-                                })}
-                            </div>
-                        </section>
-                    )}
-
-                <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-12 border-t border-zinc-700 text-center relative">
-                    <h2 className="text-3xl font-bold text-white mb-4">Get In Touch</h2>
-                    <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-                         I&apos;m always open to new opportunities and collaborations. 
-                            Feel free to reach out!
-                    </p>
-                    <div className="flex justify-center space-x-6 mb-8">
-                        <a href="https://www.linkedin.com/in/andré-gottgtroy-b56616172/" className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Linkedin className="w-6 h-6 text-white" /></a>
-                        <button onClick={handleCopyEmail} className="p-3 bg-zinc-800 rounded-full hover:bg-violet-600 transition-colors transform hover:-translate-y-1"><Mail className="w-6 h-6 text-white" /></button>
-                    </div>
-                     <AnimatePresence>
-                        {copySuccess && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 10 }}
-                                className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap"
-                            >
-                                {copySuccess}
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
-                        <a href={"/Andre_Gottgtroy_Resume.pdf"} download className="inline-flex items-center px-8 py-3 border-2 border-violet-500 text-violet-400 font-bold rounded-lg hover:bg-violet-500 hover:text-white transition-all duration-300 text-lg">
-                            <FileText className="w-5 h-5 mr-2" />
-                            Download Resume
-                        </a>
-                    </div>
-                </section>
-            </main>
-            
-            <style jsx global>{`
-                .aspect-w-16 { position: relative; padding-bottom: 56.25%; }
-                .aspect-h-9 { }
-                .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-            `}</style>
-        </div>
-    );
+function ArticleBlock({ block, title }) {
+  switch (block.type) {
+    case 'paragraph':
+      return <div className="article-paragraph" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
+    case 'heading-1':
+    case 'heading-2':
+      return <h2 className="article-h2">{block.text}</h2>;
+    case 'heading-3':
+    case 'heading':
+      return <h3 className="article-h3">{block.text}</h3>;
+    case 'subheading':
+    case 'subheading-2':
+      return <h3 className="article-subheading">{block.text}</h3>;
+    case 'image':
+      return <figure className="article-image"><Image src={block.src} alt={block.alt || `${title} design illustration`} width={1200} height={675} sizes="(max-width: 767px) 100vw, 760px" />{block.caption && <figcaption>{block.caption}</figcaption>}</figure>;
+    case 'video':
+      return <div className="article-video"><iframe src={`https://www.youtube.com/embed/${block.videoId}`} title={block.alt || `${title} video`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div>;
+    case 'gallery':
+      return <div className="article-gallery">{block.screenshots?.map((src, imageIndex) => <Image key={src} src={src} alt={`${title} screenshot ${imageIndex + 1}`} width={900} height={506} sizes="(max-width: 767px) 100vw, 380px" />)}</div>;
+    case 'video_gallery':
+      return <div className="article-gallery">{block.videos?.map((video) => <div className="article-video" key={video.videoId}><iframe src={`https://www.youtube.com/embed/${video.videoId}`} title={video.alt || `${title} video`} allowFullScreen /></div>)}</div>;
+    case 'list':
+      return <ul className="article-list">{block.items?.map((item, itemIndex) => <li key={itemIndex} dangerouslySetInnerHTML={{ __html: item }} />)}</ul>;
+    case 'blockquote':
+      return <blockquote className="article-quote" dangerouslySetInnerHTML={{ __html: block.processedText }} />;
+    case 'html':
+      return <div className="article-paragraph" dangerouslySetInnerHTML={{ __html: block.value }} />;
+    default:
+      return null;
+  }
 }
 
-// --- Next.js Data Fetching Functions ---
+function RelatedCard({ post, nextInSeries }) {
+  return <Link href={`/design-writing/${post.slug}`} className="article-related-card">
+    <span>{nextInSeries ? `Next in ${post.series}` : formatDate(post.date)}</span>
+    <strong>{post.title}</strong>
+    <span className="article-related-action">{nextInSeries ? 'Continue reading' : 'Read article'} <ArrowRight aria-hidden="true" /></span>
+  </Link>;
+}
+
+export default function DesignWritingPostPage({ postData, nextPostInSeries, otherPosts }) {
+  const readingTime = calculateReadingTime(postData.content);
+  const relatedPosts = [nextPostInSeries, ...otherPosts].filter(Boolean);
+
+  return <>
+    <Head>
+      <title>{`${postData.title} | André Gottgtroy`}</title>
+      <meta name="description" content={postData.excerpt || `Design writing about ${postData.title} by André Gottgtroy.`} />
+      <link rel="canonical" href={`/design-writing/${postData.slug}/`} />
+    </Head>
+    <a className="skip-link" href="#article-content">Skip to article</a>
+    <Navigation />
+    <main className="article-page">
+      <header className="article-hero">
+        <div className="article-hero-glow" aria-hidden="true" />
+        <div className="site-shell article-hero-inner">
+          <Link href="/design-writing" className="article-back"><ArrowLeft aria-hidden="true" /> All Design Writing</Link>
+          <div className="article-tags">{postData.tags?.map((tag) => <span key={tag}>{tag}</span>)}</div>
+          {postData.series && <p className="eyebrow">{postData.series} · Part {postData.part}</p>}
+          <h1>{postData.title}</h1>
+          {postData.excerpt && <p className="article-deck">{postData.excerpt}</p>}
+          <div className="article-byline">
+            <Image src="/profile-photo.webp" alt="" width={42} height={42} />
+            <div><strong>{postData.author}</strong><span>{formatDate(postData.date)} <i aria-hidden="true">·</i> <Clock aria-hidden="true" /> {readingTime}</span></div>
+          </div>
+        </div>
+      </header>
+      {postData.coverImage && <div className="site-shell article-cover"><Image src={postData.coverImage} alt={postData.coverAlt || ''} width={1600} height={900} priority sizes="(max-width: 767px) 100vw, 1180px" /></div>}
+      <div className="site-shell article-layout">
+        <aside className="article-rail"><span className="eyebrow">Design Writing</span><p>Practical notes on game design, systems and the decisions behind how a game feels.</p><Link href="/design-writing">Browse all articles <ArrowRight aria-hidden="true" /></Link></aside>
+        <article id="article-content" className="article-content">
+          {postData.content?.map((block, index) => <ArticleBlock key={`${block.type}-${index}`} block={block} title={postData.title} />)}
+        </article>
+      </div>
+      {relatedPosts.length > 0 && <section className="article-related"><div className="site-shell">
+        <div className="article-section-heading"><p className="eyebrow">Keep reading</p><h2>More Design Writing</h2></div>
+        <div className="article-related-grid">{relatedPosts.map((post) => <RelatedCard key={post.slug} post={post} nextInSeries={nextPostInSeries?.id === post.id} />)}</div>
+      </div></section>}
+      <section className="article-contact"><div className="site-shell article-contact-inner">
+        <div><p className="eyebrow">Continue the conversation</p><h2>Have a design problem worth discussing?</h2></div>
+        <a href={`mailto:${SITE.email}`}><Mail aria-hidden="true" /> Email André <ExternalLink aria-hidden="true" /></a>
+      </div></section>
+    </main>
+    <footer className="writing-footer"><div className="site-shell writing-footer-inner"><div className="writing-footer-brand"><FourDotMark /><span>{SITE.name}</span></div><Link href="/">Back to portfolio <ArrowRight aria-hidden="true" /></Link></div></footer>
+  </>;
+}
+
 export async function getStaticPaths() {
-    const blogDirectory = path.join(process.cwd(), 'src', 'content', 'blog');
-    let paths = [];
-
-    // Check if the directory exists before trying to read it
-    if (fs.existsSync(blogDirectory)) {
-        const filenames = fs.readdirSync(blogDirectory).filter(filename => filename.endsWith('.md'));
-        paths = filenames.map(filename => ({
-            params: { slug: filename.replace(/\.md$/, '') }
-        }));
-    }
-
-    return { paths, fallback: false };
+  const directory = path.join(process.cwd(), 'src', 'content', 'blog');
+  const filenames = fs.existsSync(directory) ? fs.readdirSync(directory).filter((filename) => filename.endsWith('.md')) : [];
+  return { paths: filenames.map((filename) => ({ params: { slug: filename.replace(/\.md$/, '') } })), fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-    const blogDirectory = path.join(process.cwd(), 'src', 'content', 'blog');
-    
-    const filePath = path.join(blogDirectory, `${params.slug}.md`);
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data } = matter(fileContents);
-
-    // Convert the legacy block shortcodes to standard Markdown before rendering.
-    // Inline colour/sidenote markers remain spans, so the generated HTML stays valid.
-    if (data.content && Array.isArray(data.content)) {
-        for (const block of data.content) {
-            if ((block.type === 'paragraph' || block.type === 'blockquote') && block.text) {
-                const preparedText = block.text
-                    .replace(/\[(?:BLOCK|NOTE|CNOTE)(?:=\d+)?\]([\s\S]*?)\[\/(?:BLOCK|NOTE|CNOTE)\]/g, (_match, content) =>
-                        content.split('\n').map(line => `> ${line}`).join('\n')
-                    )
-                    .replace(/\[INDENT(?:=\d+)?\]([\s\S]*?)\[\/INDENT\]/g, '$1');
-
-                const processed = await remark().use(html).process(preparedText);
-                let processedHtml = processed.toString();
-
-                processedHtml = processedHtml.replace(/\[VIOLET\]/g, (match, level) => {
-                    return `<span class="text-violet-400">`;
-                }).replace(/\[\/VIOLET\]/g, '</span>');
-
-                processedHtml = processedHtml.replace(/\[ZINC\]/g, (match, level) => {
-                    return `<span class="text-zinc-400">`;
-                }).replace(/\[\/ZINC\]/g, '</span>');
-
-                processedHtml = processedHtml.replace(/\[WHITE\]/g, (match, level) => {
-                    return `<span class="text-white">`;
-                }).replace(/\[\/WHITE\]/g, '</span>');
-
-                processedHtml = processedHtml.replace(/\[SIDENOTE\]/g, (match, level) => {
-                    return `<span class="text-zinc-400 italic">—`;
-                }).replace(/\[\/SIDENOTE\]/g, '—</span>');
-
-                block.processedText = processedHtml;
-            }
-        }
+  const directory = path.join(process.cwd(), 'src', 'content', 'blog');
+  const source = fs.readFileSync(path.join(directory, `${params.slug}.md`), 'utf8');
+  const { data } = matter(source);
+  if (Array.isArray(data.content)) {
+    for (const block of data.content) {
+      if ((block.type === 'paragraph' || block.type === 'blockquote') && block.text) {
+        const preparedText = block.text
+          .replace(/\[(?:BLOCK|NOTE|CNOTE)(?:=\d+)?\]([\s\S]*?)\[\/(?:BLOCK|NOTE|CNOTE)\]/g, (_match, content) => content.split('\n').map((line) => `> ${line}`).join('\n'))
+          .replace(/\[INDENT(?:=\d+)?\]([\s\S]*?)\[\/INDENT\]/g, '$1');
+        const processed = await remark().use(html).process(preparedText);
+        block.processedText = processed.toString()
+          .replace(/\[VIOLET\]/g, '<span class="article-violet">').replace(/\[\/VIOLET\]/g, '</span>')
+          .replace(/\[ZINC\]/g, '<span class="article-muted">').replace(/\[\/ZINC\]/g, '</span>')
+          .replace(/\[WHITE\]/g, '<span class="article-white">').replace(/\[\/WHITE\]/g, '</span>')
+          .replace(/\[SIDENOTE\]/g, '<span class="article-sidenote">—').replace(/\[\/SIDENOTE\]/g, '—</span>');
+      }
     }
-
-    const allFilenames = fs.readdirSync(blogDirectory).filter(filename => filename.endsWith('.md'));
-    const allPosts = allFilenames.map(filename => {
-        const file = fs.readFileSync(path.join(blogDirectory, filename), 'utf8');
-        const { data: postMeta } = matter(file);
-        return {
-            slug: filename.replace(/\.md$/, ''),
-            ...postMeta
-        };
-    }).sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    const nextInSeries = data.series 
-        ? allPosts.find(p => p.series === data.series && p.part === data.part + 1)
-        : null;
-
-    const otherPosts = allPosts
-        .filter(p => p.id !== data.id && (!nextInSeries || p.id !== nextInSeries.id))
-        .slice(0, 2);
-
-    return {
-        props: {
-            postData: { slug: params.slug, ...data },
-            nextPostInSeries: nextInSeries || null,
-            otherPosts
-        }
-    };
+  }
+  const allPosts = fs.readdirSync(directory).filter((filename) => filename.endsWith('.md')).map((filename) => {
+    const file = fs.readFileSync(path.join(directory, filename), 'utf8');
+    const { data: metadata } = matter(file);
+    return { slug: filename.replace(/\.md$/, ''), ...metadata };
+  }).sort((a, b) => new Date(b.date) - new Date(a.date));
+  const nextInSeries = data.series ? allPosts.find((post) => post.series === data.series && post.part === data.part + 1) : null;
+  const otherPosts = allPosts.filter((post) => post.id !== data.id && post.id !== nextInSeries?.id).slice(0, 2);
+  return { props: { postData: { slug: params.slug, ...data }, nextPostInSeries: nextInSeries || null, otherPosts } };
 }

@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
 import FourDotMark from './FourDotMark';
 import { SITE } from '@/data/portfolio';
 
 const links = [
-  ['Work', '#work'],
-  ['Experience', '#experience'],
-  ['Skills', '#skills'],
-  ['About', '#about'],
-  ['Design Writing', '#design-writing'],
-  ['Contact', '#contact'],
+  ['Work', '/#work'],
+  ['Experience', '/#experience'],
+  ['Skills', '/#skills'],
+  ['About', '/#about'],
+  ['Design Writing', '/design-writing'],
+  ['Contact', '/#contact'],
 ];
 
 export default function Navigation() {
@@ -18,14 +19,14 @@ export default function Navigation() {
   return (
     <nav className="site-nav" aria-label="Primary navigation">
       <div className="nav-inner">
-        <a className="brand" href="#top" aria-label="André Gottgtroy, back to top">
+        <Link className="brand" href="/" aria-label="André Gottgtroy, portfolio home">
           <FourDotMark />
           <span>{SITE.name}</span>
-        </a>
+        </Link>
 
         <div className="desktop-nav">
           {links.map(([label, href]) => (
-            <a key={href} href={href}>{label}</a>
+            <Link key={href} href={href}>{label}</Link>
           ))}
           <a className="nav-resume" href={SITE.resume} target="_blank" rel="noreferrer">
             Resume <span aria-hidden="true">↗</span>
@@ -47,7 +48,7 @@ export default function Navigation() {
       {open && (
         <div id="mobile-navigation" className="mobile-nav">
           {links.map(([label, href]) => (
-            <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
+            <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>
           ))}
           <a href={SITE.resume} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>
             Resume <span aria-hidden="true">↗</span>
