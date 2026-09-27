@@ -10,10 +10,15 @@ export function SectionHeading({ eyebrow, title, description }) {
   return (
     <div className="section-heading">
       <p className="eyebrow">{eyebrow}</p>
-      <h2>{title}</h2>
+      {title && <h2>{title}</h2>}
       {description && <p>{description}</p>}
     </div>
   );
+}
+
+function AboutParagraph({ text }) {
+  const parts = text.split('**');
+  return <p>{parts.map((part, index) => (index % 2 ? <strong key={`${index}-${part}`}>{part}</strong> : part))}</p>;
 }
 
 export function Hero() {
@@ -21,8 +26,8 @@ export function Hero() {
     <header id="top" className="hero">
       <div className="site-shell hero-inner">
         <div className="hero-copy">
-          <p className="eyebrow">Game Designer</p>
-          <h1>I design game <span>systems</span> people enjoy playing.</h1>
+          <p className="eyebrow">André Gottgtroy</p>
+          <h1>Game Designer</h1>
           <p className="hero-lead">
             6 years of professional experience across gameplay, systems, live service, monetization, social features, technical design, prototyping and R&amp;D.
           </p>
@@ -48,8 +53,7 @@ export function SelectedWork({ projects, onOpen }) {
       <div className="site-shell">
         <SectionHeading
           eyebrow="Selected work"
-          title="Projects that show different sides of my design work."
-          description="Professional and released work across R&D, multiplayer, live service, systems, combat and technical implementation."
+          description="A few projects that best show the range of my work."
         />
         <div className="selected-grid">
           {projects.map((project) => <ProjectCard key={project.slug} project={project} onOpen={onOpen} />)}
@@ -73,10 +77,10 @@ export function MoreProjects({ projects, onOpen }) {
   };
 
   return (
-    <section className="section more-projects" aria-labelledby="more-projects-title">
+    <section className="section more-projects" aria-label="More projects">
       <div className="site-shell">
         <div className="more-projects-heading">
-          <SectionHeading eyebrow="More projects" title="Smaller projects, tools and experiments." />
+          <SectionHeading eyebrow="More projects" />
           {!expanded && (
             <div className="strip-controls" aria-label="Scroll projects">
               <button type="button" onClick={() => scroll(-1)} aria-label="Scroll projects left"><ArrowLeft aria-hidden="true" /></button>
@@ -128,7 +132,6 @@ export function Experience({ onOpenBySlug }) {
       <div className="site-shell">
         <SectionHeading
           eyebrow="Experience"
-          title="Game Design is the through-line."
           description="Professional experience and overlapping responsibilities over time. Mytona was one continuous Game Design role; on Hublix, leadership and deputy-production responsibilities overlapped with hands-on design."
         />
 
@@ -198,8 +201,7 @@ export function Skills() {
       <div className="site-shell">
         <SectionHeading
           eyebrow="Skills"
-          title="Core areas I work across."
-          description="A broad design practice grounded in implementation, communication and the player problem."
+          description="The design disciplines, tools and technical skills I use most often."
         />
         <div className="skills-grid">
           {SKILL_GROUPS.map((group, index) => (
@@ -225,7 +227,9 @@ export function About() {
             <div className="profile-image-wrap">
               <Image src="/profile-photo.webp" alt="André Gottgtroy" fill sizes="(max-width: 767px) 42vw, 180px" />
             </div>
-            <p>{ABOUT}</p>
+            <div className="about-text">
+              {ABOUT.map((paragraph) => <AboutParagraph key={paragraph} text={paragraph} />)}
+            </div>
           </div>
         </div>
       </div>

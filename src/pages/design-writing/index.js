@@ -54,7 +54,7 @@ export default function DesignWritingPage({ posts }) {
         <header className="writing-hero">
           <div className="site-shell writing-hero-inner">
             <p className="eyebrow">Design Writing</p>
-            <h1>Ideas, exercises and notes from the design process.</h1>
+            <h1>Thoughts, experiments and lessons from making games.</h1>
             <p>A place to think through game design problems in public—from systems and mechanics to the practical decisions that shape how a game feels.</p>
           </div>
         </header>

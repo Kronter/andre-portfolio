@@ -248,10 +248,13 @@ img { display: block; }
 /* About */
 .about-section { background: #0e0e12; }
 .about-grid { display: block; }
+.about-section .section-heading h2 { font-size: clamp(1.7rem, 2.35vw, 2.25rem); }
 .about-copy-layout { display: grid; grid-template-columns: 132px 1fr; gap: 24px; align-items: start; }
 .profile-image-wrap { position: relative; aspect-ratio: 1; overflow: hidden; border: 1px solid rgba(167,139,250,.34); border-radius: 10px; background: #18181d; }
 .profile-image-wrap img { object-fit: cover; }
+.about-text { display: grid; gap: 12px; }
 .about-copy-layout p { margin: 0; color: #b7b7bf; font-size: .88rem; line-height: 1.65; }
+.about-copy-layout strong { color: #e4e4e7; font-weight: 750; }
 .quick-links { padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); align-self: end; }
 .quick-links a { min-height: 44px; display: flex; align-items: center; gap: 11px; border-top: 1px solid var(--line); color: #d4d4d8; text-decoration: none; font-size: .8rem; font-weight: 700; }
 .quick-links a:hover { color: var(--violet-light); }
