@@ -2,70 +2,58 @@
 
 ## Comparison target
 
-- Source visual truth:
-  - Browser Comments 1–5 and their annotated footer/About screenshots for `https://african-statutory-terrace-clean.trycloudflare.com/`.
-  - `C:/Users/Andrev/AppData/Local/Temp/codex-clipboard-e48877dd-d124-4a2f-8755-2ddef87d266d.png` showing the expanded Environment Query System Tool project view exceeding the intended visible area.
-- Rendered implementation evidence:
-  - `http://localhost:3001/` — About/footer capture at 1304 × 892.
-  - `http://localhost:3001/#project/environment-query-system` — expanded Project Focus capture at 1304 × 892.
-  - Mobile Project Focus measured at 390 × 844.
-  - Persistent preview: `https://african-statutory-terrace-clean.trycloudflare.com/`.
-- State: dark theme; desktop footer at the bottom of the homepage; Project Focus opened to Environment Query System Tool and expanded.
+- Source visual truth path: `C:/Users/Andrev/AppData/Local/Temp/codex-clipboard-fa1a4e41-28ea-4cd4-ab9b-f59145d4c795.png`.
+- Rendered implementation: `http://localhost:3001/`, More Projects region captured in the Codex in-app Browser.
+- Implementation screenshot evidence: browser capture attached to this task; the in-app Browser backend does not expose a filesystem path for captured bytes.
+- Viewport: 1598 × 900 CSS px at device pixel ratio 1; comparison region: 1598 × 598 px.
+- State: homepage, dark theme, More Projects collapsed with the All filter active.
 
 ## Capture normalization
 
-- Desktop source and implementation use equivalent wide desktop states. Implementation capture used a 1304 × 892 CSS viewport at device pixel ratio 1.
-- The attached expanded-project screenshot includes Windows/browser chrome, while implementation measurements use the browser content viewport. Comparison therefore targets the project panel’s relationship to the visible viewport, not operating-system chrome.
-- Mobile regression check used 390 × 844 CSS px at device pixel ratio 1.
-- Source captures and browser-rendered implementation captures were opened in the same review context before judging.
+- The source image is 1598 × 598 px. The implementation comparison uses the same 1598 px width and a 598 px crop beginning at the More Projects section boundary.
+- Both captures use the desktop layout and the same collapsed project-strip state.
+- A separate mobile regression check used 390 × 844 CSS px at device pixel ratio 1.
 
 ## Full-view comparison evidence
 
-- About now uses the complete 1240 px site shell instead of the former 930 px content restriction.
-- Footer keeps the Contact heading and a three-item Quick Links panel. The duplicate standalone email, upper brand mark, Design Writing quick link and copyright symbol are removed.
-- The four-colour brand mark is now paired with the year and name in the bottom sign-off row.
-- Expanded desktop Project Focus has a measured 16 px inset on all sides and is fully contained within the 1304 × 892 browser viewport.
+- The More Projects label, filter row, card strip and expand control retain the reference composition and existing site shell.
+- The left/right controls were lowered by 30 px, matching the measured offset between the previous control position and the remaining section label.
+- Selected Work, Experience and Skills now use a compact 22 px heading-to-content gap after their large titles were removed.
 
 ## Focused-region comparison evidence
 
-- About: measured `.about-copy-layout` width and `.about-grid` shell width are both 1240 px.
-- Footer: DOM verification confirms no `.footer-email`, no mark in the main footer column, one mark in `.footer-bottom`, no copyright symbol, and exactly three Quick Links.
-- Expanded Project Focus: panel bounds are left 16, top 16, right 1288, bottom 876 inside a 1304 × 892 viewport. Its inner content remains independently scrollable (`overflow-y: auto`, 802 px client height, 1663 px scroll height).
-- Floating Project Focus: after toggling out of expanded mode, its measured panel bounds also remain fully inside the viewport.
-- Mobile Project Focus: remains edge-to-edge with no document-level horizontal overflow.
+- Before the fix, `.strip-controls` occupied y=1111–1154 while the remaining heading occupied y=1153–1184, leaving the controls visually above the label.
+- After the fix, `.strip-controls` occupies y=1135–1178 and the heading occupies y=1147–1178. Their vertical centres are aligned within approximately 2 px.
+- The filter row begins at y=1196, preserving an 18 px gap below the aligned header controls.
+- At 390 × 844, the desktop controls remain hidden, compact heading spacing resolves to the existing 32 px mobile rule, and document horizontal overflow is 0 px.
 
 ## Required fidelity surfaces
 
-- Fonts and typography: passed. No requested type hierarchy changed; the wider About paragraph retains its established size and line height.
-- Spacing and layout rhythm: passed. About fills the shell, the simplified footer remains balanced, and expanded Project Focus uses a consistent 16 px desktop inset.
-- Colors and visual tokens: passed. Existing charcoal, violet and four-colour brand tokens are preserved.
-- Image quality and asset fidelity: passed. Profile and project media remain unchanged and correctly cropped.
-- Copy and content: passed. Only the explicitly requested duplicate footer items and copyright symbol were removed.
+- Fonts and typography: passed. Existing font family, weights, letter spacing and label hierarchy are unchanged.
+- Spacing and layout rhythm: passed. Arrow alignment is corrected and no-title desktop sections use a tighter, consistent 22 px content gap.
+- Colors and visual tokens: passed. Existing charcoal, violet, border and focus tokens are unchanged.
+- Image quality and asset fidelity: passed. Project imagery and crops are unchanged.
+- Copy and content: passed. No text or project data changed.
 
 ## Findings and comparison history
 
-- [Resolved P2] Expanded Project Focus could exceed the visible browser area because `100vw × 100dvh` was combined with backdrop padding.
-  - Fix: expanded mode now fills the backdrop’s available content box, with overflow containment and a 16 px desktop inset; mobile keeps zero inset.
-  - Post-fix evidence: measured desktop panel bounds remain within all four viewport edges, with inner content scrolling independently.
-- [Resolved P2] About retained the old two-column width constraint after Quick Links moved away.
-  - Fix: removed the 930 px cap so the image/text layout spans the full 1240 px site shell.
-  - Post-fix evidence: browser measurement confirms equal About content and shell widths.
-- [Resolved P2] Footer contained duplicated contact/writing actions and an unnecessary upper mark.
-  - Fix: removed standalone email and Design Writing from Quick Links, removed the upper mark, and moved the mark beside the bottom sign-off.
-  - Post-fix evidence: 1304 × 892 footer capture and DOM checks match all five annotations.
-- [Resolved P3] Footer showed a copyright symbol despite no copyright claim being desired.
-  - Fix: removed the symbol while retaining the year and name.
+- [Resolved P2] More Projects controls sat noticeably above the remaining section label after the large title was removed.
+  - Fix: lowered the control group by the measured 30 px offset.
+  - Post-fix evidence: control and label centres align within approximately 2 px, with 18 px remaining before the filters.
+- [Resolved P2] Sections whose large titles were removed retained the former 28 px title-era heading gap.
+  - Fix: added a reusable compact heading state with a 22 px desktop gap.
+  - Post-fix evidence: Selected Work, Experience and Skills all measure 22 px from heading copy to primary content; About retains its intentional 28 px titled layout.
 
 ## Interaction and technical checks
 
-- Tested Project Focus open, expand, return to floating mode and Escape close.
-- Verified body/panel containment at 1304 × 892 and mobile behavior at 390 × 844.
-- Verified Quick Links remain semantic links for Resume, LinkedIn and direct email.
+- Verified More Projects filter and project strip remain in their existing positions and states.
+- Verified desktop at 1598 × 900 and mobile at 390 × 844.
+- Verified mobile controls remain hidden and no document-level horizontal overflow is introduced.
 - Browser console checked with no errors or warnings.
 - Production build completed successfully.
 
 ## Follow-up polish
 
-- No actionable P0/P1/P2 differences remain for the supplied annotations and overflow report.
+- No actionable P0/P1/P2 differences remain for the supplied spacing and alignment reference.
 
 final result: passed

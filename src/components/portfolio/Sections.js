@@ -8,7 +8,7 @@ import { ABOUT, EXPERIENCE, FILTERS, SITE, SKILL_GROUPS } from '@/data/portfolio
 
 export function SectionHeading({ eyebrow, title, description }) {
   return (
-    <div className="section-heading">
+    <div className={`section-heading${title ? '' : ' section-heading-compact'}`}>
       <p className="eyebrow">{eyebrow}</p>
       {title && <h2>{title}</h2>}
       {description && <p>{description}</p>}

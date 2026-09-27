@@ -71,6 +71,7 @@ img { display: block; }
 }
 
 .section-heading { max-width: 780px; margin-bottom: 28px; }
+.section-heading-compact { margin-bottom: 22px; }
 .section-heading h2 {
   margin: 0;
   max-width: 700px;
@@ -194,7 +195,7 @@ img { display: block; }
 .more-projects { background: #0d0d11; }
 .more-projects-heading { display: flex; justify-content: space-between; align-items: flex-end; }
 .more-projects .section-heading { margin-bottom: 18px; }
-.strip-controls { display: flex; gap: 8px; margin-bottom: 48px; }
+.strip-controls { display: flex; gap: 8px; margin-bottom: 48px; transform: translateY(30px); }
 .strip-controls button { width: 43px; height: 43px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 9px; background: var(--surface-2); color: white; cursor: pointer; }
 .strip-controls button:hover { border-color: var(--line-strong); }
 .strip-controls svg { width: 18px; }
