@@ -32,7 +32,7 @@ export function Hero() {
             6 years designing gameplay, systems, live service features, monetization, social systems, technical design, prototyping, and R&amp;D.
           </p>
           <p className="hero-body">
-            I have a Software Engineering background and hands-on experience with Unreal Engine, Unity, proprietary engines, Blueprints, and scripting. I like digging into design challenges, iterating quickly, and collaborating with the team to create responsive and satisfying player experiences.
+            I have a Software Engineering background and hands-on experience with Unreal Engine, Unity, proprietary engines, Blueprints, and scripting. I like digging into design challenges, iterating quickly, and collaborating with the team to create responsive and satisfying player experiences.</p>
           <p className="hero-location"><MapPin aria-hidden="true" /> Auckland, New Zealand <span aria-hidden="true">·</span> Open to relocation &amp; remote work</p>
           <div className="hero-actions">
             <a className="primary-button" href="#work">View Selected Work <ArrowDown aria-hidden="true" /></a>
