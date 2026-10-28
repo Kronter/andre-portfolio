@@ -29,11 +29,10 @@ export function Hero() {
           <p className="eyebrow">André Gottgtroy</p>
           <h1>Game Designer</h1>
           <p className="hero-lead">
-            6 years of professional experience across gameplay, systems, live service, monetization, social features, technical design, prototyping and R&amp;D.
+            6 years designing gameplay, systems, live service features, monetization, social systems, technical design, prototyping, and R&amp;D.
           </p>
           <p className="hero-body">
-            With a Software Engineering background and hands-on experience in Unreal Engine, Unity, proprietary engines, Blueprints and scripting, I like getting stuck into design problems, trying ideas quickly and improving them with the team until they make sense for the player.
-          </p>
+            I have a Software Engineering background and hands-on experience with Unreal Engine, Unity, proprietary engines, Blueprints, and scripting. I like digging into design challenges, iterating quickly, and collaborating with the team to create responsive and satisfying player experiences.
           <p className="hero-location"><MapPin aria-hidden="true" /> Auckland, New Zealand <span aria-hidden="true">·</span> Open to relocation &amp; remote work</p>
           <div className="hero-actions">
             <a className="primary-button" href="#work">View Selected Work <ArrowDown aria-hidden="true" /></a>
@@ -53,7 +52,7 @@ export function SelectedWork({ projects, onOpen }) {
       <div className="site-shell">
         <SectionHeading
           eyebrow="Selected work"
-          description="A few projects that best show the range of my work."
+          description="Here are a few projects that really show the range of my work."
         />
         <div className="selected-grid">
           {projects.map((project) => <ProjectCard key={project.slug} project={project} onOpen={onOpen} />)}
@@ -132,7 +131,7 @@ export function Experience({ onOpenBySlug }) {
       <div className="site-shell">
         <SectionHeading
           eyebrow="Experience"
-          description="Professional experience and overlapping responsibilities over time. Mytona was one continuous Game Design role; on Hublix, leadership and deputy-production responsibilities overlapped with hands-on design."
+          description="Professional experience with overlapping responsibilities throughout my career. At Mytona, I held a continuous Game Design role; on Hublix, leadership and deputy-production responsibilities mixed directly with hands-on design work."
         />
 
         <div className="desktop-career-flow" aria-label="Career timeline from 2019 to 2026">
@@ -201,7 +200,7 @@ export function Skills() {
       <div className="site-shell">
         <SectionHeading
           eyebrow="Skills"
-          description="The design disciplines, tools and technical skills I use most often."
+          description="The design disciplines, tools, and technical skills I rely on the most."
         />
         <div className="skills-grid">
           {SKILL_GROUPS.map((group, index) => (
@@ -267,7 +266,7 @@ export function Footer() {
       <div className="site-shell footer-grid">
         <div>
           <p className="eyebrow">Contact</p>
-          <h2>Let’s talk about games and design problems.</h2>
+          <h2>Let's talk game design; always happy to connect.</h2>
         </div>
         <QuickLinks />
       </div>

@@ -19,18 +19,18 @@ videos:
 videoId: "gWdGxazrgqw"
 roles: ["Tools Designer", "Programmer"]
 responsibilityAreas: ["Behaviour Tree framework", "Visual editor", "Real-time debugging", "Reusable ScriptableObject structure"]
-summary: "A visual authoring and debugging tool created for the code-first Behaviour Tree used in District Underground."
+summary: "A visual authoring and debugging tool I built for the code-first Behaviour Tree system in District Underground; designed to make editing and troubleshooting more intuitive for designers and programmers alike."
 relatedProjects: ["district-underground"]
 ---
 ## Why I built it
 
-District Underground's original Behaviour Tree existed only in code. That made its structure difficult to read and slowed down debugging, so I created a Unity editor tool that made the tree visible and easier to author.
+District Underground's original Behaviour Tree lived entirely in code, which made the structure difficult to read and slowed down debugging. To solve this, I built a Unity editor tool that made the tree visible, editable, and much more approachable for designers.
 
 ## Main features
 
-- Behaviour Tree construction and visualisation;
-- real-time flow viewing and debugging;
-- a ScriptableObject base for trees, actions and nodes;
-- a structure that could be moved between projects more easily.
+- Behaviour Tree construction and visualisation
+- real-time flow viewing and debugging
+- a ScriptableObject base for trees, actions and nodes
+- a structure that could move easily between projects
 
-The tool was both a programming project and an early technical-design exercise: it translated a system into an interface that made iteration clearer.
+This tool was both a programming challenge and an early technical-design lesson - translating a system into an interface that actually sped up iteration for the whole team.

@@ -16,19 +16,19 @@ imageAlt: "Unity Environment Query System debug view"
 videoId: "agZPd6LQoQ8"
 roles: ["Tools Designer", "Programmer"]
 responsibilityAreas: ["Environment sampling", "Query scoring", "Visual debugging", "Reusable query tests"]
-summary: "A Unity tool inspired by Unreal's Environment Query System, built to give District Underground's AI useful spatial information."
+summary: "A Unity tool I built, inspired by and based on Unreal's Environment Query System, designed to give District Underground's AI meaningful spatial awareness and improve decision-making."
 relatedProjects: ["district-underground"]
 ---
 ## Why I built it
 
-I created this tool for District Underground so enemy AI could query the environment and use the results when choosing positions. Unity did not provide an equivalent at the time, so I used Unreal's Environment Query System as a reference for the approach.
+I built this tool for District Underground so enemy AI could read and react to the environment when choosing positions. Unity didn’t have a built-in system like this at the time, so I took inspiration from Unreal’s Environment Query System to guide the design.
 
 ## Main features
 
-- environment-data queries;
-- visual feedback for query data and test results;
-- swappable, scriptable tests;
-- adjustable query shapes and point density;
-- optional height adjustment for uneven terrain.
+- environment-data queries
+- visual feedback for query data and test results
+- swappable, scriptable tests
+- adjustable query shapes and point density
+- optional height adjustment for uneven terrain
 
-Use cases included combat positioning for flanking or specific attacks, maintaining line of sight, choosing cover and finding hiding positions.
+The tool came into play for things like combat positioning (flanking or special attacks), keeping line of sight, choosing cover, and finding hiding spots.

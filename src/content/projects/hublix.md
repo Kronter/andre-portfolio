@@ -17,39 +17,39 @@ imageAlt: "Hublix social game key art"
 videoId: "0zd_g4t-lsk"
 roles: ["Game Designer", "Design Leadership", "Deputy Production"]
 responsibilityAreas: ["R&D and rapid prototyping", "Gameplay and systems design", "3Cs and social/meta features", "Technical collaboration", "Design leadership and mentoring", "Deputy-production responsibility"]
-summary: "An experimental social game where I worked across R&D, prototyping, gameplay, systems, 3Cs and social/meta features, later carrying design leadership and deputy-production responsibility while continuing hands-on Game Design."
+summary: "An experimental social game where I worked across R&D, prototyping, gameplay, systems, 3Cs, and social/meta features, later taking on design leadership and deputy-production responsibilities, all while staying hands-on with Game Design."
 ndaLimited: true
 ---
 ## Project overview
 
-Hublix was a social game built around meeting, talking, playing and creating spaces with other people. It was my first professional Game Design project and a broad one: the team was exploring a new concept, so design work moved repeatedly between research, prototypes, player-facing systems and the details required to make those systems work together.
+Hublix was a social game built around meeting, chatting, playing, and creating spaces with others. It was my first professional Game Design project and a broad one. The team was exploring a new concept, so design work kept shifting between research, prototypes, player-facing systems, and all the details needed to make those systems actually fit together.
 
 ## R&D and prototyping
 
-As the first Game Designer on the project, I researched the market, developed and presented feature ideas, and worked with small engineering teams to prototype them. The useful question was not only whether an idea sounded promising, but whether it felt coherent once a player could move through it.
+As the first Game Designer on the project, I researched the market, pitched feature ideas, and worked with small engineering teams to get prototypes up and running. The big question wasn’t just if something sounded promising, but whether it actually felt right once a player could interact with it.
 
-I also worked as the sole designer with multiple programming teams on different prototypes. My Software Engineering background helped me communicate intent, understand implementation constraints and keep iteration moving.
+I was also the only designer working with different programming teams on various prototypes. My Software Engineering background helped me communicate ideas, work out what was possible, and keep things moving quickly.
 
 ## Hands-on Game Design
 
-When Hublix moved into production, my work broadened across:
+When Hublix moved into production, my work stretched across several areas:
 
-- gameplay systems and mechanics;
-- 3Cs;
-- social and private hub features;
-- meta systems;
-- UI/UX collaboration;
-- some level-design work;
-- feature specifications, flows and implementation support.
+- gameplay systems and mechanics
+- 3Cs
+- social and private hub features
+- meta systems
+- UI/UX collaboration
+- some level-design work
+- feature specifications, flows and implementation support
 
-Because I had been involved from the project's early exploration, I also helped keep features aligned with its design pillars and made sure individual systems supported the same overall player experience.
+Since I’d been involved from the early days, I also kept an eye on making sure features stayed true to the game’s design pillars and that every system worked together to support the player experience.
 
 ## Overlapping responsibility
 
-Game Design remained my core work throughout Hublix. As the team grew, I also took on design leadership and mentoring, including leading a team of designers. Later, I carried deputy-production responsibility across art, design and audio, supporting planning and delivery while continuing to design hands-on.
+Game Design was always at the core of my work on Hublix. As the team expanded, I picked up design leadership and mentoring, including leading a team of designers, and later took on some deputy-production work across art, design, and audio. I helped with planning and delivery but always stayed hands-on with design.
 
-These responsibilities overlapped. They were not a sequence where Game Design stopped and a production role replaced it.
+These responsibilities often overlapped. It wasn’t a case of Game Design stopping and production taking over, I was always doing a mix of both.
 
 ## Related recognition
 
-A feature I designed was later used as the basis for work with the Cooking Diary team. I consulted with that team using my specifications and design intent as a guide. The resulting feature was a finalist in the GameRefinery Mobile GameDev Awards 2022 for Best Feature Innovation.
+One of the features I designed became the starting point for work with the Cooking Diary team. I consulted with them, using my specs and design intent as a guide. That feature even made it to the finals for Best Feature Innovation at the GameRefinery Mobile GameDev Awards 2022.

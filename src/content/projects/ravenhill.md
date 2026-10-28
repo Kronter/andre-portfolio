@@ -17,7 +17,7 @@ imageAlt: "Ravenhill hidden-object game key art"
 videoId: "oq9raTB9cHM"
 roles: ["Game Designer"]
 responsibilityAreas: ["Live-service Game Design", "Monetization events and offers", "Offer standards and design principles", "Player-facing meta systems", "Refinement and polish"]
-summary: "Live-service Game Design across monetization events and offers, updated offer standards, player-facing meta systems, and refinement of established features."
+summary: "Live-service Game Design covering monetization events and offers, updated offer standards, player-facing meta systems, and ongoing refinement of established features."
 ndaLimited: true
 externalLinks:
   - label: "Google Play"
@@ -27,20 +27,20 @@ externalLinks:
 ---
 ## Project overview
 
-Ravenhill is a live-service detective game built around hidden-object scenes, puzzles, quests and long-term meta progression. My work covered monetization events and offers, player-facing meta systems, and the refinement, polish of established features and where additional design support was needed.
+Ravenhill is a live-service detective game designed around hidden-object scenes, puzzles, quests, and long-term meta progression. My responsibilities included shaping monetization events and offers, player-facing meta systems, and refining established features wherever extra design support was needed.
 
 ## Monetization & Live Events
 
-A significant part of my work focused on monetization events and offers.
+A big focus for me was on monetization events and offers - making sure they were engaging for players while also supporting the game's goals.
 
-I helped establish updated standards and design principles for offers, with the goal of improving their structure, presentation and value to players while supporting the game's monetization goals.
+I introduced updated standards and design principles for offers, aiming to improve their structure, presentation, and the value they delivered to players - all while keeping monetization effective.
 
-I was able to take one offer through development using the new approach. It outperformed comparable older offers and performed better than expected, providing encouraging validation for the direction.
+I brought several offers through development from start to finish with this new approach. The first and only one released surpassed previous offers and performed beyond expectations, which was a satisfying validation of the direction we took.
 
-Unfortunately, this work came late in the project's lifecycle, so there was limited opportunity to apply and iterate on the approach more broadly.
+Unfortunately, this work happened late in the project cycle, so there wasn't much time to apply and iterate on the approach more widely.
 
 ## Meta & Player-Facing Systems
 
-I also worked across a range of player-facing meta systems, helping refine existing features, improve usability and presentation, and support the ongoing live-service experience.
+I worked across a variety of player-facing meta systems, refining established features, improving usability and presentation, and supporting the live-service experience as it evolved.
 
-My role frequently involved entering established systems, understanding how they worked within the wider game, identifying opportunities for improvement, and working with the team to implement and polish those changes.
+My role often meant jumping into existing systems, getting to grips with how they fit into the bigger picture, spotting where we could improve things, and collaborating with the team to implement and polish those changes.

@@ -16,7 +16,7 @@ export const EXPERIENCE = {
       start: 2019,
       end: 2020,
       summary:
-        'Developed and maintained production software in C# and .NET, working in agile teams across delivery, testing, maintenance and customer support.',
+        'Built and supported production software in C# and .NET, collaborating with agile teams to deliver, test, maintain and support projects. Focused on practical problem-solving, clear communication, and making sure features felt polished and reliable.',
     },
     {
       company: 'Mytona',
@@ -25,7 +25,7 @@ export const EXPERIENCE = {
       start: 2020,
       end: 2026,
       summary:
-        'Continuous Game Design employment across gameplay, systems, content, live service, R&D and player-facing features. Leadership, mentoring and deputy-production responsibilities overlapped with hands-on design work on Hublix.',
+        'Continuous Game Design across gameplay, systems, content, live service, R&D and player-facing features. On Hublix, I balanced leadership, mentoring and deputy production with hands-on design work; often wearing a few hats at once.',
     },
   ],
   projects: [
@@ -38,7 +38,7 @@ export const EXPERIENCE = {
       role: 'Game Design throughout',
       additional: ['Design Leadership', 'Deputy Production'],
       summary:
-        'R&D, prototyping, systems, gameplay, 3Cs, social and meta features, with some level-design involvement. Leadership and deputy-production responsibility were additional, overlapping duties rather than a move away from Game Design.',
+        'Kept Game Design at the core, while taking on Design Leadership and Deputy Production. Led R&D, prototyping, systems, gameplay, 3Cs, social and meta features, and contributed to level design. Leadership and production work always overlapped with my main focus on design; never a shift away from the craft.',
     },
     {
       title: 'Outfire',
@@ -48,7 +48,7 @@ export const EXPERIENCE = {
       end: 2025,
       role: 'Game Design',
       summary:
-        'Gameplay, social systems, live-service content, monetization and player-facing communication for a multiplayer hero shooter.',
+        'Designed gameplay, social systems, live-service content, monetization and player-facing communication for a multiplayer hero shooter. Focused on creating satisfying loops and engaging systems.',
     },
     {
       title: 'Ravenhill',
@@ -58,7 +58,7 @@ export const EXPERIENCE = {
       end: 2026,
       role: 'Game Design',
       summary:
-        'Live-service design across monetization events and offers, player-facing meta systems, and refinement of established systems.',
+        'Led live-service design for monetization events, offers, player-facing meta systems, and refined established systems to keep the experience rewarding and balanced.',
     },
   ],
 };
@@ -120,9 +120,9 @@ export const SKILL_GROUPS = [
 ];
 
 export const ABOUT = [
-  "I was born in Brazil and grew up in New Zealand. I've always been interested in history, myths and legends, and games became another way of exploring that curiosity. Age of Empires, Baldur's Gate and Harvest Moon were some of the games that first got me hooked — not just on playing, but eventually on wondering how games actually work.",
-  'I still spend a lot of time with video games, board games and tabletop RPGs, and have a physical game collection that my family insists is already large enough. They are wrong.',
-  "I studied Software Engineering with a focus on game development, which gave me a practical way to pull things apart, prototype ideas and work closely with engineers. Whether I'm playing or designing, I'm usually interested in why something works, what is getting in the player's way, and what small change might make it click.",
+  "I was born in Brazil and grew up in New Zealand. My interest in history, myths, and legends naturally led me to games, which became another way to explore that curiosity. Age of Empires, Baldur's Gate, and Harvest Moon were some of the first titles that pulled me in, not just as a player, but as someone curious about how games actually work.",
+  "I still spend plenty of time with video games, board games, and tabletop RPGs. My physical game collection is always growing, despite my family's claims that it's big enough already. I disagree.",
+  "I studied Software Engineering with a focus on game development, which taught me how to pull things apart, prototype ideas, and work closely with engineers. Whether I'm playing or designing, I'm always thinking about what makes something click, what friction exists for the player, and what small tweak could make the experience more satisfying.",
 ];
 
 export const FILTERS = ['All', 'Technical', 'Game Jams', 'Student / Independent'];

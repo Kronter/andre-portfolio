@@ -17,7 +17,7 @@ imageAlt: "Outfire multiplayer hero shooter key art"
 videoId: "rRox-ase8Dg"
 roles: ["Game Designer"]
 responsibilityAreas: ["Gameplay clarity and polish", "Team communication and ping systems", "Social and profile systems", "Live-service content and tasks", "Shop and monetization work", "Smaller combat-related contributions"]
-summary: "A fast-paced multiplayer hero shooter where I moved between gameplay clarity, team communication, social systems, content and live-service monetization work."
+summary: "A fast-paced multiplayer hero shooter where I moved between gameplay clarity, team communication, social systems, content, and live-service monetization work."
 ndaLimited: true
 externalLinks:
   - label: "Google Play"
@@ -27,26 +27,26 @@ externalLinks:
 ---
 ## Project overview
 
-Outfire is a fast-paced top-down multiplayer hero shooter with team modes and battle royale play. During development I moved between several design areas, often joining teams where additional design support was needed.
+Outfire is a fast-paced top-down multiplayer hero shooter with team modes and battle royale play. During development, I rotated between different design areas, often stepping in where extra design support was needed.
 
 ## Gameplay Design
 
-My gameplay work focused primarily on improving the player experience and readability of existing systems during matches.
+My gameplay work focused on improving the player experience and the clarity of existing systems during matches.
 
-This included refining team communication, ping systems, teammate down/recovery interactions and death-state communication so players could more easily understand what was happening and what actions were available to them.
+That included refining team communication, ping systems, how teammates get downed or revived, and how information is communicated during death states; all so players could quickly recognize what was happening and how to respond.
 
-I also contributed on a smaller scale to combat-related gameplay, including ability work and meta-level combat decisions such as player landing and match-flow considerations.
+I also contributed to combat design: ability work, meta-level decisions like player landing, and match flow.
 
-I worked on gameplay polish for hero abilities and their visual effects, helping ensure combat information remained readable while abilities still felt satisfying to use.
+I helped polish hero abilities and their visual effects, making sure combat information remained clear while ensuring abilities felt responsive and satisfying to use.
 
 ## Social Design
 
 A major part of my work on Outfire was rebuilding and expanding the game's social experience alongside another designer.
 
-This included work on player profiles and profile customisation, friend systems, friend gifting, match communication, in-match ping systems, social animations and stickers.
+This included player profiles and customization, friend systems and gifting, match communication, in-match pings, and social animations and stickers.
 
 ## Content & Monetization
 
-I contributed to Battle Pass, career and event tasks, gameplay/content polish, cosmetic content and the organisation and redesign of the in-game shop and offers.
+I contributed to Battle Pass, career and event tasks, gameplay and content polish, cosmetic content, and the in-game shop and offers were organization and redesigned.
 
-This work required moving between player experience, content requirements and commercial considerations while keeping features coherent with the wider game.
+That work meant balancing player experience, content requirements, and commercial goals, ensuring new features integrated smoothly with the overall game design.
