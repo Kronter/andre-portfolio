@@ -266,7 +266,7 @@ export function Footer() {
       <div className="site-shell footer-grid">
         <div>
           <p className="eyebrow">Contact</p>
-          <h2>Let's talk game design; always happy to connect.</h2>
+          <h2>Let&apos;s talk game design; always happy to connect.</h2>
         </div>
         <QuickLinks />
       </div>
