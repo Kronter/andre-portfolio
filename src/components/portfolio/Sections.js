@@ -163,7 +163,7 @@ export function Experience({ onOpenBySlug }) {
         </div>
 
         <div className="mobile-timeline">
-          {EXPERIENCE.employment.map((job) => (
+          {[...EXPERIENCE.employment].reverse().map((job) => (
             <article key={job.company} className="mobile-career-item">
               <span className="timeline-dot" aria-hidden="true" />
               <p className="eyebrow">{job.period}</p>
@@ -172,7 +172,7 @@ export function Experience({ onOpenBySlug }) {
               <p>{job.summary}</p>
               {job.company === 'Mytona' && (
                 <div className="mobile-project-list">
-                  {EXPERIENCE.projects.map((item) => (
+                  {[...EXPERIENCE.projects].reverse().map((item) => (
                     <div key={item.slug} className="mobile-project-item">
                       <TimelineButton item={item} onOpen={onOpenBySlug} />
                       {item.additional && (

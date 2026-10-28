@@ -16,7 +16,7 @@ image: "/lava-plaza-image.webp"
 imageAlt: "Lava Plaza mobile arcade game scene"
 roles: ["Game Designer", "Programmer"]
 responsibilityAreas: ["Overall game design", "Shared gameplay programming"]
-summary: "A released student arcade game where players dodge falling boulders while the plaza floor collapses into lava."
+summary: "An arcade game built as a student project where you dodge falling boulders and keep moving to avoid falling into the lava floor. Designed to deliver tense, satisfying moments and quick decision-making."
 released: true
 studentProject: true
 externalLinks:
@@ -25,6 +25,6 @@ externalLinks:
 ---
 ## Project overview
 
-Lava Plaza is a casual arcade game where players dodge falling boulders and try to avoid the collapsing floor and lava below. It was made during my university studies.
+Lava Plaza is an arcade game where you dodge falling boulders and keep moving to avoid falling into the lava floor. Built during my university days, it’s all about quick decisions and tense, satisfying moments.
 
-I owned the overall Game Design and shared general programming work with the other two programmers on the team.
+I led the game design and split programming duties with the rest of our small team.
