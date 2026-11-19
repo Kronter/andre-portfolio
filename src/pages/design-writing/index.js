@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Clock } from 'lucide-react';
+import WritingChoices from '@/components/portfolio/WritingChoices';
 import Navigation from '@/components/portfolio/Navigation';
 import FourDotMark from '@/components/portfolio/FourDotMark';
 import { getWritingPosts } from '@/lib/portfolio-content';
@@ -44,7 +45,6 @@ function WritingCard({ post, featured = false }) {
 export default function DesignWritingPage({ posts }) {
   const groups = getWritingSeries(posts);
   const startHere = posts.find((post) => post.slug === '06-what-playtesting-made-me-remove');
-  const latest = posts[0];
   const ungrouped = posts.filter((post) => !post.series);
   return (
     <>
@@ -60,28 +60,53 @@ export default function DesignWritingPage({ posts }) {
             <p className="eyebrow">Design Writing</p>
             <h1>Thoughts, experiments and lessons from making games.</h1>
             <p className="writing-hero-intro">A place to think through game design problems in public.<br />From systems and mechanics to the practical decisions that shape how a game feels.</p>
-            {startHere && (
-              <p className="writing-entry-link">
-                <strong>Start here</strong>{' '}
-                <Link href={`/design-writing/${startHere.slug}/`}>{startHere.title}</Link>
-              </p>
+            {groups.length > 0 && (
+              <nav className="writing-series-chooser writing-series-compact" aria-labelledby="choose-series-title">
+                <h2 id="choose-series-title">Choose a series</h2>
+                <WritingChoices choices={groups.map((group) => ({
+                  key: group.key,
+                  label: `${group.posts.length} articles`,
+                  title: group.title,
+                  description: group.description,
+                  href: `#series-${group.key}`,
+                }))} />
+              </nav>
             )}
           </div>
         </header>
+        {posts.length > 0 && (
+          <div className="writing-latest">
+            <div className={`site-shell${startHere ? ' writing-picks' : ''}`}>
+              {startHere && (
+                <section className="writing-recommended" aria-labelledby="recommended-title">
+                  <h2 id="recommended-title">If you only read one</h2>
+                  <WritingChoices choices={[{
+                    key: startHere.slug,
+                    label: startHere.readingTime,
+                    title: startHere.title,
+                    description: "For a quick look at how I design, here’s what happened when we took two mechanics I liked out of Tracers. What surprised me was how little I missed them.",
+                    href: `/design-writing/${startHere.slug}/`,
+                  }]} />
+                </section>
+              )}
+              <section aria-labelledby="latest-posts-title">
+                <h2 id="latest-posts-title">Latest posts</h2>
+                <WritingChoices choices={posts.slice(0, 2).map((post) => ({
+                  key: post.slug,
+                  label: post.readingTime,
+                  title: post.title,
+                  description: post.excerpt,
+                  href: `/design-writing/${post.slug}/`,
+                }))} />
+              </section>
+            </div>
+          </div>
+        )}
         <section id="writing-list" className="writing-library" aria-labelledby="writing-library-title">
           <div className="site-shell">
             <div className="writing-library-heading">
-              <div>
-                <h2 id="writing-library-title">All articles</h2>
-                {groups.length > 1 && (
-                  <nav className="writing-series-links" aria-label="Jump to a series">
-                    {groups.map((group) => <a key={group.key} href={`#series-${group.key}`}>{group.title}</a>)}
-                  </nav>
-                )}
-              </div>
-              {latest && latest.slug !== startHere?.slug && (
-                <p className="writing-entry-link"><strong>Latest</strong>{' '}<Link href={`/design-writing/${latest.slug}/`}>{latest.title}</Link></p>
-              )}
+              <h2 id="writing-library-title">All articles</h2>
+              <p>{posts.length} {posts.length === 1 ? 'article' : 'articles'}</p>
             </div>
             {groups.map((group) => (
               <section key={group.key} id={`series-${group.key}`} className="writing-series-section" aria-labelledby={`group-${group.key}`}>
