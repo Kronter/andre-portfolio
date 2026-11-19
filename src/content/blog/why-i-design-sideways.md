@@ -4,6 +4,7 @@ title: "Why I Design Sideways When I Want to Get Better"
 date: "2026-06-16"
 author: "André Gottgtroy"
 tags: ["Learning", "Game Design", "Practice"]
+coverImage: "/Going Sideways.png"
 excerpt: "Making a game with paper cards took away a few conveniences I'd grown used to as a digital designer."
 featured: false
 series: "Design Philosophy"
