@@ -4,6 +4,7 @@ title: "Borrowing from Skirmish Games"
 date: "2026-02-18"
 author: "André Gottgtroy"
 tags: ["Interaction", "Turn Structure", "TCG"]
+coverImage: "/tcg-alternating-activations.png"
 excerpt: "More engaging turn structures."
 featured: false
 series: "TCG"
