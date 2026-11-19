@@ -8,7 +8,7 @@ One Deck, Two Jobs: rewritten to explain Maneuvers having printed costs and gene
 
 Improv: rewritten around the original reason to add it—avoiding unplayable hands caused by the three-resource economy—then the resulting opportunity costs, pacing, agency and timing decisions. The speculative testing checklist and Tracer Entrance discussion were removed from this article; the separate Entrance article already covers that interaction.
 
-Editorial dates define reading order, not test chronology. Existing series keys and anchors remain unchanged. The actual list contains 21 articles (13 TCG and 8 Design Philosophy). `npm run test:writing` now asserts 21 and checks the corrected philosophy ordering, article headings and separation of resource/Improv topics.
+Editorial dates define reading order, not test chronology. Existing series keys and anchors remain unchanged. The actual list contains 20 articles (13 TCG and 7 Design Philosophy). `npm run test:writing` now asserts 20 and checks the corrected philosophy ordering, article headings and separation of resource/Improv topics.
 
 Image placement requested for the two TCG posts: prototype photo as first cover, paper prototype photo above the “cheap to change” heading, deck comparison slide near the overload section, and resource loop slide as the “One Deck, Two Jobs” cover. These source assets must be present under `public/` before setting `coverImage` or image blocks, to avoid broken images at build time.
 
@@ -29,3 +29,7 @@ The redundant article source file was deleted from the current branch (recoverab
 ## LEGO article rewritten — 19 November 2026
 
 The first Design Philosophy article retains its slug, id, series order, date, original LEGO cover image and link to Part 2, but has a more accurate title and excerpt: “Building Games Like LEGO: Modular Systems, Stronger Connections.” Its body now exclusively explains the author's LEGO philosophy: modular, replaceable/removable mechanics with explicit relationships; reinforcing overlaps across systems without tangled dependencies; and the foundation of cross-disciplinary practice and learning. Tracers, the physical card-game case study and the digital UI lessons from that case have been removed from this article. The prose is grounded in the original NZGDC FINAL slide-deck speaker notes (slides 2–7, 14–15, 25–27 and 32–33) and the author's explicit September/November discussion about modular, interlocking and removable systems. Preserve the separate learning-project article's focus on project exercises rather than duplicating it here.
+
+## Removed Clarity essay — 19 November 2026
+
+Deleted `clarity-is-not-the-same-as-simplicity.md` at the author's request, retaining its Git history. The adjacent philosophy posts now link directly from “What Do I Need This Prototype to Tell Me?” to “When Two Good Mechanics Make a Worse Game.” All following philosophy parts are renumbered from 6–8 to 5–7, and their relatedSlugs and navigation are updated. The current portfolio has 20 articles: 13 TCG, 7 Design Philosophy. Automated tests check the removed slug and contiguous series parts.

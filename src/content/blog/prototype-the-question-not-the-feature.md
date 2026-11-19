@@ -8,7 +8,7 @@ excerpt: "I recreated part of a digital event on the table. Choosing which part 
 featured: false
 series: "Design Philosophy"
 part: 4
-relatedSlugs: ["constraints-as-design-teachers", "clarity-is-not-the-same-as-simplicity"]
+relatedSlugs: ["constraints-as-design-teachers", "when-two-good-mechanics-make-a-worse-game"]
 content:
 - type: paragraph
   text: |-
@@ -90,5 +90,5 @@ content:
     [BLOCK]If three obstacles tell me the landing is impossible to judge, I know what I'd work on tomorrow. I'd be quite happy to find that out before building the rest of the level.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: What Can I Learn with One Less Tool?](/design-writing/constraints-as-design-teachers) · [Next: Clarity Isn't the Same as Simplicity](/design-writing/clarity-is-not-the-same-as-simplicity)
+    [Previous: What Can I Learn with One Less Tool?](/design-writing/constraints-as-design-teachers) · [Next: When Two Good Mechanics Make a Worse Game](/design-writing/when-two-good-mechanics-make-a-worse-game)
 ---

@@ -37,7 +37,7 @@ const posts = fs.readdirSync('src/content/blog').filter((name) => name.endsWith(
 }));
 
 test('articles retain valid dates, complete ordered series, balanced styling and working internal references', () => {
-  assert.equal(posts.length, 21);
+  assert.equal(posts.length, 20);
   assert.equal(new Set(posts.map((post) => post.id)).size, posts.length);
   assert.equal(posts.find((post) => post.slug === 'tcg-part-one').date, '2025-07-30');
   for (const group of getWritingSeries(posts)) {
@@ -65,11 +65,11 @@ test('new article preserves unresolved Aura timing and proposed tests', () => {
 
 
 test('removed philosophy essays are absent and remaining series is contiguous', () => {
-  const removed = ['meaningful-choices-not-more-choices', 'start-with-the-feeling-not-the-feature'];
+  const removed = ['meaningful-choices-not-more-choices', 'start-with-the-feeling-not-the-feature', 'clarity-is-not-the-same-as-simplicity'];
   for (const slug of removed) assert.ok(!posts.some((post) => post.slug === slug));
   const philosophy = getWritingSeries(posts).find((group) => group.key === 'philosophy');
-  assert.equal(philosophy.posts.length, 8);
-  assert.deepEqual(philosophy.posts.map((post) => post.part), [1, 2, 3, 4, 5, 6, 7, 8]);
+  assert.equal(philosophy.posts.length, 7);
+  assert.deepEqual(philosophy.posts.map((post) => post.part), [1, 2, 3, 4, 5, 6, 7]);
 });
 
 test('resource and Improv articles preserve the intended narrative', () => {
@@ -112,7 +112,7 @@ test('new philosophy essays have distinct theses and appropriate reading times',
     assert.ok(post, slugs[i]);
     assert.equal(post.title, titles[i]);
     assert.equal(post.series, 'Design Philosophy');
-    assert.equal(post.part, i + 6);
+    assert.equal(post.part, i + 5);
     assert.ok(post.content.some((block) => block.type === 'heading-2'));
     const text = post.content.map((block) => block.text || '').join(' ');
     const minutes = Math.ceil(text.split(/\s+/).filter(Boolean).length / 225);
@@ -152,4 +152,15 @@ test('LEGO philosophy article stays on modular interconnected systems and learni
   assert.ok(!/card game|physical game|Tracers|Maneuver/i.test(articleText));
   const minutes = Math.ceil(articleText.split(/\s+/).filter(Boolean).length / 225);
   assert.ok(minutes >= 5 && minutes <= 7, `LEGO article reading time: ${minutes}`);
+});
+
+
+test('the deleted Clarity essay is not linked from the adjacent philosophy posts', () => {
+  const slugs = ['prototype-the-question-not-the-feature', 'when-two-good-mechanics-make-a-worse-game'];
+  for (const slug of slugs) {
+    const post = posts.find((entry) => entry.slug === slug);
+    assert.ok(post);
+    assert.ok(!(post.relatedSlugs || []).includes('clarity-is-not-the-same-as-simplicity'));
+    assert.ok(!post.content.some((block) => (block.text || '').includes('clarity-is-not-the-same-as-simplicity')));
+  }
 });

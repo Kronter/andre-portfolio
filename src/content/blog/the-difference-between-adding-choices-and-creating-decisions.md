@@ -7,7 +7,7 @@ tags: ["Design Philosophy", "Player Agency", "Systems Design"]
 excerpt: "More buttons, cards and paths don't guarantee more meaningful play. The interesting part is what the player has to give up and why it matters."
 featured: false
 series: "Design Philosophy"
-part: 8
+part: 7
 relatedSlugs: ["complexity-has-an-audience", "when-two-good-mechanics-make-a-worse-game"]
 content:
 - type: paragraph

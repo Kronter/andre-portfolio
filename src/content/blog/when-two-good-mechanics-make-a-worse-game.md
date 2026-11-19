@@ -7,8 +7,8 @@ tags: ["Design Philosophy", "Systems Design", "Iteration"]
 excerpt: "A mechanic can work beautifully on its own and still steal space from the rest of the game. I care about what happens where systems meet."
 featured: false
 series: "Design Philosophy"
-part: 6
-relatedSlugs: ["clarity-is-not-the-same-as-simplicity", "complexity-has-an-audience"]
+part: 5
+relatedSlugs: ["prototype-the-question-not-the-feature", "complexity-has-an-audience"]
 content:
 - type: paragraph
   text: |-
@@ -97,5 +97,5 @@ content:
     [BLOCK]When two mechanics seem good individually but make the game worse together, I don't think the answer is automatically to pick a winner. I want to understand what each one was meant to give the player, and whether their connection is creating something worth keeping.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Clarity Isn't the Same as Simplicity](/design-writing/clarity-is-not-the-same-as-simplicity) · [Next: Complexity Has an Audience](/design-writing/complexity-has-an-audience)
+    [Previous: What Do I Need This Prototype to Tell Me?](/design-writing/prototype-the-question-not-the-feature) · [Next: Complexity Has an Audience](/design-writing/complexity-has-an-audience)
 ---

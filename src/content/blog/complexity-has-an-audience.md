@@ -7,7 +7,7 @@ tags: ["Design Philosophy", "Player Experience", "Accessibility"]
 excerpt: "I enjoy complicated games. That doesn't mean every game I design needs the same amount of complexity—or the same reason for it."
 featured: false
 series: "Design Philosophy"
-part: 7
+part: 6
 relatedSlugs: ["when-two-good-mechanics-make-a-worse-game", "the-difference-between-adding-choices-and-creating-decisions"]
 content:
 - type: paragraph
