@@ -4,6 +4,7 @@ title: "One Deck, Two Jobs"
 date: "2025-10-26"
 author: "André Gottgtroy"
 tags: ["Resource Design", "Iteration", "TCG"]
+coverImage: "/tcg-resource-loop.png"
 excerpt: "Maneuvers make the performance happen, generate resources and set up the next move. Here's why I joined those jobs together."
 featured: false
 series: "TCG"
@@ -32,6 +33,8 @@ content:
     I like that because choosing a Maneuver isn't only about its immediate effect. The card also changes what I might be able to do next. A flashy trick might be tempting, but a quieter one could generate the resource I need for my next play. Both decisions happen through the same cards.
 - type: heading-2
   text: "The triangle: Flow, Hype and Momentum"
+- type: image
+  src: "/tcg-resource-triangle.png"
 - type: paragraph
   text: |-
     The three resources are [VIOLET]**Flow, Hype and Momentum**[/VIOLET]. They do double duty. They're what you use to pay for Maneuvers, and they're also what you compare with your opponent at the end of a Jam. Each of the three resource totals can award a Point.
