@@ -1,3 +1,5 @@
+import WritingChoices from './WritingChoices';
+import { getWritingHighlights } from '@/lib/writing-series';
 import { useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -254,6 +256,7 @@ export function WritingInvitation({ posts }) {
     <section id="design-writing" className="writing-invitation">
       <div className="site-shell">
         <p>Interested in how I approach design?</p>
+        <WritingChoices choices={getWritingHighlights(posts)} />
         <Link href="/design-writing">Explore my design writing <ArrowRight aria-hidden="true" /></Link>
       </div>
     </section>

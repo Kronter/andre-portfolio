@@ -12,7 +12,10 @@ relatedSlugs: ["competition-without-combat", "why-i-built-the-world-of-tracers"]
 content:
 - type: paragraph
   text: |-
-    At some point, the card game stopped feeling like a collection of TCG experiments and started feeling like it had an identity of its own. That change wasn't the result of suddenly finding the perfect theme. It came from paying attention to what the systems already seemed to be doing.
+    At some point I stopped looking at a pile of TCG experiments and started seeing a performance. That was when this project began to feel like [VIOLET]Tracers[/VIOLET].
+- type: paragraph
+  text: |-
+    [NOTE]***Quick note:*** This is a look back at Prototype Two. Some scoring and character rules changed in later iterations.[/NOTE]
 - type: paragraph
   text: |-
     Players were taking turns making commitments, responding to one another's progress and building toward a shared resolution. They weren't commanding armies or reducing health bars. The interesting part was the momentum of the exchange itself.
@@ -37,7 +40,7 @@ content:
   text: "A Jam is a shared argument"
 - type: paragraph
   text: |-
-    In a recognisable version of Prototype Two, players take alternating Maneuver turns within a **Jam**. A Maneuver is a commitment to the developing performance. When both players are done, the Jam is resolved by comparing three resource totals: **Flow, Hype and Momentum**.
+    In a recognisable version of Prototype Two [SIDENOTE]before the later scoring revisions[/SIDENOTE], players take alternating Maneuver turns within a **Jam**. A Maneuver is a commitment to the developing performance. When both players are done, the Jam is resolved by comparing three resource totals: **Flow, Hype and Momentum**.
 - type: paragraph
   text: |-
     Each resource contest can award a Point; a tie awards nothing in the documented model. The game therefore creates several related contests rather than one simple number that always matters more than the rest.
@@ -87,7 +90,7 @@ content:
     Prototype Two gave me something the first prototype hadn't: a coherent direction in which the mechanics, turn rhythm and theme could reinforce one another. It did not eliminate balance problems, unclear wording or the need to remove features.
 - type: paragraph
   text: |-
-    In fact, later playtests made several of those problems more obvious. That is exactly what I want a more focused prototype to do. Once it has an identity, I can judge new systems against that identity instead of asking whether each system is fun in isolation.
+    [BLOCK]In fact, later playtests made several of those problems more obvious. That is exactly what I want a more focused prototype to do. Once it has an identity, I can judge new systems against that identity instead of asking whether each system is fun in isolation.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: Competition Without Combat: Making the Other Player Matter](/design-writing/competition-without-combat) · [Next: Why I Built a World Where Competition Creates Art](/design-writing/why-i-built-the-world-of-tracers)

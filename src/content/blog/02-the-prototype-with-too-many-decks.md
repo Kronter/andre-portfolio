@@ -1,7 +1,7 @@
 ---
 id: 201
 title: "My First Card Game Prototype Had Too Many Decks"
-date: "2026-10-28"
+date: "2026-10-01"
 author: "André Gottgtroy"
 tags: ["Prototype", "Systems Design", "TCG"]
 excerpt: "What the deliberately rough first prototype revealed about complexity and separate resource decks."
@@ -12,7 +12,10 @@ relatedSlugs: ["tcg-part-one", "03-rebuilding-the-resource-loop"]
 content:
 - type: paragraph
   text: |-
-    I started designing a card game partly because I wanted something that could sit on the table with family and friends, and partly because I wanted to make myself better at game design. Those two motivations were related, but not identical. The game needed to be welcoming to people who enjoyed strategy without necessarily enjoying direct confrontation. The exercise needed to challenge me as a systems designer.
+    I like the part of designing a game where a table full of paper starts asking awkward questions. My first prototype gave me plenty.
+- type: paragraph
+  text: |-
+    [NOTE]***Quick note:*** This is about my first rough prototype, rather than a recommendation against separate decks in general.[/NOTE]
 - type: paragraph
   text: |-
     So I chose an awkward problem on purpose: make a resource system that is interesting in its own right, but doesn't stop players doing the interesting things.
@@ -23,7 +26,7 @@ content:
   text: "A prototype should be cheap to change"
 - type: paragraph
   text: |-
-    My first prototype was rough. That was intentional. I wasn't trying to sell anyone on the art, a world or a polished rules book. I needed something I could rearrange, cross out and throw away. It was much easier to admit a mechanic wasn't working when replacing it meant changing a few cards rather than rebuilding a digital feature.
+    My first prototype was rough [SIDENOTE]intentionally so[/SIDENOTE]. I wasn't trying to sell anyone on the art, a world or a polished rules book. I needed something I could rearrange, cross out and throw away. It was much easier to admit a mechanic wasn't working when replacing it meant changing a few cards rather than rebuilding a digital feature.
 - type: paragraph
   text: |-
     I arrived with plenty of ideas: a main deck, a separate resource deck, a deck for zones, and other possibilities involving units, leaders and artifacts. Each element had an explanation. Resource cards could create choices around investment. Zones could change the context of a turn. Leaders could give a deck identity. On paper, they seemed like promising parts of a complete design.
@@ -40,7 +43,7 @@ content:
     Each small system asked for space on the table and space in the player's head. None of those requests was outrageous in isolation. Together they made the game increasingly about servicing its infrastructure.
 - type: paragraph
   text: |-
-    I had to distinguish *complexity that creates decisions* from *complexity that explains why decisions are allowed*. A player deciding whether to keep a flexible card or commit it as a resource might be interesting. A player spending time working out which deck to consult, or which step of a separate procedure they were in, was less convincing.
+    I had to distinguish [VIOLET]*complexity that creates decisions*[/VIOLET] from *complexity that explains why decisions are allowed*. A player deciding whether to keep a flexible card or commit it as a resource might be interesting. A player spending time working out which deck to consult, or which step of a separate procedure they were in, was less convincing.
 - type: paragraph
   text: |-
     More mechanics would not solve that problem. The system had become too expensive to interact with before it had earned that cost.
@@ -79,11 +82,11 @@ content:
     The prototype did exactly what I needed it to do. It exposed a complexity problem, limits on future design space, awkward flow and missing interaction. Those discoveries weren't glamorous, but they were usable. A beautiful mock-up might have helped me sell the idea. The ugly cards helped me question it.
 - type: paragraph
   text: |-
-    When evaluating a system now, I like asking: what decision does this create, what other system does it connect to, and what would disappear if I removed it? If the last answer is mostly bookkeeping, that is interesting information.
+    [BLOCK]When evaluating a system now, I like asking: what decision does this create, what other system does it connect to, and what would disappear if I removed it? If the last answer is mostly bookkeeping, that is interesting information.[/BLOCK]
 - type: paragraph
   text: |-
     I also try to resist a common temptation: adding a new mechanic to make an underperforming mechanic feel important. Sometimes the better answer is to move the responsibility to something players already understand. I would rather have one repeated decision that the players can explain than several separate subsystems that are technically interesting but largely invisible during play. The first prototype gave me permission to test that distinction instead of protecting the original structure.
 - type: paragraph
   text: |-
-    [Previous: Making a TCG (Sort of)](/design-writing/tcg-part-one) · [Next: Rebuilding the Resource Loop Instead of Adding More Rules](/design-writing/03-rebuilding-the-resource-loop)
+    [Previous: Making a TCG (Tracers)](/design-writing/tcg-part-one) · [Next: Rebuilding the Resource Loop Instead of Adding More Rules](/design-writing/03-rebuilding-the-resource-loop)
 ---

@@ -1,6 +1,6 @@
 ---
 id: 100
-title: "Making a TCG (Sort of)"
+title: "Making a TCG (Tracers)"
 date: "2025-07-30"
 author: "André Gottgtroy"
 tags: ["TCG", "Game Design", "Practice"]

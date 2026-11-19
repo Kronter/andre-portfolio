@@ -1,7 +1,7 @@
 ---
 id: 219
 title: "Why I Built a World Where Competition Creates Art"
-date: "2026-10-28"
+date: "2026-10-29"
 author: "André Gottgtroy"
 tags: ["Worldbuilding", "Tracers", "Creative Direction"]
 excerpt: "Why I chose an underground performance sport in a magitech city instead of a conventional combat fantasy."
@@ -12,13 +12,16 @@ relatedSlugs: ["05-prototype-two-finding-the-performance", "flow-hype-momentum-t
 content:
 - type: paragraph
   text: |-
-    Imagine two rival crews racing across the roofs and walls of a neon-lit city. One launches from a rail, another answers with a spinning landing, and a burst of rune-powered colour follows each movement. The crowd is watching, the stakes are real, and both teams want to win.
+    The image I keep coming back to is two rival crews leaving a mark on the same city. They both want to win, but neither owns the whole performance.
+- type: paragraph
+  text: |-
+    [NOTE]***Quick note:*** This is a worldbuilding direction, rather than a finished setting bible or a promise that every idea becomes a rule.[/NOTE]
 - type: paragraph
   text: |-
     But the result isn't a knocked-out opponent. It's a performance that neither crew could have created alone—and a new mark left on the city.
 - type: paragraph
   text: |-
-    That's the image I've been working toward with **Tracers**. It gave a card game about competing resources and alternating moves a world that could explain *why* people would want to play that way.
+    That's the image I've been working toward with **Tracers**. It gave a card game about competing resources and alternating moves a world that could explain [VIOLET]*why*[/VIOLET] people would want to play that way.
 - type: heading-2
   text: "I didn't want another game about hitting things"
 - type: paragraph
@@ -51,7 +54,7 @@ content:
   text: "Why fantasy, runes and near-future technology?"
 - type: paragraph
   text: |-
-    I didn't want the setting to be ordinary modern street sport, but I also didn't want technology so futuristic that a flip, a wheel or a wall would stop feeling recognisable. The direction in my design notes sits somewhere between fantasy and a near-future city: neon, customized gear, arcane sparks and **magitech**—technology powered or modified by magic and runes.
+    I didn't want the setting to be ordinary modern street sport, but I also didn't want technology so futuristic that a flip, a wheel or a wall would stop feeling recognisable. The direction in my design notes sits somewhere between fantasy and a near-future city: neon, customized gear, arcane sparks and **magitech**—[SIDENOTE]technology powered or modified by magic and runes[/SIDENOTE].
 - type: paragraph
   text: |-
     That gives the performers permission to do spectacular things without making every trick feel arbitrary. A rune-powered skate or an unusual piece of movement equipment can suggest a particular style before anyone reads its rules. The fantasy side also opens the cast beyond humans: elves, goblins, dwarves, ogres and other people can approach the same sport with different silhouettes, techniques and personalities.
@@ -105,7 +108,7 @@ content:
     The best part of Tracing as a setting is that **competition and cooperation can exist in the same moment**. Players are trying to outstyle each other, but they're building a single event together. That tension is the reason I chose this world in the first place.
 - type: paragraph
   text: |-
-    It's also why I'm happy to keep changing its rules. If a mechanic makes the experience less expressive or less readable, the world gives me a reason to question the mechanic—not an excuse to keep it.
+    [BLOCK]It's also why I'm happy to keep changing its rules. If a mechanic makes the experience less expressive or less readable, the world gives me a reason to question the mechanic—not an excuse to keep it.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: Prototype Two: Finding the Performance Inside the Systems](/design-writing/05-prototype-two-finding-the-performance) · [Next: Flow, Hype and Momentum: Designing a Three-Way Resource Contest](/design-writing/flow-hype-momentum-triangle)

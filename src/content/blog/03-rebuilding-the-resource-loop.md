@@ -1,7 +1,7 @@
 ---
 id: 202
 title: "Rebuilding the Resource Loop Instead of Adding More Rules"
-date: "2026-10-28"
+date: "2026-10-04"
 author: "André Gottgtroy"
 tags: ["Resource Design", "Iteration", "TCG"]
 excerpt: "Why I stopped adding systems and began connecting resource decisions to ordinary play."
@@ -12,7 +12,10 @@ relatedSlugs: ["02-the-prototype-with-too-many-decks", "improv-when-a-card-becom
 content:
 - type: paragraph
   text: |-
-    A complicated prototype has a very particular appeal to a systems designer: every problem looks like an invitation to invent another system. The resource deck isn't interesting enough? Give it its own effects. The board feels static? Add zones. Players need identity? Add leaders. Before long, a game can have a reasonable explanation for every part and still not have a satisfying whole.
+    I can usually think of another system to add. The harder question for me is whether the game needs it.
+- type: paragraph
+  text: |-
+    [NOTE]***Quick note:*** I am following the resource decision here, rather than trying to explain every rule in the game.[/NOTE]
 - type: paragraph
   text: |-
     That was where my first card-game prototype was heading. I had the ingredients of a game, but not enough connection between them. What I really wanted was for the resource economy to create choices within the act of playing, not become a separate activity that had to be completed before playing.
@@ -56,7 +59,7 @@ content:
   text: "The player has to see the consequences"
 - type: paragraph
   text: |-
-    Physical prototypes make this brutally obvious. A digital game can quietly update a value, recalculate a cost, resolve a trigger and highlight the button that is now available. On the table, someone has to explain and track all of that. Hidden complexity is not free simply because a computer can manage it.
+    Physical prototypes make this brutally obvious. A digital game can handle a lot quietly [SIDENOTE]updating a value, recalculating a cost, resolving a trigger or highlighting the button that is now available[/SIDENOTE]. On the table, someone has to explain and track all of that. Hidden complexity is not free simply because a computer can manage it.
 - type: paragraph
   text: |-
     So a second question joined the first: can a player see why the last action mattered?
@@ -79,7 +82,7 @@ content:
     When I work on digital systems, the same test applies. I try to identify what the player needs to understand and what the mechanic is asking them to sacrifice. If a system can only be interesting after three other systems are bolted onto it, I want to know why.
 - type: paragraph
   text: |-
-    The rebuild also showed me that connected systems can create *less* total explanation even while supporting *more* interesting decisions. One visible action can carry the jobs that used to require several rules. That is a different kind of simplicity from merely making every number smaller.
+    [BLOCK]The rebuild also showed me that connected systems can create [VIOLET]*less*[/VIOLET] total explanation even while supporting *more* interesting decisions. One visible action can carry the jobs that used to require several rules. That is a different kind of simplicity from merely making every number smaller.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: My First Card Game Prototype Had Too Many Decks](/design-writing/02-the-prototype-with-too-many-decks) · [Next: Improv: When a Card Becomes Fuel](/design-writing/improv-when-a-card-becomes-fuel)

@@ -1,7 +1,7 @@
 ---
 id: 209
 title: "Improv: When a Card Becomes Fuel"
-date: "2026-10-28"
+date: "2026-10-07"
 author: "André Gottgtroy"
 tags: ["Improv", "Card Economy", "Tracers"]
 excerpt: "How discarding a Maneuver for its printed cost changed opportunity costs, timing and progression."
@@ -12,10 +12,13 @@ relatedSlugs: ["03-rebuilding-the-resource-loop", "04-the-turn-structure-i-borro
 content:
 - type: paragraph
   text: |-
-    One of the questions that pushed my card game forward was deceptively ordinary: what happens when a player draws a card they cannot, or do not want to, play? In many card games, that card waits. Sometimes waiting is a deliberate investment; sometimes it feels like the game has temporarily taken a choice away. I wanted to see whether the card could remain useful without making every decision automatic.
+    I kept coming back to an awkward hand: cards I could not play yet, or did not want to play at all. Could those cards still give me an interesting choice?
 - type: paragraph
   text: |-
-    That question eventually became *Improv*: a way to discard a Maneuver for resources instead of playing it as a Maneuver. It sounds like a straightforward conversion. The interesting part is what it does to the relationship between your hand, your timing and the things you are trying to achieve.
+    [NOTE]***Quick note:*** Improv has changed between versions. Here I distinguish the early conversion from the later printed-cost approach.[/NOTE]
+- type: paragraph
+  text: |-
+    That question eventually became [VIOLET]*Improv*[/VIOLET]: a way to discard a Maneuver for resources instead of playing it as a Maneuver. It sounds like a straightforward conversion. The interesting part is what it does to the relationship between your hand, your timing and the things you are trying to achieve.
 - type: heading-2
   text: "One card, two futures"
 - type: paragraph
@@ -62,7 +65,7 @@ content:
     As Tracers evolved, each player gained three characters waiting outside the main deck, each linked to one of the three resources. They entered when their relevant resource reached the printed requirement. That meant Improv no longer affected only what I could play; it could also affect how quickly I brought my characters into the performance.
 - type: paragraph
   text: |-
-    The combination is exciting. A card that is too expensive to play now may instead help one of my Tracers arrive. But it can also accelerate progression in unexpected ways, especially alongside draw effects. Later playtests exposed exactly this concern: cost-based Improv could enable several Entrances more quickly than originally expected.
+    The combination is exciting. A card that is too expensive to play now may instead help one of my Tracers arrive. But it can also accelerate progression in unexpected ways, [SIDENOTE]especially alongside draw effects[/SIDENOTE]. Later playtests exposed exactly this concern: cost-based Improv could enable several Entrances more quickly than originally expected.
 - type: paragraph
   text: |-
     The important distinction is between an observation and a verdict. Fast Entrances aren't inherently wrong. They may be dramatic and satisfying. The question is whether they preserve decisions, counterplay and reasonable competitive outcomes. That is why later validation work compared possible Tracer tuning and Maneuver-economy tuning rather than silently changing the Improv rule.
@@ -79,7 +82,7 @@ content:
     Those are different problems, and they suggest different changes. One might require a better spread of card roles; the other might require adjustments to draw, resource generation or the timing of character benefits. Adding a blanket restriction before identifying the problem risks destroying the interesting choice as well.
 - type: paragraph
   text: |-
-    Improv started as a way to make hands more flexible. It became a way to examine opportunity cost, pacing, player agency and the links between systems. That is the sort of evolution I want from a prototype: a small rule makes the right questions more visible. The next challenge was making sure those decisions mattered to the person sitting across the table.
+    [BLOCK]Improv started as a way to make hands more flexible. It became a way to examine opportunity cost, pacing, player agency and the links between systems. That is the sort of evolution I want from a prototype: a small rule makes the right questions more visible. The next challenge was making sure those decisions mattered to the person sitting across the table.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: Rebuilding the Resource Loop Instead of Adding More Rules](/design-writing/03-rebuilding-the-resource-loop) · [Next: The Turn Structure I Borrowed from Wargames](/design-writing/04-the-turn-structure-i-borrowed-from-wargames)

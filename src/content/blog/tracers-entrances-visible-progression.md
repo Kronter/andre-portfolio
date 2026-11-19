@@ -1,7 +1,7 @@
 ---
 id: 213
 title: "Tracer Entrances: Making Progression Part of the Performance"
-date: "2026-10-28"
+date: "2026-11-07"
 author: "André Gottgtroy"
 tags: ["Progression", "Character Systems", "Tracers"]
 excerpt: "How resource-linked entrances replaced forced character rotation."
@@ -12,10 +12,13 @@ relatedSlugs: ["gear-styles-sequences-and-scope", "the-table-is-the-interface"]
 content:
 - type: paragraph
   text: |-
-    A competitive card game often gives players a character, leader or signature ability from the start. I wanted Tracers to feel a little different. A Tracer should be more than a permanent effect printed beside the board. Bringing one into play should feel like a moment in the performance, something the player builds toward through ordinary decisions.
+    I wanted bringing a Tracer into play to feel like a moment in the performance. A character arriving should mean more than another effect to remember.
 - type: paragraph
   text: |-
-    That ambition led through several approaches before settling on the resource-linked Entrance system for the streamlined Tracers prototype. It's one of the most useful design journeys in the project because it touches progression, pacing, visibility and the price of flexibility.
+    [NOTE]***Quick note:*** The timing below describes the later prototype direction. The balance comparisons remain planned work.[/NOTE]
+- type: paragraph
+  text: |-
+    That ambition led through several approaches before settling on the [VIOLET]resource-linked Entrance system[/VIOLET] for the streamlined Tracers prototype. It's one of the most useful design journeys in the project because it touches progression, pacing, visibility and the price of flexibility.
 - type: heading-2
   text: "The problem with the Featured approach"
 - type: paragraph
@@ -31,7 +34,7 @@ content:
   text: "From forced rotation to earned arrival"
 - type: paragraph
   text: |-
-    The new direction placed three Tracers outside the Maneuver deck, each assigned to Flow, Hype or Momentum after the player saw their final opening hand. Each Tracer would have a printed Entrance requirement tied to the resource it was assigned. Reach the requirement and the Tracer enters, eventually remaining in play across Jams.
+    The new direction placed three Tracers outside the Maneuver deck, each assigned to Flow, Hype or Momentum [SIDENOTE]after the player saw their final opening hand[/SIDENOTE]. Each Tracer would have a printed Entrance requirement tied to the resource it was assigned. Reach the requirement and the Tracer enters, eventually remaining in play across Jams.
 - type: paragraph
   text: |-
     I liked the link because it attached progression to the main contest. The decision to build Flow was no longer only about scoring Flow at Jam end. It could also bring a character closer to their Entrance. What looks like one action now carries both an immediate competitive goal and a medium-term progression goal.
@@ -90,7 +93,7 @@ content:
     Those observations would tell me whether the progression system genuinely belongs in the core loop. It would also tell me more than merely measuring the average turn on which a Tracer appears.
 - type: paragraph
   text: |-
-    The strongest part of this iteration is that progression is no longer isolated from the match. Scoring, card conversion, timing and character identity all have reasons to interact. My challenge is to keep those connections visible enough that the player experiences an earned entrance—not just another condition to calculate.
+    [BLOCK]The strongest part of this iteration is that progression is no longer isolated from the match. Scoring, card conversion, timing and character identity all have reasons to interact. My challenge is to keep those connections visible enough that the player experiences an earned entrance—not just another condition to calculate.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: Gear, Styles and Sequences: When Good Systems Compete for Attention](/design-writing/gear-styles-sequences-and-scope) · [Next: The Table Is the Interface: Designing Rules People Can See](/design-writing/the-table-is-the-interface)

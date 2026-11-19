@@ -1,7 +1,7 @@
 ---
 id: 214
 title: "The Table Is the Interface: Designing Rules People Can See"
-date: "2026-10-28"
+date: "2026-11-10"
 author: "André Gottgtroy"
 tags: ["Game UX", "Readability", "Tracers"]
 excerpt: "Why physical state, card layout and wording became part of the game system."
@@ -12,10 +12,13 @@ relatedSlugs: ["tracers-entrances-visible-progression", "06-what-playtesting-mad
 content:
 - type: paragraph
   text: |-
-    Working with digital games for years trained me to rely on a remarkable number of conveniences. A button greys out when an action isn't legal. A tooltip explains an effect. The game calculates resources, remembers timers and resolves an order of operations without asking the player to do any of it.
+    Working on digital games gives me a lot of conveniences. A paper prototype is very good at reminding me which ones I have been taking for granted.
 - type: paragraph
   text: |-
-    A physical prototype offers none of those conveniences automatically. If something matters, it has to exist in the components, in the layout, in clear language or in a procedure players can actually follow. Designing Tracers reminded me that presentation is not a polish pass sitting on top of the rules. For a physical game, presentation is part of the machinery.
+    [NOTE]***Quick note:*** Some layout changes are explorations. The unfamiliar-player test at the end is a proposal, not a reported result.[/NOTE]
+- type: paragraph
+  text: |-
+    A physical prototype offers none of those conveniences automatically. If something matters, it has to exist somewhere players can find it [SIDENOTE]in the components, the layout, clear language or a procedure they can actually follow[/SIDENOTE]. Designing Tracers reminded me that presentation is not a polish pass sitting on top of the rules. For a physical game, presentation is part of the machinery.
 - type: heading-2
   text: "A rule can exist and still be invisible"
 - type: paragraph
@@ -26,7 +29,7 @@ content:
     Early arrangements relied too heavily on implicit order and memory. Players needed to remember where a chain began and when it broke. The fix I explored was to make boundaries explicit and arrange cards so the relevant grouping was visible. A fan stack or declaration could carry information the rules were otherwise expecting players to hold in their heads.
 - type: paragraph
   text: |-
-    There is an important difference between a rule being *specified* and a game state being *readable*. An elegant rules document can still describe a cumbersome table experience. If two players repeatedly stop to reconstruct state, the system is asking for a better interface.
+    There is an important difference between a rule being [VIOLET]*specified*[/VIOLET] and a game state being *readable*. An elegant rules document can still describe a cumbersome table experience. If two players repeatedly stop to reconstruct state, the system is asking for a better interface.
 - type: heading-2
   text: "Information should live where players look"
 - type: paragraph
@@ -87,7 +90,7 @@ content:
     I would then run a quick unfamiliar-player test. Give someone a frozen mid-Jam table and ask: whose action happened last, which resource increased, what can happen next, and what still needs to resolve? Record where they hesitate rather than jumping in to explain. That test would validate the interface, not just my intentions.
 - type: paragraph
   text: |-
-    The table isn't merely where Tracers happens. It is the screen, the state tracker and the explanation. Learning to design for that physical reality has influenced how I think about digital UI as well. Even when a computer can remember everything, the player should not have to guess what the game knows.
+    [BLOCK]The table isn't merely where Tracers happens. It is the screen, the state tracker and the explanation. Learning to design for that physical reality has influenced how I think about digital UI as well. Even when a computer can remember everything, the player should not have to guess what the game knows.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: Tracer Entrances: Making Progression Part of the Performance](/design-writing/tracers-entrances-visible-progression) · [Next: What Playtesting Tracers Made Me Remove](/design-writing/06-what-playtesting-made-me-remove)

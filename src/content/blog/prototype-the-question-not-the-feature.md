@@ -1,7 +1,7 @@
 ---
 id: 208
 title: "Prototype the Question, Not the Feature"
-date: "2026-10-28"
+date: "2026-10-30"
 author: "André Gottgtroy"
 tags: ["Prototyping", "Design Philosophy", "R&D"]
 excerpt: "A small prototype should answer the right question before proving a complete feature."
@@ -12,10 +12,13 @@ relatedSlugs: ["constraints-as-design-teachers", "clarity-is-not-the-same-as-sim
 content:
 - type: paragraph
   text: |-
-    One of my favourite early-development questions used to be: how much of this feature do I need to build before I can test it?
+    Before I build a prototype, I want to know what it is going to tell me. I have not always asked that early enough.
 - type: paragraph
   text: |-
-    I still ask that sometimes, especially when collaborating with engineers. But a more useful question often comes first: **what is the smallest thing I need to answer the question I'm actually uncertain about?**
+    [NOTE]***Quick note:*** The proposed tests are examples of how I would investigate a question, rather than completed experiments.[/NOTE]
+- type: paragraph
+  text: |-
+    I still ask that sometimes, [SIDENOTE]especially when collaborating with engineers[/SIDENOTE]. But a more useful question often comes first: **[VIOLET]what is the smallest thing I need to answer the question I'm actually uncertain about?[/VIOLET]**
 - type: paragraph
   text: |-
     Those two formulations sound similar. They can lead to very different prototypes.
@@ -93,7 +96,7 @@ content:
     Before I start implementing, I try to write a sentence beginning, 'I need to find out whether…' Then I identify what I would observe if the hypothesis were true, and what would make me reconsider it.
 - type: paragraph
   text: |-
-    That habit changes the conversation. Instead of asking whether a feature is finished, I can ask whether the uncertainty has been reduced enough to justify the next investment. And instead of feeling that a failed prototype wasted time, I can judge whether it actually answered the question it was built to ask.
+    [BLOCK]That habit changes the conversation. Instead of asking whether a feature is finished, I can ask whether the uncertainty has been reduced enough to justify the next investment. And instead of feeling that a failed prototype wasted time, I can judge whether it actually answered the question it was built to ask.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: Constraints Are Design Teachers, Not Just Production Limits](/design-writing/constraints-as-design-teachers) · [Next: Clarity Isn't the Same as Simplicity](/design-writing/clarity-is-not-the-same-as-simplicity)

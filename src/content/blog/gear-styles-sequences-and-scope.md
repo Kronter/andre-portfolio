@@ -1,7 +1,7 @@
 ---
 id: 212
 title: "Gear, Styles and Sequences: When Good Systems Compete for Attention"
-date: "2026-10-28"
+date: "2026-11-04"
 author: "André Gottgtroy"
 tags: ["Iteration", "Scope", "Tracers"]
 excerpt: "What Gear, Styles and Sequences taught me about the player attention budget."
@@ -12,7 +12,10 @@ relatedSlugs: ["flow-hype-momentum-triangle", "tracers-entrances-visible-progres
 content:
 - type: paragraph
   text: |-
-    There is a particular danger in making a card game: every good idea can become its own card type, keyword or zone. The pieces may be interesting individually. They may even be balanced. But at the table, players still have a limited amount of attention to spend, and all those ideas compete for it.
+    I like the idea of a crew having its own style. It is much harder to let go of a mechanic when I can already imagine how good it could feel.
+- type: paragraph
+  text: |-
+    [NOTE]***Quick note:*** Deferred does not mean discarded forever. I am looking at what the streamlined prototype needs now.[/NOTE]
 - type: paragraph
   text: |-
     Tracers repeatedly brought me back to that problem. The evolution from Gear to Styles, and later the experimentation with Sequences, taught me that a subsystem has to earn not only its rules but also the mental space it occupies.
@@ -34,7 +37,7 @@ content:
   text: "A Style should change expression, not just statistics"
 - type: paragraph
   text: |-
-    The richer Styles concept developed two sides, Verse and Chorus, along with conditions for shifting between them. I liked the idea of a performer moving through different phases of a Jam, gaining a recognisable rhythm rather than simply accumulating passive bonuses.
+    The richer Styles concept developed two sides, [SIDENOTE]Verse and Chorus[/SIDENOTE], along with conditions for shifting between them. I liked the idea of a performer moving through different phases of a Jam, gaining a recognisable rhythm rather than simply accumulating passive bonuses.
 - type: paragraph
   text: |-
     It's a compelling fantasy. A player establishes a pattern, builds toward a transition and changes how their Maneuvers feel. Styles could give decks personality while leaving the underlying resource contest recognisable.
@@ -43,7 +46,7 @@ content:
     But I had to distinguish the fantasy from the implementation. A Style that flips between modes is not automatically engaging. Players need to know when it changes, what choices it opens and why the change feels earned. If most of the cognitive effort goes into checking the trigger, the feature may be delivering less than it promises.
 - type: paragraph
   text: |-
-    That's true even when the feature is sophisticated and technically functional. What matters is whether the additional structure changes what the player *wants* to do.
+    That's true even when the feature is sophisticated and technically functional. What matters is whether the additional structure changes what the player [VIOLET]*wants*[/VIOLET] to do.
 - type: heading-2
   text: "Sequences were another tempting connection"
 - type: paragraph
@@ -93,7 +96,7 @@ content:
     I still like the idea of players developing a signature performance through Style changes and sequences of moves. I just don't think every attractive part of the fantasy has to enter the first version at once.
 - type: paragraph
   text: |-
-    My aim is to create enough depth that players begin noticing possibilities I didn't explicitly teach them. When a subsystem gets in the way of noticing those possibilities, it can be better to set it aside. The design isn't less ambitious because the prototype has fewer rules. The ambition has moved from the number of components to the quality of their relationships.
+    [BLOCK]My aim is to create enough depth that players begin noticing possibilities I didn't explicitly teach them. When a subsystem gets in the way of noticing those possibilities, it can be better to set it aside. The design isn't less ambitious because the prototype has fewer rules. The ambition has moved from the number of components to the quality of their relationships.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: Flow, Hype and Momentum: Designing a Three-Way Resource Contest](/design-writing/flow-hype-momentum-triangle) · [Next: Tracer Entrances: Making Progression Part of the Performance](/design-writing/tracers-entrances-visible-progression)

@@ -1,7 +1,7 @@
 ---
 id: 216
 title: "Start with the Feeling, Not the Feature List"
-date: "2026-10-28"
+date: "2026-10-11"
 author: "André Gottgtroy"
 tags: ["Player Experience", "Design Thinking", "Game Design"]
 excerpt: "Begin with what players should experience, then judge whether the features produce it."
@@ -12,7 +12,10 @@ relatedSlugs: ["meaningful-choices-not-more-choices", "why-i-design-sideways"]
 content:
 - type: paragraph
   text: |-
-    When someone pitches a game, the conversation often begins with its components: crafting, base building, dynamic weather, procedural encounters, companions. Those are useful ingredients, and I enjoy talking about them. But they don't tell me what the game is supposed to be like for the person playing it.
+    I enjoy talking about systems and features. Before I get too attached to them, though, I want to know what playing the game should feel like.
+- type: paragraph
+  text: |-
+    [NOTE]***Quick note:*** The garden game is an illustrative example, not a project or playtest I am reporting on.[/NOTE]
 - type: paragraph
   text: |-
     Before becoming attached to a particular feature, I want to understand the experience it is meant to create. Are players supposed to feel curious, capable, vulnerable, clever, connected or pleasantly surprised? What should they want to do a second time? Those questions sound abstract until you use them to make concrete design decisions.
@@ -23,7 +26,7 @@ content:
     Consider a game about restoring a neglected garden. We could begin with a list: plant seeds, water flowers, gather compost, decorate paths, unlock new plots. Every item could be implemented successfully and the result might still feel like completing chores.
 - type: paragraph
   text: |-
-    Now start with an experience goal: 'I want players to feel that careful observation and small acts of care make a place come alive.' The feature list takes on a different meaning. Watering could be a decision about when to intervene, not a mandatory timer. Compost could influence which plants thrive together. New growth could reveal unexpected relationships between neighbouring flowers.
+    Now start with an [VIOLET]experience goal[/VIOLET]: 'I want players to feel that careful observation and small acts of care make a place come alive.' The feature list takes on a different meaning. Watering could be a decision about when to intervene, not a mandatory timer. Compost could influence which plants thrive together. New growth could reveal unexpected relationships between neighbouring flowers.
 - type: paragraph
   text: |-
     The mechanics are still familiar. What changes is the standard we use to judge them. A feature earns its place by contributing to the experience rather than merely satisfying a checklist.
@@ -40,7 +43,7 @@ content:
     For a sense of mastery, I might look for players predicting the result of an action and changing their approach deliberately. For a sense of belonging, I might look at whether they recognise characters, voluntarily revisit places, or invent small routines.
 - type: paragraph
   text: |-
-    Those behaviours aren't perfect measurements of emotion. A player can be curious without saying anything, and a player can try every object simply because they're a completionist. But observable signals give me something better than assuming the feature produced the feeling I intended.
+    Those behaviours aren't perfect measurements of emotion [SIDENOTE]a player can be curious without saying anything[/SIDENOTE]. A player can also try every object simply because they're a completionist. But observable signals give me something better than assuming the feature produced the feeling I intended.
 - type: paragraph
   text: |-
     I also like asking players open questions after they have played. What did you want to do next? Which moment surprised you? When did you stop feeling in control? Their descriptions may reveal a different experience from the one I thought I designed.
@@ -93,7 +96,7 @@ content:
     That flexibility is particularly important during prototyping. I am not trying to prove that the first implementation was clever. I am trying to find a version that creates the experience I was looking for.
 - type: paragraph
   text: |-
-    So I start by writing one sentence about what I want players to feel or be able to express. Then I write another sentence about what they would actually do if that experience were happening. Those two sentences don't design the game for me, but they give every mechanic a much better question to answer.
+    [BLOCK]So I start by writing one sentence about what I want players to feel or be able to express. Then I write another sentence about what they would actually do if that experience were happening. Those two sentences don't design the game for me, but they give every mechanic a much better question to answer.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: More Options Don't Automatically Mean More Meaningful Choices](/design-writing/meaningful-choices-not-more-choices) · [Next: Why I Design Sideways When I Want to Get Better](/design-writing/why-i-design-sideways)

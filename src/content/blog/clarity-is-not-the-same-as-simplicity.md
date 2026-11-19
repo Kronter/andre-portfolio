@@ -1,7 +1,7 @@
 ---
 id: 218
 title: "Clarity Isn't the Same as Simplicity"
-date: "2026-10-28"
+date: "2026-11-12"
 author: "André Gottgtroy"
 tags: ["Game UX", "Accessibility", "Design Philosophy"]
 excerpt: "Why player comprehension and strategic depth are not opposites."
@@ -12,10 +12,13 @@ relatedSlugs: ["prototype-the-question-not-the-feature"]
 content:
 - type: paragraph
   text: |-
-    I often hear game systems described as either simple or complex, as though that single scale tells us how approachable they are. I think something important gets lost there. A mechanic can have very few rules and still be confusing. Another can support considerable depth while making the immediate choice obvious.
+    I want people to spend their attention on the interesting choice. If they are still trying to work out what a button did, I have a different problem to solve.
 - type: paragraph
   text: |-
-    When I think about accessibility in design, I care less about counting mechanics than about whether players understand what they can do, why they might want to do it and what happened afterward. That is clarity. It isn't identical to simplicity.
+    [NOTE]***Quick note:*** The examples here are design illustrations, rather than reports from particular playtests.[/NOTE]
+- type: paragraph
+  text: |-
+    When I think about accessibility in design, I care less about counting mechanics than about whether players understand what they can do, why they might want to do it and what happened afterward. [VIOLET]That is clarity.[/VIOLET] It isn't identical to simplicity.
 - type: heading-2
   text: "The difference shows up in play"
 - type: paragraph
@@ -34,7 +37,7 @@ content:
     A specification can describe a perfect system while the actual interface leaves the player guessing. If a cooldown is relevant, the player needs some indication of when the ability will return. If a relationship changes, the game should communicate enough for players to connect that change to their actions.
 - type: paragraph
   text: |-
-    That doesn't mean revealing every formula or removing the joy of discovery. I think of information in layers. Some things must be clear immediately: what is legal, what is currently happening, and what a chosen action is expected to affect. Other things can be discovered gradually: hidden patterns, strategic combinations or unexpected uses for a familiar tool.
+    That doesn't mean revealing every formula or removing the joy of discovery. I think of information in layers. Some things must be clear immediately: what is legal, what is currently happening, and what a chosen action is expected to affect. Other things [SIDENOTE]hidden patterns, strategic combinations or unexpected uses for a familiar tool[/SIDENOTE] can be discovered gradually.
 - type: paragraph
   text: |-
     The distinction matters. Mystery about a world can be exciting. Mystery about whether clicking a button worked usually isn't.
@@ -93,7 +96,7 @@ content:
     Separating these outcomes prevents me from rewriting a good rule merely because I communicated it badly, or polishing an interface that faithfully explains an uninteresting decision.
 - type: paragraph
   text: |-
-    My goal isn't minimal rules for their own sake. It's a game where the complexity players encounter is the complexity I intended them to enjoy. Clarity makes that possible. It gives players a solid understanding from which curiosity, experimentation and mastery can grow.
+    [BLOCK]My goal isn't minimal rules for their own sake. It's a game where the complexity players encounter is the complexity I intended them to enjoy. Clarity makes that possible. It gives players a solid understanding from which curiosity, experimentation and mastery can grow.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: Prototype the Question, Not the Feature](/design-writing/prototype-the-question-not-the-feature)

@@ -1,7 +1,7 @@
 ---
 id: 217
 title: "Constraints Are Design Teachers, Not Just Production Limits"
-date: "2026-10-28"
+date: "2026-10-22"
 author: "André Gottgtroy"
 tags: ["Design Practice", "Prototyping", "Learning"]
 excerpt: "Using deliberate constraints to expose weaknesses and strengthen design habits."
@@ -12,10 +12,13 @@ relatedSlugs: ["why-i-design-sideways", "prototype-the-question-not-the-feature"
 content:
 - type: paragraph
   text: |-
-    Constraints are usually presented as the unfortunate part of making games: not enough time, not enough people, not enough memory, not enough budget. Those limits are real, and I don't think teams should romanticise harmful schedules or inadequate resources. But there is another kind of constraint I actively choose: one that makes me practise something I'd otherwise avoid.
+    There are constraints I would happily avoid, and others I choose on purpose. I am interested in the ones that make me practise something I tend to sidestep.
 - type: paragraph
   text: |-
-    I use deliberate constraints as a way to learn because they remove convenient solutions. A restriction can reveal which part of my design ability is genuinely strong and which part has been carried by a tool, a familiar workflow or a genre convention.
+    [NOTE]***Quick note:*** I mean deliberate learning constraints here, rather than making peace with an unhealthy production schedule.[/NOTE]
+- type: paragraph
+  text: |-
+    I use [VIOLET]deliberate constraints[/VIOLET] as a way to learn because they remove convenient solutions. A restriction can reveal which part of my design ability is genuinely strong and which part has been carried by a tool, a familiar workflow or a genre convention.
 - type: heading-2
   text: "Find the crutch first"
 - type: paragraph
@@ -23,7 +26,7 @@ content:
     In digital development, I can rely on automation to track complex states. I can add interface text to explain an unclear rule. I can use a powerful engine and a lot of scripting to make an awkward interaction technically functional.
 - type: paragraph
   text: |-
-    Those are useful tools. They become a problem only when I rely on them instead of understanding the design underneath. If I want to improve my ability to communicate rules, I might deliberately choose an exercise with no tooltips or automatic state changes.
+    Those are useful tools [SIDENOTE]and I use them too[/SIDENOTE]. They become a problem only when I rely on them instead of understanding the design underneath. If I want to improve my ability to communicate rules, I might deliberately choose an exercise with no tooltips or automatic state changes.
 - type: paragraph
   text: |-
     If I want to improve encounter pacing, I might build a tiny combat scenario with a fixed set of actions and no progression rewards. If I want to improve environmental storytelling, I might restrict myself to one room, a small number of objects and no written exposition.
@@ -90,7 +93,7 @@ content:
     If I learn to make physical state visible in one exercise, where could that help a digital interface? If I learn to pace decisions with a tiny encounter, where might that apply to a larger quest? I don't want the lesson to stay trapped inside the project that created it.
 - type: paragraph
   text: |-
-    The best constraint is one that changes how I approach my next problem. It makes me notice assumptions I previously treated as unavoidable. That is how I want to use side projects: not as a competition to collect prototypes, but as a controlled way to become a better designer.
+    [BLOCK]The best constraint is one that changes how I approach my next problem. It makes me notice assumptions I previously treated as unavoidable. That is how I want to use side projects: not as a competition to collect prototypes, but as a controlled way to become a better designer.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: Why I Design Sideways When I Want to Get Better](/design-writing/why-i-design-sideways) · [Next: Prototype the Question, Not the Feature](/design-writing/prototype-the-question-not-the-feature)

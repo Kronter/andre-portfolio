@@ -42,8 +42,9 @@ export async function getWritingPosts() {
       const plainText = text.replace(/\[[A-Z]+\]|\[\/[A-Z]+\]|<[^>]+>|[*_#]/g, ' ');
       const readingMinutes = Math.max(1, Math.ceil(plainText.split(/\s+/).filter(Boolean).length / 225));
 
+      const { content: articleContent, ...metadata } = data;
       return {
-        ...data,
+        ...metadata,
         slug: filename.replace(/\.md$/, ''),
         readingTime: `${readingMinutes} min read`,
       };

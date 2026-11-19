@@ -1,7 +1,7 @@
 ---
 id: 203
 title: "The Turn Structure I Borrowed from Wargames"
-date: "2026-10-28"
+date: "2026-10-10"
 author: "André Gottgtroy"
 tags: ["Interaction", "Turn Structure", "TCG"]
 excerpt: "Why alternating activations helped change the cadence of a non-combat card game."
@@ -12,13 +12,16 @@ relatedSlugs: ["improv-when-a-card-becomes-fuel", "competition-without-combat"]
 content:
 - type: paragraph
   text: |-
-    I wanted a card game that my family could enjoy together, including people who weren't interested in a game built around attacking the other player. That gave me an awkward design challenge: I wanted indirect competition without the feeling of two people quietly playing separate solitaire games.
+    I wanted a game my family could enjoy together. That meant finding a way to compete without making direct attacks the main event.
+- type: paragraph
+  text: |-
+    [NOTE]***Quick note:*** I borrowed a rhythm from wargames, rather than trying to turn Tracers into one.[/NOTE]
 - type: paragraph
   text: |-
     These aren't opposite ends of one scale. A game can have almost no direct attacks and still be intensely interactive. It can also have lots of attack cards and surprisingly few interesting responses. What matters to me is whether another player's decisions change what I want to do.
 - type: paragraph
   text: |-
-    My first prototype had a problem here. The resource systems could be interesting on their own, but that didn't guarantee that the experience of taking turns was interesting *together*.
+    My first prototype had a problem here. The resource systems could be interesting on their own, but that didn't guarantee that the experience of taking turns was interesting [VIOLET]*together*[/VIOLET].
 - type: heading-2
   text: "Watching isn't the same as participating"
 - type: paragraph
@@ -32,7 +35,7 @@ content:
     My question became: what is the smallest unit of action that creates an interesting response?
 - type: paragraph
   text: |-
-    Notice that I'm not asking how often a player can interrupt. Interruption systems carry their own problems: timing windows, priority rules, extra explanations and the uncertainty of whether you should ask your opponent to stop. I wanted to see whether the rhythm of ordinary turns could do some of that work first.
+    Notice that I'm not asking how often a player can interrupt. Interruption systems carry their own problems [SIDENOTE]timing windows, priority rules and extra explanations[/SIDENOTE], as well as the uncertainty of whether you should ask your opponent to stop. I wanted to see whether the rhythm of ordinary turns could do some of that work first.
 - type: heading-2
   text: "Go sideways to find a better pattern"
 - type: paragraph
@@ -85,7 +88,7 @@ content:
     It also reinforced my belief that looking outside your usual medium is one of the fastest ways to challenge an assumption. A designer working entirely inside TCG conventions might ask which instant-speed cards encourage interaction. Looking at alternating activations let me ask whether the base turn structure could encourage it instead.
 - type: paragraph
   text: |-
-    That sort of borrowing isn't copying. You still have to understand *why* the source pattern works, which dependencies it carries and whether it supports the experience you want.
+    [BLOCK]That sort of borrowing isn't copying. You still have to understand *why* the source pattern works, which dependencies it carries and whether it supports the experience you want.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: Improv: When a Card Becomes Fuel](/design-writing/improv-when-a-card-becomes-fuel) · [Next: Competition Without Combat: Making the Other Player Matter](/design-writing/competition-without-combat)

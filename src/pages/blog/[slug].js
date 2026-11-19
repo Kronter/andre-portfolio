@@ -1,3 +1,4 @@
+import { seriesTitle } from '@/lib/writing-series';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -55,7 +56,7 @@ function ArticleBlock({ block, title }) {
 
 function RelatedCard({ post, nextInSeries }) {
   return <Link href={`/design-writing/${post.slug}`} className="article-related-card">
-    <span>{nextInSeries ? `Next in ${post.series}` : formatDate(post.date)}</span>
+    <span>{nextInSeries ? `Next in ${seriesTitle(post.series)}` : formatDate(post.date)}</span>
     <strong>{post.title}</strong>
     <span className="article-related-action">{nextInSeries ? 'Continue reading' : 'Read article'} <ArrowRight aria-hidden="true" /></span>
   </Link>;
@@ -78,7 +79,7 @@ export default function DesignWritingPostPage({ postData, nextPostInSeries, othe
         <div className="site-shell article-hero-inner">
           <Link href="/design-writing" className="article-back"><ArrowLeft aria-hidden="true" /> All Design Writing</Link>
           <div className="article-tags">{postData.tags?.map((tag) => <span key={tag}>{tag}</span>)}</div>
-          {postData.series && <p className="eyebrow">{postData.series} · Part {postData.part}</p>}
+          {postData.series && <p className="eyebrow">{seriesTitle(postData.series)} · Part {postData.part}</p>}
           <h1>{postData.title}</h1>
           {postData.excerpt && <p className="article-deck">{postData.excerpt}</p>}
           <div className="article-byline">
@@ -128,7 +129,7 @@ export async function getStaticProps({ params }) {
           .replace(/\[VIOLET\]/g, '<span class="article-violet">').replace(/\[\/VIOLET\]/g, '</span>')
           .replace(/\[ZINC\]/g, '<span class="article-muted">').replace(/\[\/ZINC\]/g, '</span>')
           .replace(/\[WHITE\]/g, '<span class="article-white">').replace(/\[\/WHITE\]/g, '</span>')
-          .replace(/\[SIDENOTE\]/g, '<span class="article-sidenote"> [').replace(/\[\/SIDENOTE\]/g, '] </span>');
+          .replace(/\[SIDENOTE\]/g, '<span class="article-sidenote"> - ').replace(/\[\/SIDENOTE\]/g, ' - </span>');
       }
     }
   }

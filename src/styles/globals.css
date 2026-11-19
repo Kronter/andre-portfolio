@@ -647,3 +647,15 @@ img { display: block; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+/* Writing discovery shares the compact series cards across both entry points. */
+.writing-invitation .site-shell { display: block; }
+.writing-invitation .writing-series-chooser-grid { margin: 20px 0 24px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.writing-invitation a.writing-series-choice { display: flex; color: var(--ink); }
+.writing-latest, .writing-chooser-section { border-bottom: 1px solid var(--line); }
+.writing-chooser-section { background: #111620; }
+.writing-chooser-section h2 { margin: 0 0 22px; }
+.writing-latest .writing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 767px) {
+  .writing-invitation .writing-series-chooser-grid, .writing-latest .writing-grid { grid-template-columns: 1fr; }
+}

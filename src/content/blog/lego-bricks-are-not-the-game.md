@@ -1,7 +1,7 @@
 ---
 id: 206
 title: "The LEGO Bricks Are Not the Game"
-date: "2026-10-28"
+date: "2026-10-02"
 author: "André Gottgtroy"
 tags: ["Design Philosophy", "Systems Design", "Player Experience"]
 excerpt: "My LEGO-brick view of game design: value comes from how familiar mechanics connect."
@@ -12,10 +12,13 @@ relatedSlugs: ["meaningful-choices-not-more-choices"]
 content:
 - type: paragraph
   text: |-
-    I often explain my view of game design using LEGO bricks. Not because I think games are simple to build, but because I think an enormous amount of design skill lives in seeing what pieces can become when they're connected differently.
+    I often explain how I think about game design with [VIOLET]LEGO bricks[/VIOLET]. I like collecting the pieces, but the interesting part is what happens between them.
 - type: paragraph
   text: |-
-    A game designer collects pieces over time: mechanics they've played, systems they've built, patterns they've studied, mistakes they've made and behaviours they've watched players invent. A resource economy is a piece. A turn structure is a piece. Progression, feedback, pacing, social pressure and player goals are pieces too.
+    [NOTE]***Quick note:*** The game examples are hypothetical. I use them to explain a relationship, rather than as evidence from a finished project.[/NOTE]
+- type: paragraph
+  text: |-
+    A game designer collects pieces over time [SIDENOTE]mechanics they've played, systems they've built, patterns they've studied, mistakes they've made and behaviours they've watched players invent[/SIDENOTE]. A resource economy is a piece. A turn structure is a piece. Progression, feedback, pacing, social pressure and player goals are pieces too.
 - type: paragraph
   text: |-
     Having more pieces is useful. Knowing how they connect is what makes the collection valuable.
@@ -93,7 +96,7 @@ content:
     My personal design toolkit isn't just a catalogue of mechanics. It's a growing memory of relationships: which ones created interesting tradeoffs, which ones created friction, which ones were difficult to explain, and which changed completely when placed in a different context.
 - type: paragraph
   text: |-
-    That's why I think making many small experiments matters. Each one adds more than a mechanism to the collection. It adds an observation about how mechanisms behave together.
+    [BLOCK]That's why I think making many small experiments matters. Each one adds more than a mechanism to the collection. It adds an observation about how mechanisms behave together.[/BLOCK]
 - type: paragraph
   text: |-
     [Next: More Options Don't Automatically Mean More Meaningful Choices](/design-writing/meaningful-choices-not-more-choices)

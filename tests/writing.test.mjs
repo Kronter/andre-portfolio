@@ -1,0 +1,66 @@
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+import fs from 'node:fs';
+import matter from 'gray-matter';
+
+// Load the client-safe helper without changing the project's module configuration.
+const source = fs.readFileSync('src/lib/writing-series.js', 'utf8');
+const { getWritingHighlights, getWritingSeries, seriesTitle } = await import(`data:text/javascript;base64,${Buffer.from(source).toString('base64')}`);
+const article = (slug, series, date, updated) => ({ slug, series, date, updated, part: 1, title: slug, readingTime: '3 min read' });
+
+test('highlights fill three slots with recent series, then latest posts', () => {
+  for (const count of [0, 1, 2, 3, 4]) {
+    const posts = Array.from({ length: count }, (_, i) => article(`post-${i}`, `Series ${i}`, `2026-11-${10 + i}`));
+    posts.push(article('standalone', null, '2026-11-19'));
+    const cards = getWritingHighlights(posts);
+    assert.equal(cards.length, Math.min(3, posts.length + count));
+    assert.equal(cards.filter((card) => card.label.startsWith('Series')).length, Math.min(3, count));
+    if (count < 3) assert.equal(cards[count].key, 'standalone');
+    assert.equal(new Set(cards.map((card) => card.key)).size, cards.length);
+  }
+  assert.deepEqual(getWritingHighlights([]), []);
+});
+
+test('series use the newest update while preserving part order and anchor links', () => {
+  const posts = [article('older', 'TCG', '2026-10-01', '2026-11-19'), article('newer', 'Design Philosophy', '2026-11-12')];
+  posts.push({ ...article('tcg-next', 'TCG', '2026-11-14'), part: 2 });
+  const groups = getWritingSeries(posts);
+  assert.equal(groups[0].key, 'tcg');
+  assert.equal(groups[0].title, 'Making a TCG (Tracers)');
+  assert.deepEqual(groups[0].posts.map((post) => post.part), [1, 2]);
+  assert.equal(getWritingHighlights(posts)[0].href, '/design-writing/#series-tcg');
+  assert.equal(seriesTitle('Design Philosophy'), 'My Game Design Philosophy');
+});
+
+const posts = fs.readdirSync('src/content/blog').filter((name) => name.endsWith('.md')).map((name) => ({
+  slug: name.slice(0, -3), ...matter(fs.readFileSync(`src/content/blog/${name}`, 'utf8')).data,
+}));
+
+test('articles retain valid dates, complete ordered series, balanced styling and working internal references', () => {
+  assert.equal(posts.length, 21);
+  assert.equal(new Set(posts.map((post) => post.id)).size, posts.length);
+  assert.equal(posts.find((post) => post.slug === 'tcg-part-one').date, '2025-07-30');
+  for (const group of getWritingSeries(posts)) {
+    group.posts.forEach((post, i) => {
+      assert.equal(post.part, i + 1);
+      assert.match(post.date, /^\d{4}-\d{2}-\d{2}$/);
+      assert.ok(post.date <= '2026-11-19');
+      if (i) assert.ok(post.date >= group.posts[i - 1].date);
+      for (const slug of post.relatedSlugs || []) assert.ok(posts.some((p) => p.slug === slug && p.series === post.series));
+      const text = post.content.map((block) => block.text || '').join('\n');
+      for (const tag of ['NOTE', 'BLOCK', 'SIDENOTE', 'VIOLET']) {
+        assert.equal(text.split(`[${tag}]`).length, text.split(`[/${tag}]`).length, `${post.slug}: ${tag}`);
+      }
+      assert.ok(text.includes('[NOTE]'), `${post.slug}: quick note`);
+      assert.ok(text.includes('[BLOCK]'), `${post.slug}: purple inset`);
+      for (const [, slug] of text.matchAll(/\]\(\/design-writing\/([^/)]+)\)/g)) assert.ok(posts.some((p) => p.slug === slug), `${post.slug}: ${slug}`);
+    });
+  }
+});
+
+test('new article preserves unresolved Aura timing and proposed tests', () => {
+  const post = posts.find((post) => post.slug === 'when-more-cards-meant-less-game');
+  const text = post.content.map((block) => block.text || '').join('\n');
+  assert.equal(post.part, 14);
+  for (const phrase of ["We haven't decided that part yet.", "I'll compare a few existing draw and recovery effects", 'generated Auras come first', "I don't want to introduce a dedicated Aura area or a hard limit"]) assert.ok(text.includes(phrase));
+});

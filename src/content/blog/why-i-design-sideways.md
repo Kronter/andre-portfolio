@@ -1,7 +1,7 @@
 ---
 id: 207
 title: "Why I Design Sideways When I Want to Get Better"
-date: "2026-10-28"
+date: "2026-10-17"
 author: "André Gottgtroy"
 tags: ["Learning", "Game Design", "Practice"]
 excerpt: "How choosing unfamiliar learning projects changes the skills I practise."
@@ -12,7 +12,10 @@ relatedSlugs: ["start-with-the-feeling-not-the-feature", "constraints-as-design-
 content:
 - type: paragraph
   text: |-
-    If I ask myself what game I want to make, I can produce a very long list. I like systems-heavy games, multiplayer experiences, RPGs, board games, mechanics with room for experimentation, and probably too many side projects for my own good.
+    I have no shortage of games I would like to make. Choosing one that will actually make me practise a weaker skill is a different question.
+- type: paragraph
+  text: |-
+    [NOTE]***Quick note:*** This is about choosing a learning project. It does not need to become a commercial release to be useful.[/NOTE]
 - type: paragraph
   text: |-
     That question is exciting, but it's not always the most useful one when my goal is to improve as a designer.
@@ -21,12 +24,12 @@ content:
     A better question is: **what do I want to get better at, and what could I make that would force me to practise it?**
 - type: paragraph
   text: |-
-    That shift became the centre of my NZGDC talk, *What Physical Games Taught Me About Better Game Design*. Rather than treating a personal project only as a possible product, I began treating it as a training environment.
+    That shift became the centre of my NZGDC talk, [VIOLET]*What Physical Games Taught Me About Better Game Design*[/VIOLET]. Rather than treating a personal project only as a possible product, I began treating it as a training environment.
 - type: heading-2
   text: "Learning is more than collecting explanations"
 - type: paragraph
   text: |-
-    Books, talks, courses and conversations with other designers are valuable. I use them. But I don't always understand something properly until I try to apply it, discover why my first interpretation was inadequate and adjust.
+    Books, talks, courses and conversations with other designers are valuable [SIDENOTE]I use them too[/SIDENOTE]. But I don't always understand something properly until I try to apply it, discover why my first interpretation was inadequate and adjust.
 - type: paragraph
   text: |-
     It's possible to explain a principle convincingly without being able to use it under pressure. I can say that players need clear feedback. Then I can make a game where nobody knows when an effect expires. Knowing the principle isn't the same as having the reflex to catch the problem before a playtest.
@@ -93,7 +96,7 @@ content:
     A learning exercise can keep changing as each version presents a narrower question. I might remove a favourite feature from a minimal test, or discover that two good ideas don't connect well. Those results remain useful beyond the individual exercise because they teach me what to look for next time, even when the most successful outcome is a smaller design.
 - type: paragraph
   text: |-
-    If I were choosing a learning project tomorrow, I'd start by writing down one design skill, one crutch I want to remove and one observation that would tell me I'm improving. That's more actionable than choosing a genre and hoping experience happens along the way.
+    [BLOCK]If I were choosing a learning project tomorrow, I'd start by writing down one design skill, one crutch I want to remove and one observation that would tell me I'm improving. That's more actionable than choosing a genre and hoping experience happens along the way.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: Start with the Feeling, Not the Feature List](/design-writing/start-with-the-feeling-not-the-feature) · [Next: Constraints Are Design Teachers, Not Just Production Limits](/design-writing/constraints-as-design-teachers)

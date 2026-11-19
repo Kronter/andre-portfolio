@@ -1,7 +1,7 @@
 ---
 id: 205
 title: "What Playtesting Tracers Made Me Remove"
-date: "2026-10-28"
+date: "2026-11-14"
 author: "André Gottgtroy"
 tags: ["Tracers", "Playtesting", "Iteration"]
 excerpt: "The systems Tracers needed to simplify, defer or rethink after later testing."
@@ -12,7 +12,10 @@ relatedSlugs: ["the-table-is-the-interface"]
 content:
 - type: paragraph
   text: |-
-    I tend to enjoy designing interconnected systems. Give me a card game and I'll find a dozen ways to add expressive combinations, strategic identities and opportunities for mastery. That part comes naturally. Deciding which ideas have earned a place in the experience is harder.
+    I enjoy designing interconnected systems. Deciding which ones to remove is the part I find harder.
+- type: paragraph
+  text: |-
+    [NOTE]***Quick note:*** These are observations from the versions described below, rather than a claim that the current rules are finished.[/NOTE]
 - type: paragraph
   text: |-
     Tracers has been a useful reminder that a rule can be clever, thematic and reasonably documented while still making the game worse to play. As the project evolved beyond the version shown in my NZGDC talk, I began cutting, delaying or rewriting things I had previously been excited about.
@@ -29,7 +32,7 @@ content:
     The game understood the Sequence in the designer's imagination. The table didn't show it reliably.
 - type: paragraph
   text: |-
-    One line of revision was to declare Sequences explicitly and group the relevant cards so the boundary became visible. That improved the communication problem, at least conceptually. But it also raised another question: what did the mechanic add to the experience *right now*?
+    One line of revision was to declare Sequences explicitly and group the relevant cards so the boundary became visible. That improved the communication problem, [SIDENOTE]at least conceptually[/SIDENOTE]. But it also raised another question: what did the mechanic add to the experience [VIOLET]*right now*[/VIOLET]?
 - type: paragraph
   text: |-
     A later stripped-down playtest omitted both Styles and Sequences. We didn't miss them. That was an uncomfortable but useful result. It didn't prove those systems were bad, nor that they should never return. It told me they hadn't yet earned the overhead they brought to the core test.
@@ -96,8 +99,8 @@ content:
     I still want Tracers to feel like a competitive performance with strategic expression and indirect pressure. Removing a Sequence from the minimal test doesn't abandon that goal. Revising Improv doesn't betray the resource system. Changing an Entrance's timing doesn't change why an Entrance should feel exciting.
 - type: paragraph
   text: |-
-    The hard part is separating my attachment to an implementation from the player experience I'm trying to create. I can preserve the learning, archive the old rule and test another route without pretending every idea was a mistake.
+    [BLOCK]The hard part is separating my attachment to an implementation from the player experience I'm trying to create. I can preserve the learning, archive the old rule and test another route without pretending every idea was a mistake.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: The Table Is the Interface: Designing Rules People Can See](/design-writing/the-table-is-the-interface)
+    [Previous: The Table Is the Interface: Designing Rules People Can See](/design-writing/the-table-is-the-interface) · [Next: When More Cards Meant Less Game](/design-writing/when-more-cards-meant-less-game)
 ---

@@ -1,7 +1,7 @@
 ---
 id: 215
 title: "More Options Don't Automatically Mean More Meaningful Choices"
-date: "2026-10-28"
+date: "2026-10-06"
 author: "André Gottgtroy"
 tags: ["Player Agency", "Meaningful Choices", "Design Philosophy"]
 excerpt: "Why more mechanics and options do not necessarily make better decisions."
@@ -12,10 +12,13 @@ relatedSlugs: ["lego-bricks-are-not-the-game", "start-with-the-feeling-not-the-f
 content:
 - type: paragraph
   text: |-
-    I love systems with a lot of possibilities. Give me different movement tools, interactable environments, character abilities and an economy that connects them, and I will probably start wondering what happens when players combine them in ways I hadn't anticipated. But I've also learned that offering more things to do is not the same as offering better decisions.
+    Give me a system with plenty of possibilities and I will probably want to explore it. That does not mean I want another option added to every decision.
 - type: paragraph
   text: |-
-    When I evaluate a design, I ask what the player is actually choosing *between*. If one option is clearly superior, the others may be ornamental. If every alternative has the same outcome, the player may have freedom of animation rather than freedom of strategy. Interesting options need reasons to exist.
+    [NOTE]***Quick note:*** More options can be useful. I am interested in what makes those options worth choosing between.[/NOTE]
+- type: paragraph
+  text: |-
+    When I evaluate a design, I ask what the player is actually choosing [VIOLET]*between*[/VIOLET]. If one option is clearly superior, the others may be ornamental. If every alternative has the same outcome, the player may have freedom of animation rather than freedom of strategy. Interesting options need reasons to exist.
 - type: heading-2
   text: "A choice needs a consequence"
 - type: paragraph
@@ -23,10 +26,10 @@ content:
     Imagine an adventure game with three ways to cross a river. The player can use a bridge, swim or build a raft. That sounds like a rich set of options. But if all three take the same time, have the same cost and lead to exactly the same result, the player is mostly choosing a preferred visual.
 - type: paragraph
   text: |-
-    That's not necessarily bad. Expressive choices can matter. Choosing how a character behaves is itself a kind of play. But if the design promises strategic choice, those routes need distinct consequences. Maybe swimming is fast but requires abandoning equipment. Maybe the bridge is safe but guarded. Maybe a raft takes preparation while preserving supplies.
+    That's not necessarily bad [SIDENOTE]expressive choices can matter[/SIDENOTE]. Choosing how a character behaves is itself a kind of play. But if the design promises strategic choice, those routes need distinct consequences. Maybe swimming is fast but requires abandoning equipment. Maybe the bridge is safe but guarded. Maybe a raft takes preparation while preserving supplies.
 - type: paragraph
   text: |-
-    Now the player is weighing time, risk and future opportunity. The same three options have become a more interesting system without adding a fourth route.
+    Now the player is weighing **time, risk and future opportunity**. The same three options have become a more interesting system without adding a fourth route.
 - type: paragraph
   text: |-
     I find it useful to distinguish the *number of actions* from the *number of meaningful tradeoffs*. A smaller action set can support considerable depth if the environment changes their relative value.
@@ -93,7 +96,7 @@ content:
     If every tester chooses the same option for the same reason, I look for a missing tradeoff or an irrelevant alternative. If they choose differently but cannot understand the consequences, I look at feedback and communication. If different choices produce interesting outcomes, I have a strong basis for further iteration.
 - type: paragraph
   text: |-
-    This is why I think depth comes from relationships, not feature counts. More options can help, but only when they create genuinely different things for players to consider. I would rather build a small set of actions that keep becoming interesting in new contexts than a large catalogue that asks the same question every time.
+    [BLOCK]This is why I think depth comes from relationships, not feature counts. More options can help, but only when they create genuinely different things for players to consider. I would rather build a small set of actions that keep becoming interesting in new contexts than a large catalogue that asks the same question every time.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: The LEGO Bricks Are Not the Game](/design-writing/lego-bricks-are-not-the-game) · [Next: Start with the Feeling, Not the Feature List](/design-writing/start-with-the-feeling-not-the-feature)

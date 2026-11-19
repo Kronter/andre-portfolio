@@ -1,7 +1,7 @@
 ---
 id: 211
 title: "Flow, Hype and Momentum: Designing a Three-Way Resource Contest"
-date: "2026-10-28"
+date: "2026-11-01"
 author: "André Gottgtroy"
 tags: ["Resource Economy", "Scoring", "Tracers"]
 excerpt: "Designing three competing resources and the consequences of their circular generation."
@@ -12,10 +12,13 @@ relatedSlugs: ["why-i-built-the-world-of-tracers", "gear-styles-sequences-and-sc
 content:
 - type: paragraph
   text: |-
-    A resource system can easily become a fuel gauge. Collect enough points, spend them on the expensive thing, repeat. That works for many games, but it wasn't the experience I wanted from Tracers. I wanted the resources themselves to be the contest: something players build in public, argue over through their actions and use to express different approaches to a performance.
+    I did not want Tracers resources to be something players collected before getting to the game. I wanted them to be part of what the players were competing over.
 - type: paragraph
   text: |-
-    That led to Flow, Hype and Momentum. Three words, three competing scores, and a set of relationships that I needed to make both strategically useful and physically readable.
+    [NOTE]***Quick note:*** The example Jam below is an illustration, not a recorded match. The later tie rule is also called out separately.[/NOTE]
+- type: paragraph
+  text: |-
+    That led to [VIOLET]Flow, Hype and Momentum[/VIOLET]. Three words, three competing scores, and a set of relationships that I needed to make both strategically useful and physically readable.
 - type: heading-2
   text: "Why three resources?"
 - type: paragraph
@@ -45,7 +48,7 @@ content:
   text: "A Jam has several stories at once"
 - type: paragraph
   text: |-
-    Imagine two performers approaching the end of a Jam. One has built a strong Hype lead, but the other is close in Flow and Momentum. The decision to push one resource isn't just an efficiency calculation. It can become a small story of commitment, a bluff or a last-minute swing.
+    Imagine two performers approaching the end of a Jam. One has built a strong Hype lead, but the other is close in Flow and Momentum. The decision to push one resource isn't just an efficiency calculation. It can become a small story of commitment, [SIDENOTE]a bluff or a last-minute swing[/SIDENOTE].
 - type: paragraph
   text: |-
     This is a design illustration rather than a recorded match. What matters is the kind of choice it describes. A player should be able to see the competing stakes and decide whether a marginal point is worth more than investing in a different resource.
@@ -82,7 +85,7 @@ content:
     The design also has to work if the player doesn't care about my intended metaphor. Someone should still understand the score, the Maneuver types and the consequences. Theme can reinforce the structure, but it shouldn't be required to decode it.
 - type: paragraph
   text: |-
-    The resource triangle gave Prototype Two a recognisable rhythm. It didn't finish the game. Later work with Styles, Sequences and Tracer Entrances would test how much extra structure the basic loop could support before it stopped being the thing players noticed. For me, that is the central resource-design challenge: not how many clever interactions I can invent, but whether each one makes the next choice more interesting.
+    [BLOCK]The resource triangle gave Prototype Two a recognisable rhythm. It didn't finish the game. Later work with Styles, Sequences and Tracer Entrances would test how much extra structure the basic loop could support before it stopped being the thing players noticed. For me, that is the central resource-design challenge: not how many clever interactions I can invent, but whether each one makes the next choice more interesting.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: Why I Built a World Where Competition Creates Art](/design-writing/why-i-built-the-world-of-tracers) · [Next: Gear, Styles and Sequences: When Good Systems Compete for Attention](/design-writing/gear-styles-sequences-and-scope)
