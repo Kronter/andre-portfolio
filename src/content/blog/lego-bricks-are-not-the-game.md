@@ -42,6 +42,8 @@ content:
     Being able to replace a piece makes experimentation less intimidating. I can hold on to the experience I'm trying to create while questioning whether the specific rule I've written is the right way to achieve it.
 - type: heading-2
   text: "Overlapping bricks make a stronger wall"
+- type: image
+  src: "/Lego.png"
 - type: paragraph
   text: |-
     If you stack LEGO bricks in separate vertical columns, you can build upwards. But if each column stays separate, they don't do much to support each other. Offset the next row so one brick crosses two underneath it, and now it helps hold both together. The structure gets its strength from the overlaps.
@@ -90,6 +92,8 @@ content:
     I don't need to become an expert in every discipline. But I do want enough understanding to recognise their relationships. The stronger and broader that foundation becomes, the more ways I have to approach an unfamiliar design problem.
 - type: heading-2
   text: "Sometimes learning sideways builds upwards"
+- type: image
+  src: "/Going Sideways.png"
 - type: paragraph
   text: |-
     I can keep practising the things I already know how to do. That absolutely has value. Going deeper into a discipline is often exactly what I need.
