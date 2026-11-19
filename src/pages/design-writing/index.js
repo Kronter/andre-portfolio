@@ -41,7 +41,26 @@ function WritingCard({ post, featured = false }) {
 }
 
 export default function DesignWritingPage({ posts }) {
-  const [featured, ...remaining] = posts;
+  const groups = [
+    {
+      key: 'tcg',
+      title: 'Making a TCG (Sort of)',
+      description: 'A documented journey through prototypes, Tracers rules and playtest decisions.',
+      posts: posts.filter((post) => post.series === 'TCG').sort((a, b) => a.part - b.part),
+    },
+    {
+      key: 'philosophy',
+      title: 'My Game Design Philosophy',
+      description: 'Standalone essays on choices, play, learning, constraints and clarity.',
+      posts: posts.filter((post) => post.series === 'Design Philosophy').sort((a, b) => a.part - b.part),
+    },
+    {
+      key: 'other',
+      title: 'Other Writing',
+      description: 'Additional articles.',
+      posts: posts.filter((post) => !['TCG', 'Design Philosophy'].includes(post.series)),
+    },
+  ].filter((group) => group.posts.length > 0);
   return (
     <>
       <Head>
@@ -64,8 +83,22 @@ export default function DesignWritingPage({ posts }) {
               <div><p className="eyebrow">Latest writing</p><h2 id="writing-library-title">Read, explore, and follow the process.</h2></div>
               <p>{posts.length} {posts.length === 1 ? 'article' : 'articles'}</p>
             </div>
-            {featured ? <div className="writing-grid"><WritingCard post={featured} featured />{remaining.map((post) => <WritingCard key={post.slug} post={post} />)}</div>
-              : <p className="writing-empty">New design writing is on the way.</p>}
+            {groups.length > 0 ? groups.map((group) => (
+              <section key={group.key} aria-labelledby={`group-${group.key}`} style={{ marginTop: '2.5rem' }}>
+                <div className="writing-library-heading">
+                  <div>
+                    <h3 id={`group-${group.key}`}>{group.title}</h3>
+                    <p>{group.description}</p>
+                  </div>
+                  <p>{group.posts.length} articles</p>
+                </div>
+                <div className="writing-grid">
+                  {group.posts.map((post, index) => (
+                    <WritingCard key={post.slug} post={post} featured={index === 0} />
+                  ))}
+                </div>
+              </section>
+            )) : <p className="writing-empty">New design writing is on the way.</p>}
           </div>
         </section>
       </main>
