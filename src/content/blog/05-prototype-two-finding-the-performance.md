@@ -4,6 +4,7 @@ title: "When Tracers Started to Feel Like a Performance"
 date: "2026-05-26"
 author: "André Gottgtroy"
 tags: ["Tracers", "Prototyping", "Systems Design"]
+coverImage: "/tcg-tracers-inspirations.png"
 excerpt: "A dance battle gave me a way to picture what two players were doing when they played their cards."
 featured: false
 series: "TCG"
