@@ -38,7 +38,7 @@ content:
     The trouble was what happened when I put them together.
 - type: heading-2
   text: "Cognitive and resource overload"
-  - type: image
+- type: image
   src: "/tcg-too-many-decks.png" 
 - type: paragraph
   text: |-
