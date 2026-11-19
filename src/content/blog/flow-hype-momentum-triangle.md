@@ -4,6 +4,7 @@ title: "Why Does a Momentum Card Give Me Hype?"
 date: "2026-07-29"
 author: "André Gottgtroy"
 tags: ["Resource Economy", "Scoring", "Tracers"]
+coverImage: "/Resources.png"
 excerpt: "Being one point behind in Hype gives me a good reason to look at the Momentum cards in my hand."
 featured: false
 series: "TCG"
