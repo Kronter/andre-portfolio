@@ -26,7 +26,7 @@ content:
 - type: heading-2
   text: "A prototype should be cheap to change"
 - type: image
-    src: '/tcg-prototype-cheap.jpg'  
+  src: '/tcg-prototype-cheap.jpg'  
 - type: paragraph
   text: |-
     My first prototype was rough [SIDENOTE]intentionally so[/SIDENOTE]. I wasn't trying to sell anyone on the art, a world or a polished rules book. I needed something I could rearrange, cross out and throw away. It was much easier to admit a mechanic wasn't working when replacing it meant changing a few cards rather than rebuilding a digital feature.
@@ -38,6 +38,8 @@ content:
     The trouble was what happened when I put them together.
 - type: heading-2
   text: "Cognitive and resource overload"
+  - type: image
+  src: '/tcg-too-many-decks.png' 
 - type: paragraph
   text: |-
     The first problem was cognitive load. Three decks meant three sets of expectations: where to draw from, when each pile mattered, how resources could be recycled, and how all of those steps interacted with the main game. Knowing what to do next was becoming a task of its own.
