@@ -350,7 +350,8 @@ img { display: block; }
 .writing-hero-inner { position: relative; }
 .writing-hero h1 { max-width: 1080px; margin: 0; color: white; font-size: clamp(2.8rem, 5vw, 4.65rem); line-height: .98; letter-spacing: -.05em; }
 .writing-hero-intro { max-width: 820px; margin: 24px 0 0; color: #b7b7bf; font-size: 1rem; }
-.writing-series-compact .writing-series-chooser-grid { max-width: 840px; }
+.writing-series-compact { max-width: 840px; margin-inline: auto; }
+.writing-series-compact h2 { text-align: center; }
 .writing-series-compact .writing-series-choice { min-height: 0; padding: 10px 16px; }
 .writing-series-compact .writing-series-choice-title { font-size: 1rem; }
 .writing-picks { display: grid; gap: 24px; }
