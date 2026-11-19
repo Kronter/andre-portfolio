@@ -58,7 +58,7 @@ export default function DesignWritingPage({ posts }) {
           <div className="site-shell writing-hero-inner">
             <p className="eyebrow">Design Writing</p>
             <h1>Thoughts, experiments and lessons from making games.</h1>
-            <p className="writing-hero-intro">A place to think through game design problems in public—from systems and mechanics to the practical decisions that shape how a game feels.</p>
+            <p className="writing-hero-intro">A place to think through game design problems in public. From systems and mechanics to the practical decisions that shape how a game feels.</p>
             {groups.length > 0 && (
               <nav className="writing-series-chooser" aria-labelledby="series-chooser-title">
                 <h2 id="series-chooser-title">Choose a series</h2>
