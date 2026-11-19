@@ -137,7 +137,14 @@ export async function getStaticProps({ params }) {
     const { data: metadata } = matter(file);
     return { slug: filename.replace(/\.md$/, ''), ...metadata };
   }).sort((a, b) => new Date(b.date) - new Date(a.date));
-  const nextInSeries = data.series ? allPosts.find((post) => post.series === data.series && post.part === data.part + 1) : null;
-  const otherPosts = allPosts.filter((post) => post.id !== data.id && post.id !== nextInSeries?.id).slice(0, 2);
+  // Keep each blog series self-contained, even for articles with no explicit relatedSlugs.
+  const sameSeries = allPosts.filter((post) => post.series === data.series && post.id !== data.id);
+  const nextInSeries = sameSeries.find((post) => post.part === data.part + 1) || null;
+  const curated = (data.relatedSlugs || [])
+    .map((slug) => sameSeries.find((post) => post.slug === slug))
+    .filter(Boolean);
+  const otherPosts = [...curated, ...sameSeries]
+    .filter((post, index, posts) => post.id !== nextInSeries?.id && posts.findIndex((entry) => entry.id === post.id) === index)
+    .slice(0, 2);
   return { props: { postData: { slug: params.slug, ...data }, nextPostInSeries: nextInSeries || null, otherPosts } };
 }
