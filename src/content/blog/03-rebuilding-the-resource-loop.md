@@ -4,7 +4,7 @@ title: "One Deck, Two Jobs"
 date: "2025-10-26"
 author: "André Gottgtroy"
 tags: ["Resource Design", "Iteration", "TCG"]
-excerpt: "If I can spend one card to play another, what happens to the move I was saving?"
+excerpt: "Maneuvers make the performance happen, generate resources and set up the next move. Here's why I joined those jobs together."
 featured: false
 series: "TCG"
 part: 3
@@ -12,74 +12,73 @@ relatedSlugs: ["02-the-prototype-with-too-many-decks", "improv-when-a-card-becom
 content:
 - type: paragraph
   text: |-
-    In the first prototype, resources had their own deck. When I tried taking it away, I still wanted that feeling of looking at two cards I'd quite like to play and having to give one up.
+    In my first prototype, the resource deck was doing more of the interesting work than the main deck. Taking it away was tempting, but I didn't want to throw away the decisions I'd been trying to build around resources.
 - type: paragraph
   text: |-
-    [NOTE]***Quick note:*** I'm following one card through the resource system here. The rest of a turn can wait.[/NOTE]
+    What I wanted was a closer connection between the move a player makes and the economy that lets them keep moving. Instead of having one deck for actions and another deck to run the engine, could the [VIOLET]**Maneuvers themselves**[/VIOLET] do both jobs?
+- type: paragraph
+  text: |-
+    [NOTE]***Quick note:*** This is about the core resource system: what a Maneuver costs, what it generates and what that means during a Jam. The other ways a hand can produce resources belong in the next article.[/NOTE]
 - type: heading-2
-  text: "The question behind the mechanic"
+  text: "The same card is a move and part of the engine"
 - type: paragraph
   text: |-
-    So, **what happens to the card I don't play?**
+    In Tracers, a Maneuver is a trick, movement or combination performed by your crew during a Jam. Each card has a **resource cost**, a resource type and a **generation value**, alongside whatever effect it might have.
 - type: paragraph
   text: |-
-    I wanted a choice with consequences. A card in your hand should have some value right now, some value later, or some value as fuel for another plan. If spending it as a resource is always correct, the decision is hollow. If keeping it is always correct, the alternative is just decoration. Interesting resource decisions live between those extremes.
+    You pay a Maneuver's cost to play it. Then the played Maneuver generates resources, and any relevant effects resolve. So one action can give you something to work with on a later turn. There's no separate resource deck you need to draw from before the action becomes interesting.
 - type: paragraph
   text: |-
-    That doesn't mean every card needs five uses. It means each route should make sense within the rest of the game. The card, the resources it creates or costs, and what the opponent can see should all contribute to one understandable exchange.
+    I like that because choosing a Maneuver isn't only about its immediate effect. The card also changes what I might be able to do next. A flashy trick might be tempting, but a quieter one could generate the resource I need for my next play. Both decisions happen through the same cards.
 - type: heading-2
-  text: "Connect more than one system at once"
+  text: "The triangle: Flow, Hype and Momentum"
 - type: paragraph
   text: |-
-    I started with the main deck. If I could spend a card from my hand to help play another one, I'd have my resource decision right there, with both options in front of me.
+    The three resources are [VIOLET]**Flow, Hype and Momentum**[/VIOLET]. They do double duty. They're what you use to pay for Maneuvers, and they're also what you compare with your opponent at the end of a Jam. Each of the three resource totals can award a Point.
 - type: paragraph
   text: |-
-    There is an important distinction between adding flexibility and creating depth. An extra use for a card increases the number of things written in the rules. Depth appears only if the uses compete in an interesting way and players can understand the tradeoff.
+    I didn't want every Flow Maneuver simply to produce more Flow. That would encourage looking at one resource type in isolation. Instead I made the basic generation pattern a triangle:
 - type: paragraph
   text: |-
-    This became a useful design test: when two systems connect, do they create a new decision, or merely add more rules? Two mechanics existing alongside one another is not the same as two mechanics reinforcing each other.
+    **Momentum Maneuver → generates Hype.**
+    
+    **Hype Maneuver → generates Flow.**
+    
+    **Flow Maneuver → generates Momentum.**
 - type: paragraph
   text: |-
-    I started looking for relationships that did several jobs at once. Could playing a Maneuver also push a shared competition forward? Could committing a card make an opponent think differently about their own turn? Could resource generation express a style of play rather than exist as an anonymous currency? Those questions eventually mattered more than the number of cards in each pile.
+    If I'm short on Hype, a Momentum Maneuver is what I should be looking at. If I need Momentum for an expensive play, perhaps I have to set it up with a Flow Maneuver first. The type of the card and the resource it creates are connected, but they aren't the same thing.
+- type: paragraph
+  text: |-
+    The Maneuver's **printed cost** is another part of that decision. The resource you want to generate might be exactly the resource you first need to spend to get the card onto the table. The generation value, cost and card effect can all pull your plan in different directions.
 - type: heading-2
-  text: "Where does the next resource come from?"
+  text: "Why I preferred this to the separate resource deck"
 - type: paragraph
   text: |-
-    One thing that helped me reason about the design was treating the economy as a loop. Something generates resources. A player holds or converts them. A cost consumes them. The result changes future options. If successful decisions increase the ability to make even more successful decisions, the system can accelerate. If all that matters is gathering more, the game risks becoming a race without enough meaningful tradeoffs.
+    In Prototype 1, my resource deck was the smallest pile but carried much of the utility, efficiency and decision-making. It left less room for the main deck to be interesting. Here the economy is still important, but the action cards themselves create and use it.
 - type: paragraph
   text: |-
-    That perspective is also useful when comparing other games. I can admire a pitch or ink system without assuming it would work unchanged in my own design. Its effect depends on the rest of the rules: turn timing, card draw, deck construction, what a card does when it is played and what information the opponent receives.
+    For example, I might have a Maneuver with an effect I want right now, and another that generates the resource I need for a stronger move later. Because the Jam also scores my resource totals, choosing between them isn't always as simple as picking the one with the biggest effect.
 - type: paragraph
   text: |-
-    The resource economy I was designing did not need to copy any particular TCG. It needed to support my intended player experience: fluid play, planning, readable consequences and indirect pressure.
+    I want players to think about the next action, the chain they are building and the three areas where they can compete for Points. Those are connected decisions, rather than a separate resource minigame sitting beside the performance.
+- type: paragraph
+  text: |-
+    There is a balance to strike. If costs are too steep or the three-resource cycle leaves a player unable to find a playable route, the system stops feeling fluid. If generation is too generous, costs stop producing meaningful choices. A triangle doesn't solve those problems on its own; it's a structure I can design and tune around.
 - type: heading-2
-  text: "The player has to see the consequences"
+  text: "The point wasn't to remove resources"
 - type: paragraph
   text: |-
-    Physical prototypes make this brutally obvious. A digital game can handle a lot quietly [SIDENOTE]updating a value, recalculating a cost, resolving a trigger or highlighting the button that is now available[/SIDENOTE]. On the table, someone has to explain and track all of that. Hidden complexity is not free simply because a computer can manage it.
+    I wasn't trying to strip the economy down to a single number. I wanted resources to stay relevant while giving the main deck back its design space. Now a new Maneuver could contribute an effect, a cost, a generation pattern and a direction for the next decision.
 - type: paragraph
   text: |-
-    So a second question joined the first: can a player see why the last action mattered?
+    That approach also fitted what I wanted the game to feel like. Crews build momentum through the moves they perform, each action makes something else possible, and the opposition can see the performance taking shape across the table.
 - type: paragraph
   text: |-
-    Sometimes the answer is as simple as where a counter sits. Sometimes it means making card order visible or renaming an effect. Sometimes it means removing a conversion that feels elegant in a diagram but impossible to follow during play. I began treating visual layout, wording and economy design as one problem rather than three handoffs.
+    [BLOCK]A Maneuver isn't just the thing I spend resources on. Playing it changes the resources I have, the options I might have next, and the contest I'm in right now. That's the connection I wanted the first prototype to make.[/BLOCK]
 - type: paragraph
   text: |-
-    This doesn't mean a physical version is the best final interface for every mechanic. It means a physical version makes me confront assumptions I'd otherwise leave inside the code.
-- type: heading-2
-  text: "Why the rebuild was progress"
-- type: paragraph
-  text: |-
-    Rebuilding the resource loop gave me a more useful direction, not an instant finished game. It opened new questions about balance, card roles and how much information to show. That was fine. They were closer to the questions I actually wanted to answer.
-- type: paragraph
-  text: |-
-    I could now describe a test in terms of a decision: when offered two useful ways to use a card, do players have a reason to hesitate? Can they explain their choice? Can the other player read what has changed? Those observations would tell me more than whether everyone successfully followed a resource-deck procedure.
-- type: paragraph
-  text: |-
-    When I work on digital systems, the same test applies. I try to identify what the player needs to understand and what the mechanic is asking them to sacrifice. If a system can only be interesting after three other systems are bolted onto it, I want to know why.
-- type: paragraph
-  text: |-
-    [BLOCK]What I like about this version is that I can explain it with two cards in my hand. I can show you the move I want to make, and the one it'll cost me.[/BLOCK]
+    There was still a practical problem, though. A hand full of cards isn't much use if none of them can be played with the resources you have. Solving that without bringing back a separate resource deck became the next question.
 - type: paragraph
   text: |-
     [Previous: My First Card Game Prototype Had Too Many Decks](/design-writing/02-the-prototype-with-too-many-decks) · [Next: Improv: Which Card Can I Give Up?](/design-writing/improv-when-a-card-becomes-fuel)

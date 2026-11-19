@@ -1,28 +1,13 @@
 # Writing update — 19 November 2026
 
-The original TCG introduction is the style reference: personal framing, quick
-notes, inline sidenotes, violet emphasis and purple inset reflections. Existing
-articles keep their factual accounts and distinguish hypothetical examples and
-planned tests from reported observations. Part 14 keeps the author's account of card draw and proposed comparisons, with a light copy edit. Aura timing remains open.
+The two hypothetical philosophy exercises (“Three Ways Across a River” and “What Would Make Me Come Back to This Garden?”) were removed. The remaining five philosophy essays now run in contiguous order and the internal next/previous links point to existing articles.
 
-The series use editorial dates to space the reading order from July 2025 to November 2026. The original introduction keeps 30 July 2025 and Part 14 keeps 19 November 2026. These dates do not record uploads or establish when tests took place. Later revisions can describe newer decisions. The competition article explicitly identifies the October prediction work as a later update.
+Prototype 1: added the author’s intended account of resources as a generated/spent/recycled utility engine, explicitly distinguishing useful decisions from excess cognitive load and lost main-deck design space. Added the quick-note element required by the editorial test; refined the hierarchy with two subheadings under “Cognitive and resource overload”.
 
-Series identity remains `TCG` / `Design Philosophy`; shared display names and
-existing `series-tcg` / `series-philosophy` anchors live in
-`src/lib/writing-series.js`. Series cards sort by the newest article `updated`
-date, falling back to `date`. Latest-post cards sort by publication date. The
-homepage fills at most three slots, using series first and latest posts for
-remaining slots. Both `/blog/[slug]` and `/design-writing/[slug]` remain available.
+One Deck, Two Jobs: rewritten to explain Maneuvers having printed costs and generating resources, and the basic Momentum → Hype → Flow → Momentum generation triangle. The story now focuses on why joining resource generation to the main action deck supports the intended player experience, instead of previewing the dedicated Improv article.
 
-Validation: `npm run test:writing` checks fallback counts, update ordering,
-anchors, all 21 articles, contiguous parts, date ordering, balanced styling,
-related links and preservation of the new article's unresolved questions.
-`npm run build` includes lint/type checks and exports all 47 pages. Browser
-checks at 1440px and 390px verified homepage cards, series navigation, latest two
-posts, all 21 library cards, article callouts, no horizontal overflow and no page
-errors. No significant new abstraction requires a separate simplicity review;
-shared series data and the compact card component replace duplicated navigation.
+Improv: rewritten around the original reason to add it—avoiding unplayable hands caused by the three-resource economy—then the resulting opportunity costs, pacing, agency and timing decisions. The speculative testing checklist and Tracer Entrance discussion were removed from this article; the separate Entrance article already covers that interaction.
 
-Retrospective: one implementation agent and one independent verifier; dependency
-setup needed npm's locked install to match CI. Local build/export and browser
-checks required normal host access. No routing or policy changes were made.
+Editorial dates define reading order, not test chronology. Existing series keys and anchors remain unchanged. The actual list contains 19 articles (14 TCG and 5 Design Philosophy). `npm run test:writing` now asserts 19 and checks the corrected philosophy ordering, article headings and separation of resource/Improv topics.
+
+Image placement requested for the two TCG posts: prototype photo as first cover, paper prototype photo above the “cheap to change” heading, deck comparison slide near the overload section, and resource loop slide as the “One Deck, Two Jobs” cover. These source assets must be present under `public/` before setting `coverImage` or image blocks, to avoid broken images at build time.

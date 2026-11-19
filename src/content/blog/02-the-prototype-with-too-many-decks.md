@@ -4,7 +4,7 @@ title: "My First Card Game Prototype Had Too Many Decks"
 date: "2025-09-11"
 author: "André Gottgtroy"
 tags: ["Prototype", "Systems Design", "TCG"]
-excerpt: "I gave resources their own deck. Then I tried explaining a turn with all those piles on the table."
+excerpt: "The smallest deck in my first prototype did most of the work. It left too little room for everything else."
 featured: false
 series: "TCG"
 part: 2
@@ -12,10 +12,16 @@ relatedSlugs: ["tcg-part-one", "03-rebuilding-the-resource-loop"]
 content:
 - type: paragraph
   text: |-
-    When I sat down to make my first TCG prototype, I already had a main deck, a resource deck and a deck for zones in mind. I still quite like the idea of a zone deck. The bit I hadn't worked out was what my family would actually do with all three on their first turn.
+    I started my first TCG prototype with three separate decks: a main deck, a resource deck and a deck for zones. Each had a purpose on paper. But the first time I tried putting it all on a table, I had to ask what a new player would actually do with those three piles.
 - type: paragraph
   text: |-
-    The pile I was most interested in was the **resource deck**. I'd enjoyed choosing which cards to pitch in Flesh and Blood. Could I get that kind of decision into my own game?
+    I was especially interested in the resources. I liked the immediacy of games such as *Marvel Snap*, and the more tangible decisions around resources in games such as the *One Piece Card Game*. I wanted to see whether I could bring some of those ideas together, then take the resource system further.
+- type: paragraph
+  text: |-
+    In Prototype 1, resources weren't simply fuel you collected and spent. You generated them, used them and recycled them. Recycled resources could then provide utility or trigger special effects. I wanted that layer to keep creating decisions instead of being a simple calculation before playing a card. At first, it really was interesting.
+- type: paragraph
+  text: |-
+    [NOTE]***Quick note:*** This was an early, deliberately rough test of a game I wanted my family and more casual players to pick up. I'm not arguing that a complicated resource engine is wrong for every card game.[/NOTE]
 - type: heading-2
   text: "A prototype should be cheap to change"
 - type: paragraph
@@ -28,31 +34,40 @@ content:
   text: |-
     The trouble was what happened when I put them together.
 - type: heading-2
-  text: "Which pile am I drawing from?"
+  text: "Cognitive and resource overload"
 - type: paragraph
   text: |-
-    The resource system was supposed to support the rest of the game. Instead, it began consuming the design space around it. Separate piles introduced separate rules: how to draw them, when to use them, what happens when you don't see the right cards, how those cards interact with other effects, and what a new player is expected to remember.
+    The first problem was cognitive load. Three decks meant three sets of expectations: where to draw from, when each pile mattered, how resources could be recycled, and how all of those steps interacted with the main game. Knowing what to do next was becoming a task of its own.
 - type: paragraph
   text: |-
-    The funny thing was that the resource deck was the smallest pile and the biggest engine. If I made a new card for the main deck, I also had to think through how the player would get the resources to use it and what the separate deck was doing that turn. More ideas for main-deck cards couldn’t buy that space back.
+    But it wasn't only a question of explaining the rules. The **resource deck was the smallest deck in the game**, yet I'd made it responsible for a huge amount of the gameplay. A lot of the efficiency, utility and interesting decisions lived there. It was effectively the engine driving everything else.
 - type: paragraph
   text: |-
-    I had to distinguish [VIOLET]*complexity that creates decisions*[/VIOLET] from *complexity that explains why decisions are allowed*. A player deciding whether to keep a flexible card or commit it as a resource might be interesting. A player spending time working out which deck to consult, or which step of a separate procedure they were in, was less convincing.
+    In one sense, I'd achieved exactly what I set out to do: resources mattered. The trouble was that they mattered **too much**.
 - type: paragraph
   text: |-
-    More mechanics would not solve that problem. The system had become too expensive to interact with before it had earned that cost.
-- type: heading-2
+    Generating, spending and recycling resources already created so many possible interactions that I had to keep the cards in the main deck relatively simple. Whenever I considered a more interesting main-deck effect, I had to think about everything the resource layer might do to it. Put too much on those cards and the game became overwhelming very quickly.
+- type: paragraph
+  text: |-
+    That was the strange part. The system I'd expected to open up design space was taking design space away from the rest of the game. The smallest deck was doing most of the interesting work, which left much less room to make the main deck interesting.
+- type: paragraph
+  text: |-
+    And the multiple decks made that imbalance more visible. Players weren't just choosing between strategies. They were managing where things came from, which system was active and what a recycled resource might do. Some of that complexity created genuine choices. Some of it was just work required to reach those choices.
+- type: paragraph
+  text: |-
+    For a heavier game aimed at players who enjoy mastering an intricate economy, that tradeoff might be completely worthwhile. For **the more approachable game I was trying to make**, it was a mismatch. Complexity has to earn its place in the experience, not just look clever in the rules.
+- type: subheading
   text: "A deck is not a game loop"
 - type: paragraph
   text: |-
-    It is easy to look at a familiar TCG and break it into recognisable ingredients: costs, resources, units, permanent effects, deck identities and turns. It is harder to notice the relationships that make those ingredients worthwhile. A resource is meaningful because it changes what you can do next. A card's cost matters because there was another useful way to spend what you had. A turn structure matters because someone is responding to what you just did.
+    It is easy to look at a familiar TCG and break it into recognisable ingredients: costs, resources, units, permanent effects, deck identities and turns. It is harder to notice the relationships that make those ingredients worthwhile. A resource is meaningful when gaining or spending it changes what you can do next. A card's cost becomes interesting when paying it means giving up another worthwhile option. A turn structure matters because it shapes what each player can do in response to the other. Those relationships are where more meaningful and interesting choices come from, rather than from simply adding more mechanics.
 - type: paragraph
   text: |-
     I found myself thinking about the pieces rather than the experience I was trying to produce. I wanted fluid turns, indirect competition and a resource economy that rewarded planning. Yet the prototype was asking players to learn multiple parallel procedures before they could get to those decisions.
 - type: paragraph
   text: |-
     This wasn't proof that multiple decks are inherently bad. Plenty of good games use them. It was evidence that *my particular combination* didn't yet justify itself.
-- type: heading-2
+- type: subheading
   text: "Could I lose the resource deck?"
 - type: paragraph
   text: |-

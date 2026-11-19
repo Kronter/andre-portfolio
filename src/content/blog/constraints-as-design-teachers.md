@@ -7,7 +7,7 @@ tags: ["Design Practice", "Prototyping", "Learning"]
 excerpt: "A weekend, a handful of enemies, or a single room. Which limit would actually help me practise?"
 featured: false
 series: "Design Philosophy"
-part: 5
+part: 3
 relatedSlugs: ["why-i-design-sideways", "prototype-the-question-not-the-feature"]
 content:
 - type: paragraph

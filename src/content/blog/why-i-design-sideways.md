@@ -7,8 +7,8 @@ tags: ["Learning", "Game Design", "Practice"]
 excerpt: "Making a game with paper cards took away a few conveniences I'd grown used to as a digital designer."
 featured: false
 series: "Design Philosophy"
-part: 4
-relatedSlugs: ["start-with-the-feeling-not-the-feature", "constraints-as-design-teachers"]
+part: 2
+relatedSlugs: ["lego-bricks-are-not-the-game", "constraints-as-design-teachers"]
 content:
 - type: paragraph
   text: |-
@@ -93,5 +93,5 @@ content:
     [BLOCK]If I wanted to practise explaining game state tomorrow, I'd put a few cards on a table and give someone a turn. The interesting bit for me would be the first question they have to ask.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: What Would Make Me Come Back to This Garden?](/design-writing/start-with-the-feeling-not-the-feature) · [Next: What Can I Learn with One Less Tool?](/design-writing/constraints-as-design-teachers)
+    [Previous: The LEGO Bricks Are Not the Game](/design-writing/lego-bricks-are-not-the-game) · [Next: What Can I Learn with One Less Tool?](/design-writing/constraints-as-design-teachers)
 ---

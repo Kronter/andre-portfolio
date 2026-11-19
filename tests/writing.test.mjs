@@ -37,7 +37,7 @@ const posts = fs.readdirSync('src/content/blog').filter((name) => name.endsWith(
 }));
 
 test('articles retain valid dates, complete ordered series, balanced styling and working internal references', () => {
-  assert.equal(posts.length, 21);
+  assert.equal(posts.length, 19);
   assert.equal(new Set(posts.map((post) => post.id)).size, posts.length);
   assert.equal(posts.find((post) => post.slug === 'tcg-part-one').date, '2025-07-30');
   for (const group of getWritingSeries(posts)) {
@@ -63,4 +63,26 @@ test('new article preserves unresolved Aura timing and proposed tests', () => {
   const text = post.content.map((block) => block.text || '').join('\n');
   assert.equal(post.part, 14);
   for (const phrase of ["We haven't decided that part yet.", "I'll compare a few existing draw and recovery effects", 'generated Auras come first', "I don't want to introduce a dedicated Aura area or a hard limit"]) assert.ok(text.includes(phrase));
+});
+
+
+test('removed philosophy essays are absent and remaining series is contiguous', () => {
+  const removed = ['meaningful-choices-not-more-choices', 'start-with-the-feeling-not-the-feature'];
+  for (const slug of removed) assert.ok(!posts.some((post) => post.slug === slug));
+  const philosophy = getWritingSeries(posts).find((group) => group.key === 'philosophy');
+  assert.equal(philosophy.posts.length, 5);
+  assert.deepEqual(philosophy.posts.map((post) => post.part), [1, 2, 3, 4, 5]);
+});
+
+test('resource and Improv articles preserve the intended narrative', () => {
+  const bySlug = (slug) => posts.find((post) => post.slug === slug);
+  const content = (slug) => bySlug(slug).content.map((block) => block.text || '').join('\\n');
+  const prototype = bySlug('02-the-prototype-with-too-many-decks');
+  for (const heading of ['A deck is not a game loop', 'Could I lose the resource deck?'])
+    assert.ok(prototype.content.some((block) => block.type === 'subheading' && block.text === heading));
+  const resource = content('03-rebuilding-the-resource-loop');
+  for (const type of ['Momentum Maneuver', 'Hype Maneuver', 'Flow Maneuver']) assert.ok(resource.includes(type));
+  const improv = content('improv-when-a-card-becomes-fuel');
+  assert.ok(!improv.includes('What I would actually test'));
+  assert.ok(!improv.includes('Tracer in early'));
 });

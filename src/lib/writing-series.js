@@ -1,6 +1,6 @@
 const SERIES = {
   TCG: { key: 'tcg', title: 'Making a TCG (Tracers)', description: 'Tracers, prototypes, rules and the decisions behind the game.' },
-  'Design Philosophy': { key: 'philosophy', title: 'My Game Design Philosophy', description: 'Personal essays on choices, play, learning, constraints and clarity.' },
+  'Design Philosophy': { key: 'philosophy', title: 'My Game Design Philosophy', description: 'How I think about game design: connected systems, player experience, learning, constraints and clarity.' },
 };
 
 export const seriesTitle = (series) => SERIES[series]?.title || series;

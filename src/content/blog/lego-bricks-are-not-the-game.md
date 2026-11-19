@@ -8,7 +8,7 @@ excerpt: "What a physical card game taught me about digital UX, and why I think 
 featured: false
 series: "Design Philosophy"
 part: 1
-relatedSlugs: ["meaningful-choices-not-more-choices"]
+relatedSlugs: ["why-i-design-sideways"]
 content:
 - type: paragraph
   text: |-
@@ -48,5 +48,5 @@ content:
     That’s what I mean by a foundation. The time I spent making something readable across a table is now part of how I think about a digital interface. The time I spend understanding an economy changes what I notice walking through a level. I can keep going deeper into systems design, which I enjoy, and sometimes the best thing I can do for that work is spend a while learning somewhere else.
 - type: paragraph
   text: |-
-    [Next: Three Ways Across a River](/design-writing/meaningful-choices-not-more-choices)
+    [Next: Why I Design Sideways When I Want to Get Better](/design-writing/why-i-design-sideways)
 ---

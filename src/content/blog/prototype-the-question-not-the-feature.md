@@ -7,7 +7,7 @@ tags: ["Prototyping", "Design Philosophy", "R&D"]
 excerpt: "I recreated part of a digital event on the table. Choosing which part to build was a design decision in its own right."
 featured: false
 series: "Design Philosophy"
-part: 6
+part: 4
 relatedSlugs: ["constraints-as-design-teachers", "clarity-is-not-the-same-as-simplicity"]
 content:
 - type: paragraph

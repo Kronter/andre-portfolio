@@ -7,7 +7,7 @@ tags: ["Game UX", "Accessibility", "Design Philosophy"]
 excerpt: "A familiar card-game term made perfect sense to me. I had to think about what it asked a new player to know."
 featured: false
 series: "Design Philosophy"
-part: 7
+part: 5
 relatedSlugs: ["prototype-the-question-not-the-feature"]
 content:
 - type: paragraph
