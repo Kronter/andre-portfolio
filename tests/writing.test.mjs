@@ -37,7 +37,7 @@ const posts = fs.readdirSync('src/content/blog').filter((name) => name.endsWith(
 }));
 
 test('articles retain valid dates, complete ordered series, balanced styling and working internal references', () => {
-  assert.equal(posts.length, 19);
+  assert.equal(posts.length, 22);
   assert.equal(new Set(posts.map((post) => post.id)).size, posts.length);
   assert.equal(posts.find((post) => post.slug === 'tcg-part-one').date, '2025-07-30');
   for (const group of getWritingSeries(posts)) {
@@ -68,8 +68,8 @@ test('removed philosophy essays are absent and remaining series is contiguous', 
   const removed = ['meaningful-choices-not-more-choices', 'start-with-the-feeling-not-the-feature'];
   for (const slug of removed) assert.ok(!posts.some((post) => post.slug === slug));
   const philosophy = getWritingSeries(posts).find((group) => group.key === 'philosophy');
-  assert.equal(philosophy.posts.length, 5);
-  assert.deepEqual(philosophy.posts.map((post) => post.part), [1, 2, 3, 4, 5]);
+  assert.equal(philosophy.posts.length, 8);
+  assert.deepEqual(philosophy.posts.map((post) => post.part), [1, 2, 3, 4, 5, 6, 7, 8]);
 });
 
 test('resource and Improv articles preserve the intended narrative', () => {
@@ -92,5 +92,31 @@ test('the three revised TCG articles retain styled notes and reflections', () =>
     const text = post.content.map((block) => block.text || '').join('\\n');
     assert.ok(text.includes('[NOTE]') && text.includes('[/NOTE]'), slug + ': note');
     assert.ok(text.includes('[BLOCK]') && text.includes('[/BLOCK]'), slug + ': reflection');
+  }
+});
+
+
+test('new philosophy essays have distinct theses and appropriate reading times', () => {
+  const slugs = [
+    'when-two-good-mechanics-make-a-worse-game',
+    'complexity-has-an-audience',
+    'the-difference-between-adding-choices-and-creating-decisions',
+  ];
+  const titles = [
+    'When Two Good Mechanics Make a Worse Game',
+    'Complexity Has an Audience',
+    'The Difference Between Adding Choices and Creating Decisions',
+  ];
+  for (let i = 0; i < slugs.length; i++) {
+    const post = posts.find((p) => p.slug === slugs[i]);
+    assert.ok(post, slugs[i]);
+    assert.equal(post.title, titles[i]);
+    assert.equal(post.series, 'Design Philosophy');
+    assert.equal(post.part, i + 6);
+    assert.ok(post.content.some((block) => block.type === 'heading-2'));
+    const text = post.content.map((block) => block.text || '').join(' ');
+    const minutes = Math.ceil(text.split(/\s+/).filter(Boolean).length / 225);
+    assert.ok(minutes >= 5 && minutes <= 7, slugs[i] + ': ' + minutes + ' min');
+    assert.ok(text.includes('[BLOCK]') && text.includes('[/BLOCK]'));
   }
 });

@@ -8,7 +8,7 @@ excerpt: "A familiar card-game term made perfect sense to me. I had to think abo
 featured: false
 series: "Design Philosophy"
 part: 5
-relatedSlugs: ["prototype-the-question-not-the-feature"]
+relatedSlugs: ["prototype-the-question-not-the-feature", "when-two-good-mechanics-make-a-worse-game"]
 content:
 - type: paragraph
   text: |-
@@ -93,5 +93,5 @@ content:
     [BLOCK]I'd be pleased to hear someone say, ‘I can see exactly how these tiles connect. I just haven't worked out how to get them where I want them yet.’ That's the part of the puzzle I meant to be difficult.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: What Do I Need This Prototype to Tell Me?](/design-writing/prototype-the-question-not-the-feature)
+    [Previous: What Do I Need This Prototype to Tell Me?](/design-writing/prototype-the-question-not-the-feature) · [Next: When Two Good Mechanics Make a Worse Game](/design-writing/when-two-good-mechanics-make-a-worse-game)
 ---
