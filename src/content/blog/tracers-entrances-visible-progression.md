@@ -51,8 +51,6 @@ content:
 - type: paragraph
   text: |-
     I initially considered a common Entrance threshold. It would have been easy to explain: every Tracer arrives at the same number. But a universal number ignores that Tracers may have very different power and strategic roles. A modest ability and a major payoff should not necessarily arrive at the same pace.
-- type: image
-   src: "/Tracer Cost.png"
 - type: paragraph
   text: |-
     The design moved toward individual printed requirements. This created room for different timing curves. It also meant I had to think about how the resource triangle, card generation and Improv could accelerate or delay each character.
