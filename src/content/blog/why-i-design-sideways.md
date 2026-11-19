@@ -93,5 +93,5 @@ content:
     [BLOCK]If I wanted to practise explaining game state tomorrow, I'd put a few cards on a table and give someone a turn. The interesting bit for me would be the first question they have to ask.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: The LEGO Bricks Are Not the Game](/design-writing/lego-bricks-are-not-the-game) · [Next: What Can I Learn with One Less Tool?](/design-writing/constraints-as-design-teachers)
+    [Previous: Building Games Like LEGO: Modular Systems, Stronger Connections](/design-writing/lego-bricks-are-not-the-game) · [Next: What Can I Learn with One Less Tool?](/design-writing/constraints-as-design-teachers)
 ---

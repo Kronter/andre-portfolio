@@ -138,3 +138,18 @@ test('performance and worldbuilding are combined into one TCG article', () => {
   assert.equal(tcg.posts.length, 13);
   assert.deepEqual(tcg.posts.map((post) => post.part), Array.from({ length: 13 }, (_, i) => i + 1));
 });
+
+
+test('LEGO philosophy article stays on modular interconnected systems and learning', () => {
+  const post = posts.find((post) => post.slug === 'lego-bricks-are-not-the-game');
+  assert.ok(post);
+  assert.equal(post.title, 'Building Games Like LEGO: Modular Systems, Stronger Connections');
+  assert.ok(!/card game|physical card|Tracers|Maneuver/i.test(post.excerpt));
+  const articleText = post.content.map((block) => block.text || '').join(' ');
+  for (const phrase of ['modular', 'overlap', 'replace', 'remove', 'foundation', 'learning', 'systems']) {
+    assert.ok(articleText.toLowerCase().includes(phrase), phrase);
+  }
+  assert.ok(!/card game|physical game|Tracers|Maneuver/i.test(articleText));
+  const minutes = Math.ceil(articleText.split(/\s+/).filter(Boolean).length / 225);
+  assert.ok(minutes >= 5 && minutes <= 7, `LEGO article reading time: ${minutes}`);
+});
