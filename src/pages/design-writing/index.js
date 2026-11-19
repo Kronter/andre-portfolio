@@ -74,17 +74,34 @@ export default function DesignWritingPage({ posts }) {
           <div className="site-shell writing-hero-inner">
             <p className="eyebrow">Design Writing</p>
             <h1>Thoughts, experiments and lessons from making games.</h1>
-            <p>A place to think through game design problems in public—from systems and mechanics to the practical decisions that shape how a game feels.</p>
+            <p className="writing-hero-intro">A place to think through game design problems in public—from systems and mechanics to the practical decisions that shape how a game feels.</p>
+            {groups.length > 0 && (
+              <nav className="writing-series-chooser" aria-label="Choose a writing series">
+                <h2>Choose a series</h2>
+                <div className="writing-series-chooser-grid">
+                  {groups.map((group) => (
+                    <a key={group.key} href={`#series-${group.key}`} className="writing-series-choice">
+                      <span className="writing-series-choice-content">
+                        <span className="writing-series-choice-count">{group.posts.length} {group.posts.length === 1 ? 'article' : 'articles'}</span>
+                        <span className="writing-series-choice-title">{group.title}</span>
+                        <span className="writing-series-choice-description">{group.description}</span>
+                      </span>
+                      <ArrowRight aria-hidden="true" />
+                    </a>
+                  ))}
+                </div>
+              </nav>
+            )}
           </div>
         </header>
         <section id="writing-list" className="writing-library" aria-labelledby="writing-library-title">
           <div className="site-shell">
             <div className="writing-library-heading">
-              <div><p className="eyebrow">Latest writing</p><h2 id="writing-library-title">Read, explore, and follow the process.</h2></div>
+              <div><p className="eyebrow">All articles</p><h2 id="writing-library-title">Read through each series.</h2></div>
               <p>{posts.length} {posts.length === 1 ? 'article' : 'articles'}</p>
             </div>
             {groups.length > 0 ? groups.map((group) => (
-              <section key={group.key} aria-labelledby={`group-${group.key}`} style={{ marginTop: '2.5rem' }}>
+              <section key={group.key} id={`series-${group.key}`} className="writing-series-section" aria-labelledby={`group-${group.key}`}>
                 <div className="writing-library-heading">
                   <div>
                     <h3 id={`group-${group.key}`}>{group.title}</h3>
