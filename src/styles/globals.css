@@ -652,10 +652,11 @@ img { display: block; }
 .writing-invitation .site-shell { display: block; }
 .writing-invitation .writing-series-chooser-grid { margin: 20px 0 24px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .writing-invitation a.writing-series-choice { display: flex; color: var(--ink); }
-.writing-latest, .writing-chooser-section { border-bottom: 1px solid var(--line); }
-.writing-chooser-section { background: #111620; }
-.writing-chooser-section h2 { margin: 0 0 22px; }
-.writing-latest .writing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.writing-latest { padding: 28px 0 32px; border-bottom: 1px solid var(--line); }
+.writing-latest h2 { margin: 0 0 12px; color: var(--violet-light); font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.writing-latest .writing-series-choice { min-height: 0; padding: 12px 16px; }
+.writing-latest .writing-series-choice-title { font-size: 1rem; }
+.writing-latest .writing-series-choice > svg { width: 16px; height: 16px; }
 @media (max-width: 767px) {
-  .writing-invitation .writing-series-chooser-grid, .writing-latest .writing-grid { grid-template-columns: 1fr; }
+  .writing-invitation .writing-series-chooser-grid { grid-template-columns: 1fr; }
 }

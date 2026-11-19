@@ -1,7 +1,7 @@
 ---
 id: 202
 title: "Rebuilding the Resource Loop Instead of Adding More Rules"
-date: "2026-10-04"
+date: "2025-12-09"
 author: "André Gottgtroy"
 tags: ["Resource Design", "Iteration", "TCG"]
 excerpt: "Why I stopped adding systems and began connecting resource decisions to ordinary play."

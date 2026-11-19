@@ -9,9 +9,10 @@ timing or claiming the proposed comparisons have happened.
 
 Displayed article dates are editorial dates chosen for this update, not a record
 of when the files first appeared on GitHub or when individual playtests occurred.
-The original introduction retains 30 July 2025. Later posts run from October to
-November 2026 in series order; the competition article describing October 2026
-decisions stays on 28 October, and subsequent parts follow it. Part 14 is dated
+The original introduction retains 30 July 2025. Part 2 is dated 13 November
+2025, and the early articles are spread across the following months. The
+competition article describing October 2026 decisions stays on 28 October,
+and subsequent parts follow it. Part 14 is dated
 19 November 2026. Do not use this editorial schedule as playtest evidence.
 
 Series identity remains `TCG` / `Design Philosophy`; shared display names and

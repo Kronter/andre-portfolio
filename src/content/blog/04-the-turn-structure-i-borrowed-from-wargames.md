@@ -1,7 +1,7 @@
 ---
 id: 203
 title: "The Turn Structure I Borrowed from Wargames"
-date: "2026-10-10"
+date: "2026-06-17"
 author: "André Gottgtroy"
 tags: ["Interaction", "Turn Structure", "TCG"]
 excerpt: "Why alternating activations helped change the cadence of a non-combat card game."

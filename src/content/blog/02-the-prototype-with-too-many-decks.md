@@ -1,7 +1,7 @@
 ---
 id: 201
 title: "My First Card Game Prototype Had Too Many Decks"
-date: "2026-10-01"
+date: "2025-11-13"
 author: "André Gottgtroy"
 tags: ["Prototype", "Systems Design", "TCG"]
 excerpt: "What the deliberately rough first prototype revealed about complexity and separate resource decks."

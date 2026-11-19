@@ -4,7 +4,7 @@ title: "What Playtesting Tracers Made Me Remove"
 date: "2026-11-14"
 author: "André Gottgtroy"
 tags: ["Tracers", "Playtesting", "Iteration"]
-excerpt: "The systems Tracers needed to simplify, defer or rethink after later testing."
+excerpt: "What I cut or rethought after testing Tracers."
 featured: false
 series: "TCG"
 part: 13

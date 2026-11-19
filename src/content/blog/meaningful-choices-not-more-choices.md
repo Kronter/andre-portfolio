@@ -1,7 +1,7 @@
 ---
 id: 215
 title: "More Options Don't Automatically Mean More Meaningful Choices"
-date: "2026-10-06"
+date: "2026-04-29"
 author: "André Gottgtroy"
 tags: ["Player Agency", "Meaningful Choices", "Design Philosophy"]
 excerpt: "Why more mechanics and options do not necessarily make better decisions."

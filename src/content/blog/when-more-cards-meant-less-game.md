@@ -4,7 +4,7 @@ title: "When More Cards Meant Less Game"
 date: "2026-11-19"
 author: "André Gottgtroy"
 tags: ["Tracers", "Card Economy", "Iteration"]
-excerpt: "Why I am questioning unconditional card advantage in Prototype Two, and what deck preparation and single-use Auras might offer instead."
+excerpt: "Why extra cards made Tracers feel less interactive."
 featured: false
 series: "TCG"
 part: 14

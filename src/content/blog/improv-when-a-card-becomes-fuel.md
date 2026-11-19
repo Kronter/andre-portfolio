@@ -1,7 +1,7 @@
 ---
 id: 209
 title: "Improv: When a Card Becomes Fuel"
-date: "2026-10-07"
+date: "2026-03-12"
 author: "André Gottgtroy"
 tags: ["Improv", "Card Economy", "Tracers"]
 excerpt: "How discarding a Maneuver for its printed cost changed opportunity costs, timing and progression."

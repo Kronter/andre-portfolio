@@ -1,7 +1,7 @@
 ---
 id: 216
 title: "Start with the Feeling, Not the Feature List"
-date: "2026-10-11"
+date: "2026-08-11"
 author: "André Gottgtroy"
 tags: ["Player Experience", "Design Thinking", "Game Design"]
 excerpt: "Begin with what players should experience, then judge whether the features produce it."

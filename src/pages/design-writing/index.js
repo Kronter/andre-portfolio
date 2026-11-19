@@ -59,21 +59,34 @@ export default function DesignWritingPage({ posts }) {
             <p className="eyebrow">Design Writing</p>
             <h1>Thoughts, experiments and lessons from making games.</h1>
             <p className="writing-hero-intro">A place to think through game design problems in public—from systems and mechanics to the practical decisions that shape how a game feels.</p>
-
+            {groups.length > 0 && (
+              <nav className="writing-series-chooser" aria-labelledby="series-chooser-title">
+                <h2 id="series-chooser-title">Choose a series</h2>
+                <WritingChoices choices={groups.map((group) => ({
+                  key: group.key,
+                  title: group.title,
+                  description: group.description,
+                  label: `Series · ${group.posts.length} articles`,
+                  href: `#series-${group.key}`,
+                }))} />
+              </nav>
+            )}
           </div>
         </header>
-        <section className="writing-library writing-latest" aria-labelledby="latest-posts-title">
-          <div className="site-shell">
-            <div className="writing-library-heading"><div><p className="eyebrow">Latest posts</p><h2 id="latest-posts-title">The newest design notes.</h2></div></div>
-            <div className="writing-grid">{posts.slice(0, 2).map((post) => <WritingCard key={post.slug} post={post} />)}</div>
-          </div>
-        </section>
-        {groups.length > 0 && <section className="writing-library writing-chooser-section" aria-labelledby="series-chooser-title">
-          <nav className="site-shell" aria-label="Choose a writing series">
-            <h2 id="series-chooser-title">Choose a series</h2>
-            <WritingChoices choices={groups.map((group) => ({ ...group, label: `Series · ${group.posts.length} articles`, href: `#series-${group.key}` }))} />
-          </nav>
-        </section>}
+        {posts.length > 0 && (
+          <section className="writing-latest" aria-labelledby="latest-posts-title">
+            <div className="site-shell">
+              <h2 id="latest-posts-title">Latest posts</h2>
+              <WritingChoices choices={posts.slice(0, 2).map((post) => ({
+                key: post.slug,
+                title: post.title,
+                description: post.excerpt,
+                label: post.readingTime,
+                href: `/design-writing/${post.slug}/`,
+              }))} />
+            </div>
+          </section>
+        )}
         <section id="writing-list" className="writing-library" aria-labelledby="writing-library-title">
           <div className="site-shell">
             <div className="writing-library-heading">

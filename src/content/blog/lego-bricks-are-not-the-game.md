@@ -1,7 +1,7 @@
 ---
 id: 206
 title: "The LEGO Bricks Are Not the Game"
-date: "2026-10-02"
+date: "2026-01-22"
 author: "André Gottgtroy"
 tags: ["Design Philosophy", "Systems Design", "Player Experience"]
 excerpt: "My LEGO-brick view of game design: value comes from how familiar mechanics connect."
