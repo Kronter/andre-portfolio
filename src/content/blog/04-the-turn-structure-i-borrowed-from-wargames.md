@@ -1,10 +1,10 @@
 ---
 id: 203
-title: "The Turn Structure I Borrowed from Wargames"
+title: "Borrowing from Skirmish Games"
 date: "2026-02-18"
 author: "André Gottgtroy"
 tags: ["Interaction", "Turn Structure", "TCG"]
-excerpt: "My partner likes a complicated game. I wanted one where we could keep each other guessing without having to attack."
+excerpt: "More engaging turn structures."
 featured: false
 series: "TCG"
 part: 5
@@ -34,10 +34,10 @@ content:
   text: |-
     Notice that I'm not asking how often a player can interrupt. Interruption systems carry their own problems [SIDENOTE]timing windows, priority rules and extra explanations[/SIDENOTE], as well as the uncertainty of whether you should ask your opponent to stop. I wanted to see whether the rhythm of ordinary turns could do some of that work first.
 - type: heading-2
-  text: "What I borrowed from miniature wargames"
+  text: "What I borrowed from skirmish games"
 - type: paragraph
   text: |-
-    One thing I enjoy in miniature wargames is **alternating activations**. I move a piece, then you get to do something with yours. By the time it comes back to me, the move I was saving might look considerably less appealing.
+    One thing I enjoy in skirmish games is **alternating activations**. I move a piece, then you get to do something with yours. By the time it comes back to me, the move I was saving might look considerably less appealing.
 - type: paragraph
   text: |-
     The part I wanted to borrow was the few seconds after the other player acts. I’ve been lining up a move, they do something I hadn’t counted on, and now I get to decide whether my plan is still any good. They can create that moment for me while leaving every piece I own on the table.
@@ -79,7 +79,7 @@ content:
   text: "What does the waiting player get to do?"
 - type: paragraph
   text: |-
-    Borrowing an idea from a wargame didn't make my card game a wargame. It gave me a different way to examine agency, timing and the space between actions.
+    Borrowing an idea from a skirmish game didn't make my card game a skirmish game. It gave me a different way to examine agency, timing and the space between actions.
 - type: paragraph
   text: |-
     It also reinforced my belief that looking outside your usual medium is one of the fastest ways to challenge an assumption. A designer working entirely inside TCG conventions might ask which instant-speed cards encourage interaction. Looking at alternating activations let me ask whether the base turn structure could encourage it instead.
