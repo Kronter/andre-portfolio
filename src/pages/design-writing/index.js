@@ -5,7 +5,6 @@ import { ArrowRight, Clock } from 'lucide-react';
 import Navigation from '@/components/portfolio/Navigation';
 import FourDotMark from '@/components/portfolio/FourDotMark';
 import { getWritingPosts } from '@/lib/portfolio-content';
-import WritingChoices from '@/components/portfolio/WritingChoices';
 import { getWritingSeries, seriesTitle } from '@/lib/writing-series';
 import { SITE } from '@/data/portfolio';
 
@@ -44,6 +43,8 @@ function WritingCard({ post, featured = false }) {
 
 export default function DesignWritingPage({ posts }) {
   const groups = getWritingSeries(posts);
+  const startHere = posts.find((post) => post.slug === '06-what-playtesting-made-me-remove');
+  const latest = posts[0];
   const ungrouped = posts.filter((post) => !post.series);
   return (
     <>
@@ -58,40 +59,29 @@ export default function DesignWritingPage({ posts }) {
           <div className="site-shell writing-hero-inner">
             <p className="eyebrow">Design Writing</p>
             <h1>Thoughts, experiments and lessons from making games.</h1>
-            <p className="writing-hero-intro">A place to think through game design problems in public. From systems and mechanics to the practical decisions that shape how a game feels.</p>
-            {groups.length > 0 && (
-              <nav className="writing-series-chooser" aria-labelledby="series-chooser-title">
-                <h2 id="series-chooser-title">Choose a series</h2>
-                <WritingChoices choices={groups.map((group) => ({
-                  key: group.key,
-                  title: group.title,
-                  description: group.description,
-                  label: `Series · ${group.posts.length} articles`,
-                  href: `#series-${group.key}`,
-                }))} />
-              </nav>
+            <p className="writing-hero-intro">A place to think through game design problems in public.<br />From systems and mechanics to the practical decisions that shape how a game feels.</p>
+            {startHere && (
+              <p className="writing-entry-link">
+                <strong>Start here</strong>{' '}
+                <Link href={`/design-writing/${startHere.slug}/`}>{startHere.title}</Link>
+              </p>
             )}
           </div>
         </header>
-        {posts.length > 0 && (
-          <section className="writing-latest" aria-labelledby="latest-posts-title">
-            <div className="site-shell">
-              <h2 id="latest-posts-title">Latest posts</h2>
-              <WritingChoices choices={posts.slice(0, 2).map((post) => ({
-                key: post.slug,
-                title: post.title,
-                description: post.excerpt,
-                label: post.readingTime,
-                href: `/design-writing/${post.slug}/`,
-              }))} />
-            </div>
-          </section>
-        )}
         <section id="writing-list" className="writing-library" aria-labelledby="writing-library-title">
           <div className="site-shell">
             <div className="writing-library-heading">
-              <div><p className="eyebrow">All articles</p><h2 id="writing-library-title">Read through each series.</h2></div>
-              <p>{posts.length} {posts.length === 1 ? 'article' : 'articles'}</p>
+              <div>
+                <h2 id="writing-library-title">All articles</h2>
+                {groups.length > 1 && (
+                  <nav className="writing-series-links" aria-label="Jump to a series">
+                    {groups.map((group) => <a key={group.key} href={`#series-${group.key}`}>{group.title}</a>)}
+                  </nav>
+                )}
+              </div>
+              {latest && latest.slug !== startHere?.slug && (
+                <p className="writing-entry-link"><strong>Latest</strong>{' '}<Link href={`/design-writing/${latest.slug}/`}>{latest.title}</Link></p>
+              )}
             </div>
             {groups.map((group) => (
               <section key={group.key} id={`series-${group.key}`} className="writing-series-section" aria-labelledby={`group-${group.key}`}>
