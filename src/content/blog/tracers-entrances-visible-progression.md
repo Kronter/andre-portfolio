@@ -4,6 +4,7 @@ title: "When Should a Tracer Join the Jam?"
 date: "2026-09-10"
 author: "André Gottgtroy"
 tags: ["Progression", "Character Systems", "Tracers"]
+coverImage: "/Tracers Entrance.png"
 excerpt: "I wanted players to see a new performer coming. Rotating the Featured Tracer didn't quite give me that."
 featured: false
 series: "TCG"
@@ -32,6 +33,8 @@ content:
     The question I needed to ask was not 'How do I make the rotation system more detailed?' It was 'What should it feel like when a Tracer becomes part of the Jam?' That reframing opened a different approach.
 - type: heading-2
   text: "From forced rotation to earned arrival"
+- type: image
+   src: "/Tracers Entrance.png"
 - type: paragraph
   text: |-
     The new direction placed three Tracers outside the Maneuver deck, each assigned to Flow, Hype or Momentum [SIDENOTE]after the player saw their final opening hand[/SIDENOTE]. Each Tracer would have a printed Entrance requirement tied to the resource it was assigned. Reach the requirement and the Tracer enters, eventually remaining in play across Jams.
@@ -43,9 +46,13 @@ content:
     The old Featured rotation was replaced for current testing. That doesn't mean the previous experiment was useless. It helped identify the emotional job—dramatic entrances and character identity—while showing me one way of implementing it that created too much friction.
 - type: heading-2
   text: "Printed requirements make characters different"
+- type: image
+   src: "/Tracer.png"
 - type: paragraph
   text: |-
     I initially considered a common Entrance threshold. It would have been easy to explain: every Tracer arrives at the same number. But a universal number ignores that Tracers may have very different power and strategic roles. A modest ability and a major payoff should not necessarily arrive at the same pace.
+- type: image
+   src: "/Tracer Cost.png"
 - type: paragraph
   text: |-
     The design moved toward individual printed requirements. This created room for different timing curves. It also meant I had to think about how the resource triangle, card generation and Improv could accelerate or delay each character.
