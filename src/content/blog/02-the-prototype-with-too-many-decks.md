@@ -4,6 +4,7 @@ title: "My First Card Game Prototype Had Too Many Decks"
 date: "2025-09-11"
 author: "André Gottgtroy"
 tags: ["Prototype", "Systems Design", "TCG"]
+coverImage: "/tcg-prototype-one.jpg"
 excerpt: "The smallest deck in my first prototype did most of the work. It left too little room for everything else."
 featured: false
 series: "TCG"
@@ -24,6 +25,8 @@ content:
     [NOTE]***Quick note:*** This was an early, deliberately rough test of a game I wanted my family and more casual players to pick up. I'm not arguing that a complicated resource engine is wrong for every card game.[/NOTE]
 - type: heading-2
   text: "A prototype should be cheap to change"
+- type: image
+    src: '/tcg-prototype-cheap.jpg'  
 - type: paragraph
   text: |-
     My first prototype was rough [SIDENOTE]intentionally so[/SIDENOTE]. I wasn't trying to sell anyone on the art, a world or a polished rules book. I needed something I could rearrange, cross out and throw away. It was much easier to admit a mechanic wasn't working when replacing it meant changing a few cards rather than rebuilding a digital feature.
