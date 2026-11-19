@@ -7,7 +7,7 @@ tags: ["Tracers", "Playtesting", "Iteration"]
 excerpt: "We played without Styles and Sequences. I was surprised by how little I missed them."
 featured: false
 series: "TCG"
-part: 13
+part: 12
 relatedSlugs: ["the-table-is-the-interface"]
 content:
 - type: paragraph

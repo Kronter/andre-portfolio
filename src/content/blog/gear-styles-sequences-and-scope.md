@@ -7,7 +7,7 @@ tags: ["Iteration", "Scope", "Tracers"]
 excerpt: "I wanted each crew to have its own style. How much did players have to remember to make that happen?"
 featured: false
 series: "TCG"
-part: 10
+part: 9
 relatedSlugs: ["flow-hype-momentum-triangle", "tracers-entrances-visible-progression"]
 content:
 - type: paragraph

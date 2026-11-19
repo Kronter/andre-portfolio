@@ -37,7 +37,7 @@ const posts = fs.readdirSync('src/content/blog').filter((name) => name.endsWith(
 }));
 
 test('articles retain valid dates, complete ordered series, balanced styling and working internal references', () => {
-  assert.equal(posts.length, 22);
+  assert.equal(posts.length, 21);
   assert.equal(new Set(posts.map((post) => post.id)).size, posts.length);
   assert.equal(posts.find((post) => post.slug === 'tcg-part-one').date, '2025-07-30');
   for (const group of getWritingSeries(posts)) {
@@ -59,7 +59,7 @@ test('articles retain valid dates, complete ordered series, balanced styling and
 test('new article preserves unresolved Aura timing and proposed tests', () => {
   const post = posts.find((post) => post.slug === 'when-more-cards-meant-less-game');
   const text = post.content.map((block) => block.text || '').join('\n');
-  assert.equal(post.part, 14);
+  assert.equal(post.part, 13);
   for (const phrase of ["We haven't decided that part yet.", "I'll compare a few existing draw and recovery effects", 'generated Auras come first', "I don't want to introduce a dedicated Aura area or a hard limit"]) assert.ok(text.includes(phrase));
 });
 
@@ -119,4 +119,22 @@ test('new philosophy essays have distinct theses and appropriate reading times',
     assert.ok(minutes >= 5 && minutes <= 7, slugs[i] + ': ' + minutes + ' min');
     assert.ok(text.includes('[BLOCK]') && text.includes('[/BLOCK]'));
   }
+});
+
+
+test('performance and worldbuilding are combined into one TCG article', () => {
+  const removed = 'why-i-built-the-world-of-tracers';
+  assert.ok(!posts.some((post) => post.slug === removed), 'no redundant worldbuilding entry');
+  const combined = posts.find((post) => post.slug === '05-prototype-two-finding-the-performance');
+  assert.ok(combined);
+  assert.equal(combined.part, 7);
+  assert.equal(combined.coverImage, '/tcg-tracers-inspirations.png');
+  const text = combined.content.map((block) => block.text || '').join(' ');
+  for (const phrase of ['underground sport', 'two crews', 'world', 'Flow', 'Hype', 'Momentum', 'pavement after a Jam']) {
+    assert.ok(text.includes(phrase), phrase);
+  }
+  assert.ok(!text.includes('/design-writing/' + removed));
+  const tcg = getWritingSeries(posts).find((group) => group.key === 'tcg');
+  assert.equal(tcg.posts.length, 13);
+  assert.deepEqual(tcg.posts.map((post) => post.part), Array.from({ length: 13 }, (_, i) => i + 1));
 });

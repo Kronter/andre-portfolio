@@ -7,7 +7,7 @@ tags: ["Tracers", "Card Economy", "Iteration"]
 excerpt: "Extra cards helped my crews keep going. Sometimes one of them kept going for a little too long."
 featured: false
 series: "TCG"
-part: 14
+part: 13
 relatedSlugs: ["06-what-playtesting-made-me-remove", "improv-when-a-card-becomes-fuel"]
 content:
 - type: paragraph

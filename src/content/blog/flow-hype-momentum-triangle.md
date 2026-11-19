@@ -7,8 +7,8 @@ tags: ["Resource Economy", "Scoring", "Tracers"]
 excerpt: "Being one point behind in Hype gives me a good reason to look at the Momentum cards in my hand."
 featured: false
 series: "TCG"
-part: 9
-relatedSlugs: ["why-i-built-the-world-of-tracers", "gear-styles-sequences-and-scope"]
+part: 8
+relatedSlugs: ["05-prototype-two-finding-the-performance", "gear-styles-sequences-and-scope"]
 content:
 - type: paragraph
   text: |-
@@ -88,5 +88,5 @@ content:
     [BLOCK]The resource triangle gave Prototype Two a recognisable rhythm. It didn't finish the game. Later work with Styles, Sequences and Tracer Entrances would test how much extra structure the basic loop could support before it stopped being the thing players noticed. For me, that is the central resource-design challenge: not how many clever interactions I can invent, but whether each one makes the next choice more interesting.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: The Street After a Jam](/design-writing/why-i-built-the-world-of-tracers) · [Next: Gear, Styles and the Jam That Worked Without Them](/design-writing/gear-styles-sequences-and-scope)
+    [Previous: When Tracers Started to Feel Like a Performance](/design-writing/05-prototype-two-finding-the-performance) · [Next: Gear, Styles and the Jam That Worked Without Them](/design-writing/gear-styles-sequences-and-scope)
 ---

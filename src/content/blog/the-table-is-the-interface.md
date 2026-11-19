@@ -7,7 +7,7 @@ tags: ["Game UX", "Readability", "Tracers"]
 excerpt: "Hand someone a table halfway through a Jam. Can they tell which Maneuver came last?"
 featured: false
 series: "TCG"
-part: 12
+part: 11
 relatedSlugs: ["tracers-entrances-visible-progression", "06-what-playtesting-made-me-remove"]
 content:
 - type: paragraph

@@ -7,7 +7,7 @@ tags: ["Progression", "Character Systems", "Tracers"]
 excerpt: "I wanted players to see a new performer coming. Rotating the Featured Tracer didn't quite give me that."
 featured: false
 series: "TCG"
-part: 11
+part: 10
 relatedSlugs: ["gear-styles-sequences-and-scope", "the-table-is-the-interface"]
 content:
 - type: paragraph
