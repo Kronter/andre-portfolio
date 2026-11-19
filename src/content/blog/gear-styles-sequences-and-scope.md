@@ -4,6 +4,7 @@ title: "Gear, Styles and the Jam That Worked Without Them"
 date: "2026-08-28"
 author: "André Gottgtroy"
 tags: ["Iteration", "Scope", "Tracers"]
+coverImage: "/Styles.png"
 excerpt: "I wanted each crew to have its own style. How much did players have to remember to make that happen?"
 featured: false
 series: "TCG"
@@ -35,6 +36,8 @@ content:
     The direction changed toward Styles: a clearer expression of a performer's identity and approach. That was a meaningful shift in purpose, not just a new name for the same equipment slot.
 - type: heading-2
   text: "A Style should change expression, not just statistics"
+- type: image
+  src: "/Styles.png"
 - type: paragraph
   text: |-
     The richer Styles concept developed two sides, [SIDENOTE]Verse and Chorus[/SIDENOTE], along with conditions for shifting between them. I liked the idea of a performer moving through different phases of a Jam, gaining a recognisable rhythm rather than simply accumulating passive bonuses.
@@ -49,6 +52,8 @@ content:
     That's true even when the feature is sophisticated and technically functional. What matters is whether the additional structure changes what the player [VIOLET]*wants*[/VIOLET] to do.
 - type: heading-2
   text: "Sequences were another tempting connection"
+- type: image
+  src: "/Sequences.jpg"
 - type: paragraph
   text: |-
     Sequences explored a different idea: the order in which Maneuvers appear on the Line could create combo-like patterns. This matched the performance theme nicely. A sequence of moves could express rhythm and composition, much like a routine assembled step by step.
