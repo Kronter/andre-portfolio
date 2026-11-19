@@ -4,6 +4,7 @@ title: "The LEGO Bricks Are Not the Game"
 date: "2025-12-04"
 author: "André Gottgtroy"
 tags: ["Design Philosophy", "Systems Design", "Player Experience"]
+coverImage: "/Legos.png"
 excerpt: "What a physical card game taught me about digital UX, and why I think of a designer’s skills as overlapping LEGO bricks."
 featured: false
 series: "Design Philosophy"
