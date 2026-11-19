@@ -4,6 +4,7 @@ title: "Reading a Jam from Across the Table"
 date: "2026-10-12"
 author: "André Gottgtroy"
 tags: ["Game UX", "Readability", "Tracers"]
+coverImage: "/Table.png"
 excerpt: "Hand someone a table halfway through a Jam. Can they tell which Maneuver came last?"
 featured: false
 series: "TCG"
