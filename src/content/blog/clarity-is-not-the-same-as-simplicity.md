@@ -4,7 +4,7 @@ title: "Clarity Isn't the Same as Simplicity"
 date: "2026-11-09"
 author: "André Gottgtroy"
 tags: ["Game UX", "Accessibility", "Design Philosophy"]
-excerpt: "Rotating a tile is easy enough. Working out which tiles are connected can be the hard part."
+excerpt: "A familiar card-game term made perfect sense to me. I had to think about what it asked a new player to know."
 featured: false
 series: "Design Philosophy"
 part: 7
@@ -12,21 +12,18 @@ relatedSlugs: ["prototype-the-question-not-the-feature"]
 content:
 - type: paragraph
   text: |-
-    Say I give you a puzzle with one rule. You're allowed to rotate a tile. How much does that help if you can't see which tiles are joined together?
+    I used the word *Scry* on a card. If you’ve played enough card games, you may already have a fairly good guess about what it does. That was exactly why it was easy for me to overlook the word when I read the card back. I brought the explanation with me.
 - type: paragraph
   text: |-
-    [NOTE]***Quick note:*** The examples here are design illustrations, rather than reports from particular playtests.[/NOTE]
-- type: paragraph
-  text: |-
-    This is the distinction I mean by **clarity**. Once you can see the connection, I can give you quite a tricky puzzle and you still have somewhere to start.
+    In my NZGDC talk I showed the change to *Prep*. I like what that word does before anyone knows the exact procedure. It suggests I’m getting something ready for later. I still owe the player an explanation of what they can do with the cards. At least the name and the explanation are pulling in the same direction.
 - type: heading-2
   text: "One tile, one rule"
 - type: paragraph
   text: |-
-    A management game can have the opposite problem on paper. There might be half a dozen systems to learn, yet you change one thing and immediately see which building gained workers or ran out of supplies. I find that sort of game easier to get into than my one-rule puzzle.
+    Imagine a tile puzzle that lets you rotate one piece. I can explain the control in four words. If you can’t see which tiles are joined, you still can’t predict what your move will turn. Showing those joins gives you more to think about. It also gives you a fair chance to think about it.
 - type: paragraph
   text: |-
-    Neither example proves the more complex game is better. They show why I don't evaluate comprehension by word count alone. Rules, visual communication, timing, feedback and player expectations all contribute to how difficult something feels.
+    That’s the distinction I kept running into on the tabletop. When I could point to the connection, the interesting question survived. Which piece should I turn? When I had to remember the connection for both of us, much of the puzzle was happening in my head.
 - type: paragraph
   text: |-
     I want complexity to come from considering interesting consequences, not from reconstructing hidden information or interpreting ambiguous terminology.
@@ -52,14 +49,11 @@ content:
 - type: paragraph
   text: |-
     I am interested in that feedback as part of the decision loop. A player acts, the game responds, and the player uses that response to choose what to do next. If the response is missing or misleading, strategic learning becomes much harder even when the underlying rules are fair.
-- type: paragraph
-  text: |-
-    This is one reason I admire interaction-focused games. They often give players enough immediate response to begin experimenting before they fully understand everything the game can do. That creates a path from approachable actions to deeper mastery.
 - type: heading-2
   text: "Short words aren't always clearer words"
 - type: paragraph
   text: |-
-    Language has the same problem. A single invented term might be efficient for an experienced player and opaque for everyone else. A longer ordinary phrase may require more space while producing fewer misunderstandings.
+    Another example from the talk was *Closer*. I’d been using words along the lines of ‘the last card you play’. Last as in most recent? Or last as in the move that finishes the performance? Naming the role gave me a way to explain it once and let the theme do some of the remembering.
 - type: paragraph
   text: |-
     I don't have a rule against terminology. Good terms form a vocabulary that makes complex ideas easier to discuss. But the vocabulary should earn its cost through repetition and consistency. If I introduce a new name for an action that appears once, I need a good reason to believe the name helps.

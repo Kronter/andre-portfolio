@@ -91,4 +91,7 @@ content:
       - <strong><em>Casual-friendly but challenging to master</em></strong>
       - <strong><em>Indirect player interactivity</em></strong>
       - <strong><em>Multiplayer playability</em></strong>
+  - type: paragraph
+    text: |-
+      [Next: My First Card Game Prototype Had Too Many Decks](/design-writing/02-the-prototype-with-too-many-decks/)
 ---

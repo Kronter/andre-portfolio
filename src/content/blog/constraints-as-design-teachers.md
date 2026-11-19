@@ -12,13 +12,10 @@ relatedSlugs: ["why-i-design-sideways", "prototype-the-question-not-the-feature"
 content:
 - type: paragraph
   text: |-
-    If I want to get better at pacing an encounter, giving myself more enemies to design is quite an attractive way of avoiding the problem. What happens if I have to use the same few enemies again?
+    A computer will quite happily keep track of a rule that nobody playing the game understands. I appreciate that when it’s doing arithmetic for me. It becomes a problem when I’m trying to practise showing a player enough to make a decision. Taking the computer away gave me a surprisingly good exercise.
 - type: paragraph
   text: |-
-    [NOTE]***Quick note:*** I mean deliberate learning constraints here, rather than making peace with an unhealthy production schedule.[/NOTE]
-- type: paragraph
-  text: |-
-    That's what I mean by a [VIOLET]deliberate constraint[/VIOLET]. I pick something I lean on and see what I have to learn when it's missing.
+    With paper on the table, somebody has to remember the rule, point to the thing that changed or stop the game to work it out. As the designer I have to decide where that work belongs. That’s the reason I chose the constraint.
 - type: heading-2
   text: "Find the crutch first"
 - type: paragraph
@@ -29,7 +26,7 @@ content:
     Those are useful tools [SIDENOTE]and I use them too[/SIDENOTE]. They become a problem only when I rely on them instead of understanding the design underneath. If I want to improve my ability to communicate rules, I might deliberately choose an exercise with no tooltips or automatic state changes.
 - type: paragraph
   text: |-
-    If I want to improve encounter pacing, I might build a tiny combat scenario with a fixed set of actions and no progression rewards. If I want to improve environmental storytelling, I might restrict myself to one room, a small number of objects and no written exposition.
+    Say I want to practise encounter pacing next. I could give myself the same few enemies for a whole level. Now I have to decide when the player sees them, where there’s room to move, and how long the player gets to recover. If every encounter still feels the same, I know where to spend the next afternoon.
 - type: paragraph
   text: |-
     The key is choosing the constraint because of the skill it exposes. 'Make it harder' is not a learning objective. 'Remove the tool that currently hides this design problem' is much more useful.
@@ -44,9 +41,6 @@ content:
 - type: paragraph
   text: |-
     The constraint is valuable if it creates useful design problems. If it merely prevents me from testing the idea I care about, it is the wrong constraint.
-- type: paragraph
-  text: |-
-    This is why I don't believe in arbitrary challenges as a universal method. A one-button game may teach valuable lessons about input timing and feedback, but it might be a terrible way to practise a conversation system. The restriction needs to serve the skill.
 - type: heading-2
   text: "Constraints can reveal the core interaction"
 - type: paragraph
@@ -63,9 +57,6 @@ content:
     Once I understand the basic experience, I can remove the restriction deliberately. A constraint should be a tool for finding clarity, not an ideology that forbids useful complexity forever.
 - type: heading-2
   text: "What can I learn in a weekend?"
-- type: paragraph
-  text: |-
-    I also use scope constraints. A weekend prototype forces me to select one uncertainty rather than beginning a miniature production roadmap. But a time box is useful only if I know what I want to learn during it.
 - type: paragraph
   text: |-
     **A weekend prototype.** I could spend those two days seeing how much of a game I can build. Or I could give someone the same action in three different situations and find out when they stop wanting to do it.
@@ -93,7 +84,7 @@ content:
     If I learn to make physical state visible in one exercise, where could that help a digital interface? If I learn to pace decisions with a tiny encounter, where might that apply to a larger quest? I don't want the lesson to stay trapped inside the project that created it.
 - type: paragraph
   text: |-
-    [BLOCK]I'd count the exercise as a success if, the next time I'm designing an encounter, I try changing when an enemy arrives before I start making a new one. That's something I get to keep even if the weekend prototype goes in a drawer.[/BLOCK]
+    [BLOCK]I’d put the tool back as soon as I’d learned what I needed. I want the computer to do the arithmetic again. I also want to remember which result the player needed to see before choosing their next move.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: Why I Design Sideways When I Want to Get Better](/design-writing/why-i-design-sideways) · [Next: What Do I Need This Prototype to Tell Me?](/design-writing/prototype-the-question-not-the-feature)

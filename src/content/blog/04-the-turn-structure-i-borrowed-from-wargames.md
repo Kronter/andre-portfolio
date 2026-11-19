@@ -15,9 +15,6 @@ content:
     My partner quite enjoys a complicated board game. What she enjoys less is spending a turn knocking someone else's pieces off the board. That distinction mattered when I started thinking about how a turn in my TCG should work.
 - type: paragraph
   text: |-
-    [NOTE]***Quick note:*** The bit I borrowed from miniature wargames was what happens *between* my turns.[/NOTE]
-- type: paragraph
-  text: |-
     I still wanted us to have reasons to watch each other play. If I can plan my whole turn while you take yours, how much of a game are we actually playing together?
 - type: paragraph
   text: |-
@@ -43,7 +40,7 @@ content:
     One thing I enjoy in miniature wargames is **alternating activations**. I move a piece, then you get to do something with yours. By the time it comes back to me, the move I was saving might look considerably less appealing.
 - type: paragraph
   text: |-
-    The useful thing wasn't the miniatures or the battlefield. It was the relationship between *commitment* and *opportunity*. I do one meaningful thing; you see it; now you choose. The design creates interaction through sequence rather than only through cards explicitly labelled as counters.
+    The part I wanted to borrow was the few seconds after the other player acts. I’ve been lining up a move, they do something I hadn’t counted on, and now I get to decide whether my plan is still any good. They can create that moment for me while leaving every piece I own on the table.
 - type: paragraph
   text: |-
     I explored bringing that cadence into the card game. During a Jam, players would alternate playing Maneuvers, building toward a shared resolution. The opponent would not have to wait through an entire private engine turn before deciding how to respond.

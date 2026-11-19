@@ -15,9 +15,6 @@ content:
     Give me three ways across a river and I'll probably want to try all three. Ask me which one I'd choose the second time, though, and I'd like a better reason than ‘I haven't seen the raft animation yet.’
 - type: paragraph
   text: |-
-    [NOTE]***Quick note:*** More options can be useful. I am interested in what makes those options worth choosing between.[/NOTE]
-- type: paragraph
-  text: |-
     When I look at a choice, that's what I'm trying to get at. **What would make me pick differently next time?**
 - type: heading-2
   text: "The bridge, the swim and the raft"
@@ -32,15 +29,12 @@ content:
     Now the player is weighing **time, risk and future opportunity**. The same three options have become a more interesting system without adding a fourth route.
 - type: paragraph
   text: |-
-    I find it useful to distinguish the *number of actions* from the *number of meaningful tradeoffs*. A smaller action set can support considerable depth if the environment changes their relative value.
+    I’d try this with two trips. On the way out, all I’m carrying is a rope. On the way home I’ve got someone with me who needs help crossing. If I start looking at the same stretch of water differently, the second trip has done more for the decision than a fourth crossing animation would.
 - type: heading-2
   text: "Situations make familiar actions interesting"
 - type: paragraph
   text: |-
     A jump button is simple. The experience it creates depends on where and when the player uses it. A jump across a small gap is a movement check. The same jump during a chase with shifting platforms can become a question of timing, risk and confidence.
-- type: paragraph
-  text: |-
-    I admire the way games associated with Shigeru Miyamoto often make familiar interactions worth exploring through context and immediate response. I don't think there is a single Miyamoto design formula to copy, and I'm not claiming this is his terminology. What resonates with me is the emphasis on what happens when players act and how the world reacts.
 - type: paragraph
   text: |-
     That is why I often want to test an interaction before designing a large surrounding structure. Does it feel responsive? Can the player anticipate the result? Can they discover a use for it that the instructions did not explicitly spell out? Those questions reveal whether the action can carry enough interest to justify deeper systems.
@@ -65,13 +59,13 @@ content:
   text: "Information determines what can be chosen"
 - type: paragraph
   text: |-
-    A decision can exist mathematically while being invisible to the player. Imagine a crafting game where soil quality affects plant growth, but no part of the interface indicates which soil a plant prefers. Players may technically have a choice between several planting locations, yet most can't reason about it without trial and error or external reference material.
+    Suppose the raft can take my supplies but the game only tells me that once I’ve left them on the bank. There was a good decision in the design. As a player I never got to make it. A low platform with room for the pack, or a companion putting theirs down on it, might tell me enough before I commit.
 - type: paragraph
   text: |-
-    Discovery can be fun; opaque bookkeeping often isn't. I try to separate uncertainty about *what might happen* from uncertainty about *how the rules work*. The first can create curiosity and tension. The second can prevent players from forming a plan at all.
+    I’d happily leave some things for the player to discover. How far downstream could I steer this thing? That’s a question I might enjoy answering by trying. Whether my pack is still on the bank after I set off is something I’d want to see.
 - type: paragraph
   text: |-
-    A little feedback can transform the experience: soil appearance, plant behaviour, a change in growth animation, or a short in-world clue. Players can begin making informed predictions. They don't need the entire formula revealed, but they need enough signal to connect action and consequence.
+    It matters to me that someone choosing the bridge can have just as good a reason. Maybe they want the conversation with their companion on the walk round. If I only count time and supplies, I can talk myself into balancing away the very thing that makes one route theirs.
 - type: paragraph
   text: |-
     This also means that accessibility isn't necessarily a matter of reducing options. Making their implications visible can allow more players to engage with the same depth.

@@ -4,7 +4,7 @@ title: "What Do I Need This Prototype to Tell Me?"
 date: "2026-09-23"
 author: "André Gottgtroy"
 tags: ["Prototyping", "Design Philosophy", "R&D"]
-excerpt: "Three obstacles can tell me quite a bit about a jump before I build a level around it."
+excerpt: "I recreated part of a digital event on the table. Choosing which part to build was a design decision in its own right."
 featured: false
 series: "Design Philosophy"
 part: 6
@@ -12,16 +12,13 @@ relatedSlugs: ["constraints-as-design-teachers", "clarity-is-not-the-same-as-sim
 content:
 - type: paragraph
   text: |-
-    ‘Can we build this?’ is a question I quite enjoy, especially with my software engineering background. It's also how I can end up planning a whole level before I've worked out whether the jump is any fun.
+    At work I was asked to design an event or offer that would get more players to engage with it. That’s a perfectly reasonable goal to hand a designer. It also leaves a lot open. What does a player see when they arrive? What can they decide right now? Why would they care what happens next?
 - type: paragraph
   text: |-
-    [NOTE]***Quick note:*** The proposed tests are examples of how I would investigate a question, rather than completed experiments.[/NOTE]
+    I ended up recreating part of the feature physically. I’d been making a card game in my own time, so the idea of taking one piece out and playing with it felt fairly natural. The interesting decision was which piece of a digital event was worth putting on a table.
 - type: paragraph
   text: |-
-    I still ask it [SIDENOTE]particularly when I'm working with engineers[/SIDENOTE]. For an early prototype, though, I like to start with **what am I trying to find out?**
-- type: paragraph
-  text: |-
-    The first makes the feature the centre of the exercise. The second makes the uncertainty the centre. That difference is important because a feature can be technically complete and still fail to tell you whether the experience is worth pursuing.
+    The part I cared about was the relationship between the choice in front of the player and the goal they could see themselves working towards. If that relationship was weak, building the rest of the event would give me a much more expensive way to discover the same thing.
 - type: heading-2
   text: "Name the unknown before building"
 - type: paragraph
@@ -65,13 +62,10 @@ content:
   text: "The feature that changed because the process changed"
 - type: paragraph
   text: |-
-    In my NZGDC talk, I used an example from professional digital development: a player-facing event/offer feature. I won't share confidential implementation details or metrics, but the transferable design work was about testing earlier, clarifying choices, surfacing the system and connecting short-, medium- and longer-term goals.
+    Coming back to the event, I had a reason to ask what the player could choose, what they could see immediately afterwards, and how that helped them understand the longer goal. I let go of early designs and reworked the feature while those questions were still cheap to answer. Making a physical prototype was one part of that process.
 - type: paragraph
   text: |-
-    The feature received a strong player response and performed well against its intended goals. I don't attribute that result to one magic rule copied from a physical game. The lesson was that the way I approached the problem changed: fewer assumptions hidden behind the interface, earlier challenges to weak directions and a clearer picture of what the player was working toward.
-- type: paragraph
-  text: |-
-    It was a useful reminder that learning from one kind of experiment can improve professional work without the finished products looking remotely alike.
+    The event got a strong player response and performed well against its goals. I can talk about the design change more precisely than I can talk about the numbers publicly. I tried alternatives earlier, made the goal easier to follow and gave the player more opportunities to participate. Several things changed together, so I wouldn’t put the result down to any one of them.
 - type: heading-2
   text: "Know what to throw away"
 - type: paragraph

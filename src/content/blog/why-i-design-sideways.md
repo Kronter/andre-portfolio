@@ -12,10 +12,7 @@ relatedSlugs: ["start-with-the-feeling-not-the-feature", "constraints-as-design-
 content:
 - type: paragraph
   text: |-
-    What game would I like to make next? I could lose a whole evening to that question quite happily. It's a little different when I'm choosing something to practise.
-- type: paragraph
-  text: |-
-    [NOTE]***Quick note:*** This is about choosing a learning project. It does not need to become a commercial release to be useful.[/NOTE]
+    If I wanted to practise designing clearer digital games, a fairly odd place to start would be to take away my screen. That was part of the attraction of making a physical card game. I work on digital games. I know how handy it is to have a button light up at exactly the moment a move becomes legal. What would I do for the person across the table when I couldn’t light anything up?
 - type: paragraph
   text: |-
     For a personal project I can start with the genre, the setting, even a mechanic I've wanted an excuse to try. For a learning project I try to turn that around.
@@ -32,7 +29,7 @@ content:
     Books, talks, courses and conversations with other designers are valuable [SIDENOTE]I use them too[/SIDENOTE]. But I don't always understand something properly until I try to apply it, discover why my first interpretation was inadequate and adjust.
 - type: paragraph
   text: |-
-    It's possible to explain a principle convincingly without being able to use it under pressure. I can say that players need clear feedback. Then I can make a game where nobody knows when an effect expires. Knowing the principle isn't the same as having the reflex to catch the problem before a playtest.
+    I can explain why a player needs feedback and still write a perfectly sensible rule that only works because I’m sitting there explaining it. The awkward bit about playing my own paper prototype is that I know whose turn it is, what just happened and where the next card goes. It takes effort to notice how much of the interface is currently me.
 - type: paragraph
   text: |-
     Repeated cycles of doing, failing, reflecting and adjusting help turn knowledge into a habit. Different people learn differently, and a good learning project gives you practical problems you can't solve by simply repeating a definition.
@@ -50,9 +47,6 @@ content:
 - type: paragraph
   text: |-
     One way I challenged myself was by working in a physical medium to remove those conveniences. There would be no invisible rule enforcement. No automatic counter updates. No interface quietly handling timing. If players needed a piece of information, I had to put it somewhere they could find it or explain how they could derive it.
-- type: paragraph
-  text: |-
-    The point wasn't to prove that physical games are harder or better. The point was to create the conditions under which *my own weaknesses* would be difficult to avoid.
 - type: heading-2
   text: "Choose a project that produces the right problems"
 - type: paragraph
@@ -71,7 +65,7 @@ content:
     The exercise I use starts with a **skill** and a **crutch**. I pick something I'd like to practise, then take away one tool that usually does part of it for me. I build just enough to run into the difficulty, try it with someone, and write down what actually happened. The last bit is taking one of those observations back to my normal work.
 - type: paragraph
   text: |-
-    The reflection step is crucial. Failure does not automatically become learning. If a rule confuses someone and I merely replace the wording, I might solve that one instance without understanding the pattern. If I ask *why* it confused them—hidden state, competing terminology, ambiguous ownership, or a mismatch between expectation and outcome—I can carry that insight to another project.
+    The reflection matters because I could easily walk away from that session thinking I need a better explanation. A different diagnosis would lead me to move two cards closer together. In the next game I can leave them there, let someone else take the turn and see which questions still come up.
 - type: paragraph
   text: |-
     Likewise, a prototype that goes smoothly doesn't automatically prove my design is strong. It may mean the test was too comfortable, the participants shared my assumptions, or the question was too broad to reveal anything useful.
@@ -85,7 +79,7 @@ content:
     I can apply them by making a UI state easier to read, shortening the delay between an action and its consequence, or ensuring players have something meaningful to work toward right now as well as later. The useful transfer is a sharper way of identifying problems, not a mandate to copy the tabletop solution.
 - type: paragraph
   text: |-
-    I used that approach when working on a professional digital event/offer feature: test earlier, simplify what players needed to understand and make the relationship between choices and goals clearer. The confidential details stay confidential, but the process is transferable.
+    That difference followed me back to work. On a digital event I was designing, I recreated part of the feature physically. I’d had recent practice putting a decision in front of someone before building all the things around it. I was more willing to rethink an early version because I could already see which part of the player’s decision I wanted to keep.
 - type: heading-2
   text: "A project is allowed to succeed as a lesson"
 - type: paragraph
