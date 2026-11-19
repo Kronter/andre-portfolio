@@ -1,10 +1,10 @@
 ---
 id: 219
-title: "Why I Built a World Where Competition Creates Art"
-date: "2026-10-29"
+title: "What Do Two Rival Crews Leave Behind?"
+date: "2026-07-08"
 author: "André Gottgtroy"
 tags: ["Worldbuilding", "Tracers", "Creative Direction"]
-excerpt: "Why I chose an underground performance sport in a magitech city instead of a conventional combat fantasy."
+excerpt: "Two crews compete, a crowd gathers, and the street looks different after they've gone. That's the sport I wanted to make."
 featured: false
 series: "TCG"
 part: 8
@@ -12,16 +12,16 @@ relatedSlugs: ["05-prototype-two-finding-the-performance", "flow-hype-momentum-t
 content:
 - type: paragraph
   text: |-
-    The image I keep coming back to is two rival crews leaving a mark on the same city. They both want to win, but neither owns the whole performance.
+    I keep picturing the same street after a Jam. Both crews have gone home, somebody in the crowd is still arguing about who won, and you can look up and see what they made together.
 - type: paragraph
   text: |-
     [NOTE]***Quick note:*** This is a worldbuilding direction, rather than a finished setting bible or a promise that every idea becomes a rule.[/NOTE]
 - type: paragraph
   text: |-
-    But the result isn't a knocked-out opponent. It's a performance that neither crew could have created alone—and a new mark left on the city.
+    I liked the idea that even the crew that lost could point to part of that mark and say, ‘That bit was ours.’
 - type: paragraph
   text: |-
-    That's the image I've been working toward with **Tracers**. It gave a card game about competing resources and alternating moves a world that could explain [VIOLET]*why*[/VIOLET] people would want to play that way.
+    That's where the world of **Tracers** started to make sense to me. I had a reason for rival crews to seek each other out, and for people who'd never played a card game to want to stop and watch.
 - type: heading-2
   text: "I didn't want another game about hitting things"
 - type: paragraph
@@ -57,7 +57,7 @@ content:
     I didn't want the setting to be ordinary modern street sport, but I also didn't want technology so futuristic that a flip, a wheel or a wall would stop feeling recognisable. The direction in my design notes sits somewhere between fantasy and a near-future city: neon, customized gear, arcane sparks and **magitech**—[SIDENOTE]technology powered or modified by magic and runes[/SIDENOTE].
 - type: paragraph
   text: |-
-    That gives the performers permission to do spectacular things without making every trick feel arbitrary. A rune-powered skate or an unusual piece of movement equipment can suggest a particular style before anyone reads its rules. The fantasy side also opens the cast beyond humans: elves, goblins, dwarves, ogres and other people can approach the same sport with different silhouettes, techniques and personalities.
+    I can give one performer rune-powered skates and send another up a wall with a pair of parkour gloves. They can tackle the same stretch of street quite differently. The fantasy side lets me play with that too. An ogre and a goblin are going to make rather different silhouettes coming over the same railing.
 - type: paragraph
   text: |-
     I was drawn to the kinetic energy of *Air Gear*, the theatricality of professional wrestling, hip-hop and breaking culture, and the kind of energetic city that could sit between contemporary streets and fantasy technology. Those are reference points, not a plan to reproduce their worlds.
@@ -65,7 +65,7 @@ content:
   text: |-
     For the visual direction, I explored Shibuya-punk and superflat-pop influences, expressive posing and bold clothing. I want strong colour and striking shapes, but with a little more rendering and dimensionality than a purely flat treatment. Anime and manga have influenced the movement and energy, while a distinct card-game identity remains the aim.
 - type: heading-2
-  text: "The resource names began telling a story"
+  text: "What does the crowd see in a Maneuver?"
 - type: paragraph
   text: |-
     As the systems developed, I had three important resources: **Flow, Hype and Momentum**. Their jobs in the rules need to be distinct and readable, but their names also offered a way to think about what happens inside a Jam.
@@ -99,7 +99,7 @@ content:
   text: "A world is useful when it changes my decisions"
 - type: paragraph
   text: |-
-    I'm still exploring the details of the city, its territories, crew culture and underground leagues. Some league names and wider lore ideas were brainstormed rather than finalized. I don't want to pretend the world has a complete historical timeline or an official canon when much of that work is still open.
+    I'm still figuring out who lives in each part of the city, where the crews practise and what an underground league would look like. I have a few possible league names [SIDENOTE]remembering which ones I still like is another matter[/SIDENOTE].
 - type: paragraph
   text: |-
     What I *do* have is a clear direction against which to test new ideas. Does this card suggest a recognizable move or performance? Does it make the opposing crew worth watching? Can a character's identity come through without adding another layer of bookkeeping? Does the art communicate movement rather than a static collection of special effects?
@@ -108,8 +108,8 @@ content:
     The best part of Tracing as a setting is that **competition and cooperation can exist in the same moment**. Players are trying to outstyle each other, but they're building a single event together. That tension is the reason I chose this world in the first place.
 - type: paragraph
   text: |-
-    [BLOCK]It's also why I'm happy to keep changing its rules. If a mechanic makes the experience less expressive or less readable, the world gives me a reason to question the mechanic—not an excuse to keep it.[/BLOCK]
+    [BLOCK]When I'm unsure about a new Maneuver, I try picturing it from the pavement. Could someone in the crowd point out what the second crew did with the first crew's move? That's the bit of this world I want to be able to play.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Prototype Two: Finding the Performance Inside the Systems](/design-writing/05-prototype-two-finding-the-performance) · [Next: Flow, Hype and Momentum: Designing a Three-Way Resource Contest](/design-writing/flow-hype-momentum-triangle)
+    [Previous: When Tracers Started to Feel Like a Performance](/design-writing/05-prototype-two-finding-the-performance) · [Next: Why Does a Momentum Card Give Me Hype?](/design-writing/flow-hype-momentum-triangle)
 ---

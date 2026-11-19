@@ -1,10 +1,10 @@
 ---
 id: 216
-title: "Start with the Feeling, Not the Feature List"
-date: "2026-08-11"
+title: "What Would Make Me Come Back to This Garden?"
+date: "2026-05-03"
 author: "André Gottgtroy"
 tags: ["Player Experience", "Design Thinking", "Game Design"]
-excerpt: "Begin with what players should experience, then judge whether the features produce it."
+excerpt: "I'd like watering a plant to feel like I've noticed something about it. What would that change about a garden game?"
 featured: false
 series: "Design Philosophy"
 part: 3
@@ -12,18 +12,18 @@ relatedSlugs: ["meaningful-choices-not-more-choices", "why-i-design-sideways"]
 content:
 - type: paragraph
   text: |-
-    I enjoy talking about systems and features. Before I get too attached to them, though, I want to know what playing the game should feel like.
+    I like the idea of a game about bringing a neglected garden back to life. I can already think of things I'd put in it. Seeds, compost, a watering can, probably far too many plants. Would I enjoy looking after that garden?
 - type: paragraph
   text: |-
     [NOTE]***Quick note:*** The garden game is an illustrative example, not a project or playtest I am reporting on.[/NOTE]
 - type: paragraph
   text: |-
-    Before becoming attached to a particular feature, I want to understand the experience it is meant to create. Are players supposed to feel curious, capable, vulnerable, clever, connected or pleasantly surprised? What should they want to do a second time? Those questions sound abstract until you use them to make concrete design decisions.
+    The bit I'd want to keep coming back for is noticing a small change and working out what caused it. That gives me something to look for in each feature I add.
 - type: heading-2
   text: "Features describe what we build"
 - type: paragraph
   text: |-
-    Consider a game about restoring a neglected garden. We could begin with a list: plant seeds, water flowers, gather compost, decorate paths, unlock new plots. Every item could be implemented successfully and the result might still feel like completing chores.
+    **Watering a plant** sounds like a perfectly sensible feature. If all it does is reset a timer, though, I might spend most of my time in the garden clearing a list of chores.
 - type: paragraph
   text: |-
     Now start with an [VIOLET]experience goal[/VIOLET]: 'I want players to feel that careful observation and small acts of care make a place come alive.' The feature list takes on a different meaning. Watering could be a decision about when to intervene, not a mandatory timer. Compost could influence which plants thrive together. New growth could reveal unexpected relationships between neighbouring flowers.
@@ -34,7 +34,7 @@ content:
   text: |-
     This doesn't mean I write down one emotion and treat it as an inflexible law. Players interpret games differently. A goal is a hypothesis about what the interaction should invite, and I have to check whether real play supports it.
 - type: heading-2
-  text: "Make the feeling observable"
+  text: "What would a curious player do?"
 - type: paragraph
   text: |-
     'Players should feel curious' isn't a test result. I need to ask what curiosity would look like. Would they investigate a strange object without being prompted? Try a second approach after their first attempt? Ask what might happen if they returned later?
@@ -76,10 +76,10 @@ content:
   text: "Different time scales, one direction"
 - type: paragraph
   text: |-
-    I think about goals at short, medium and long horizons. The short horizon gives the player something interesting to do right now. The medium horizon gives their next few choices a direction. The long horizon gives the wider experience meaning and anticipation.
+    I tend to think about this at three different scales. What am I doing with the watering can right now? What am I hoping to see in this bed in a few days? And what made me want to take on the whole garden in the first place?
 - type: paragraph
   text: |-
-    In a garden game, watering a particular plant may be the short action, developing a thriving bed the medium project, and transforming a neglected place the long-term purpose. The scales work together when an immediate action visibly contributes to a larger goal without making every minute feel like work.
+    I'd like watering one plant to give me a little evidence about what that bed needs. Then tending the bed brings the larger garden along with it. I have a reason to care about today's action even if the finished garden is a long way off.
 - type: paragraph
   text: |-
     A design can also fail when these horizons contradict one another. If the world invites relaxed experimentation but a harsh timer punishes curiosity, the systems are sending mixed signals. That might be deliberate in a survival experience; it might be a mistake in a cosy one.
@@ -99,5 +99,5 @@ content:
     [BLOCK]So I start by writing one sentence about what I want players to feel or be able to express. Then I write another sentence about what they would actually do if that experience were happening. Those two sentences don't design the game for me, but they give every mechanic a much better question to answer.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: More Options Don't Automatically Mean More Meaningful Choices](/design-writing/meaningful-choices-not-more-choices) · [Next: Why I Design Sideways When I Want to Get Better](/design-writing/why-i-design-sideways)
+    [Previous: Three Ways Across a River](/design-writing/meaningful-choices-not-more-choices) · [Next: Why I Design Sideways When I Want to Get Better](/design-writing/why-i-design-sideways)
 ---

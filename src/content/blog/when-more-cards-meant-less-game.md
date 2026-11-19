@@ -4,7 +4,7 @@ title: "When More Cards Meant Less Game"
 date: "2026-11-19"
 author: "André Gottgtroy"
 tags: ["Tracers", "Card Economy", "Iteration"]
-excerpt: "Why extra cards made Tracers feel less interactive."
+excerpt: "Extra cards helped my crews keep going. Sometimes one of them kept going for a little too long."
 featured: false
 series: "TCG"
 part: 14
@@ -33,18 +33,18 @@ content:
 
     [BLOCK]So an additional card isn't just another option. It can be fuel, flexibility and another step in the same sequence.[/BLOCK]
 
-    In the worst cases, that starts to create what I think of as *soloing*: one player keeps finding ways to continue while the other increasingly feels like they're watching. The rules still alternate turns, but the experience stops feeling like a contest.
+    That's what I mean by **soloing**. We're still taking turns, but one of us keeps finding another move and the other is mostly waiting to see when they'll run out.
 
     That matters more to me than whether the draw effect is mathematically efficient.
 - type: heading-2
-  text: "The actual problem isn't drawing cards"
+  text: "Which kinds of draw do I want to keep?"
 - type: paragraph
   text: |-
     I don't want to remove card draw. An expensive Maneuver that pays off with a fresh card can be satisfying. A Tracer ability that creates a brief draw opportunity can be interesting. Sometimes drawing is exactly what a design needs.
 
     What I'm questioning is how easily and frequently the game hands out *unconditional* cards.
 
-    Drawing increases the cards I have available. Drawing and then discarding improves my options without necessarily increasing hand size. Looking at the top few cards and rearranging them changes what comes later. Returning a specific card from the discard pile to my hand can be even more powerful than a random draw.
+    **Draw a card** and I've got one more card in hand. **Draw, then discard** and I've had a chance to swap out something awkward. Looking at the top few cards lets me set up a later turn. Getting to pick a particular card out of my discard pile might be stronger than any of those.
 
     That last one matters. I've started treating recovery effects such as Recall, and even ways of replaying cards through Encore, with the same caution as draw. If extra cards are strong, getting back precisely the card I want deserves scrutiny too.
 
@@ -87,7 +87,7 @@ content:
   text: |-
     There are two directions worth considering.
 
-    One is a standalone Aura: pay to put it into play, generate no resources, receive a benefit later. The other is a Maneuver that generates an Aura as part of doing something now.
+    A **standalone Aura** would cost me a play now for something I get later, with no resources generated. A **generated Aura** would come from a Maneuver, so I'd get to do something in the Jam as well as set up my next one.
 
     I'm starting with generated Auras because they let me test the idea without introducing another card type immediately. But standalone Auras aren't inherently wrong. Tracers already has Maneuvers that generate zero resources, so zero generation isn't a reason to dismiss them.
 

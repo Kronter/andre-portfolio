@@ -1,10 +1,10 @@
 ---
 id: 205
 title: "What Playtesting Tracers Made Me Remove"
-date: "2026-11-14"
+date: "2026-10-30"
 author: "André Gottgtroy"
 tags: ["Tracers", "Playtesting", "Iteration"]
-excerpt: "What I cut or rethought after testing Tracers."
+excerpt: "We played without Styles and Sequences. I was surprised by how little I missed them."
 featured: false
 series: "TCG"
 part: 13
@@ -12,16 +12,13 @@ relatedSlugs: ["the-table-is-the-interface"]
 content:
 - type: paragraph
   text: |-
-    I enjoy designing interconnected systems. Deciding which ones to remove is the part I find harder.
+    We tried a game of **Tracers** without Styles or Sequences. I liked both mechanics and had spent a fair bit of time working out how they should fit. What surprised me was how little I missed them while we were playing.
 - type: paragraph
   text: |-
     [NOTE]***Quick note:*** These are observations from the versions described below, rather than a claim that the current rules are finished.[/NOTE]
 - type: paragraph
   text: |-
-    Tracers has been a useful reminder that a rule can be clever, thematic and reasonably documented while still making the game worse to play. As the project evolved beyond the version shown in my NZGDC talk, I began cutting, delaying or rewriting things I had previously been excited about.
-- type: paragraph
-  text: |-
-    This isn't a post about arriving at perfect rules. The game is still being designed. It's about what testing revealed and how I try to respond without losing the goal.
+    Since showing the game in my NZGDC talk, I've had a chance to try it with fewer moving parts. Sequences were one of the first things I wanted another look at.
 - type: heading-2
   text: "A Sequence that exists mostly in your memory"
 - type: paragraph
@@ -35,7 +32,7 @@ content:
     One line of revision was to declare Sequences explicitly and group the relevant cards so the boundary became visible. That improved the communication problem, [SIDENOTE]at least conceptually[/SIDENOTE]. But it also raised another question: what did the mechanic add to the experience [VIOLET]*right now*[/VIOLET]?
 - type: paragraph
   text: |-
-    A later stripped-down playtest omitted both Styles and Sequences. We didn't miss them. That was an uncomfortable but useful result. It didn't prove those systems were bad, nor that they should never return. It told me they hadn't yet earned the overhead they brought to the core test.
+    When we eventually played without either system, we could still read each other's moves and compete over the Jam. That was the bit I'd been worried about losing.
 - type: paragraph
   text: |-
     So I moved them out of the minimal prototype and kept them as possible future depth rather than mandatory starting rules.
@@ -77,7 +74,7 @@ content:
     I experimented with the idea of effects that ask you to read or predict the opponent's next resource choice. If they play Flow next, perhaps your earlier commitment pays off. The possibility is appealing because it encourages attention without demanding a dense interrupt stack.
 - type: paragraph
   text: |-
-    That is still design space, not a claim that a finished suite of prediction cards has been tested and approved. The test I want is behavioural: did the opponent's visible state change what the player decided to do?
+    What I'd like to watch for in a prediction test is quite simple. Does the other player look at my prediction, look back at their hand, and reconsider what they were going to play?
 - type: paragraph
   text: |-
     Similarly, letting someone glimpse an opponent's hand is not automatically interaction. If the information doesn't influence a later choice, it may simply be trivia.
@@ -93,14 +90,14 @@ content:
   text: |-
     I've also learned to question card terminology. A familiar keyword can save reading, but only when players interpret it in the intended way. Something short can be less clear than a slightly longer, ordinary phrase. The table is where that becomes obvious.
 - type: heading-2
-  text: "Keep the intent; change the implementation"
+  text: "What I'd bring back"
 - type: paragraph
   text: |-
     I still want Tracers to feel like a competitive performance with strategic expression and indirect pressure. Removing a Sequence from the minimal test doesn't abandon that goal. Revising Improv doesn't betray the resource system. Changing an Entrance's timing doesn't change why an Entrance should feel exciting.
 - type: paragraph
   text: |-
-    [BLOCK]The hard part is separating my attachment to an implementation from the player experience I'm trying to create. I can preserve the learning, archive the old rule and test another route without pretending every idea was a mistake.[/BLOCK]
+    [BLOCK]I'd happily try Sequences again if I find a move that's enjoyable to put together and easy for the other player to follow. For now, I quite like being able to sit down and play without explaining them.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: The Table Is the Interface: Designing Rules People Can See](/design-writing/the-table-is-the-interface) · [Next: When More Cards Meant Less Game](/design-writing/when-more-cards-meant-less-game)
+    [Previous: Can You Read a Jam from Across the Table?](/design-writing/the-table-is-the-interface) · [Next: When More Cards Meant Less Game](/design-writing/when-more-cards-meant-less-game)
 ---

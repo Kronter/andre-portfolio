@@ -1,10 +1,10 @@
 ---
 id: 217
-title: "Constraints Are Design Teachers, Not Just Production Limits"
-date: "2026-10-22"
+title: "What Can I Learn with One Less Tool?"
+date: "2026-08-11"
 author: "André Gottgtroy"
 tags: ["Design Practice", "Prototyping", "Learning"]
-excerpt: "Using deliberate constraints to expose weaknesses and strengthen design habits."
+excerpt: "A weekend, a handful of enemies, or a single room. Which limit would actually help me practise?"
 featured: false
 series: "Design Philosophy"
 part: 5
@@ -12,13 +12,13 @@ relatedSlugs: ["why-i-design-sideways", "prototype-the-question-not-the-feature"
 content:
 - type: paragraph
   text: |-
-    There are constraints I would happily avoid, and others I choose on purpose. I am interested in the ones that make me practise something I tend to sidestep.
+    If I want to get better at pacing an encounter, giving myself more enemies to design is quite an attractive way of avoiding the problem. What happens if I have to use the same few enemies again?
 - type: paragraph
   text: |-
     [NOTE]***Quick note:*** I mean deliberate learning constraints here, rather than making peace with an unhealthy production schedule.[/NOTE]
 - type: paragraph
   text: |-
-    I use [VIOLET]deliberate constraints[/VIOLET] as a way to learn because they remove convenient solutions. A restriction can reveal which part of my design ability is genuinely strong and which part has been carried by a tool, a familiar workflow or a genre convention.
+    That's what I mean by a [VIOLET]deliberate constraint[/VIOLET]. I pick something I lean on and see what I have to learn when it's missing.
 - type: heading-2
   text: "Find the crutch first"
 - type: paragraph
@@ -62,16 +62,16 @@ content:
   text: |-
     Once I understand the basic experience, I can remove the restriction deliberately. A constraint should be a tool for finding clarity, not an ideology that forbids useful complexity forever.
 - type: heading-2
-  text: "Time boxes need a question"
+  text: "What can I learn in a weekend?"
 - type: paragraph
   text: |-
     I also use scope constraints. A weekend prototype forces me to select one uncertainty rather than beginning a miniature production roadmap. But a time box is useful only if I know what I want to learn during it.
 - type: paragraph
   text: |-
-    A bad version is: 'Build as much of the game as possible in two days.' The result may be a fragile pile of features with no meaningful evidence. A better version is: 'Find out whether players enjoy repeating this one interaction when the environment changes.'
+    **A weekend prototype.** I could spend those two days seeing how much of a game I can build. Or I could give someone the same action in three different situations and find out when they stop wanting to do it.
 - type: paragraph
   text: |-
-    Now the scope has a reason. I can prepare a few situations, observe a small number of players and record what I learned. The goal is not to win a race against the clock. It is to make the cost of asking the question small enough that I can ask another one.
+    The second version tells me what to prepare before Saturday and what to watch for when somebody plays. It also leaves me enough time to change something.
 - type: heading-2
   text: "The constraint should eventually be questioned"
 - type: paragraph
@@ -93,8 +93,8 @@ content:
     If I learn to make physical state visible in one exercise, where could that help a digital interface? If I learn to pace decisions with a tiny encounter, where might that apply to a larger quest? I don't want the lesson to stay trapped inside the project that created it.
 - type: paragraph
   text: |-
-    [BLOCK]The best constraint is one that changes how I approach my next problem. It makes me notice assumptions I previously treated as unavoidable. That is how I want to use side projects: not as a competition to collect prototypes, but as a controlled way to become a better designer.[/BLOCK]
+    [BLOCK]I'd count the exercise as a success if, the next time I'm designing an encounter, I try changing when an enemy arrives before I start making a new one. That's something I get to keep even if the weekend prototype goes in a drawer.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Why I Design Sideways When I Want to Get Better](/design-writing/why-i-design-sideways) · [Next: Prototype the Question, Not the Feature](/design-writing/prototype-the-question-not-the-feature)
+    [Previous: Why I Design Sideways When I Want to Get Better](/design-writing/why-i-design-sideways) · [Next: What Do I Need This Prototype to Tell Me?](/design-writing/prototype-the-question-not-the-feature)
 ---

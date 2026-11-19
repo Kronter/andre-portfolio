@@ -1,10 +1,10 @@
 ---
 id: 208
-title: "Prototype the Question, Not the Feature"
-date: "2026-10-30"
+title: "What Do I Need This Prototype to Tell Me?"
+date: "2026-09-23"
 author: "André Gottgtroy"
 tags: ["Prototyping", "Design Philosophy", "R&D"]
-excerpt: "A small prototype should answer the right question before proving a complete feature."
+excerpt: "Three obstacles can tell me quite a bit about a jump before I build a level around it."
 featured: false
 series: "Design Philosophy"
 part: 6
@@ -12,16 +12,13 @@ relatedSlugs: ["constraints-as-design-teachers", "clarity-is-not-the-same-as-sim
 content:
 - type: paragraph
   text: |-
-    Before I build a prototype, I want to know what it is going to tell me. I have not always asked that early enough.
+    ‘Can we build this?’ is a question I quite enjoy, especially with my software engineering background. It's also how I can end up planning a whole level before I've worked out whether the jump is any fun.
 - type: paragraph
   text: |-
     [NOTE]***Quick note:*** The proposed tests are examples of how I would investigate a question, rather than completed experiments.[/NOTE]
 - type: paragraph
   text: |-
-    I still ask that sometimes, [SIDENOTE]especially when collaborating with engineers[/SIDENOTE]. But a more useful question often comes first: **[VIOLET]what is the smallest thing I need to answer the question I'm actually uncertain about?[/VIOLET]**
-- type: paragraph
-  text: |-
-    Those two formulations sound similar. They can lead to very different prototypes.
+    I still ask it [SIDENOTE]particularly when I'm working with engineers[/SIDENOTE]. For an early prototype, though, I like to start with **what am I trying to find out?**
 - type: paragraph
   text: |-
     The first makes the feature the centre of the exercise. The second makes the uncertainty the centre. That difference is important because a feature can be technically complete and still fail to tell you whether the experience is worth pursuing.
@@ -32,7 +29,7 @@ content:
     Suppose I'm designing a movement ability for an action game. I might be tempted to build a full level, a set of enemies, polished animations, a skill tree and a tutorial. After weeks of work, I could finally ask whether the movement itself creates interesting choices.
 - type: paragraph
   text: |-
-    Or I can start with a basic character controller and three deliberately different obstacles. I can make the player choose between using the ability now and keeping it for a more difficult jump. Do they spot multiple routes? Does the ability reward timing, or is there one obviously correct answer? Can they predict where they will land?
+    For a first pass, I'd give myself a basic character controller and three obstacles. Can you see two routes? Can you tell where you'll land? Is there a jump worth saving the ability for? I can find out quite a bit before I need an enemy or a skill tree.
 - type: paragraph
   text: |-
     That smaller experiment doesn't establish the full game feel or balance. It answers an earlier question: is this movement decision interesting enough to develop? Animation and audio may be essential for a later test, but they aren't automatically the first uncertainty.
@@ -40,7 +37,7 @@ content:
   text: |-
     I've found that a prototype can easily accumulate supporting systems before its central interaction has earned that investment. The scope may look reasonable on a planning board while the important question remains unanswered. The useful correction is to stop adding completeness and start isolating the decision I want to understand.
 - type: heading-2
-  text: "A playable slice isn't always the smallest useful test"
+  text: "Three obstacles and a jump"
 - type: paragraph
   text: |-
     I like vertical slices. They're valuable for showing how technology, art, audio, UI and gameplay work together. But if I'm uncertain about a single choice, a polished slice can be too large and too expensive an answer.
@@ -96,8 +93,8 @@ content:
     Before I start implementing, I try to write a sentence beginning, 'I need to find out whether…' Then I identify what I would observe if the hypothesis were true, and what would make me reconsider it.
 - type: paragraph
   text: |-
-    [BLOCK]That habit changes the conversation. Instead of asking whether a feature is finished, I can ask whether the uncertainty has been reduced enough to justify the next investment. And instead of feeling that a failed prototype wasted time, I can judge whether it actually answered the question it was built to ask.[/BLOCK]
+    [BLOCK]If three obstacles tell me the landing is impossible to judge, I know what I'd work on tomorrow. I'd be quite happy to find that out before building the rest of the level.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Constraints Are Design Teachers, Not Just Production Limits](/design-writing/constraints-as-design-teachers) · [Next: Clarity Isn't the Same as Simplicity](/design-writing/clarity-is-not-the-same-as-simplicity)
+    [Previous: What Can I Learn with One Less Tool?](/design-writing/constraints-as-design-teachers) · [Next: Clarity Isn't the Same as Simplicity](/design-writing/clarity-is-not-the-same-as-simplicity)
 ---

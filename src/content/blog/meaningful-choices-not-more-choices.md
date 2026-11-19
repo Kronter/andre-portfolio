@@ -1,10 +1,10 @@
 ---
 id: 215
-title: "More Options Don't Automatically Mean More Meaningful Choices"
-date: "2026-04-29"
+title: "Three Ways Across a River"
+date: "2026-03-12"
 author: "André Gottgtroy"
 tags: ["Player Agency", "Meaningful Choices", "Design Philosophy"]
-excerpt: "Why more mechanics and options do not necessarily make better decisions."
+excerpt: "A bridge, a swim and a raft all get me to the other bank. What would make me think twice about the crossing?"
 featured: false
 series: "Design Philosophy"
 part: 2
@@ -12,18 +12,18 @@ relatedSlugs: ["lego-bricks-are-not-the-game", "start-with-the-feeling-not-the-f
 content:
 - type: paragraph
   text: |-
-    Give me a system with plenty of possibilities and I will probably want to explore it. That does not mean I want another option added to every decision.
+    Give me three ways across a river and I'll probably want to try all three. Ask me which one I'd choose the second time, though, and I'd like a better reason than ‘I haven't seen the raft animation yet.’
 - type: paragraph
   text: |-
     [NOTE]***Quick note:*** More options can be useful. I am interested in what makes those options worth choosing between.[/NOTE]
 - type: paragraph
   text: |-
-    When I evaluate a design, I ask what the player is actually choosing [VIOLET]*between*[/VIOLET]. If one option is clearly superior, the others may be ornamental. If every alternative has the same outcome, the player may have freedom of animation rather than freedom of strategy. Interesting options need reasons to exist.
+    When I look at a choice, that's what I'm trying to get at. **What would make me pick differently next time?**
 - type: heading-2
-  text: "A choice needs a consequence"
+  text: "The bridge, the swim and the raft"
 - type: paragraph
   text: |-
-    Imagine an adventure game with three ways to cross a river. The player can use a bridge, swim or build a raft. That sounds like a rich set of options. But if all three take the same time, have the same cost and lead to exactly the same result, the player is mostly choosing a preferred visual.
+    Take a bridge, a swim and a raft. If all three get me to the same bank in the same time with the same things in my pockets, I can pick the one I like the look of. There's very little to plan around, though.
 - type: paragraph
   text: |-
     That's not necessarily bad [SIDENOTE]expressive choices can matter[/SIDENOTE]. Choosing how a character behaves is itself a kind of play. But if the design promises strategic choice, those routes need distinct consequences. Maybe swimming is fast but requires abandoning equipment. Maybe the bridge is safe but guarded. Maybe a raft takes preparation while preserving supplies.
@@ -54,7 +54,7 @@ content:
     When I say a choice needs consequences, I don't mean everything must have a punishment. A tradeoff can be about identity, pacing, information, preparation or personal expression. Perhaps choosing a slow path lets a player discover more about the world. Perhaps a fast route lets them arrive before an event changes.
 - type: paragraph
   text: |-
-    The important thing is that the alternatives support different priorities. A game can tell players that one option is 'high risk, high reward', but that label is meaningless if the actual circumstances make the reward irrelevant.
+    Suppose the raft carries extra supplies. That's a lovely advantage on the way to an expedition and fairly useless if I'm heading home with an empty bag. I like that the very same option can be worth a second look on the return trip.
 - type: paragraph
   text: |-
     I like asking whether two different players could reasonably make different decisions from the same state. If so, what are they valuing differently? If I can explain those priorities, I have a stronger basis for designing and balancing the alternatives.
@@ -96,8 +96,8 @@ content:
     If every tester chooses the same option for the same reason, I look for a missing tradeoff or an irrelevant alternative. If they choose differently but cannot understand the consequences, I look at feedback and communication. If different choices produce interesting outcomes, I have a strong basis for further iteration.
 - type: paragraph
   text: |-
-    [BLOCK]This is why I think depth comes from relationships, not feature counts. More options can help, but only when they create genuinely different things for players to consider. I would rather build a small set of actions that keep becoming interesting in new contexts than a large catalogue that asks the same question every time.[/BLOCK]
+    [BLOCK]I'd go back to the river with the same three routes and change what the player is carrying. If they stop to reconsider the crossing, those three options are already doing quite a bit of work.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: The LEGO Bricks Are Not the Game](/design-writing/lego-bricks-are-not-the-game) · [Next: Start with the Feeling, Not the Feature List](/design-writing/start-with-the-feeling-not-the-feature)
+    [Previous: The LEGO Bricks Are Not the Game](/design-writing/lego-bricks-are-not-the-game) · [Next: What Would Make Me Come Back to This Garden?](/design-writing/start-with-the-feeling-not-the-feature)
 ---

@@ -1,10 +1,10 @@
 ---
 id: 201
 title: "My First Card Game Prototype Had Too Many Decks"
-date: "2025-11-13"
+date: "2025-09-11"
 author: "André Gottgtroy"
 tags: ["Prototype", "Systems Design", "TCG"]
-excerpt: "What the deliberately rough first prototype revealed about complexity and separate resource decks."
+excerpt: "I gave resources their own deck. Then I tried explaining a turn with all those piles on the table."
 featured: false
 series: "TCG"
 part: 2
@@ -12,16 +12,13 @@ relatedSlugs: ["tcg-part-one", "03-rebuilding-the-resource-loop"]
 content:
 - type: paragraph
   text: |-
-    I like the part of designing a game where a table full of paper starts asking awkward questions. My first prototype gave me plenty.
+    When I sat down to make my first TCG prototype, I already had a main deck, a resource deck and a deck for zones in mind. I still quite like the idea of a zone deck. The bit I hadn't worked out was what my family would actually do with all three on their first turn.
 - type: paragraph
   text: |-
-    [NOTE]***Quick note:*** This is about my first rough prototype, rather than a recommendation against separate decks in general.[/NOTE]
+    [NOTE]***Quick note:*** These were paper cards. I could cross something out and play it differently the next time round, which turned out to be quite handy.[/NOTE]
 - type: paragraph
   text: |-
-    So I chose an awkward problem on purpose: make a resource system that is interesting in its own right, but doesn't stop players doing the interesting things.
-- type: paragraph
-  text: |-
-    That sounds reasonable until you try to make it work using pieces of paper.
+    The pile I was most interested in was the **resource deck**. I'd enjoyed choosing which cards to pitch in Flesh and Blood. Could I get that kind of decision into my own game?
 - type: heading-2
   text: "A prototype should be cheap to change"
 - type: paragraph
@@ -34,13 +31,13 @@ content:
   text: |-
     The trouble was what happened when I put them together.
 - type: heading-2
-  text: "The smallest deck made the biggest demands"
+  text: "Which pile am I drawing from?"
 - type: paragraph
   text: |-
     The resource system was supposed to support the rest of the game. Instead, it began consuming the design space around it. Separate piles introduced separate rules: how to draw them, when to use them, what happens when you don't see the right cards, how those cards interact with other effects, and what a new player is expected to remember.
 - type: paragraph
   text: |-
-    Each small system asked for space on the table and space in the player's head. None of those requests was outrageous in isolation. Together they made the game increasingly about servicing its infrastructure.
+    Even before anyone chose a card, I'd given them three places to look. I could explain each pile on its own. Explaining how to take a turn was quite a bit harder.
 - type: paragraph
   text: |-
     I had to distinguish [VIOLET]*complexity that creates decisions*[/VIOLET] from *complexity that explains why decisions are allowed*. A player deciding whether to keep a flexible card or commit it as a resource might be interesting. A player spending time working out which deck to consult, or which step of a separate procedure they were in, was less convincing.
@@ -58,11 +55,8 @@ content:
 - type: paragraph
   text: |-
     This wasn't proof that multiple decks are inherently bad. Plenty of good games use them. It was evidence that *my particular combination* didn't yet justify itself.
-- type: paragraph
-  text: |-
-    That distinction matters. Removing a subsystem because it is unfamiliar is not the same as removing one because testing reveals it isn't contributing enough.
 - type: heading-2
-  text: "Change the connection, not the goal"
+  text: "Could I lose the resource deck?"
 - type: paragraph
   text: |-
     The turning point was a different question: could resource play become part of the main deck gameplay, rather than live alongside it?
@@ -85,8 +79,8 @@ content:
     [BLOCK]When evaluating a system now, I like asking: what decision does this create, what other system does it connect to, and what would disappear if I removed it? If the last answer is mostly bookkeeping, that is interesting information.[/BLOCK]
 - type: paragraph
   text: |-
-    I also try to resist a common temptation: adding a new mechanic to make an underperforming mechanic feel important. Sometimes the better answer is to move the responsibility to something players already understand. I would rather have one repeated decision that the players can explain than several separate subsystems that are technically interesting but largely invisible during play. The first prototype gave me permission to test that distinction instead of protecting the original structure.
+    The question I wanted to keep was **which card am I willing to give up?** I could try that with the main deck I already had. That gave me somewhere to start the next prototype.
 - type: paragraph
   text: |-
-    [Previous: Making a TCG (Tracers)](/design-writing/tcg-part-one) · [Next: Rebuilding the Resource Loop Instead of Adding More Rules](/design-writing/03-rebuilding-the-resource-loop)
+    [Previous: Making a TCG (Sort Of)](/design-writing/tcg-part-one) · [Next: Could the Main Deck Do Both Jobs?](/design-writing/03-rebuilding-the-resource-loop)
 ---

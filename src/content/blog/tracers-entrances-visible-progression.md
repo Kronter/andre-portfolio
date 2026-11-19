@@ -1,10 +1,10 @@
 ---
 id: 213
-title: "Tracer Entrances: Making Progression Part of the Performance"
-date: "2026-11-07"
+title: "When Should a Tracer Join the Jam?"
+date: "2026-09-10"
 author: "André Gottgtroy"
 tags: ["Progression", "Character Systems", "Tracers"]
-excerpt: "How resource-linked entrances replaced forced character rotation."
+excerpt: "I wanted players to see a new performer coming. Rotating the Featured Tracer didn't quite give me that."
 featured: false
 series: "TCG"
 part: 11
@@ -12,13 +12,13 @@ relatedSlugs: ["gear-styles-sequences-and-scope", "the-table-is-the-interface"]
 content:
 - type: paragraph
   text: |-
-    I wanted bringing a Tracer into play to feel like a moment in the performance. A character arriving should mean more than another effect to remember.
+    The bit I wanted to capture was the moment somebody new joins a crew's performance. Ideally you can see them getting ready and think, ‘Oh, if she gets one more Flow, that Tracer's coming in.’
 - type: paragraph
   text: |-
     [NOTE]***Quick note:*** The timing below describes the later prototype direction. The balance comparisons remain planned work.[/NOTE]
 - type: paragraph
   text: |-
-    That ambition led through several approaches before settling on the [VIOLET]resource-linked Entrance system[/VIOLET] for the streamlined Tracers prototype. It's one of the most useful design journeys in the project because it touches progression, pacing, visibility and the price of flexibility.
+    It took me a few goes to get from rotating a **Featured Tracer** to the [VIOLET]Entrance[/VIOLET] system I'm testing now.
 - type: heading-2
   text: "The problem with the Featured approach"
 - type: paragraph
@@ -56,10 +56,10 @@ content:
   text: |-
     I also had to be careful with what the characters did on arrival. A Tracer entering with an activated ability immediately usable could create a very different tempo spike from one whose ability becomes available on a later turn.
 - type: heading-2
-  text: "Timing is an invisible design choice until it isn't"
+  text: "Did I have enough Flow when my turn ended?"
 - type: paragraph
   text: |-
-    Entrance timing took several revisions. Under the later accepted prototype design, each player's end-of-turn Entrance Check examines the current amount of the assigned resource, after the turn's effects resolve. Merely touching a threshold earlier isn't enough if the resources are spent before that check.
+    **When do I check?** At the end of my turn, after the effects have resolved, I look at how much of the assigned resource I still have. If I reached the requirement and then spent some of it, my Tracer might have to wait.
 - type: paragraph
   text: |-
     A passing turn still gets its ordinary Entrance Check. There is no additional check later in the same Jam simply because an opponent grants that player more resources. Tracers enter ready by default, but their activated abilities first become usable on a later own turn; printed card exceptions may specify otherwise.
@@ -93,8 +93,8 @@ content:
     Those observations would tell me whether the progression system genuinely belongs in the core loop. It would also tell me more than merely measuring the average turn on which a Tracer appears.
 - type: paragraph
   text: |-
-    [BLOCK]The strongest part of this iteration is that progression is no longer isolated from the match. Scoring, card conversion, timing and character identity all have reasons to interact. My challenge is to keep those connections visible enough that the player experiences an earned entrance—not just another condition to calculate.[/BLOCK]
+    [BLOCK]What I want to see is the other player noticing who's about to join my crew. If they can see the Entrance coming, the turn *before* the character arrives can be part of the fun too.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Gear, Styles and Sequences: When Good Systems Compete for Attention](/design-writing/gear-styles-sequences-and-scope) · [Next: The Table Is the Interface: Designing Rules People Can See](/design-writing/the-table-is-the-interface)
+    [Previous: Does My Crew Really Need Gear, Styles and Sequences?](/design-writing/gear-styles-sequences-and-scope) · [Next: Can You Read a Jam from Across the Table?](/design-writing/the-table-is-the-interface)
 ---

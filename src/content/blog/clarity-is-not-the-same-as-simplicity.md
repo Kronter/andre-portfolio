@@ -1,10 +1,10 @@
 ---
 id: 218
 title: "Clarity Isn't the Same as Simplicity"
-date: "2026-11-12"
+date: "2026-11-09"
 author: "André Gottgtroy"
 tags: ["Game UX", "Accessibility", "Design Philosophy"]
-excerpt: "Why player comprehension and strategic depth are not opposites."
+excerpt: "Rotating a tile is easy enough. Working out which tiles are connected can be the hard part."
 featured: false
 series: "Design Philosophy"
 part: 7
@@ -12,18 +12,18 @@ relatedSlugs: ["prototype-the-question-not-the-feature"]
 content:
 - type: paragraph
   text: |-
-    I want people to spend their attention on the interesting choice. If they are still trying to work out what a button did, I have a different problem to solve.
+    Say I give you a puzzle with one rule. You're allowed to rotate a tile. How much does that help if you can't see which tiles are joined together?
 - type: paragraph
   text: |-
     [NOTE]***Quick note:*** The examples here are design illustrations, rather than reports from particular playtests.[/NOTE]
 - type: paragraph
   text: |-
-    When I think about accessibility in design, I care less about counting mechanics than about whether players understand what they can do, why they might want to do it and what happened afterward. [VIOLET]That is clarity.[/VIOLET] It isn't identical to simplicity.
+    This is the distinction I mean by **clarity**. Once you can see the connection, I can give you quite a tricky puzzle and you still have somewhere to start.
 - type: heading-2
-  text: "The difference shows up in play"
+  text: "One tile, one rule"
 - type: paragraph
   text: |-
-    Imagine a puzzle game with only one action: rotate a tile. The rules are short. But if the player cannot tell which tiles are connected or what rotation changes, the experience may be baffling. Now imagine a management game with several interacting systems, each represented through consistent icons and visible changes. The rules may be longer, yet the player can make a reasonable decision at every step.
+    A management game can have the opposite problem on paper. There might be half a dozen systems to learn, yet you change one thing and immediately see which building gained workers or ran out of supplies. I find that sort of game easier to get into than my one-rule puzzle.
 - type: paragraph
   text: |-
     Neither example proves the more complex game is better. They show why I don't evaluate comprehension by word count alone. Rules, visual communication, timing, feedback and player expectations all contribute to how difficult something feels.
@@ -65,7 +65,7 @@ content:
     I don't have a rule against terminology. Good terms form a vocabulary that makes complex ideas easier to discuss. But the vocabulary should earn its cost through repetition and consistency. If I introduce a new name for an action that appears once, I need a good reason to believe the name helps.
 - type: paragraph
   text: |-
-    When possible, I test comprehension with people who don't share my assumptions. I ask them to explain an instruction in their own words, then compare their interpretation with the intended behaviour. Every mismatch is an opportunity to improve either the wording or the mechanic.
+    I like asking someone to read an instruction and tell me, in their own words, what they're about to do. If their reading makes perfect sense and gives them the wrong move, I probably owe them a better instruction.
 - type: paragraph
   text: |-
     Sometimes the confusion reveals that the rule itself is doing too many things. Sometimes the rule is fine and only the presentation needs work. Those require different fixes.
@@ -81,7 +81,7 @@ content:
   text: |-
     That is closer to the kind of accessibility I aim for than removing every challenging decision. Players should be allowed to become skilful. They shouldn't need to wrestle with the interface just to reach the interesting part of the challenge.
 - type: heading-2
-  text: "Test comprehension separately from enjoyment"
+  text: "What do you think just happened?"
 - type: paragraph
   text: |-
     One mistake I try to avoid is collapsing every playtest question into 'Was it fun?' Enjoyment matters, but it doesn't tell me which part of the experience worked or failed.
@@ -96,8 +96,8 @@ content:
     Separating these outcomes prevents me from rewriting a good rule merely because I communicated it badly, or polishing an interface that faithfully explains an uninteresting decision.
 - type: paragraph
   text: |-
-    [BLOCK]My goal isn't minimal rules for their own sake. It's a game where the complexity players encounter is the complexity I intended them to enjoy. Clarity makes that possible. It gives players a solid understanding from which curiosity, experimentation and mastery can grow.[/BLOCK]
+    [BLOCK]I'd be pleased to hear someone say, ‘I can see exactly how these tiles connect. I just haven't worked out how to get them where I want them yet.’ That's the part of the puzzle I meant to be difficult.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Prototype the Question, Not the Feature](/design-writing/prototype-the-question-not-the-feature)
+    [Previous: What Do I Need This Prototype to Tell Me?](/design-writing/prototype-the-question-not-the-feature)
 ---

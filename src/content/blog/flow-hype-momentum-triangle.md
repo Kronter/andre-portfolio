@@ -1,10 +1,10 @@
 ---
 id: 211
-title: "Flow, Hype and Momentum: Designing a Three-Way Resource Contest"
-date: "2026-11-01"
+title: "Why Does a Momentum Card Give Me Hype?"
+date: "2026-07-29"
 author: "André Gottgtroy"
 tags: ["Resource Economy", "Scoring", "Tracers"]
-excerpt: "Designing three competing resources and the consequences of their circular generation."
+excerpt: "Being one point behind in Hype gives me a good reason to look at the Momentum cards in my hand."
 featured: false
 series: "TCG"
 part: 9
@@ -12,13 +12,13 @@ relatedSlugs: ["why-i-built-the-world-of-tracers", "gear-styles-sequences-and-sc
 content:
 - type: paragraph
   text: |-
-    I did not want Tracers resources to be something players collected before getting to the game. I wanted them to be part of what the players were competing over.
+    If you ask who's winning halfway through a Jam, I quite like that the answer can be ‘winning which bit?’ One crew might have the crowd behind them while the other has put together a much smoother line.
 - type: paragraph
   text: |-
-    [NOTE]***Quick note:*** The example Jam below is an illustration, not a recorded match. The later tie rule is also called out separately.[/NOTE]
+    [NOTE]***Quick note:*** I've made up a Jam to show how the three scores work. I've also included the tie rule I changed later.[/NOTE]
 - type: paragraph
   text: |-
-    That led to [VIOLET]Flow, Hype and Momentum[/VIOLET]. Three words, three competing scores, and a set of relationships that I needed to make both strategically useful and physically readable.
+    In Tracers those contests are [VIOLET]Flow, Hype and Momentum[/VIOLET]. I wanted all three to be easy to check from the other side of a table.
 - type: heading-2
   text: "Why three resources?"
 - type: paragraph
@@ -31,10 +31,10 @@ content:
   text: |-
     There is a cost to that flexibility. If each resource simply means 'another number to increase', the names are decorative. They need to matter in card identity, in how resources are generated and in the ways opponents can react to each other. The design needs a reason for the three values to exist together.
 - type: heading-2
-  text: "Building a circular relationship"
+  text: "Which resource comes next?"
 - type: paragraph
   text: |-
-    An important prototype rule created a triangle of generation: a Momentum Maneuver typically generates Hype, a Hype Maneuver generates Flow, and a Flow Maneuver generates Momentum. This separates the kind of Maneuver a player chooses from the resource it helps them build.
+    **Which Maneuver gives me what?** In the basic pattern a Momentum Maneuver gives me Hype, Hype gives me Flow, and Flow gives me Momentum. So if I'm just behind you in Hype, it's the Momentum cards in my hand I want another look at.
 - type: paragraph
   text: |-
     I like what that separation asks of the player. Choosing a type isn't merely choosing which column should go up. You have to consider what the card will generate, what you need for scoring and what its other effects might do. A simple circular relationship can make planning slightly less direct, which is useful when that extra thought is understandable rather than arbitrary.
@@ -43,15 +43,15 @@ content:
     The triangle also provides a clear structure for card design. An effect can bend a relationship, strengthen a particular approach or reward a player for preparing a sequence of choices. But that potential can become a trap: if every card ignores the base triangle, the reference structure stops helping players understand the game.
 - type: paragraph
   text: |-
-    A reliable basic pattern is valuable because exceptions mean something only when players know what the ordinary behaviour is.
+    Once the basic pattern feels familiar, a card that breaks it has a much better chance of catching someone's eye.
 - type: heading-2
-  text: "A Jam has several stories at once"
+  text: "A Jam with one move left"
 - type: paragraph
   text: |-
     Imagine two performers approaching the end of a Jam. One has built a strong Hype lead, but the other is close in Flow and Momentum. The decision to push one resource isn't just an efficiency calculation. It can become a small story of commitment, [SIDENOTE]a bluff or a last-minute swing[/SIDENOTE].
 - type: paragraph
   text: |-
-    This is a design illustration rather than a recorded match. What matters is the kind of choice it describes. A player should be able to see the competing stakes and decide whether a marginal point is worth more than investing in a different resource.
+    If I'm only one point behind you on Flow, it's tempting to chase it. But what do I give up in Momentum to get there? That's the part I'd like us both to be able to see on the table.
 - type: paragraph
   text: |-
     At Jam resolution, the three resources are compared. The score determines the Jam's outcome and contributes to the match goal. The later design uses a positive-tie advantage for Lead while keeping zero-to-zero ties scoreless; other timing details exist to make the procedure consistent. These rules are important, but they aren't the centre of the fantasy. They are there so that the value of each player's decisions can be understood and trusted.
@@ -88,5 +88,5 @@ content:
     [BLOCK]The resource triangle gave Prototype Two a recognisable rhythm. It didn't finish the game. Later work with Styles, Sequences and Tracer Entrances would test how much extra structure the basic loop could support before it stopped being the thing players noticed. For me, that is the central resource-design challenge: not how many clever interactions I can invent, but whether each one makes the next choice more interesting.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Why I Built a World Where Competition Creates Art](/design-writing/why-i-built-the-world-of-tracers) · [Next: Gear, Styles and Sequences: When Good Systems Compete for Attention](/design-writing/gear-styles-sequences-and-scope)
+    [Previous: What Do Two Rival Crews Leave Behind?](/design-writing/why-i-built-the-world-of-tracers) · [Next: Does My Crew Really Need Gear, Styles and Sequences?](/design-writing/gear-styles-sequences-and-scope)
 ---

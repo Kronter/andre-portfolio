@@ -1,10 +1,10 @@
 ---
 id: 202
-title: "Rebuilding the Resource Loop Instead of Adding More Rules"
-date: "2025-12-09"
+title: "Could the Main Deck Do Both Jobs?"
+date: "2025-10-26"
 author: "André Gottgtroy"
 tags: ["Resource Design", "Iteration", "TCG"]
-excerpt: "Why I stopped adding systems and began connecting resource decisions to ordinary play."
+excerpt: "If I can spend one card to play another, what happens to the move I was saving?"
 featured: false
 series: "TCG"
 part: 3
@@ -12,18 +12,15 @@ relatedSlugs: ["02-the-prototype-with-too-many-decks", "improv-when-a-card-becom
 content:
 - type: paragraph
   text: |-
-    I can usually think of another system to add. The harder question for me is whether the game needs it.
+    In the first prototype, resources had their own deck. When I tried taking it away, I still wanted that feeling of looking at two cards I'd quite like to play and having to give one up.
 - type: paragraph
   text: |-
-    [NOTE]***Quick note:*** I am following the resource decision here, rather than trying to explain every rule in the game.[/NOTE]
-- type: paragraph
-  text: |-
-    That was where my first card-game prototype was heading. I had the ingredients of a game, but not enough connection between them. What I really wanted was for the resource economy to create choices within the act of playing, not become a separate activity that had to be completed before playing.
+    [NOTE]***Quick note:*** I'm following one card through the resource system here. The rest of a turn can wait.[/NOTE]
 - type: heading-2
   text: "The question behind the mechanic"
 - type: paragraph
   text: |-
-    My early question sounded technical: how should resources be generated? The more useful question was experiential: what should players consider when they decide to use a card?
+    So, **what happens to the card I don't play?**
 - type: paragraph
   text: |-
     I wanted a choice with consequences. A card in your hand should have some value right now, some value later, or some value as fuel for another plan. If spending it as a resource is always correct, the decision is hollow. If keeping it is always correct, the alternative is just decoration. Interesting resource decisions live between those extremes.
@@ -34,7 +31,7 @@ content:
   text: "Connect more than one system at once"
 - type: paragraph
   text: |-
-    The idea I began exploring was to bring resource play into the main deck. A card could participate in the game's economy rather than wait for an unrelated deck to supply permission. That meant the same physical object might matter as an action, an opportunity cost and a source of future options.
+    I started with the main deck. If I could spend a card from my hand to help play another one, I'd have my resource decision right there, with both options in front of me.
 - type: paragraph
   text: |-
     There is an important distinction between adding flexibility and creating depth. An extra use for a card increases the number of things written in the rules. Depth appears only if the uses compete in an interesting way and players can understand the tradeoff.
@@ -45,7 +42,7 @@ content:
   text: |-
     I started looking for relationships that did several jobs at once. Could playing a Maneuver also push a shared competition forward? Could committing a card make an opponent think differently about their own turn? Could resource generation express a style of play rather than exist as an anonymous currency? Those questions eventually mattered more than the number of cards in each pile.
 - type: heading-2
-  text: "Economies are feedback loops, not just costs"
+  text: "Where does the next resource come from?"
 - type: paragraph
   text: |-
     One thing that helped me reason about the design was treating the economy as a loop. Something generates resources. A player holds or converts them. A cost consumes them. The result changes future options. If successful decisions increase the ability to make even more successful decisions, the system can accelerate. If all that matters is gathering more, the game risks becoming a race without enough meaningful tradeoffs.
@@ -82,8 +79,8 @@ content:
     When I work on digital systems, the same test applies. I try to identify what the player needs to understand and what the mechanic is asking them to sacrifice. If a system can only be interesting after three other systems are bolted onto it, I want to know why.
 - type: paragraph
   text: |-
-    [BLOCK]The rebuild also showed me that connected systems can create [VIOLET]*less*[/VIOLET] total explanation even while supporting *more* interesting decisions. One visible action can carry the jobs that used to require several rules. That is a different kind of simplicity from merely making every number smaller.[/BLOCK]
+    [BLOCK]What I like about this version is that I can explain it with two cards in my hand. I can show you the move I want to make, and the one it'll cost me.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: My First Card Game Prototype Had Too Many Decks](/design-writing/02-the-prototype-with-too-many-decks) · [Next: Improv: When a Card Becomes Fuel](/design-writing/improv-when-a-card-becomes-fuel)
+    [Previous: My First Card Game Prototype Had Too Many Decks](/design-writing/02-the-prototype-with-too-many-decks) · [Next: Improv: Which Card Can I Give Up?](/design-writing/improv-when-a-card-becomes-fuel)
 ---

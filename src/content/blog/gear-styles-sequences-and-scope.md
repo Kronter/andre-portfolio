@@ -1,10 +1,10 @@
 ---
 id: 212
-title: "Gear, Styles and Sequences: When Good Systems Compete for Attention"
-date: "2026-11-04"
+title: "Does My Crew Really Need Gear, Styles and Sequences?"
+date: "2026-08-28"
 author: "André Gottgtroy"
 tags: ["Iteration", "Scope", "Tracers"]
-excerpt: "What Gear, Styles and Sequences taught me about the player attention budget."
+excerpt: "I wanted each crew to have its own style. How much did players have to remember to make that happen?"
 featured: false
 series: "TCG"
 part: 10
@@ -12,13 +12,13 @@ relatedSlugs: ["flow-hype-momentum-triangle", "tracers-entrances-visible-progres
 content:
 - type: paragraph
   text: |-
-    I like the idea of a crew having its own style. It is much harder to let go of a mechanic when I can already imagine how good it could feel.
+    I can picture a crew switching Styles in the middle of a performance. I can also picture myself halfway through a turn, trying to remember whether I was supposed to flip a card. I wanted the first of those quite a bit more than the second.
 - type: paragraph
   text: |-
     [NOTE]***Quick note:*** Deferred does not mean discarded forever. I am looking at what the streamlined prototype needs now.[/NOTE]
 - type: paragraph
   text: |-
-    Tracers repeatedly brought me back to that problem. The evolution from Gear to Styles, and later the experimentation with Sequences, taught me that a subsystem has to earn not only its rules but also the mental space it occupies.
+    I ran into a version of that problem three times, first with **Gear**, then with **Styles** and **Sequences**. Each sounded like something a crew ought to have. Finding room for it during a Jam was another matter.
 - type: heading-2
   text: "Gear had a job, but not enough presence"
 - type: paragraph
@@ -57,10 +57,10 @@ content:
     The difficulty was that the rules initially relied too heavily on players recognising boundaries in the sequence. During competitive play, that created uncertainty about when a Sequence started, when it ended and which cards belonged to it. The physical game had no automatic system to repair the ambiguity.
 - type: paragraph
   text: |-
-    I explored explicit declarations and visible groupings, including fanning related cards together. These were attempts to move state out of memory and into the table layout. The insight was larger than Sequences: a system can have well-defined rules and still be hard to operate when its state is invisible.
+    One idea was to announce the Sequence and fan those cards together. Then you could point at the whole thing and ask me about it, even if you hadn't seen me play the first card.
 - type: paragraph
   text: |-
-    Later, after testing a simplified version without Styles and Sequences, I faced an uncomfortable result: the game did not appear to miss them in that minimal playtest. That doesn't prove either system is bad. It does mean that I had to reconsider whether they belonged in the current core.
+    We eventually tried a game with both Styles and Sequences left out. I thought I'd miss having a way to express the crew's style. During that test, at least, I was quite happy choosing my next Maneuver.
 - type: heading-2
   text: "A feature can be deferred without being rejected"
 - type: paragraph
@@ -73,7 +73,7 @@ content:
   text: |-
     This is particularly relevant to card games because future sets and formats can create legitimate reasons to revisit an idea. But I don't want that possibility to become an excuse for carrying its cost now. 'Maybe useful later' is a perfectly good reason to archive a mechanic. It is not, by itself, a good reason to make every new player learn it.
 - type: heading-2
-  text: "The attention budget"
+  text: "What am I asking you to remember?"
 - type: paragraph
   text: |-
     I increasingly think about a player's attention as part of the game's economy. Every new state, keyword, timing step and component asks the player to notice something. Sometimes that investment produces a rich decision. Sometimes it simply makes the rules longer.
@@ -85,7 +85,7 @@ content:
     For Styles and Sequences, the simplified tests were a strong reason to focus on the Maneuver-resource-Jam loop first. I could always test whether one advanced layer improved a specific weakness once the basic game was legible and interesting.
 - type: paragraph
   text: |-
-    A fair experiment would add one system back at a time, keeping the rest of the deck as comparable as possible. Otherwise, a better result might come from an unrelated card change rather than the mechanic I thought I was validating.
+    If I put one of these back in, I'd start with just that one and use much the same deck. If I change the cards as well, I'll have a hard time telling what we actually enjoyed.
 - type: heading-2
   text: "Design for a readable first experience"
 - type: paragraph
@@ -99,5 +99,5 @@ content:
     [BLOCK]My aim is to create enough depth that players begin noticing possibilities I didn't explicitly teach them. When a subsystem gets in the way of noticing those possibilities, it can be better to set it aside. The design isn't less ambitious because the prototype has fewer rules. The ambition has moved from the number of components to the quality of their relationships.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Flow, Hype and Momentum: Designing a Three-Way Resource Contest](/design-writing/flow-hype-momentum-triangle) · [Next: Tracer Entrances: Making Progression Part of the Performance](/design-writing/tracers-entrances-visible-progression)
+    [Previous: Why Does a Momentum Card Give Me Hype?](/design-writing/flow-hype-momentum-triangle) · [Next: When Should a Tracer Join the Jam?](/design-writing/tracers-entrances-visible-progression)
 ---

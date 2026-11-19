@@ -1,10 +1,10 @@
 ---
 id: 207
 title: "Why I Design Sideways When I Want to Get Better"
-date: "2026-10-17"
+date: "2026-06-16"
 author: "André Gottgtroy"
 tags: ["Learning", "Game Design", "Practice"]
-excerpt: "How choosing unfamiliar learning projects changes the skills I practise."
+excerpt: "Making a game with paper cards took away a few conveniences I'd grown used to as a digital designer."
 featured: false
 series: "Design Philosophy"
 part: 4
@@ -12,13 +12,13 @@ relatedSlugs: ["start-with-the-feeling-not-the-feature", "constraints-as-design-
 content:
 - type: paragraph
   text: |-
-    I have no shortage of games I would like to make. Choosing one that will actually make me practise a weaker skill is a different question.
+    What game would I like to make next? I could lose a whole evening to that question quite happily. It's a little different when I'm choosing something to practise.
 - type: paragraph
   text: |-
     [NOTE]***Quick note:*** This is about choosing a learning project. It does not need to become a commercial release to be useful.[/NOTE]
 - type: paragraph
   text: |-
-    That question is exciting, but it's not always the most useful one when my goal is to improve as a designer.
+    For a personal project I can start with the genre, the setting, even a mechanic I've wanted an excuse to try. For a learning project I try to turn that around.
 - type: paragraph
   text: |-
     A better question is: **what do I want to get better at, and what could I make that would force me to practise it?**
@@ -65,10 +65,10 @@ content:
   text: |-
     The choice of medium is itself part of the learning design. The useful project is not necessarily the one closest to your day job; it may be the one that makes your comfortable assumptions least reliable.
 - type: heading-2
-  text: "Keep the loop small enough to run"
+  text: "How I set up a learning project"
 - type: paragraph
   text: |-
-    My learning-project loop has seven steps. First, pick the skill. Then identify the tool or assumption you rely on most. Choose a constraint that removes it. Build the smallest version that exposes the issue. Look for friction when you use it or test it with someone else. Reflect on what actually happened. Finally, transfer the observation back into your usual work.
+    The exercise I use starts with a **skill** and a **crutch**. I pick something I'd like to practise, then take away one tool that usually does part of it for me. I build just enough to run into the difficulty, try it with someone, and write down what actually happened. The last bit is taking one of those observations back to my normal work.
 - type: paragraph
   text: |-
     The reflection step is crucial. Failure does not automatically become learning. If a rule confuses someone and I merely replace the wording, I might solve that one instance without understanding the pattern. If I ask *why* it confused them—hidden state, competing terminology, ambiguous ownership, or a mismatch between expectation and outcome—I can carry that insight to another project.
@@ -96,8 +96,8 @@ content:
     A learning exercise can keep changing as each version presents a narrower question. I might remove a favourite feature from a minimal test, or discover that two good ideas don't connect well. Those results remain useful beyond the individual exercise because they teach me what to look for next time, even when the most successful outcome is a smaller design.
 - type: paragraph
   text: |-
-    [BLOCK]If I were choosing a learning project tomorrow, I'd start by writing down one design skill, one crutch I want to remove and one observation that would tell me I'm improving. That's more actionable than choosing a genre and hoping experience happens along the way.[/BLOCK]
+    [BLOCK]If I wanted to practise explaining game state tomorrow, I'd put a few cards on a table and give someone a turn. The interesting bit for me would be the first question they have to ask.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Start with the Feeling, Not the Feature List](/design-writing/start-with-the-feeling-not-the-feature) · [Next: Constraints Are Design Teachers, Not Just Production Limits](/design-writing/constraints-as-design-teachers)
+    [Previous: What Would Make Me Come Back to This Garden?](/design-writing/start-with-the-feeling-not-the-feature) · [Next: What Can I Learn with One Less Tool?](/design-writing/constraints-as-design-teachers)
 ---

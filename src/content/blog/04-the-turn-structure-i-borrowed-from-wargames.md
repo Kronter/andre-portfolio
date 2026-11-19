@@ -1,10 +1,10 @@
 ---
 id: 203
 title: "The Turn Structure I Borrowed from Wargames"
-date: "2026-06-17"
+date: "2026-02-18"
 author: "André Gottgtroy"
 tags: ["Interaction", "Turn Structure", "TCG"]
-excerpt: "Why alternating activations helped change the cadence of a non-combat card game."
+excerpt: "My partner likes a complicated game. I wanted one where we could keep each other guessing without having to attack."
 featured: false
 series: "TCG"
 part: 5
@@ -12,13 +12,13 @@ relatedSlugs: ["improv-when-a-card-becomes-fuel", "competition-without-combat"]
 content:
 - type: paragraph
   text: |-
-    I wanted a game my family could enjoy together. That meant finding a way to compete without making direct attacks the main event.
+    My partner quite enjoys a complicated board game. What she enjoys less is spending a turn knocking someone else's pieces off the board. That distinction mattered when I started thinking about how a turn in my TCG should work.
 - type: paragraph
   text: |-
-    [NOTE]***Quick note:*** I borrowed a rhythm from wargames, rather than trying to turn Tracers into one.[/NOTE]
+    [NOTE]***Quick note:*** The bit I borrowed from miniature wargames was what happens *between* my turns.[/NOTE]
 - type: paragraph
   text: |-
-    These aren't opposite ends of one scale. A game can have almost no direct attacks and still be intensely interactive. It can also have lots of attack cards and surprisingly few interesting responses. What matters to me is whether another player's decisions change what I want to do.
+    I still wanted us to have reasons to watch each other play. If I can plan my whole turn while you take yours, how much of a game are we actually playing together?
 - type: paragraph
   text: |-
     My first prototype had a problem here. The resource systems could be interesting on their own, but that didn't guarantee that the experience of taking turns was interesting [VIOLET]*together*[/VIOLET].
@@ -37,10 +37,10 @@ content:
   text: |-
     Notice that I'm not asking how often a player can interrupt. Interruption systems carry their own problems [SIDENOTE]timing windows, priority rules and extra explanations[/SIDENOTE], as well as the uncertainty of whether you should ask your opponent to stop. I wanted to see whether the rhythm of ordinary turns could do some of that work first.
 - type: heading-2
-  text: "Go sideways to find a better pattern"
+  text: "What I borrowed from miniature wargames"
 - type: paragraph
   text: |-
-    I started looking at miniature wargames and their alternating-activation structures. Rather than one side doing everything and the next side doing everything, players take turns activating pieces. Even without formal reactions, the game state changes in smaller steps. Each commitment can matter to the next decision.
+    One thing I enjoy in miniature wargames is **alternating activations**. I move a piece, then you get to do something with yours. By the time it comes back to me, the move I was saving might look considerably less appealing.
 - type: paragraph
   text: |-
     The useful thing wasn't the miniatures or the battlefield. It was the relationship between *commitment* and *opportunity*. I do one meaningful thing; you see it; now you choose. The design creates interaction through sequence rather than only through cards explicitly labelled as counters.
@@ -74,12 +74,12 @@ content:
     For Tracers, the emerging shared stakes were the resources both players were competing over and the final comparison at the end of a Jam. I might care about the resource I was generating, but I also needed to notice which resource you were building. A public contest turns an ordinary efficiency question into a contextual one.
 - type: paragraph
   text: |-
-    Later testing showed the limits of that solution. Some decisions still felt too parallel, even with alternating play. That led to experiments around reading or predicting an opponent's next resource choice. Those ideas are part of ongoing design work; they are not evidence that a finished reaction system already exists.
+    We still had moments in later tests where we took turns quite happily and barely looked at each other's cards. That's what got me interested in letting a player predict which resource their opponent would go for next. Those cards still need testing.
 - type: paragraph
   text: |-
     That distinction matters because the first experiment answered one question—would shorter alternating turns produce a better rhythm?—without answering every question about player interaction.
 - type: heading-2
-  text: "The real lesson wasn't a turn rule"
+  text: "What does the waiting player get to do?"
 - type: paragraph
   text: |-
     Borrowing an idea from a wargame didn't make my card game a wargame. It gave me a different way to examine agency, timing and the space between actions.
@@ -88,8 +88,8 @@ content:
     It also reinforced my belief that looking outside your usual medium is one of the fastest ways to challenge an assumption. A designer working entirely inside TCG conventions might ask which instant-speed cards encourage interaction. Looking at alternating activations let me ask whether the base turn structure could encourage it instead.
 - type: paragraph
   text: |-
-    [BLOCK]That sort of borrowing isn't copying. You still have to understand *why* the source pattern works, which dependencies it carries and whether it supports the experience you want.[/BLOCK]
+    [BLOCK]If I want to know whether the shorter turns are helping, I'd watch the player who's waiting. Is there a move I could make that would change the card they're about to play?[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Improv: When a Card Becomes Fuel](/design-writing/improv-when-a-card-becomes-fuel) · [Next: Competition Without Combat: Making the Other Player Matter](/design-writing/competition-without-combat)
+    [Previous: Improv: Which Card Can I Give Up?](/design-writing/improv-when-a-card-becomes-fuel) · [Next: How Do I Make Your Turn Matter to Me?](/design-writing/competition-without-combat)
 ---

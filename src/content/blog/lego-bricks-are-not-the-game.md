@@ -1,10 +1,10 @@
 ---
 id: 206
 title: "The LEGO Bricks Are Not the Game"
-date: "2026-01-22"
+date: "2025-12-04"
 author: "André Gottgtroy"
 tags: ["Design Philosophy", "Systems Design", "Player Experience"]
-excerpt: "My LEGO-brick view of game design: value comes from how familiar mechanics connect."
+excerpt: "Drafting a card gets a lot more interesting when I also have to find somewhere to put it."
 featured: false
 series: "Design Philosophy"
 part: 1
@@ -12,16 +12,13 @@ relatedSlugs: ["meaningful-choices-not-more-choices"]
 content:
 - type: paragraph
   text: |-
-    I often explain how I think about game design with [VIOLET]LEGO bricks[/VIOLET]. I like collecting the pieces, but the interesting part is what happens between them.
+    I think of the mechanics I pick up from games a bit like a box of [VIOLET]LEGO bricks[/VIOLET]. I'll recognise a piece I've used before and immediately want to try attaching something different to it.
 - type: paragraph
   text: |-
     [NOTE]***Quick note:*** The game examples are hypothetical. I use them to explain a relationship, rather than as evidence from a finished project.[/NOTE]
 - type: paragraph
   text: |-
-    A game designer collects pieces over time [SIDENOTE]mechanics they've played, systems they've built, patterns they've studied, mistakes they've made and behaviours they've watched players invent[/SIDENOTE]. A resource economy is a piece. A turn structure is a piece. Progression, feedback, pacing, social pressure and player goals are pieces too.
-- type: paragraph
-  text: |-
-    Having more pieces is useful. Knowing how they connect is what makes the collection valuable.
+    **Drafting** is one of those pieces. So is choosing where to put something on a board. I can borrow either one, but what really interests me is whether choosing a card gets harder once you know where it has to go.
 - type: heading-2
   text: "A familiar brick can make an unfamiliar game"
 - type: paragraph
@@ -37,10 +34,10 @@ content:
   text: |-
     This is one reason I enjoy moving between digital games, board games and tabletop RPGs. They reveal different uses for familiar pieces. A procedure that is mundane in one genre might produce a new kind of decision in another.
 - type: heading-2
-  text: "Connection isn't just combination"
+  text: "Do these two pieces fit?"
 - type: paragraph
   text: |-
-    There is a weaker version of this idea: take two successful mechanics, put both in the game, and hope that makes the design richer. It often makes the design busier instead.
+    I've also put two mechanics I like in the same prototype and found myself explaining them separately. That's usually my first clue that I haven't actually worked out how they fit.
 - type: paragraph
   text: |-
     When I evaluate a combination, I ask what relationship it creates. Does one system change the player's understanding of the other? Does a decision in one system create a consequence in the other? Do the mechanics reinforce the same fantasy, or compete for attention?
@@ -96,8 +93,8 @@ content:
     My personal design toolkit isn't just a catalogue of mechanics. It's a growing memory of relationships: which ones created interesting tradeoffs, which ones created friction, which ones were difficult to explain, and which changed completely when placed in a different context.
 - type: paragraph
   text: |-
-    [BLOCK]That's why I think making many small experiments matters. Each one adds more than a mechanism to the collection. It adds an observation about how mechanisms behave together.[/BLOCK]
+    [BLOCK]The note I'd want to keep from that drafting game is what happened when the board filled up. A card I was delighted to see on turn one might be the last thing I want to draw now. That's a relationship I'd try in another game.[/BLOCK]
 - type: paragraph
   text: |-
-    [Next: More Options Don't Automatically Mean More Meaningful Choices](/design-writing/meaningful-choices-not-more-choices)
+    [Next: Three Ways Across a River](/design-writing/meaningful-choices-not-more-choices)
 ---

@@ -1,10 +1,10 @@
 ---
 id: 209
-title: "Improv: When a Card Becomes Fuel"
-date: "2026-03-12"
+title: "Improv: Which Card Can I Give Up?"
+date: "2026-01-08"
 author: "André Gottgtroy"
 tags: ["Improv", "Card Economy", "Tracers"]
-excerpt: "How discarding a Maneuver for its printed cost changed opportunity costs, timing and progression."
+excerpt: "Discarding a Maneuver can pay for another move. It can also bring a Tracer into the Jam earlier than I expected."
 featured: false
 series: "TCG"
 part: 4
@@ -12,13 +12,13 @@ relatedSlugs: ["03-rebuilding-the-resource-loop", "04-the-turn-structure-i-borro
 content:
 - type: paragraph
   text: |-
-    I kept coming back to an awkward hand: cards I could not play yet, or did not want to play at all. Could those cards still give me an interesting choice?
+    What do you do with a card you like but can't afford? I enjoy having something in my hand to look forward to. I enjoy it rather less when half my hand looks like that.
 - type: paragraph
   text: |-
     [NOTE]***Quick note:*** Improv has changed between versions. Here I distinguish the early conversion from the later printed-cost approach.[/NOTE]
 - type: paragraph
   text: |-
-    That question eventually became [VIOLET]*Improv*[/VIOLET]: a way to discard a Maneuver for resources instead of playing it as a Maneuver. It sounds like a straightforward conversion. The interesting part is what it does to the relationship between your hand, your timing and the things you are trying to achieve.
+    My answer for Tracers was [VIOLET]**Improv**[/VIOLET]. I can discard a Maneuver to get resources. The card I was saving might be exactly what lets me play something useful now.
 - type: heading-2
   text: "One card, two futures"
 - type: paragraph
@@ -40,7 +40,7 @@ content:
     Now the cards carry another layer of identity. A more expensive card can provide more immediate fuel, but sacrificing it may mean giving up a more ambitious action. That introduces a tension worth exploring: should I use this powerful card now as a resource, or keep it for the moment when I can actually perform it?
 - type: paragraph
   text: |-
-    The solution also creates risks. If drawing extra cards gives a player more possible actions *and* more potential resource fuel, card draw becomes doubly valuable. And once resources also determine when Tracers enter the performance, a large Improv can advance more than one subsystem at the same time.
+    Here's where that got interesting. Draw a card and I've also given you something else to Improv. If the resources from that discard bring a Tracer in early, my little hand-management rule has just put another performer into the Jam.
 - type: paragraph
   text: |-
     I didn't want to respond to that automatically by imposing a hard limit. A powerful interaction isn't necessarily a broken one. It depends on whether the other player has ways to respond, whether the timing creates interesting choices, and whether the resulting pace still feels right.
@@ -57,9 +57,9 @@ content:
     This is a useful example of a rule whose value isn't just balance. It clarifies the cadence of play. One player acts, the other observes the resulting public state, and then the next player has an opportunity to respond. The system remains flexible without demanding a general out-of-turn response window.
 - type: paragraph
   text: |-
-    I am careful about calling that timing a final solution to every interaction problem. Different cards could still need specific wording and exceptions. But establishing a clear default makes the exceptions much easier to assess.
+    Having a default gives me a starting point when I write a new card. If it lets you Improv at a different time, I need to say when and give you a good reason to remember the exception.
 - type: heading-2
-  text: "The surprise was progression"
+  text: "Improv could bring a Tracer in early"
 - type: paragraph
   text: |-
     As Tracers evolved, each player gained three characters waiting outside the main deck, each linked to one of the three resources. They entered when their relevant resource reached the printed requirement. That meant Improv no longer affected only what I could play; it could also affect how quickly I brought my characters into the performance.
@@ -79,11 +79,11 @@ content:
     I would particularly watch for two failure modes. First, an obvious conversion where the player doesn't have to think. Second, a compounding loop where the player who is already ahead can draw more, generate more and get more advantages without facing a comparable sacrifice.
 - type: paragraph
   text: |-
-    Those are different problems, and they suggest different changes. One might require a better spread of card roles; the other might require adjustments to draw, resource generation or the timing of character benefits. Adding a blanket restriction before identifying the problem risks destroying the interesting choice as well.
+    If the same expensive card always goes straight into the discard pile, I'd look at what that card offers when played. If every card looks worth discarding because another draw is easy to come by, I'd start with the draw instead.
 - type: paragraph
   text: |-
     [BLOCK]Improv started as a way to make hands more flexible. It became a way to examine opportunity cost, pacing, player agency and the links between systems. That is the sort of evolution I want from a prototype: a small rule makes the right questions more visible. The next challenge was making sure those decisions mattered to the person sitting across the table.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Rebuilding the Resource Loop Instead of Adding More Rules](/design-writing/03-rebuilding-the-resource-loop) · [Next: The Turn Structure I Borrowed from Wargames](/design-writing/04-the-turn-structure-i-borrowed-from-wargames)
+    [Previous: Could the Main Deck Do Both Jobs?](/design-writing/03-rebuilding-the-resource-loop) · [Next: The Turn Structure I Borrowed from Wargames](/design-writing/04-the-turn-structure-i-borrowed-from-wargames)
 ---

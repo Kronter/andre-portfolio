@@ -3,17 +3,9 @@
 The original TCG introduction is the style reference: personal framing, quick
 notes, inline sidenotes, violet emphasis and purple inset reflections. Existing
 articles keep their factual accounts and distinguish hypothetical examples and
-planned tests from reported observations. The new Part 14 uses the author's full
-supplied text, adding formatting and a quick note without resolving open Aura
-timing or claiming the proposed comparisons have happened.
+planned tests from reported observations. Part 14 keeps the author's account of card draw and proposed comparisons, with a light copy edit. Aura timing remains open.
 
-Displayed article dates are editorial dates chosen for this update, not a record
-of when the files first appeared on GitHub or when individual playtests occurred.
-The original introduction retains 30 July 2025. Part 2 is dated 13 November
-2025, and the early articles are spread across the following months. The
-competition article describing October 2026 decisions stays on 28 October,
-and subsequent parts follow it. Part 14 is dated
-19 November 2026. Do not use this editorial schedule as playtest evidence.
+The series use editorial dates to space the reading order from July 2025 to November 2026. The original introduction keeps 30 July 2025 and Part 14 keeps 19 November 2026. These dates do not record uploads or establish when tests took place. Later revisions can describe newer decisions. The competition article explicitly identifies the October prediction work as a later update.
 
 Series identity remains `TCG` / `Design Philosophy`; shared display names and
 existing `series-tcg` / `series-philosophy` anchors live in

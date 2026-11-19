@@ -1,10 +1,10 @@
 ---
 id: 204
-title: "Prototype Two: Finding the Performance Inside the Systems"
-date: "2026-10-28"
+title: "When Tracers Started to Feel Like a Performance"
+date: "2026-05-26"
 author: "André Gottgtroy"
 tags: ["Tracers", "Prototyping", "Systems Design"]
-excerpt: "How the performance fantasy gave Prototype Two a more coherent identity."
+excerpt: "A dance battle gave me a way to picture what two players were doing when they played their cards."
 featured: false
 series: "TCG"
 part: 7
@@ -12,16 +12,13 @@ relatedSlugs: ["competition-without-combat", "why-i-built-the-world-of-tracers"]
 content:
 - type: paragraph
   text: |-
-    At some point I stopped looking at a pile of TCG experiments and started seeing a performance. That was when this project began to feel like [VIOLET]Tracers[/VIOLET].
+    What would these cards look like if I could step inside the game for a minute? One player makes a move, someone else answers, and both are trying to get a crowd on their side. I could picture that. It looked quite a bit like a dance battle.
 - type: paragraph
   text: |-
     [NOTE]***Quick note:*** This is a look back at Prototype Two. Some scoring and character rules changed in later iterations.[/NOTE]
 - type: paragraph
   text: |-
-    Players were taking turns making commitments, responding to one another's progress and building toward a shared resolution. They weren't commanding armies or reducing health bars. The interesting part was the momentum of the exchange itself.
-- type: paragraph
-  text: |-
-    So I began thinking of it as a performance.
+    I'd been thinking of each card as a contribution to one of three totals. Thinking of it as the next move in a performance gave me a much better idea of who was playing it and why.
 - type: heading-2
   text: "What if competition wasn't combat?"
 - type: paragraph
@@ -37,13 +34,13 @@ content:
   text: |-
     The theme wasn't a coat of paint applied after the fact. It helped me ask whether the rules were expressing the experience I wanted.
 - type: heading-2
-  text: "A Jam is a shared argument"
+  text: "How do you win a Jam?"
 - type: paragraph
   text: |-
     In a recognisable version of Prototype Two [SIDENOTE]before the later scoring revisions[/SIDENOTE], players take alternating Maneuver turns within a **Jam**. A Maneuver is a commitment to the developing performance. When both players are done, the Jam is resolved by comparing three resource totals: **Flow, Hype and Momentum**.
 - type: paragraph
   text: |-
-    Each resource contest can award a Point; a tie awards nothing in the documented model. The game therefore creates several related contests rather than one simple number that always matters more than the rest.
+    In that version you could earn **one point per resource**. If we tied on Flow, neither of us scored for Flow. We still had Hype and Momentum to settle.
 - type: paragraph
   text: |-
     That structure creates decisions you can explain in ordinary terms. Do I strengthen a category I'm already winning, or contest one that's close? If my opponent appears committed to one direction, can I make another more valuable? Is the card worth playing now, or does it have greater value for what comes next?
@@ -54,7 +51,7 @@ content:
   text: "Flow, Hype and Momentum aren't just labels"
 - type: paragraph
   text: |-
-    In the documented design, the three resources form a triangular generation relationship: one type of Maneuver feeds another resource, which then feeds the next. This creates an interesting separation between the kind of action you choose and what it makes possible.
+    The resources feed each other. If I want more of one, I have to look at what a different type of Maneuver gives me. That little wrinkle matters when I'm choosing which part of the performance to build up.
 - type: paragraph
   text: |-
     The resource triangle illustrates why I wanted these systems to reinforce one another. By connecting generation to visible competitive goals and alternating actions, the same choice could support planning, interaction and the performance fantasy.
@@ -84,14 +81,14 @@ content:
   text: |-
     I started treating the physical arrangement as a designed interface. Information needed to live somewhere visible, not merely exist in the rules document. This lesson would eventually feed back into the way I thought about digital UI and player-facing feedback.
 - type: heading-2
-  text: "Finding the identity is not finishing the game"
+  text: "What I could finally test"
 - type: paragraph
   text: |-
     Prototype Two gave me something the first prototype hadn't: a coherent direction in which the mechanics, turn rhythm and theme could reinforce one another. It did not eliminate balance problems, unclear wording or the need to remove features.
 - type: paragraph
   text: |-
-    [BLOCK]In fact, later playtests made several of those problems more obvious. That is exactly what I want a more focused prototype to do. Once it has an identity, I can judge new systems against that identity instead of asking whether each system is fun in isolation.[/BLOCK]
+    [BLOCK]The next time I tried a rule, I had something quite specific to look for. Would the other crew care that I'd made this move? Some of the ideas I liked best on paper had a surprisingly hard time with that one.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Competition Without Combat: Making the Other Player Matter](/design-writing/competition-without-combat) · [Next: Why I Built a World Where Competition Creates Art](/design-writing/why-i-built-the-world-of-tracers)
+    [Previous: How Do I Make Your Turn Matter to Me?](/design-writing/competition-without-combat) · [Next: What Do Two Rival Crews Leave Behind?](/design-writing/why-i-built-the-world-of-tracers)
 ---
