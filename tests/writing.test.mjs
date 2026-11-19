@@ -51,8 +51,6 @@ test('articles retain valid dates, complete ordered series, balanced styling and
       for (const tag of ['NOTE', 'BLOCK', 'SIDENOTE', 'VIOLET']) {
         assert.equal(text.split(`[${tag}]`).length, text.split(`[/${tag}]`).length, `${post.slug}: ${tag}`);
       }
-      assert.ok(text.includes('[NOTE]'), `${post.slug}: quick note`);
-      assert.ok(text.includes('[BLOCK]'), `${post.slug}: purple inset`);
       for (const [, slug] of text.matchAll(/\]\(\/design-writing\/([^/)]+)\)/g)) assert.ok(posts.some((p) => p.slug === slug), `${post.slug}: ${slug}`);
     });
   }
@@ -85,4 +83,14 @@ test('resource and Improv articles preserve the intended narrative', () => {
   const improv = content('improv-when-a-card-becomes-fuel');
   assert.ok(!improv.includes('What I would actually test'));
   assert.ok(!improv.includes('Tracer in early'));
+});
+
+
+test('the three revised TCG articles retain styled notes and reflections', () => {
+  for (const slug of ['02-the-prototype-with-too-many-decks', '03-rebuilding-the-resource-loop', 'improv-when-a-card-becomes-fuel']) {
+    const post = posts.find((post) => post.slug === slug);
+    const text = post.content.map((block) => block.text || '').join('\\n');
+    assert.ok(text.includes('[NOTE]') && text.includes('[/NOTE]'), slug + ': note');
+    assert.ok(text.includes('[BLOCK]') && text.includes('[/BLOCK]'), slug + ': reflection');
+  }
 });
