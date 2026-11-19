@@ -128,7 +128,7 @@ export async function getStaticProps({ params }) {
           .replace(/\[VIOLET\]/g, '<span class="article-violet">').replace(/\[\/VIOLET\]/g, '</span>')
           .replace(/\[ZINC\]/g, '<span class="article-muted">').replace(/\[\/ZINC\]/g, '</span>')
           .replace(/\[WHITE\]/g, '<span class="article-white">').replace(/\[\/WHITE\]/g, '</span>')
-          .replace(/\[SIDENOTE\]/g, '<span class="article-sidenote"> (').replace(/\[\/SIDENOTE\]/g, ') </span>');
+          .replace(/\[SIDENOTE\]/g, '<span class="article-sidenote"> [').replace(/\[\/SIDENOTE\]/g, '] </span>');
       }
     }
   }
