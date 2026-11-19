@@ -1,6 +1,6 @@
 ---
 id: 214
-title: "Can You Read a Jam from Across the Table?"
+title: "Reading a Jam from Across the Table"
 date: "2026-10-12"
 author: "André Gottgtroy"
 tags: ["Game UX", "Readability", "Tracers"]

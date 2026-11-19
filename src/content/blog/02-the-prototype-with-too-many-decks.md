@@ -82,5 +82,5 @@ content:
     The question I wanted to keep was **which card am I willing to give up?** I could try that with the main deck I already had. That gave me somewhere to start the next prototype.
 - type: paragraph
   text: |-
-    [Previous: Making a TCG (Sort Of)](/design-writing/tcg-part-one) · [Next: Could the Main Deck Do Both Jobs?](/design-writing/03-rebuilding-the-resource-loop)
+    [Previous: Making a TCG (Sort Of)](/design-writing/tcg-part-one) · [Next: One Deck, Two Jobs](/design-writing/03-rebuilding-the-resource-loop)
 ---

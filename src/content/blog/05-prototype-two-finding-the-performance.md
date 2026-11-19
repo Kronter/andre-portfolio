@@ -90,5 +90,5 @@ content:
     [BLOCK]The next time I tried a rule, I had something quite specific to look for. Would the other crew care that I'd made this move? Some of the ideas I liked best on paper had a surprisingly hard time with that one.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: How Do I Make Your Turn Matter to Me?](/design-writing/competition-without-combat) · [Next: What Do Two Rival Crews Leave Behind?](/design-writing/why-i-built-the-world-of-tracers)
+    [Previous: Competing for Flow Without Throwing a Punch](/design-writing/competition-without-combat) · [Next: The Street After a Jam](/design-writing/why-i-built-the-world-of-tracers)
 ---

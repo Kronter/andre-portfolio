@@ -91,5 +91,5 @@ content:
     [BLOCK]If I want to know whether the shorter turns are helping, I'd watch the player who's waiting. Is there a move I could make that would change the card they're about to play?[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Improv: Which Card Can I Give Up?](/design-writing/improv-when-a-card-becomes-fuel) · [Next: How Do I Make Your Turn Matter to Me?](/design-writing/competition-without-combat)
+    [Previous: Improv: Which Card Can I Give Up?](/design-writing/improv-when-a-card-becomes-fuel) · [Next: Competing for Flow Without Throwing a Punch](/design-writing/competition-without-combat)
 ---

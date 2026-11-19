@@ -96,5 +96,5 @@ content:
     [BLOCK]What I want to see is the other player noticing who's about to join my crew. If they can see the Entrance coming, the turn *before* the character arrives can be part of the fun too.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Does My Crew Really Need Gear, Styles and Sequences?](/design-writing/gear-styles-sequences-and-scope) · [Next: Can You Read a Jam from Across the Table?](/design-writing/the-table-is-the-interface)
+    [Previous: Gear, Styles and the Jam That Worked Without Them](/design-writing/gear-styles-sequences-and-scope) · [Next: Reading a Jam from Across the Table](/design-writing/the-table-is-the-interface)
 ---

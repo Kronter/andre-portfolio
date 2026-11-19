@@ -99,5 +99,5 @@ content:
     [BLOCK]I'd happily try Sequences again if I find a move that's enjoyable to put together and easy for the other player to follow. For now, I quite like being able to sit down and play without explaining them.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Can You Read a Jam from Across the Table?](/design-writing/the-table-is-the-interface) · [Next: When More Cards Meant Less Game](/design-writing/when-more-cards-meant-less-game)
+    [Previous: Reading a Jam from Across the Table](/design-writing/the-table-is-the-interface) · [Next: When More Cards Meant Less Game](/design-writing/when-more-cards-meant-less-game)
 ---

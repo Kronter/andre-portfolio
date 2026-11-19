@@ -85,5 +85,5 @@ content:
     [BLOCK]Improv started as a way to make hands more flexible. It became a way to examine opportunity cost, pacing, player agency and the links between systems. That is the sort of evolution I want from a prototype: a small rule makes the right questions more visible. The next challenge was making sure those decisions mattered to the person sitting across the table.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: Could the Main Deck Do Both Jobs?](/design-writing/03-rebuilding-the-resource-loop) · [Next: The Turn Structure I Borrowed from Wargames](/design-writing/04-the-turn-structure-i-borrowed-from-wargames)
+    [Previous: One Deck, Two Jobs](/design-writing/03-rebuilding-the-resource-loop) · [Next: The Turn Structure I Borrowed from Wargames](/design-writing/04-the-turn-structure-i-borrowed-from-wargames)
 ---

@@ -1,6 +1,6 @@
 ---
 id: 210
-title: "How Do I Make Your Turn Matter to Me?"
+title: "Competing for Flow Without Throwing a Punch"
 date: "2026-04-19"
 author: "André Gottgtroy"
 tags: ["Player Interaction", "Competitive Design", "Tracers"]

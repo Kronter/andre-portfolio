@@ -1,6 +1,6 @@
 ---
 id: 212
-title: "Does My Crew Really Need Gear, Styles and Sequences?"
+title: "Gear, Styles and the Jam That Worked Without Them"
 date: "2026-08-28"
 author: "André Gottgtroy"
 tags: ["Iteration", "Scope", "Tracers"]

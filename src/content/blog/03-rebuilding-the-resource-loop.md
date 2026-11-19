@@ -1,6 +1,6 @@
 ---
 id: 202
-title: "Could the Main Deck Do Both Jobs?"
+title: "One Deck, Two Jobs"
 date: "2025-10-26"
 author: "André Gottgtroy"
 tags: ["Resource Design", "Iteration", "TCG"]

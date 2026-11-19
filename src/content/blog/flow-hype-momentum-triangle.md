@@ -88,5 +88,5 @@ content:
     [BLOCK]The resource triangle gave Prototype Two a recognisable rhythm. It didn't finish the game. Later work with Styles, Sequences and Tracer Entrances would test how much extra structure the basic loop could support before it stopped being the thing players noticed. For me, that is the central resource-design challenge: not how many clever interactions I can invent, but whether each one makes the next choice more interesting.[/BLOCK]
 - type: paragraph
   text: |-
-    [Previous: What Do Two Rival Crews Leave Behind?](/design-writing/why-i-built-the-world-of-tracers) · [Next: Does My Crew Really Need Gear, Styles and Sequences?](/design-writing/gear-styles-sequences-and-scope)
+    [Previous: The Street After a Jam](/design-writing/why-i-built-the-world-of-tracers) · [Next: Gear, Styles and the Jam That Worked Without Them](/design-writing/gear-styles-sequences-and-scope)
 ---
