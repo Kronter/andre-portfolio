@@ -26,7 +26,7 @@ content:
     One of the clearest lessons came from Sequences. I could define a Sequence in a document and understand exactly which Maneuvers belonged to it. That didn't mean the people at the table could identify it consistently.
 - type: paragraph
   text: |-
-    Early arrangements relied too heavily on implicit order and memory. Players needed to remember where a chain began and when it broke. The fix I explored was to make boundaries explicit and arrange cards so the relevant grouping was visible. A fan stack or declaration could carry information the rules were otherwise expecting players to hold in their heads.
+    The difference between playtest groups caught my attention. More casual players could get on with a Jam while barely touching Sequences. The people who tried to make the most of them kept running into the boundaries. Where does this one break? Which card starts the next one? Watching the first group alone could have left me quite happy with a rule the second group found hard to use.
 - type: paragraph
   text: |-
     There is an important difference between a rule being [VIOLET]*specified*[/VIOLET] and a game state being *readable*. An elegant rules document can still describe a cumbersome table experience. If two players repeatedly stop to reconstruct state, the system is asking for a better interface.

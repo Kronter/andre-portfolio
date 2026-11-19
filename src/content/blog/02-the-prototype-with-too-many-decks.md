@@ -15,9 +15,6 @@ content:
     When I sat down to make my first TCG prototype, I already had a main deck, a resource deck and a deck for zones in mind. I still quite like the idea of a zone deck. The bit I hadn't worked out was what my family would actually do with all three on their first turn.
 - type: paragraph
   text: |-
-    [NOTE]***Quick note:*** These were paper cards. I could cross something out and play it differently the next time round, which turned out to be quite handy.[/NOTE]
-- type: paragraph
-  text: |-
     The pile I was most interested in was the **resource deck**. I'd enjoyed choosing which cards to pitch in Flesh and Blood. Could I get that kind of decision into my own game?
 - type: heading-2
   text: "A prototype should be cheap to change"
@@ -37,7 +34,7 @@ content:
     The resource system was supposed to support the rest of the game. Instead, it began consuming the design space around it. Separate piles introduced separate rules: how to draw them, when to use them, what happens when you don't see the right cards, how those cards interact with other effects, and what a new player is expected to remember.
 - type: paragraph
   text: |-
-    Even before anyone chose a card, I'd given them three places to look. I could explain each pile on its own. Explaining how to take a turn was quite a bit harder.
+    The funny thing was that the resource deck was the smallest pile and the biggest engine. If I made a new card for the main deck, I also had to think through how the player would get the resources to use it and what the separate deck was doing that turn. More ideas for main-deck cards couldn’t buy that space back.
 - type: paragraph
   text: |-
     I had to distinguish [VIOLET]*complexity that creates decisions*[/VIOLET] from *complexity that explains why decisions are allowed*. A player deciding whether to keep a flexible card or commit it as a resource might be interesting. A player spending time working out which deck to consult, or which step of a separate procedure they were in, was less convincing.

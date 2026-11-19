@@ -12,10 +12,7 @@ relatedSlugs: ["meaningful-choices-not-more-choices", "why-i-design-sideways"]
 content:
 - type: paragraph
   text: |-
-    I like the idea of a game about bringing a neglected garden back to life. I can already think of things I'd put in it. Seeds, compost, a watering can, probably far too many plants. Would I enjoy looking after that garden?
-- type: paragraph
-  text: |-
-    [NOTE]***Quick note:*** The garden game is an illustrative example, not a project or playtest I am reporting on.[/NOTE]
+    Here’s a small design problem I like. Imagine I’ve watered a neglected garden and come back tomorrow. What would make me stop at one particular plant before I open the list of things to do? If I can picture that moment, I’ve got somewhere to start.
 - type: paragraph
   text: |-
     The bit I'd want to keep coming back for is noticing a small change and working out what caused it. That gives me something to look for in each feature I add.
@@ -43,7 +40,7 @@ content:
     For a sense of mastery, I might look for players predicting the result of an action and changing their approach deliberately. For a sense of belonging, I might look at whether they recognise characters, voluntarily revisit places, or invent small routines.
 - type: paragraph
   text: |-
-    Those behaviours aren't perfect measurements of emotion [SIDENOTE]a player can be curious without saying anything[/SIDENOTE]. A player can also try every object simply because they're a completionist. But observable signals give me something better than assuming the feature produced the feeling I intended.
+    In this imagined garden, counting return visits would tell me very little on its own. Someone who comes back to inspect a new shoot and someone who comes back because a timer is about to expire can look identical in the numbers. I’d want to hear what each person hoped to find when they opened the gate.
 - type: paragraph
   text: |-
     I also like asking players open questions after they have played. What did you want to do next? Which moment surprised you? When did you stop feeling in control? Their descriptions may reveal a different experience from the one I thought I designed.
@@ -62,9 +59,6 @@ content:
   text: "The moment-to-moment interaction matters"
 - type: paragraph
   text: |-
-    I have a strong affinity for interaction-led design: finding the fun in what a player does, then letting the larger systems amplify it. I associate part of that outlook with Miyamoto's work, especially games that invite experimentation and respond clearly to it. But it is my own working interpretation, not a claim to follow a fixed philosophy he has prescribed.
-- type: paragraph
-  text: |-
     A movement mechanic may be enjoyable simply because turning, accelerating and stopping feel responsive. A toy-like interaction might be satisfying before it has a score or a progression bar. If that foundation works, the environment can present increasingly interesting situations without needing to invent a completely new interaction each time.
 - type: paragraph
   text: |-
@@ -76,7 +70,7 @@ content:
   text: "Different time scales, one direction"
 - type: paragraph
   text: |-
-    I tend to think about this at three different scales. What am I doing with the watering can right now? What am I hoping to see in this bed in a few days? And what made me want to take on the whole garden in the first place?
+    Working on a digital event made me think more carefully about how a goal looks at different distances. A player can know exactly what the next button does and still have no idea why they’d come back tomorrow. I’d carry that question into the garden too.
 - type: paragraph
   text: |-
     I'd like watering one plant to give me a little evidence about what that bed needs. Then tending the bed brings the larger garden along with it. I have a reason to care about today's action even if the finished garden is a long way off.
@@ -96,7 +90,7 @@ content:
     That flexibility is particularly important during prototyping. I am not trying to prove that the first implementation was clever. I am trying to find a version that creates the experience I was looking for.
 - type: paragraph
   text: |-
-    [BLOCK]So I start by writing one sentence about what I want players to feel or be able to express. Then I write another sentence about what they would actually do if that experience were happening. Those two sentences don't design the game for me, but they give every mechanic a much better question to answer.[/BLOCK]
+    [BLOCK]I’d try the smallest scene first. One bed, two visits and a change the player can notice on the second visit. Before I add another plant, I want to know what they think happened to the first one.[/BLOCK]
 - type: paragraph
   text: |-
     [Previous: Three Ways Across a River](/design-writing/meaningful-choices-not-more-choices) · [Next: Why I Design Sideways When I Want to Get Better](/design-writing/why-i-design-sideways)

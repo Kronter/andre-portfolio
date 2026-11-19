@@ -15,9 +15,6 @@ content:
     I keep picturing the same street after a Jam. Both crews have gone home, somebody in the crowd is still arguing about who won, and you can look up and see what they made together.
 - type: paragraph
   text: |-
-    [NOTE]***Quick note:*** This is a worldbuilding direction, rather than a finished setting bible or a promise that every idea becomes a rule.[/NOTE]
-- type: paragraph
-  text: |-
     I liked the idea that even the crew that lost could point to part of that mark and say, ‘That bit was ours.’
 - type: paragraph
   text: |-
@@ -57,13 +54,13 @@ content:
     I didn't want the setting to be ordinary modern street sport, but I also didn't want technology so futuristic that a flip, a wheel or a wall would stop feeling recognisable. The direction in my design notes sits somewhere between fantasy and a near-future city: neon, customized gear, arcane sparks and **magitech**—[SIDENOTE]technology powered or modified by magic and runes[/SIDENOTE].
 - type: paragraph
   text: |-
-    I can give one performer rune-powered skates and send another up a wall with a pair of parkour gloves. They can tackle the same stretch of street quite differently. The fantasy side lets me play with that too. An ogre and a goblin are going to make rather different silhouettes coming over the same railing.
+    Give one performer rune-powered skates and another a pair of parkour gloves that leave a print wherever they catch the wall. Now picture a teammate on jumping stilts crossing the gap overhead. From the crowd, you can follow the crew’s route across the street in three different marks. That’s the bit I’d want to keep even if I changed every piece of equipment.
 - type: paragraph
   text: |-
     I was drawn to the kinetic energy of *Air Gear*, the theatricality of professional wrestling, hip-hop and breaking culture, and the kind of energetic city that could sit between contemporary streets and fantasy technology. Those are reference points, not a plan to reproduce their worlds.
 - type: paragraph
   text: |-
-    For the visual direction, I explored Shibuya-punk and superflat-pop influences, expressive posing and bold clothing. I want strong colour and striking shapes, but with a little more rendering and dimensionality than a purely flat treatment. Anime and manga have influenced the movement and energy, while a distinct card-game identity remains the aim.
+    I keep going back to the silhouettes and colour of *Dirty Pair* and *Record of Lodoss War*, alongside the street clothing and vertical spaces that draw me to *RKGK* and *Kemuri*. What I want an illustrator to be able to answer is specific to Tracing. From the far side of a crowd, can I tell who made that mark, how they got up there and which teammate is about to answer?
 - type: heading-2
   text: "What does the crowd see in a Maneuver?"
 - type: paragraph

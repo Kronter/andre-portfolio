@@ -37,7 +37,7 @@ content:
     The new direction placed three Tracers outside the Maneuver deck, each assigned to Flow, Hype or Momentum [SIDENOTE]after the player saw their final opening hand[/SIDENOTE]. Each Tracer would have a printed Entrance requirement tied to the resource it was assigned. Reach the requirement and the Tracer enters, eventually remaining in play across Jams.
 - type: paragraph
   text: |-
-    I liked the link because it attached progression to the main contest. The decision to build Flow was no longer only about scoring Flow at Jam end. It could also bring a character closer to their Entrance. What looks like one action now carries both an immediate competitive goal and a medium-term progression goal.
+    The order matters here. I get to look at my opening hand before I assign one Tracer to each resource. If the hand suggests an early push for Flow, do I put the teammate I most want to see on Flow? Or am I happy to chase Flow anyway and give myself a reason to contest something else? I like that I get to make a crew decision before anyone plays a Maneuver.
 - type: paragraph
   text: |-
     The old Featured rotation was replaced for current testing. That doesn't mean the previous experiment was useless. It helped identify the emotional job—dramatic entrances and character identity—while showing me one way of implementing it that created too much friction.
